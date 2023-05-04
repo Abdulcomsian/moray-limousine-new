@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="102px" height="102px" viewBox="0 0 102 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>B71A89A2-D91D-4D31-878B-3119F464A931</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="select_city" transform="translate(-137.000000, -338.000000)">
+            <g id="ic_arrow_up" transform="translate(138.000000, 339.000000)">
+                <g id="ic_arrow_forward" transform="translate(50.000000, 50.000000) scale(1, -1) rotate(90.000000) translate(-50.000000, -50.000000) translate(25.000000, 25.000000)">
+                    <polygon id="Bounds" points="0 0 50 0 50 50 0 50"></polygon>
+                    <polygon id="Shape" fill="#168CCC" points="25 8.33333333 22.0625 11.2708333 33.6875 22.9166667 8.33333333 22.9166667 8.33333333 27.0833333 33.6875 27.0833333 22.0625 38.7291667 25 41.6666667 41.6666667 25"></polygon>
+                </g>
+                <path d="M50,99.9974481 C77.6144541,99.9974481 100,77.6119022 100,49.9974481 C100,22.3855459 77.6144541,0 50,0 C22.3855459,0 0,22.3855459 0,49.9974481 C0,77.6119022 22.3855459,99.9974481 50,99.9974481 L50,99.9974481 Z" id="Stroke-1" stroke="#168CCC"></path>
+            </g>
+        </g>
+    </g>
+</svg>

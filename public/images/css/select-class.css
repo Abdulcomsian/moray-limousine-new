@@ -1,0 +1,31 @@
+.location-list{
+    background-color: #fff;
+    border: 1px solid rgb(191, 156, 96);
+    padding: 6px;
+    border-right: none;
+    border-left:none;
+    border-radius: 0;
+    font-size: 0.8rem;
+}
+.gm-style-mtc,.gm-svpc{
+    display: none !important;
+}
+.summary-bar-area {
+    background: #2c2c2c;
+    padding: 1px 0 5px;
+    border: 2px solid #eac16a;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    position: relative;
+    top: 0 !important;
+
+}
+.booking-steps-area {
+    padding: 21px 0 1px;
+    border-top: 3px solid #e3cb78;
+}
+
+.mht {
+    margin-top: 8rem;
+}
