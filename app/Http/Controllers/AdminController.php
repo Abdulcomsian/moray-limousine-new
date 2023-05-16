@@ -18,7 +18,7 @@ class AdminController extends Controller
     {
         return view('admin.manage-reshty.all-reshty');
     }
-    
+
     public function allHappyStories()
     {
         return view('admin.all-happy-stories');

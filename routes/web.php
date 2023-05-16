@@ -72,7 +72,7 @@ Route::get('/become-partner', [PartnerController::class, 'becomePartner']);
 
 //new work for partner registration
 
-Route::get('/partner-registration', function () 
+Route::get('/partner-registration', function ()
 {
     $locations = DB::table('locations')->get();
     return view('home.partner-registration', compact('locations'));
@@ -90,7 +90,7 @@ Route::get('/booking', [BookingController::class, 'selectClassByDistance'])->nam
 
 
 
-Route::group(['middleware' => ['web', 'auth']], function () 
+Route::group(['middleware' => ['web', 'auth']], function ()
 {
     Route::get('user/invoice/{id}', [UserController::class, 'getInvoice']);
 
@@ -113,7 +113,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
     Route::post('/booking/adminapprove', [BookingController::class, 'adminbookingApprove']);
 
     Route::post('/booking/editadminapprove', [BookingController::class, 'editadminbookingApprove']);
-   
+
     Route::get('/booking/disapprove/{id}', [BookingController::class, 'bookingDisapprove']);
 
     Route::post('paypal-transaction-complete', [BookingController::class, 'paypaltransactioncomplete']);
@@ -132,7 +132,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
     Route::get('/booking/delete/{id}', [BookingController::class, 'bookingDelete']);
 
-    Route::group(['middleware' => 'end_user'], function () 
+    Route::group(['middleware' => 'end_user'], function ()
     {
         Route::get('user/build-profile', [UserController::class, 'buildProfile'])->name('build-user-profile');
 
@@ -194,7 +194,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
     Route::get('/admin/get-pending-bookings', [BookingController::class, 'pendingBookings']);
 
     Route::get('/admin/get-neww-bookings', [BookingController::class, 'newBookings']);
-    
+
     Route::get('/admin/get-assigned-bookings', [BookingController::class , 'assignedBookings']);
 
     Route::get('/admin/get-canceled-bookings', [BookingController::class, 'canceledBookings']);
@@ -261,7 +261,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
     // Admin Routes
 
-    Route::group(['middleware' => 'auth'], function () 
+    Route::group(['middleware' => 'auth'], function ()
     {
 
         Route::get('vehicle/vehicleDetail/{id}', [VehicleController::class, 'vehicleDetails']);
@@ -289,7 +289,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
         Route::get('vehicle/delete-docs/{id}', [VehicleController::class, 'deleteDocument']);
 
-        Route::group(['middleware' => 'partner'], function () 
+        Route::group(['middleware' => 'partner'], function ()
         {
             Route::get('partner/profile', [PartnerController::class, 'profileView'])->name('partner.profile');
 
@@ -354,13 +354,13 @@ Route::group(['middleware' => ['web', 'auth']], function ()
             Route::post('partner/store-vehicle-docs', [PartnerController::class, 'storeVehicleDocs'])->name('partner.vehicle.docs');
         });
 
-        Route::group(['middleware' => 'partnerstep'], function () 
+        Route::group(['middleware' => 'partnerstep'], function ()
         {
-            Route::get('info/welcome', function () 
+            Route::get('info/welcome', function ()
             {
                 return view('information.welcome');
             });
-            Route::get('info/company', function () 
+            Route::get('info/company', function ()
             {
                 $cities = DB::table('locations')->get();
                 $coutnrycode = DB::table('country')->groupBy('phonecode')->orderBy('phonecode', 'asc')->get();
@@ -369,14 +369,14 @@ Route::group(['middleware' => ['web', 'auth']], function ()
                 return view('information.company', compact('cities', 'legalform', 'coutnrycode', 'countries'));
             });
 
-            Route::get('info/driver', function () 
+            Route::get('info/driver', function ()
             {
                 $driver = User::where(['user_type' => 'driver', 'creator_id' => Auth::user()->id])->first();
                 $coutnrycode = DB::table('country')->groupBy('phonecode')->orderBy('phonecode', 'asc')->get();
                 return view('information.driver', compact('driver', 'coutnrycode'));
             });
 
-            Route::get('info/vehicle', function () 
+            Route::get('info/vehicle', function ()
             {
                 $vehicle = Vehicle::where(['creator_id' => Auth::user()->id])->first();
                 $data['category'] = VehicleCategory::all();
@@ -386,7 +386,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
                 return view('information.vehicle', compact('vehicle', 'data', 'VehicleSubtype', 'standards', 'proudctionyear'));
             });
 
-            Route::get('info/payment', function () 
+            Route::get('info/payment', function ()
             {
                 return view('information.payment');
             });
@@ -459,7 +459,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
     // booking
 
-    Route::group(['middleware' => 'admin'], function () 
+    Route::group(['middleware' => 'admin'], function ()
     {
 
         Route::get('driver/pending-drivers', [DriverController::class, 'pendingDrivers']);
@@ -713,11 +713,9 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
         Route::get('admin/city-price-active/{id}',  [AdminController::class, 'cityPriceActive']);
 
-        
-        
+
+
         //        Documents Routes
-
-
         Route::get('admin/add-documents', [DocumentsController::class, 'addDocuments']);
 
         Route::get('admin/document-delete/{id}', [DocumentsController::class, 'deleteDocument']);
@@ -731,7 +729,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
         Route::get('admin/disapprove-doc/{id}', [UploadedDocumentController::class, 'disapproveDocument']);
 
         //          Manage Locations Routes
-        
+
         Route::get('admin/add-locations', [LocationController::class, 'addLocations']);
         Route::get('admin/add-booking-hours', [LocationController::class, 'addBookingHours']);
         Route::get('admin/delete-location/{id}', [LocationController::class, 'deleteLocation']);
@@ -742,7 +740,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
         Route::post('admin/save-booking-hours', [LocationController::class, 'saveBookingHours'])->name('admin.save.bookinghour');
         Route::get('admin/delete-booking-hour/{id}', [LocationController::class, 'deleteBookingHour']);
         Route::get('admin/edit-booking-hour/{id}', [LocationController::class, 'editBookinghour']);
-        
+
 
         //        Manage tax
 

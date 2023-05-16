@@ -194,7 +194,7 @@ class Booking extends Model
                 //     ->whereDate('end_date', '>', $form_data['pick_date'])
                 //     ->whereTime('start_time', '<=', $form_data['pick_time'])
                 //     ->first();
-                
+
 
                 // $discount_rate = null;
                 // $markup_rate = null;
@@ -233,14 +233,14 @@ class Booking extends Model
                     $class->setAttribute('tax_amount', number_format($tax_amount, 2));
                     $classesWithPrice[] = $class;
                 }
-               
+
                  //working for city wise price
                 $countrywiseprice=DB::table('city_wise_pricing')->where(['category'=>$class->name,'country'=>$form_data['booking_country'],'type'=>'fixed'])->where('status', 'active')
                     ->whereDate('start_date', '<=', $form_data['pick_date'])
                     ->whereDate('end_date', '>', $form_data['pick_date'])
                     ->whereTime('start_time', '<=', $form_data['pick_time'])
                     ->first();
-              
+
                 if($countrywiseprice)
                 {
                     $percetageprice=($class->class_price/100)*$countrywiseprice->price;
@@ -255,15 +255,15 @@ class Booking extends Model
                     ->first();
                     if($result)
                     {
-                        $percetageprice=(($class->class_price/100)*$result->price);  
+                        $percetageprice=(($class->class_price/100)*$result->price);
                         $class->class_price += $percetageprice;
                        $class->setAttribute('class_price', number_format($class->class_price, 2));
                     }
                 }
-                 
-               
-                
-                
+
+
+
+
             }
         }
         return $classesWithPrice;
@@ -330,12 +330,12 @@ class Booking extends Model
                     ->first();
                     if($result)
                     {
-                        $percetageprice=(($class->class_price/100)*$result->price); 
+                        $percetageprice=(($class->class_price/100)*$result->price);
                         $class->class_price += $percetageprice;
-                        $class->setAttribute('class_price', number_format($class->class_price, 2)); 
+                        $class->setAttribute('class_price', number_format($class->class_price, 2));
                     }
                 }
-                
+
             }
         }
         return $classesWithPrice;

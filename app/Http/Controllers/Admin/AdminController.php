@@ -83,9 +83,11 @@ class AdminController extends Controller
      */
     public function manageBookings()
     {
+
         $bookings = Booking::with('adminassign','vehicle')->where('payment_status', 'paid')
             ->orderBy('created_at', 'desc')->get();
         $vehicles=Vehicle::get();
+        // dd('abc');
         $drivers=User::where('user_type','driver')->get();
         $pending_bookings  = Booking::with('adminassign','vehicle')->where('booking_status', 'pending')->get();
         $complete_bookings = Booking::where('booking_status', 'completed')->get();
@@ -446,7 +448,7 @@ class AdminController extends Controller
     }
 
     public function saveCityPricing(Request $request)
-    {  
+    {
         //dd($request->all());
         if(!$request->country && !$request->location_city)
         {
@@ -507,7 +509,7 @@ class AdminController extends Controller
             );
         }
          return redirect('admin/manage-city-pricing')->with('success','Success .. !  Record save Successfully .');
-        
+
     }
     public function editCityPricing($id)
     {
@@ -527,7 +529,7 @@ class AdminController extends Controller
          ]);
 
         if ($result){
-           
+
             return redirect('admin/manage-city-pricing')->with('success','Success ! Status  DeActivated Successfully');
         }else{
             return redirect('admin/manage-city-pricing')->with('error','Error ! No Record Found ..');
@@ -539,9 +541,9 @@ class AdminController extends Controller
          $result = DB::table('city_wise_pricing')->where('id',$id)->update([
             'status'=>'active',
          ]);
-         
+
         if ($result){
-           
+
             return redirect('admin/manage-city-pricing')->with('success','Success ! Status  Activated Successfully');
         }else{
             return redirect('admin/manage-city-pricing')->with('error','Error ! No Record Found ..');
@@ -762,7 +764,7 @@ class AdminController extends Controller
     {
        foreach($request->city_id as $city_id){
             DB::table('operate_city_requirements')->insert(['city_id' => $city_id, 'main_heading' => $request->main_heading, 'requirements' => $request->requirements, 'doc_heading' => $request->doc_heading, 'documents' => $request->documents]);
-        }     
+        }
         return redirect('/partner-registration-req')->with('success', 'Requirements against city added Successfully.');
     }
     //delete partner req
@@ -844,7 +846,7 @@ class AdminController extends Controller
             foreach ($legal_form as $data) {
                  DB::table('legal_form_of_company')->insert(['city_id' => $city_id, 'legal_form' => $data]);
              }
-         } 
+         }
 
         return redirect('/legal-form-of-company')->with('success', 'Legal form against city added Successfully!! ...');
     }
