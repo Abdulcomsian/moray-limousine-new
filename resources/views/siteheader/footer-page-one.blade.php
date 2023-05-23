@@ -10,7 +10,7 @@ Contact Us
           <div class="row justify-content-center">
               <div class="col-md-10 text-center">
                   <div class="content">
-                      {!! \App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::FOOTER_PAGE_ONE) ? \App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::FOOTER_PAGE_ONE) : 'No Data' !!}
+                      {!! \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::FOOTER_PAGE_ONE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::FOOTER_PAGE_ONE) : 'No Data' !!}
                   </div>
               </div>
           </div>

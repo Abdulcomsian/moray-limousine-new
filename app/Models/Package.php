@@ -14,8 +14,9 @@ class Package extends Model
      public function savePackage($formData){
          $this::create($formData);
      }
-     
-    public function updatePackage($formData , $edit_id){
+
+    public function updatePackage($formData , $edit_id)
+    {
         $this::where('id',$edit_id)->update($formData);
     }
 

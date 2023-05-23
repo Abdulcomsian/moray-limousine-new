@@ -15,7 +15,8 @@ class VehicleSubtype extends Model
     /**
      * @return BelongsTo
      */
-    public function createdBy(){
+    public function createdBy()
+    {
         return $this->belongsTo(User::class, 'created_by', 'id');
     }
 
@@ -24,7 +25,6 @@ class VehicleSubtype extends Model
      */
     public function categories()
     {
-        return $this->belongsToMany(VehicleCategory::class, 'vehiclecategory_vehiclesubtype',
-            'subtype_id', 'category_id');
+        return $this->belongsToMany(VehicleCategory::class, 'vehiclecategory_vehiclesubtype','subtype_id', 'category_id');
     }
 }

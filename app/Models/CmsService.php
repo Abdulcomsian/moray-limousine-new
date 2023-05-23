@@ -12,7 +12,8 @@ class CmsService extends Model
      * @param $formData
      * @return mixed
      */
-    public function saveService($formData){
+    public function saveService($formData)
+    {
      return  $this::create($formData);
     }
 

@@ -28,7 +28,7 @@ class Vehicle extends Model
      */
     public function vehicleCategory()
     {
-        return $this->belongsTo('App\VehicleCategory', 'vehicleCategory_id', 'id');
+        return $this->belongsTo('App\Models\VehicleCategory', 'vehicleCategory_id', 'id');
     }
 
     /**
@@ -36,7 +36,7 @@ class Vehicle extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User', 'creator_id', 'id');
+        return $this->belongsTo('App\Models\User', 'creator_id', 'id');
     }
 
     /**

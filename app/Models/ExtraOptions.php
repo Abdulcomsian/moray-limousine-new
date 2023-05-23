@@ -15,7 +15,8 @@ class ExtraOptions extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function categories(){
-        return $this->belongsToMany('App\VehicleCategory', 'optionscategories', 'extraOption_id', 'vehicleCategory_id')->withTimestamps();
+    public function categories()
+    {
+        return $this->belongsToMany('App\Models\VehicleCategory', 'optionscategories', 'extraOption_id', 'vehicleCategory_id')->withTimestamps();
     }
 }

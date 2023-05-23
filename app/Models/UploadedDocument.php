@@ -43,7 +43,8 @@ class UploadedDocument extends Model
     //save driver documents
     public function saveDriverDocuments($form_data, $driver_id)
     {
-        if (isset($form_data)) {
+        if (isset($form_data))
+        {
             $form_data['user_id'] = $driver_id;
             $document = $this->create($form_data);
             return $document;

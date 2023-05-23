@@ -78,7 +78,8 @@
                                                     <div class="name" style="font-weight: bold;">
                                                         Moray Limousine  - <span class="date"> {{$notification->created_at}}</span>
                                                     </div>
-                                                    <p class="m-0" style="font-weight: bold;">{{$notification->data['body']}}</p>
+                                                    {{-- <p class="m-0" style="font-weight: bold;">{{ $notification->data['body'] }}</p> --}}
+                                                    <p class="m-0" style="font-weight: bold;">{{ htmlspecialchars($notification->data['body']) }}</p>
                                                     <div class="reply">
                                                         <a href="{{url($notification->data[0])}}">Thanks for choosing Moray Limousine</a>
                                                     </div>
@@ -101,9 +102,17 @@
                                                     <div class="name">
                                                         Moray Limousine  - <span class="date"> {{$notification->created_at}}</span>
                                                     </div>
-                                                    <p class="m-0">{!! $notification->data['body'] !!}</p>
+                                                    {{-- <p class="m-0">{!! $notification->data['body'] !!}</p> --}}
+                                                    {{-- <p class="m-0">{!! implode(', ', $notification->data['body']) !!}</p> --}}
+                                                    <p class="m-0">
+                                                        @if(is_array($notification->data['body']))
+                                                            {!! implode(', ', $notification->data['body']) !!}
+                                                        @else
+                                                            {!! $notification->data['body'] !!}
+                                                        @endif
+                                                    </p>
                                                     <div class="reply">
-                                                        {{--                                        <a href="{{url($notification->data[0])}}">Thanks for choosing Moray Limousine</a>--}}
+                                                    {{-- <a href="{{url($notification->data[0])}}">Thanks for choosing Moray Limousine</a> --}}
                                                     </div>
                                                 </div>
                                             </li>

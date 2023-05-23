@@ -24,7 +24,8 @@ class OtherUser extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function booking(){
+    public function booking()
+    {
         return $this->belongsTo(Booking::class);
     }
 
@@ -33,7 +34,7 @@ class OtherUser extends Model
 
     public function storeOtherUser($form_data,$booking_id)
     {
-      
+
       if(isset($form_data['booksomeone']))
       {
            //or isset($form_data->flight_number) or isset($form_data->additional_information) or isset($form_data->banner_words
@@ -50,11 +51,14 @@ class OtherUser extends Model
                'billing_address'=>$form_data['address'],
                'postcode'=>$form_data['postcode'],
                'country'=>$form_data['land'],
+
                // 'flight_number' => $form_data->flight_number,
                // 'flight_information' => $form_data->flight_information,
                // 'banner_words' => $form_data->banner_words,
+
            ]);
-           } else{
+           } else
+           {
                return null;
            }
      }

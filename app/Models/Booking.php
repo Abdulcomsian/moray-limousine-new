@@ -187,7 +187,8 @@ class Booking extends Model
                 ->where('pricing_type', 'per_km')
                 ->where('from', '<=', $d)
                 ->where('to', '>=', $d);
-            if (count($classPricing) > 0) {
+            if (count($classPricing) > 0)
+            {
                 //             Add Discount or Markup in Price
                 // $classDiscount =  $class->discount()->where('status', 'active')
                 //     ->whereDate('start_date', '<=', $form_data['pick_date'])
@@ -205,6 +206,7 @@ class Booking extends Model
                 //         $discount_rate = $classDiscount->discount_rate;
                 //     }
                 // }
+
                 $pricing_type = $classPricing->first()->is_price_fixed;
 
                 if ($pricing_type == 1 or $pricing_type == true) {

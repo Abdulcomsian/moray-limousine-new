@@ -10,6 +10,6 @@ class VehicleType extends Model
 
     public function vehicles()
     {
-        return $this->hasMany('App\Vehicle','type_id','id')->where('status','APPROVED');
+        return $this->hasMany('App\Models\Vehicle','type_id','id')->where('status','APPROVED');
     }
 }

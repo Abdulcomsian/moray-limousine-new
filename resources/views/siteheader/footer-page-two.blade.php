@@ -10,7 +10,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-10">
                     <div class="content text-dark">
-                        {!! \App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::FOOTER_PAGE_TWO) ? \App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::FOOTER_PAGE_TWO) : 'No Data' !!}
+                        {!! \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::FOOTER_PAGE_TWO) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::FOOTER_PAGE_TWO) : 'No Data' !!}
                     </div>
                 </div>
             </div>

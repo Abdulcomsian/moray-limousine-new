@@ -17,9 +17,6 @@ class UsersMedia extends Model
 
 
 
-
-
-
     /**
      * @param $image_name
      * @param $id

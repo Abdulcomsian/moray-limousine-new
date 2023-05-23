@@ -15,7 +15,8 @@ class ExtendBooking extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function booking(){
+    public function booking()
+    {
         return $this->belongsTo(Booking::class);
     }
 }

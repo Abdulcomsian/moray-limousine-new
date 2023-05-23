@@ -101,6 +101,7 @@
                                                                   'role' => $errors->has('max_bags') ? 'alert' : ''])
                                                             </div>
                                                         </div>
+
 {{--                                                        <div class="col-md-6 mt-3">--}}
 {{--                                                            <div class="form-group">--}}
 {{--                                                                <label for="price_per_km">Price / KM: </label>--}}
@@ -123,6 +124,7 @@
 {{--                                                                  'role' => $errors->has('price_per_hr') ? 'alert' : ''])--}}
 {{--                                                            </div>--}}
 {{--                                                        </div>--}}
+
                                                         <div class="col-md-12 mt-3">
                                                             <div class="form-group">
                                                                 <label for="subtypes">Vehicle Model : </label>

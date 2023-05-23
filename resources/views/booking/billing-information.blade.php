@@ -59,6 +59,7 @@
             </div>
         </div>
     </section>
+
      <section class="booking-steps-area mht ">
             <div class="container-fluid ml-4 mt-4">
                 <div class="row">
@@ -190,7 +191,7 @@
                                             <p>voraussichtlich : {{$form_data->estimated_time}} <br>Strecke : {{$form_data->estimated_distance}} km </p>
                                         </li>
                                     </ul>
-                                         
+
                                     <form id="payment-form" action="{{route('submit.booking')}}" method="post">
                                         @csrf
                                         <input type="hidden" name="FormData" value="{{json_encode($form_data)}}">
@@ -199,17 +200,21 @@
                                         <input type="hidden" name="selected_category" value="{{json_encode($options_data)}}">
                                         <input type="hidden" name="optionsData" value="{{json_encode($options_data)}}">
                                         <div class="bottom p-5">
-                                           <!--  <div id="strip-button-container">
+
+
+                                            @if($form_data->orderId == '' || $form_data->orderId == null)
+                                           <div id="strip-button-container">
                                             </div>
                                             <br>
                                             <button>Pay With Credit Card</button>
-                                            <p><img src="{{ asset('images/creditcard.png') }}" alt="credit card icons" style="width:30%;" /></p> -->
-                                            @if($form_data->orderId == '' || $form_data->orderId == null)
-                                             <div id="paypal-button-container">
-                                            </div> 
-                                            <br>
-											
-											<p><img src="{{ asset('images/creditcard.png') }}" alt="credit card icons" style="width:30%;" /></p>
+                                            <p><img src="{{ asset('images/creditcard.png') }}" alt="credit card icons" style="width:30%;" /></p>
+
+
+                                             {{-- <div id="paypal-button-container">
+                                            </div>
+                                            <br> --}}
+											{{-- <p><img src="{{ asset('images/creditcard.png') }}" alt="credit card icons" style="width:30%;" /></p> --}}
+
 											<p style="padding:5px;margin-top:30px;color: #000;font-size: 16px;border-radius:50px;background: #fff;border: 1px solid goldenrod !important;">Mit Kreditkarte ohne Paypal direkt bezahlen uber den Paypal Button oben! </p>
                                             @else
                                             <h4>Betrag Bezahlt!</h4>
@@ -262,7 +267,7 @@
                                                         <i class="fa fa-clock "></i> Summe  <span class="w-50 float-right"> {{$form_data->extra_options_amount + ($form_data->travel_amount - $form_data->tax_amount)}} EUR </span>
                                                     </li>
                                                     <li class="list-group-item location-list text-center p-2">
-                                                         
+
                                                         {{$tax_rate}}% MwSt.  <span class="w-50 float-right">  {{$form_data->tax_amount}} EUR </span>
                                                     </li>
                                                     <li class="list-group-item location-list text-center p-2" style="color: #af7e2b !important; font-weight: bold;">
@@ -294,7 +299,9 @@
 	<script src="https://js.stripe.com/v3/"></script>
 <!-- &disable-funding=credit,card <script src="https://www.paypal.com/sdk/js?client-id=AUXGCQW8WwUWqay1Zsmf6zCxdtcGMUqeCPbV0HqW5jqd7MurPnPBsRJIbtFi-_3K2tqlgtl0ZQjqaOdb&currency=EUR"></script> -->
 
-    <script>
+
+
+    {{-- <script>
         paypal.Buttons({
 	style: {
 	 layout: 'horizontal',
@@ -304,7 +311,7 @@
 	 allowed: [ paypal.FUNDING.CARD ],
 
 	},
-            createOrder: function(data, actions) { 
+            createOrder: function(data, actions) {
             return actions.order.create({
                 purchase_units: [{
                 amount: {
@@ -314,7 +321,7 @@
             });
             },
             onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) 
+            return actions.order.capture().then(function(details)
             {
                 console.log(details);
                 // Call your server to save the transaction
@@ -345,67 +352,72 @@
                 $(".summary-bar-area").attr("style","");
              }
         });
-        
-	</script>
+
+	</script> --}}
+
+
+
 
 <script>
-    // $(document).ready(function (){
-    //     var stripe = Stripe('pk_live_51H6zNfDIr4vVZ16GxaXBB2DdZCn1iPb4YUpfZL1mdM4Xy4OycK3oalYPhWTtL6OHq4Sabh5b3nkxxJRUmZUZqJEN00CNiPT8as');
-    //     var elements = stripe.elements();
-    //     // Custom styling can be passed to options when creating an Element.
-    //     var style = {
-    //         base: {
-    //             color: "#32325d",
-    //             fontFamily: 'Arial, sans-serif',
-    //             fontSmoothing: "antialiased",
-    //             fontSize: "16px",
-    //             "::placeholder": {
-    //                 color: "#32325d"
-    //             }
-    //         },
-    //         invalid: {
-    //             fontFamily: 'Arial, sans-serif',
-    //             color: "#fa755a",
-    //             iconColor: "#fa755a"
-    //         }
-    //     };
+    $(document).ready(function (){
+        var stripe = Stripe('pk_test_51LevsRISpHce1qMwKr8rZn4M1gkcDDYWjJSu5Y3JVsTVrJKOOjXhQ1Xyfz3Qs8PrzSxv5PL65iZYRi2WuyOTZ1BX00ewppUhkw');
+        var elements = stripe.elements();
 
-    //     // Create an instance of the card Element.
-    //     var card = elements.create('card', {style: style});
+        // Custom styling can be passed to options when creating an Element.
 
-    //     // Add an instance of the card Element into the `card-element` <div>.
-    //     card.mount('#strip-button-container');
+        var style = {
+            base: {
+                color: "#32325d",
+                fontFamily: 'Arial, sans-serif',
+                fontSmoothing: "antialiased",
+                fontSize: "16px",
+                "::placeholder": {
+                    color: "#32325d"
+                }
+            },
+            invalid: {
+                fontFamily: 'Arial, sans-serif',
+                color: "#fa755a",
+                iconColor: "#fa755a"
+            }
+        };
 
-    //     // Create a token or display an error when the form is submitted.
-    //     var form = document.getElementById('payment-form');
-    //     form.addEventListener('submit', function (event) {
-    //         event.preventDefault();
+        // Create an instance of the card Element.
+        var card = elements.create('card', {style: style});
 
-    //         stripe.createToken(card).then(function (result) {
-    //             if (result.error) {
-    //                 // Inform the customer that there was an error.
-    //                 var errorElement = document.getElementById('card-errors');
-    //                 errorElement.textContent = result.error.message;
-    //             } else {
-    //                 // Send the token to your server.
-    //                 stripeTokenHandler(result.token);
-    //             }
-    //         });
-    //     });
+        // Add an instance of the card Element into the `card-element` <div>.
+        card.mount('#strip-button-container');
 
-    //     function stripeTokenHandler(token) {
-    //         // Insert the token ID into the form so it gets submitted to the server
-    //         var form = document.getElementById('payment-form');
-    //         var hiddenInput = document.createElement('input');
-    //         hiddenInput.setAttribute('type', 'hidden');
-    //         hiddenInput.setAttribute('name', 'stripeToken');
-    //         hiddenInput.setAttribute('value', token.id);
-    //         hiddenInput.setAttribute('style', "border:1px");
-    //         form.appendChild(hiddenInput);
-    //         // Submit the form
-    //         form.submit();
-    //     }
-    // })
+        // Create a token or display an error when the form is submitted.
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function (result) {
+                if (result.error) {
+                    // Inform the customer that there was an error.
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Send the token to your server.
+                    stripeTokenHandler(result.token);
+                }
+            });
+        });
+
+        function stripeTokenHandler(token) {
+            // Insert the token ID into the form so it gets submitted to the server
+            var form = document.getElementById('payment-form');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'stripeToken');
+            hiddenInput.setAttribute('value', token.id);
+            hiddenInput.setAttribute('style', "border:1px");
+            form.appendChild(hiddenInput);
+            // Submit the form
+            form.submit();
+        }
+    })
 </script>
-    
+
 @endsection

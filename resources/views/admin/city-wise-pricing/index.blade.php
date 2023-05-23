@@ -9,13 +9,13 @@
         display: block;
         z-index: 9999999999;
     }
-    
+
 </style>
 <link rel="stylesheet" href="{{asset('css/wickedpicker.css')}}">
 @endsection
 @section('main-content')
 
-    
+
 
     <div style="width: 80%">
     <div id="myModal" class="modal fade" role="dialog">
@@ -40,7 +40,7 @@
                                                 <option>{{$cn->nicename}}</option>
                                                 @endforeach
                                             </select>
-                                            
+
                                         </div>
                                     </div>
                                      <div class="col-md-4">
@@ -109,7 +109,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8 text-center">
-                                        
+
                                     </div>
                                     <div class="col-md-4 text-center">
                                         <div class="form-group">
@@ -169,7 +169,9 @@
             </tr>
             </thead>
             <tbody>
-            @if(count($city) > 0)
+
+            {{-- @if(count($city) > 0) --}}
+            @if(!empty($city) && count($city) > 0)
                 @foreach($city as $ct)
                     <tr>
                         <td class="py-1">{{$ct->country}}</td>
@@ -188,7 +190,7 @@
                         <td>
                             {{$ct->end_time}}
                         </td>
-                       
+
                         <td class="py-1">{{$ct->price}}%</td>
                         <td>
                         <div class="btn-group p-0">
@@ -199,19 +201,19 @@
                             @else
                                 <label class="badge badge-danger">{{$ct->status}}</label>
                             @endif
-                            
+
                         </div>
                         </td>
                         <td>
                             <div class="btn-group p-0" style="font-size: 1.6rem;">
                                 <a id="{{$ct->id}}" title="Edit" href="#"  class="p-1 edit-document1" style="cursor: pointer">
                                     <i class="fa fa-edit"></i></a>
-                                   
+
                                 <a id="{{$ct->id}}"  title="Delete" href="{{url('admin/delete-city-price/')}}/{{$ct->id}}" class="p-1 text-dark"  style="cursor: pointer"><i class="fa fa-trash"></i></a>
                             @if($ct->status !== 'dis_active')
                                 <a id="{{$ct->id}}" title="Inactive" href="{{url('admin/city-price-disactive/')}}/{{$ct->id}}"  class="p-1 text-danger" style="cursor: pointer"><i class="fa fa-ban"></i></a>
                             @endif
-                           
+
                             @if($ct->status == 'dis_active')
                                 <a id="{{$ct->id}}" title="Active"  href="{{url('admin/city-price-active/')}}/{{$ct->id}}" class="p-1 text-success" style="cursor: pointer">
                                     <i class="fa fa-universal-access">
@@ -248,11 +250,11 @@
             $('#datatable-buttons1').dataTable({
                responsive : true
             });
-            
+
 
             let btn_cancel1 = $('.cancel-edit1');
             btn_cancel1.hide();
-            
+
 
             $.ajaxSetup({
                 headers: {
@@ -337,8 +339,8 @@
                                         }
                                     }
                                 }
-                                
-                                
+
+
                                 $('input[name="location_country"]').val(country);
 
                             } else {
@@ -350,12 +352,12 @@
 
             });
         }
-        
-      
+
+
 
     </script>
     <script src="{{asset('js/jquery-simple-validator.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/admin/wickedpicker.min.js')}}"></script>
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeHpSgm-hy0_G_NC6PynKEYgASntQIi1Y&libraries=places&callback=initMap" async defer></script>
-    
+
 @endsection

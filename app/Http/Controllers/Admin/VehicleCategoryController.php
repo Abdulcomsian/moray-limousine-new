@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\VehicleSubtype;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Vehicle;
+use App\Models\VehicleSubtype;
 use App\Models\VehicleCategory;
 use Illuminate\Routing\Redirector;
 
@@ -83,7 +83,8 @@ class VehicleCategoryController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function addCategoty(){
+    public function addCategory()
+    {
         $categories = VehicleCategory::all();
         $subtypes = VehicleSubtype::all();
         $data['categories'] = $categories;
