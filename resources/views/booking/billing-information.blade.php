@@ -182,7 +182,7 @@
                                             <div class="info">
                                                 Zeit
                                             </div>
-                                            <p>{{$form_data->pick_time}} </p>
+                                            <p>{{$form_data->pick_time}}</p>
                                         </li>
                                         <li>
                                             <div class="info">
@@ -215,7 +215,7 @@
                                             <br> --}}
 											{{-- <p><img src="{{ asset('images/creditcard.png') }}" alt="credit card icons" style="width:30%;" /></p> --}}
 
-											<p style="padding:5px;margin-top:30px;color: #000;font-size: 16px;border-radius:50px;background: #fff;border: 1px solid goldenrod !important;">Mit Kreditkarte ohne Paypal direkt bezahlen uber den Paypal Button oben! </p>
+											{{-- <p style="padding:5px;margin-top:30px;color: #000;font-size: 16px;border-radius:50px;background: #fff;border: 1px solid goldenrod !important;">Mit Kreditkarte ohne Paypal direkt bezahlen uber den Paypal Button oben! </p> --}}
                                             @else
                                             <h4>Betrag Bezahlt!</h4>
                                             @endif
@@ -405,8 +405,10 @@
             });
         });
 
-        function stripeTokenHandler(token) {
+        function stripeTokenHandler(token)
+        {
             // Insert the token ID into the form so it gets submitted to the server
+
             var form = document.getElementById('payment-form');
             var hiddenInput = document.createElement('input');
             hiddenInput.setAttribute('type', 'hidden');

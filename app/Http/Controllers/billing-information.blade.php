@@ -264,10 +264,13 @@
 
 @section('js')
     <script src="https://www.paypal.com/sdk/js?client-id=AfwgD8iiaecVXLk7mrsmXPzp-DQ6VyKF6VY17vIq0pfH0JvnUWuEH4svogD8FrCr8MqvwDlSDeRxRYFL&currency=EUR"></script>
-    {{-- AUXGCQW8WwUWqay1Zsmf6zCxdtcGMUqeCPbV0HqW5jqd7MurPnPBsRJIbtFi-_3K2tqlgtl0ZQjqaOdb --}} 
+    {{-- AUXGCQW8WwUWqay1Zsmf6zCxdtcGMUqeCPbV0HqW5jqd7MurPnPBsRJIbtFi-_3K2tqlgtl0ZQjqaOdb --}}
+
+
     <script>
+
         paypal.Buttons({
-            createOrder: function(data, actions) 
+            createOrder: function(data, actions)
             {
             return actions.order.create({
                 purchase_units: [{
@@ -277,11 +280,11 @@
                 }]
             });
             },
-            onApprove: function(data, actions) 
+            onApprove: function(data, actions)
             {
                 console.log('data');
                 console.log(data);
-            return actions.order.capture().then(function(details) 
+            return actions.order.capture().then(function(details)
             {
                 console.log(details);
                 // Call your server to save the transaction
@@ -302,5 +305,6 @@
             });
             }
         }).render('#paypal-button-container');
+
     </script>
 @endsection

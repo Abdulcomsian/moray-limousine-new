@@ -183,7 +183,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         // Unisharp\Ckeditor\ServiceProvider::class,
         // Lunaweb\EmailVerification\Providers\EmailVerificationServiceProvider::class,
-        // Barryvdh\DomPDF\ServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+
 
         /*
          * Package Service Providers...

@@ -522,7 +522,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
         Route::get('admin/vehicleCategory', [VehicleCategoryController::class, 'index'])->name('admin.vehicleCategory');
 
-        Route::get('admin/add-category', [VehicleCategoryController::class, 'addCategoty'])->name('add.category');
+        Route::get('admin/add-category', [VehicleCategoryController::class, 'addCategory'])->name('add.category');
 
         Route::post('admin/save-new-category', [VehicleCategoryController::class, 'saveNewCategory'])->name('save.category');
 

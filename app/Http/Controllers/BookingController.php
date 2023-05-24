@@ -62,7 +62,7 @@ class BookingController extends Controller
     public function selectClassByDistance(BookingRequest $request)
     {
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        if (Auth()->check() == false) 
+        if (Auth()->check() == false)
         {
             Session::put('search', $actual_link);
         }
@@ -73,7 +73,7 @@ class BookingController extends Controller
         //$distance_in_km = $this->calculateDistance($dist);
         $classes = $this->classes->all();
         //    Set Prices and also set the discounts & markup with classes
-      
+
         $classes =  $this->booking->classesWithPriceByDistance($classes, $distance_in_km, $request->all());
         $data['booking_type'] = 'distance';
         $data['form_data'] = $request->except('_token');
@@ -108,7 +108,7 @@ class BookingController extends Controller
      */
     public function saveBookingOnSelect(Request $request)
     {
-        if (Auth()->check()) 
+        if (Auth()->check())
         {
             $distance = $request['distance'];
             $form_data = json_decode($request->formData);
@@ -128,7 +128,7 @@ class BookingController extends Controller
             $data['travel_amount'] = $travel_amount;
             $data['enduser_billing_details'] = $enduser_billing_details;
             return view('booking.select-options', $data);
-        } else 
+        } else
         {
             session(['link' => url()->previous()]);
             return redirect('/login');
@@ -139,11 +139,12 @@ class BookingController extends Controller
      * @param Request $request
      * @return Factory|View
      */
+
     public function extraOptionsDetails(Request $request)
     {
         $options_data = $request->optionsData;
         $options_data = json_decode($options_data);
-        if ($options_data == null) 
+        if ($options_data == null)
         {
             $options_data = [];
         }
@@ -155,11 +156,14 @@ class BookingController extends Controller
         $id = $form_data->id;
         $travel_amount = $form_data->travel_amount;
         $booking =  $this->booking->saveSelectedOptions($options_data, $id, $travel_amount, $request->all(), $tax_amount);
+
         //saving if booking for some one other
+
         $this->other_user->storeOtherUser($request->all(), $id);
         $options_price = $booking->extra_options_amount;
         $tax_rate = "";
-        if (!empty(Configuration::first()->tax_rate)) {
+        if (!empty(Configuration::first()->tax_rate))
+        {
             $tax_rate = Configuration::first()->tax_rate;
         }
         return view('booking.billing-information', ['class' => $class, 'form_data1' => $form_data, 'form_data' => $booking, 'options_data' => $options_data, 'options_price' => $options_price, 'tax_rate' => $tax_rate]);
@@ -171,25 +175,29 @@ class BookingController extends Controller
      *
      * @param Request $request
      */
-    public function paypaltransactioncomplete(Request $request)
-    {
-        $booking_id = $request->input('bookingId');
-        $booking = Booking::find($booking_id);
-        $booking->orderId = $request->input('orderID');
-        $booking->userDetail = json_encode($request->input('userDetail'), JSON_PRETTY_PRINT);
 
-        $booking->payment_status = 'paid';
-        $booking->booking_status = 'new';
-        $booking->update();
 
-        $notify_booking_user = array_merge($this->notify_booking_user, ['body' => 'Hello  ! Your booking request For Pick Address ' . $booking->pick_addess . ' Is Received We Will Let You Know When a Driver & Vehicle will be assigned to your booking. ']);
-        $notify_booking_admin = $this->notificationMsg($booking);
-        $user = $booking->user;
-        $admin = User::where('user_type', 'admin')->get();
-        $user->notify(new MorayLimousineNotifications($notify_booking_user));
-        Notification::send($admin, new BookingNotification($notify_booking_admin));
-    }
-    
+    // public function paypaltransactioncomplete(Request $request)
+    // {
+    //     $booking_id = $request->input('bookingId');
+    //     $booking = Booking::find($booking_id);
+    //     $booking->orderId = $request->input('orderID');
+    //     $booking->userDetail = json_encode($request->input('userDetail'), JSON_PRETTY_PRINT);
+
+    //     $booking->payment_status = 'paid';
+    //     $booking->booking_status = 'new';
+    //     $booking->update();
+
+    //     $notify_booking_user = array_merge($this->notify_booking_user, ['body' => 'Hello  ! Your booking request For Pick Address ' . $booking->pick_addess . ' Is Received We Will Let You Know When a Driver & Vehicle will be assigned to your booking. ']);
+    //     $notify_booking_admin = $this->notificationMsg($booking);
+    //     $user = $booking->user;
+    //     $admin = User::where('user_type', 'admin')->get();
+    //     $user->notify(new MorayLimousineNotifications($notify_booking_user));
+    //     Notification::send($admin, new BookingNotification($notify_booking_admin));
+    // }
+
+
+
     //stripe submit action
     public function storeBooking(Request $request)
     {
@@ -197,15 +205,15 @@ class BookingController extends Controller
          $booking = Booking::find($booking_id);
          $amount=$booking->extra_options_amount+$booking->travel_amount;
        try{
-             Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+             Stripe\Stripe::setApiKey('sk_test_51LevsRISpHce1qMwlDWCUFsQ6PjUitmrrwWVDrCYnpdCXgpGLgBXIWnbPXiCuHgoOMeZzO6J6ASsu3IYoWKr41uv00l3bMBJaG');
              $stripedata=Stripe\Charge::create ([
                     "amount" => $amount*100,
                     "currency" => "eur",
                     "source" => $request->stripeToken,
                     "description" => "This payment is for tested purpose"
             ]);
-           
-           
+
+
             $booking->orderId = $stripedata->id;
             $booking->userDetail = json_encode($stripedata, JSON_PRETTY_PRINT);
             $booking->payment_status = 'paid';
@@ -215,23 +223,37 @@ class BookingController extends Controller
             $notify_booking_user = array_merge($this->notify_booking_user, ['body' => 'Hello  ! Your booking request For Pick Address ' . $booking->pick_addess . ' Is Received We Will Let You Know When a Driver & Vehicle will be assigned to your booking. ']);
             $notify_booking_admin = $this->notificationMsg($booking);
             $user = $booking->user;
+
             $admin = User::where('user_type', 'admin')->get();
             $user->notify(new MorayLimousineNotifications($notify_booking_user));
             Notification::send($admin, new BookingNotification($notify_booking_admin));
 
+
+
             //invoice work here
-            $users = user::find($user_id);
+            $users = user::find($user->id);
             $result = invoice::create([
                 'booking_id' => $booking->id,
                 'invoice_number' => 'ML- ' . mt_rand(100000, 999999)
             ]);
             $invoice_number = $result->invoice_number;
+
+
             //GENERATE PDF FILE AND SEND TO IN EMAIL
+
+
             $pdf = PDF::loadView('invoicepdf', ['booking' => $booking, 'invoice_number' => $invoice_number]);
+
+            // dd('abcd');
+
             $path = public_path('pdf');
             $fileName =  'invoice' . $booking_id . '.' . 'pdf';
             $pdf->save($path . '/' . $fileName);
+
+
+
             //send invoice using email
+
             $notify_admins_msg = [
                 'greeting' => 'Invoice',
                 'subject' => 'Booking Invoice',
@@ -258,9 +280,9 @@ class BookingController extends Controller
         } catch (\Exception $exception) {
             return redirect()->back()->with('error','ERROR .. !  '.$exception->getMessage().'.');;
         }
-        
-   
-        
+
+
+
     }
 
     /**
@@ -270,7 +292,7 @@ class BookingController extends Controller
     public function thanksPage($id)
     {
         $booking = ExtendBooking::find($id);
-        if ($booking) 
+        if ($booking)
         {
             $original_booking = $booking->booking->find($booking['booking_id']);
             return view('booking.thanks-page', ['booking' => $booking, 'original_booking' => $original_booking]);
@@ -309,12 +331,12 @@ class BookingController extends Controller
         $user->notify(new MorayLimousineNotifications($approve_msg));
         return redirect()->back();
     }
-    
+
 
     public function adminbookingApprove(Request $request)
     {
             //assign to driver from admin side
-            
+
             $vehicleId =$request->vehicle;
             $bookingId = $request->id;
             $driver =$request->driver; //array
@@ -322,7 +344,7 @@ class BookingController extends Controller
 
             $booking = Booking::find($bookingId);
             $pickUpDate = $booking->pick_date;
-            
+
             $booking->vehicle()->sync($vehicleId);
             $booking->driver()->attach($driver, ['booking_date' => $pickUpDate, 'assigned_to' => 'driver','admin_assign'=>1]);
             $assign_msg = array_merge($this->notify_driver_assign, ['body' => 'You are assigned a new ride which booking address is : ' . $booking->pick_address . ' See yor dashboard for more details or click the button blow.. ', 'action_url' => '/driver/dashboard']);
@@ -347,7 +369,7 @@ class BookingController extends Controller
 
             $booking = Booking::find($bookingId);
             $pickUpDate = $booking->pick_date;
-            
+
             $booking->vehicle()->sync($vehicleId);
             $booking->driver()->updateExistingPivot($driver, ['booking_date' => $pickUpDate, 'assigned_to' => 'driver','status'=>'approved','driver_status'=>'approved','admin_assign'=>1]);
             $assign_msg = array_merge($this->notify_driver_assign, ['body' => 'You are assigned a new ride which booking address is : ' . $booking->pick_address . ' See yor dashboard for more details or click the button blow.. ', 'action_url' => '/driver/dashboard']);
@@ -706,7 +728,7 @@ class BookingController extends Controller
         ];
         $driver->notify(new MorayLimousineNotifications($notify_driver_msg));
         //admin notify when driver accepted
-        if (auth()->user()->user_type == 'driver') 
+        if (auth()->user()->user_type == 'driver')
         {
             $notify_admins_msg = [
                 'greeting' => 'A Booking With Booking Id ' . $bookingId . ' Assigned To Driver By a Partner ' . $status . ' By Driver On Moray-Limousines',
@@ -718,7 +740,7 @@ class BookingController extends Controller
                 'action_url' => '/booking/details/' . $bookingId,
             ];
             Notification::send($customer_email->user, new MorayLimousineNotifications($notify_admins_msg));
-        } elseif (auth()->user()->user_type == 'partner') 
+        } elseif (auth()->user()->user_type == 'partner')
         {
             $notify_admins_msg = [
                 'greeting' => 'A Booking With Booking Id ' . $bookingId . ' Assigned To  Partner ' . $status . ' By Partner On Moray-Limousines',
@@ -739,6 +761,8 @@ class BookingController extends Controller
      * @param $id
      * @return RedirectResponse
      */
+
+
     public function completeBooking(Request $request, $id)
     {
         $booking = Booking::find($id);
@@ -814,15 +838,15 @@ class BookingController extends Controller
      */
     public function pendingBookings()
     {
-        //$data['bookings'] = Booking::where(['booking_status'=>'pending'])->get();
+        // $data['bookings'] = Booking::where(['booking_status'=>'pending'])->get();
         $data['bookings'] = Booking::with('checkdriverassign')->where(['booking_status'=>'approved','payment_status'=>'paid'])->get();
-        
+
         return view('parshall-views._booking-list-table', $data);
     }
     public function newBookings()
     {
         $data['bookings'] = Booking::with('checkdriverassign')->where(['booking_status'=>'new'])->get();
-        
+
         return view('parshall-views._booking-list-table', $data);
     }
     public function canceledBookings()
@@ -845,11 +869,13 @@ class BookingController extends Controller
      *
      * @return Factory|View
      */
+
     public function paidBookings()
     {
         $data['bookings'] = Booking::where('payment_status', 'paid')->get();
         return view('parshall-views._booking-list-table', $data);
     }
+
     public function approvedBookings()
     {
         $data['bookings'] = Booking::where('booking_status', 'approved')->get();
@@ -915,6 +941,7 @@ class BookingController extends Controller
     public function getLocationHours(Request $request)
     {
         $country=$request->country;
+
         //check if country wise is hours is exist or not
         $countryresult=BookingHour::where('country',$country)->first();
         if($countryresult)
