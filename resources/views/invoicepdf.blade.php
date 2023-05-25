@@ -172,12 +172,12 @@
             </center>
             <center>
                 <h4>info@menainsurance.com</h4>
-                <p>Morays Group UG, Mainzer Landstraße 49, 60329 Frankfurt am Main</p>
+                <p>Hathaways Group UG, Mainzer Landstraße 49, 60329 Frankfurt am Main</p>
                 <p>Main-Taunus-Kreis - Der Kreisausschuss</p>
                 <p>Jugendamt</p>
                 <p>Am Kreishaus 1-5</p>
                 <p>65719 Hofheim am Taunus</p>
-                <p>Tel.: 06933088908</p>
+                <p>Tel.: +49 (0) 69 26022180</p>
             </center>
             <h4>Rechnung</h4>
             <p>Wir danken Ihnen, das Sie sich für QABBY entschieden haben. Wie folgt wird Ihnen der Auftrag in Rechnung gestellt:</p>

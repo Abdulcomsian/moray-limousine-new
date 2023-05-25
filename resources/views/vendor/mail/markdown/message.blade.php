@@ -21,7 +21,7 @@
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            © {{ date('Y') }} {{ 'Moray Limousines' }}. @lang('All rights reserved.')
+            © {{ date('Y') }} {{ 'Hathaway Limousines' }}. @lang('All rights reserved.')
         @endcomponent
     @endslot
 @endcomponent

@@ -123,7 +123,7 @@
             <img src="Rechnung_RE0127_.png">
         </div>
         <div class="titleDiv">
-            <p>Morays Group UG, Mainzer Landstraße 49, 60329 Frankfurt am Main</p>
+            <p>Hathaways Group UG, Mainzer Landstraße 49, 60329 Frankfurt am Main</p>
         </div>
         <div class="addressDiv">
             <div class="leftDiv">
@@ -136,7 +136,7 @@
                 <p>Morays Group UG</p>
                 <p>Mainzer Landstraße 49</p>
                 <p>60329 Frankfurt am Main</p>
-                <p>Tel.: 06933088908</p>
+                <p>Tel.: +49 (0) 69 26022180</p>
             </div>
         </div>
         <div class="rechnungDiv">
@@ -199,13 +199,13 @@
 
             <div class="footerDiv">
                 <div class="leftDiv">
-                    <p>Morays Group UG<br>Mainzer Landstraße 49<br>60329 Frankfurt am Main<br>Tel.: 06933088908</p>
+                    <p>Hathaways Group UG<br>Mainzer Landstraße 49<br>60329 Frankfurt am Main<br>Tel.: 06933088908</p>
                 </div>
                 <div class="middleDiv">
                     <p>USt-IdNr.: DE336366477<br>Frankfurt am Main<br>Geschäftsführer / CEO: M.Hussain</p>
                 </div>
                 <div class="rightDiv">
-                    <p>Morays Group UG<br>Commerzbank<br>IBAN: DE60 5004 0000 0654 4506 00<br>BIC: COBADEFFXXX</p>
+                    <p>Hathaways Group UG<br>Commerzbank<br>IBAN: DE60 5004 0000 0654 4506 00<br>BIC: COBADEFFXXX</p>
                 </div>
             </div>
             <p>Rechnung RE0127</p>

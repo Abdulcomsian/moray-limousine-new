@@ -21,10 +21,10 @@ Become Partner
     <div class="container">
         <div class="wrapper-content pt-4">
             <h3 class="title mt-5">
-                BAUEN SIE IHR GESCHÄFT MIT MORAY LIMOUSINES WEITER AUS
+                BAUEN SIE IHR GESCHÄFT MIT HATHAWAY LIMOUSINES WEITER AUS
                 <!-- <span class="span">LIMOUSINES WEITER AUS</span> -->
             </h3>
-            <p class="content">Melden Sie sich bei Moray Limousines an und steigern Sie Ihren Verdienst.</p>
+            <p class="content">Melden Sie sich bei Hathaway Limousines an und steigern Sie Ihren Verdienst.</p>
             <a href="{{ url('partner-registration') }}" class="booking">Become A Partner<img src="{{asset('images/icon/arrow-white.png')}}" alt=""></a>
         </div>
     </div>
@@ -55,7 +55,7 @@ Become Partner
                         </div>
                     </div>
                     <div class="iconbox-content">
-                        <p>Moray Limousines bietet professionelle Fahrdienste im Rhein Main Gebiet an. Dadurch sind Sie als Partner an ein Lokales Netzwerk angebunden.</p>
+                        <p>Hathaway Limousines bietet professionelle Fahrdienste im Rhein Main Gebiet an. Dadurch sind Sie als Partner an ein Lokales Netzwerk angebunden.</p>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@ Become Partner
             </div>
             <div class="col-md-12" style="margin-top: 6rem;">
                 <h2 class="text-center">
-                    WARUM MORAY LIMOUSINES?
+                    WARUM HATHAWAY LIMOUSINES?
                 </h2>
             </div>
             <div class="col-md-5 mt-4 col-sm-6 col-xs-12 size-table">
@@ -122,9 +122,9 @@ Become Partner
                     </div>
                     <div class="iconbox-content">
                         <h3>
-                            <a href="#" title="">ERWEITERN SIE IHR GESCHÄFT MIT MORAY LIMOUSINES</a>
+                            <a href="#" title="">ERWEITERN SIE IHR GESCHÄFT MIT HATHAWAY LIMOUSINES</a>
                         </h3>
-                        <p>Ihr Erfolg ist uns wichtig! Mit Moray Limousines können Sie Ihren Umsatz bequem steigern: Wir bieten unseren Partnern täglich Fahrten an, so dass sie ihre Standzeiten möglichst effizient nutzen können. Es liegt in Ihrer Hand, wie viel Sie verdienen möchten.</p>
+                        <p>Ihr Erfolg ist uns wichtig! Mit Hathaway Limousines können Sie Ihren Umsatz bequem steigern: Wir bieten unseren Partnern täglich Fahrten an, so dass sie ihre Standzeiten möglichst effizient nutzen können. Es liegt in Ihrer Hand, wie viel Sie verdienen möchten.</p>
                     </div>
                 </div>
             </div>
@@ -148,9 +148,9 @@ Become Partner
                     </div>
                     <div class="iconbox-content">
                         <h3>
-                            <a href="#" title="">MORAY LIMOUSINES IS SIMPLE</a>
+                            <a href="#" title="">HATHAWAY LIMOUSINES IS SIMPLE</a>
                         </h3>
-                        <p>There's no hassle with Moray Limousines: Easy-to-use app, clear offers, no preferred partners, no registration fees, no journey forms to fill out, no need to carry cash. All you need to do is deliver a great customer experience and we will take care of the rest.</p>
+                        <p>There's no hassle with Hathaway Limousines: Easy-to-use app, clear offers, no preferred partners, no registration fees, no journey forms to fill out, no need to carry cash. All you need to do is deliver a great customer experience and we will take care of the rest.</p>
                     </div>
                 </div>
             </div> -->
