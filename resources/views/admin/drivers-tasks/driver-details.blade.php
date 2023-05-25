@@ -39,7 +39,7 @@
                         {{$user->first_name}} {{$user->last_name}}
                     </h5>
                     <h6 class="text-capitalize">
-{{--                        Welcome to my Moray Limousine--}}
+{{--                        Welcome to my Hathaway Limousine--}}
                     </h6>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
 

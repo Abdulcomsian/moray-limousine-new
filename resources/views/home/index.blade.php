@@ -386,7 +386,7 @@ Home
                             <h3>
                                 <span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) : 'Guaranteed fixed prices'}}</span>
                             </h3>
-                            <p>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) : 'At Moray Limousines there are no hidden costs. Our prices include all fees, taxes and are guaranteed with the booking.'}}</p>
+                            <p>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) : 'At Hathaway Limousines there are no hidden costs. Our prices include all fees, taxes and are guaranteed with the booking.'}}</p>
                         </div>
                     </div>
                 </div>
@@ -419,7 +419,7 @@ Home
                       <div class="content">
                           <div class="col-md-12 col-sm-12">
                               <p>
-                                  {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ABOUT_US_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ABOUT_US_DESCRIPTION) : 'We at Moray Limousines have set ourselves the goal of making premium travel on the road even more comfortable and luxurious. The well-being of our guests always comes first. We look forward to welcome you as a passenger on Borad!'}}
+                                  {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ABOUT_US_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ABOUT_US_DESCRIPTION) : 'We at Hathaway Limousines have set ourselves the goal of making premium travel on the road even more comfortable and luxurious. The well-being of our guests always comes first. We look forward to welcome you as a passenger on Borad!'}}
                               </p>
                           </div>
                       </div>
@@ -477,7 +477,7 @@ Home
                             <h3>
                                 <span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_COL2_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_COL2_TITLE) : 'Airport Transfers'}}</span>
                             </h3>
-                            <p>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_COL2_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_COL2_DESCRIPTION) : 'If you’re looking for the best in private airport transfers , look no further than Moray Lemousine . As  we know exactly what you need from a private transfer at Airports'}}</p>
+                            <p>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_COL2_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_COL2_DESCRIPTION) : 'If you’re looking for the best in private airport transfers , look no further than Hathaway Limousines. As  we know exactly what you need from a private transfer at Airports'}}</p>
                         </div>
                     </div>
                 </div>
@@ -577,7 +577,7 @@ Home
                         </div>
                         <div class="content-text">
                             <h4>Adresse</h4>
-                            <p>{!! \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADDRESS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADDRESS) : 'Moray Limousines (A brand of Moray Group UG) Friedrich-Ebert-Anlage 36 60325 Frankfurt am Main' !!}</p>
+                            <p>{!! \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADDRESS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADDRESS) : 'Hathaway Limousines (A brand of Hathaway Group UG) Friedrich-Ebert-Anlage 36 60325 Frankfurt am Main' !!}</p>
                         </div>
                     </div>
                 </div>
@@ -599,7 +599,7 @@ Home
                         </div>
                         <div class="content-text">
                             <h4>Email</h4>
-                            <p>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS) : 'info@moray-limousines.com'}}</p>
+                            <p>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS) : 'info@hathaway-limousines.com'}}</p>
                         </div>
                     </div>
                 </div>

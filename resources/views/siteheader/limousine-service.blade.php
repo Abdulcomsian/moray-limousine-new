@@ -130,7 +130,7 @@
                                 <li>
                                     <div class="text">
                                         <h5>Email</h5>
-                                        <p><a href="" class="" data-cfemail="5831363e3718282a373c2a312e3d763b3735">[email]</a>info@moray-limousines.com</p>
+                                        <p><a href="" class="" data-cfemail="5831363e3718282a373c2a312e3d763b3735">[email]</a>info@hathaway-limousines.com</p>
                                     </div>
                                     <div class="icon">
                                         <img src="images/icon/email.png" alt="">

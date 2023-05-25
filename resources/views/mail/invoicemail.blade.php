@@ -39,7 +39,7 @@
 
             ">
         <div class="header-content" style="text-align: center;">
-            <img src="https://moray-limousines.de/images/moray-logo.png" />
+            <img src="https://www.hathaway-limousines.com/images/moray-logo.png" />
         </div>
     </section>
     <section id="payment-remainder">
@@ -215,25 +215,25 @@
                                 <td id="x_m_-728614054202185312footerLinks" style="padding:11.25pt 15.0pt 12.0pt 15.0pt">
                                     <h2 align="center" style="margin-bottom:9.75pt; text-align:center">
                                         <span style="font-size:13.5pt; font-family:&quot;Source Sans Pro&quot;,sans-serif; color:white">
-                                            Moray Limousine<u></u><u></u>
+                                            Hathaway Limousines<u></u><u></u>
                                         </span>
                                     </h2>
                                     <p class="x_MsoNormal" align="center" style="text-align:center"><span style="color:white">
-                                            <a href="https://moray-limousines.de/service/details/3" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="10">
+                                            <a href="https://www.hathaway-limousines.com/service/details/3" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="10">
                                                 <span style="font-size:9.0pt; font-family:&quot;Source Sans Pro&quot;,sans-serif; color:white; text-decoration:none">Limousine service</span>
                                             </a> |
-                                            <a href="https://moray-limousines.de/service/details/4" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="11">
+                                            <a href="https://www.hathaway-limousines.com/service/details/4" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="11">
                                                 <span style="font-size:9.0pt; font-family:&quot;Source Sans Pro&quot;,sans-serif; color:white; text-decoration:none">Business Solutions
                                                 </span>
                                             </a> |
-                                            <a href="https://moray-limousines.de/Faq" data-auth="NotApplicable" data-linkindex="12">
+                                            <a href="https://www.hathaway-limousines.com/Faq" data-auth="NotApplicable" data-linkindex="12">
                                                 <span style="font-size:9.0pt; font-family:&quot;Source Sans Pro&quot;,sans-serif; color:white; text-decoration:none">FAQ / Hilfe
                                                 </span>
                                             </a> |
-                                            <a href="https://moray-limousines.de/contact-us" data-linkindex="13"><span style="font-size:9.0pt; font-family:&quot;Source Sans Pro&quot;,sans-serif; color:white; text-decoration:none">Contact Us
+                                            <a href="https://www.hathaway-limousines.com/contact-us" data-linkindex="13"><span style="font-size:9.0pt; font-family:&quot;Source Sans Pro&quot;,sans-serif; color:white; text-decoration:none">Contact Us
                                                 </span>
                                             </a> |
-                                            <a href="https://moray-limousines.de/about-us" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="14">
+                                            <a href="https://www.hathaway-limousines.com/about-us" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="14">
                                                 <span style="font-size:9.0pt; font-family:&quot;Source Sans Pro&quot;,sans-serif; color:white; text-decoration:none">About Us
                                                 </span>
                                             </a> <u></u><u></u></span></p>
@@ -250,7 +250,7 @@
                                 <td valign="top" id="x_m_-728614054202185312hotlines" style="padding:0cm 0cm 15.0pt 0cm">
                                     <p align="center" style="text-align:center; line-height:18.0pt">
                                         <b>
-                                            <span style="font-size:9.0pt; font-family:&quot;Source Sans Pro&quot;,sans-serif; color:white; letter-spacing:.7pt">Contact Us:<br>Mainzer Landstrasse 49<br>Moray Limousines<br>60329 Frankfurt am Main<br>+49 (0) 15906406598<u></u><u></u></span>
+                                            <span style="font-size:9.0pt; font-family:&quot;Source Sans Pro&quot;,sans-serif; color:white; letter-spacing:.7pt">Contact Us:<br>Mainzer Landstrasse 49<br>Hathaway Limousines<br>60329 Frankfurt am Main<br>+49 (0) 69 26022180<u></u><u></u></span>
                                         </b>
                                     </p>
                                 </td>
@@ -260,9 +260,9 @@
                 </div>
             </center>
             <p>Have a great day,</p>
-            <p>Thanks For Choosing Moray Limousine</p>
+            <p>Thanks For Choosing Hathaway Limousines</p>
             <p>Regards,</p>
-            <p>Moray Limousines</p>
+            <p>Hathaway Limousines</p>
         </div>
     </section>
 </body>

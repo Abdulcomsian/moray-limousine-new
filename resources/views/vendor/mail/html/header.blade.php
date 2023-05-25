@@ -1,7 +1,7 @@
 <tr>
     <td class="header">
         <a href="{{ $url }}">
-           Moray Limousine
+            Hathaway Limousines
         </a>
     </td>
 </tr>

@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title> Moray | @yield('title')</title>
+  <title>Hathaway | @yield('title')</title>
   <!-- plugins:css -->
 
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -86,7 +86,7 @@
                   <img src="{{asset('images/logo-new.png')}}" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2" style="min-width: 90%; overflow: hidden;">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">Moray Limousine </p>
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Hathaway Limousines</p>
                   <p class="font-weight-light small-text"> {{$notification->data['greeting']}} </p>
                 </div>
               </a>

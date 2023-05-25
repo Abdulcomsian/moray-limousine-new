@@ -7,7 +7,7 @@
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="CreativeLayers">
-    <title> Moray |  @yield('title')  </title>
+    <title>Hathaway |  @yield('title')  </title>
     <!-- Boostrap style -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/glyphicons.css')}}"/>
@@ -62,7 +62,7 @@
                         <ul>
                             <li><img src="{{asset('images/icon/call.png')}}" alt="">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) : '+49 (0) 69 330 889 08'}}</li>
                             {{--                            <li><img src="{{asset('images/icon/mail.png')}}" alt="">Email:--}}
-                            {{--                                {{\App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS) ? \App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS) : 'info@moray-limousines.com'}}--}}
+                            {{--                                {{\App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS) ? \App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS) : 'info@hathaway-limousines.com'}}--}}
                             {{--                            </li>--}}
                             {{--                            <li><img src="{{asset('images/icon/mail.png')}}" alt=""><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="10797e767f5060627f74796266753e737f7d">[email&#160;protected] Info@mylisft.com</a></li>--}}
                         </ul>
@@ -109,8 +109,8 @@
         <div class="bottom-header">
             <div class="container-fluid">
                 <div id="logo" class="logo-pro pt-0" style="width: 20%; text-align: center;">
-                    <a href="{{url('/')}}" title="Moray Limousines" >
-                        <img src="{{asset('images/moray-logo.png')}}"  alt="logo" class="img-fluid" style="margin-top: -8px; max-height: 6rem;">
+                    <a href="{{url('/')}}" title="Hathaway Limousines" >
+                        <img src="{{asset('images/moray-logo.png')}}"  alt="logo" class="img-fluid" style="max-height: 4rem">
                     </a>
                 </div>
                 <div class="navigation w-75 pull-right">
@@ -200,7 +200,7 @@
                     <div class="widget-footer widget-about">
                         <div class="logo-ft m-0">
                             <a href="{{url('/')}}" title="">
-                                <img src="{{asset('images/moray-logo.png')}}"  alt="logo" class="img-fluid" style="margin-top: -8px; max-height: 7rem;">
+                                <img src="{{asset('images/moray-logo.png')}}"  alt="logo" class="img-fluid" style="max-height: 7rem;">
                             </a>
                         </div>
                         <ul class="infomation-ft">
@@ -274,7 +274,7 @@
                         <h3 class="title-ft">
                             Kontakt
                         </h3>
-                        <p>{!! \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADDRESS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADDRESS) : 'Moray Limousines (A brand of Moray Group UG) Friedrich-Ebert-Anlage 36 60325 Frankfurt am Main' !!}</p>
+                        <p>{!! \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADDRESS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADDRESS) : 'Hathaway Limousines (A brand of Hathaway Group UG) Friedrich-Ebert-Anlage 36 60325 Frankfurt am Main' !!}</p>
 
                         {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) : '+49 (0) 69 330 889 08'}}
 
@@ -324,7 +324,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p>Copyright Moray Group : © {{date('Y')}}.  All Rights Reserved
+                    <p>Copyright Hathaway Group : © {{date('Y')}}.  All Rights Reserved
                         <a href="{{url('/mpressum')}}" class="pl-2 pr-2" style="color: goldenrod; text-decoration: underline;"> Impressum</a>
                         <a href="{{url('/datenschutz')}}" class="pl-2" style="color: goldenrod;text-decoration: underline;"> Datenschutz</a>
                     </p>
