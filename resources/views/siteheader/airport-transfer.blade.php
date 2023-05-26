@@ -42,9 +42,6 @@ Our Services
                 <div class="col-md-12">
                     <div class="template-title center">
                         <h1>Our Services</h1>
-                        <p class="subtitle">
-                            Our aim is to fill a gap in niche market of Trade
-                        </p>
                     </div>
                 </div>
             </div>
