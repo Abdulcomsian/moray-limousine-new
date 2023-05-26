@@ -7,7 +7,7 @@
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="CreativeLayers">
-    <title>Hathaway | @yield('title')  </title>
+    <title>Hathaway Limousines | @yield('title')  </title>
     <!-- Boostrap style -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('driver/fonts/font-awesome/css/font-awesome.min.css')}}">

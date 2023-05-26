@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hathaway | @yield('title')</title>
+    <title>Hathaway Limousines | @yield('title')</title>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('css/jquery.validity.css')}}">
