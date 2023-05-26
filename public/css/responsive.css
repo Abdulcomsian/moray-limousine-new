@@ -420,8 +420,11 @@
 	}
 	.summary-bar-area {
 		position: static;
-		margin-top: 90px;
+		/* margin-top: 90px; */
 		padding: 20px 0;
+	}
+	.summary-bar {
+		margin-top: 3rem;
 	}
 	.booking-steps-area.mht {
 		margin-top: 0px;

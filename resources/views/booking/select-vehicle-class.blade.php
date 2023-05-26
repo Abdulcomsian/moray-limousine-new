@@ -194,7 +194,7 @@
                   $(".summary-bar-area").attr("style","position:fixed;top:0px !important;z-index:999999");
                 }
              }else{
-                $(".summary-bar-area").attr("style","");
+                $(".summary-bar-area").attr("style", "");
              }
         });
 </script>
