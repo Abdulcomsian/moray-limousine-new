@@ -1071,7 +1071,8 @@ blockquote.bg-1 {
 	transition:all 0.3s ease-in-out;
 }
 .summary-bar-area.open {
-	top: 90px;
+	/* top: 90px; */
+	margin-top: 2rem;
 }
 ul.summary-bar li {
 	display: inline-block;

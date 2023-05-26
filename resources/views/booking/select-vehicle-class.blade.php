@@ -191,10 +191,10 @@
              if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 if($(".summary-bar-area").hasClass('open'))
                 {
-                  $(".summary-bar-area").attr("style","position:fixed;top:0px !important;z-index:999999");
+                  $(".summary-bar-area").attr("style","position:fixed;top:0px !important;z-index:999999; margin-top: 0");
                 }
              }else{
-                $(".summary-bar-area").attr("style","");
+                $(".summary-bar-area").attr("style", "margin-top: 2rem");
              }
         });
 </script>
