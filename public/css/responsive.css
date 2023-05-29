@@ -420,11 +420,14 @@
 	}
 	.summary-bar-area {
 		position: static;
-		/* margin-top: 90px; */
+		margin-top: 30px !important;
 		padding: 20px 0;
 	}
-	.summary-bar {
-		margin-top: 3rem;
+	.custom-top-setter{
+		margin-top: 0 !important;
+	}
+	.summary-bar-area .container-fluid {
+		margin-left: 0 !important;
 	}
 	.booking-steps-area.mht {
 		margin-top: 0px;
