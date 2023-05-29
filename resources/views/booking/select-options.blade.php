@@ -438,9 +438,11 @@ Extra Options
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             if ($(".summary-bar-area").hasClass('open')) {
                 $(".summary-bar-area").attr("style", "position:fixed;top:0px !important;z-index:999999");
+                $(".summary-bar-area").addClass("custom-top-setter")
             }
         } else {
             $(".summary-bar-area").attr("style", "");
+            $(".summary-bar-area").removeClass("custom-top-setter")
         }
     });
     //click on booking for some one else check box
