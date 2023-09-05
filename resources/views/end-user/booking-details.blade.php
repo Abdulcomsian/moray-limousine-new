@@ -65,16 +65,16 @@
                                     <li class="list-group-item"><span class="w-custom">Zeit </span>   <span class="mr-3"><i class="fa fa-clock-o pr-2"></i> {{$booking->pick_time}}</span></li>
                                     <li class="list-group-item"><span class="w-custom">Betrag </span>
                                         <span class="mr-3"><i class="fa fa-eur pr-2"></i>
-                                            {{$booking->travel_amount - $booking->tax_amount}} 
+                                            {{$booking->travel_amount - $booking->tax_amount}}
                                         </span>
-                                            
+
                                     </li>
                                     <li class="list-group-item"><span class="w-custom">Extras </span>
                                         <span class="mr-3"><i class="fa fa-eur pr-2"></i> {{$booking->extra_options_amount}}
                                         </span></li>
                                     <li class="list-group-item"><span class="w-custom">Summe </span>
                                         <span class="mr-3"><i class="fa fa-eur pr-2"></i>
-                                            {{$booking->extra_options_amount +($booking->travel_amount - $booking->tax_amount)}} 
+                                            {{$booking->extra_options_amount +($booking->travel_amount - $booking->tax_amount)}}
                                         </span></li>
                                     <li class="list-group-item"><span class="w-custom">{{$taxrate}}% MwSt.</span>
                                         <span class="mr-3">
@@ -85,7 +85,7 @@
                                       <li class="list-group-item"><span class="w-custom">Total</span>
                                         <span class="mr-3">
                                             <i class="fa fa-eur pr-2"></i>
-                                            {{$booking->net_amount}} 
+                                            {{$booking->net_amount}}
                                         </span>
                                     </li>
 
@@ -250,7 +250,7 @@
                 });
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeHpSgm-hy0_G_NC6PynKEYgASntQIi1Y&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0M1AxeqGt3ozXhX0qeeVP8CcA0OZIkgk&libraries=places&callback=initMap" async defer></script>
 
 
 @endsection

@@ -45,7 +45,7 @@
                                 <option>{{$cn->nicename}}</option>
                                 @endforeach
                             </select>
-                            
+
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -130,7 +130,7 @@
                             <div class="btn-group p-0" style="font-size: 1.6rem;">
                                 <a id="{{$cont->id}}" title="Edit" href="#"  class="p-1 edit-document" style="cursor: pointer">
                                     <i class="fa fa-edit"></i></a>
-                                   
+
                                 <a id="{{$cont->id}}"  title="Delete" href="{{url('admin/delete-booking-hour/')}}/{{$cont->id}}" class="p-1 text-dark"  style="cursor: pointer"><i class="fa fa-trash"></i></a>
                             </div>
                         </td>
@@ -168,7 +168,7 @@
                             <div class="btn-group p-0" style="font-size: 1.6rem;">
                                 <a id="{{$ct->id}}" title="Edit" href="#"  class="p-1 edit-document1" style="cursor: pointer">
                                     <i class="fa fa-edit"></i></a>
-                                   
+
                                 <a id="{{$ct->id}}"  title="Delete" href="{{url('admin/delete-booking-hour/')}}/{{$ct->id}}" class="p-1 text-dark"  style="cursor: pointer"><i class="fa fa-trash"></i></a>
                             </div>
                         </td>
@@ -179,7 +179,7 @@
             @endif
             </tbody>
         </table>
-    
+
     </div>
             </div>
         </div>
@@ -245,11 +245,11 @@
             $('#datatable-buttons1').dataTable({
                responsive : true
             });
-            
+
 
             let btn_cancel1 = $('.cancel-edit1');
             btn_cancel1.hide();
-            
+
 
             $.ajaxSetup({
                 headers: {
@@ -341,8 +341,8 @@
                                         }
                                     }
                                 }
-                                
-                                
+
+
                                 $('input[name="location_country"]').val(country);
 
                             } else {
@@ -354,11 +354,11 @@
 
             });
         }
-        
-      
+
+
 
     </script>
     <script src="{{asset('js/jquery-simple-validator.min.js')}}"></script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeHpSgm-hy0_G_NC6PynKEYgASntQIi1Y&libraries=places&callback=initMap" async defer></script>
-    
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0M1AxeqGt3ozXhX0qeeVP8CcA0OZIkgk&libraries=places&callback=initMap" async defer></script>
+
 @endsection
