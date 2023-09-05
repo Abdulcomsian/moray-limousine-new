@@ -70,8 +70,7 @@
                                                     <div class="form-group">
                                                         <label for="dob">Vehicle Class Name :</label>
                                                         <input type="text" data-name="Name" class="form-control validate" id="dob" name="name"
-                                                               placeholder="Add Vehicle Type / Class " required
-                                                               maxlength="20">
+                                                               placeholder="Add Vehicle Type / Class " required>
                                                         @include('admin._partials._error-feedback',
                                                          ['message' => $errors->has('name') ? $errors->first('name') : 'Name is required',
                                                           'role' => $errors->has('name') ? 'alert' : ''])
@@ -174,8 +173,7 @@
                                                         <label for="description">Vehicle Class Description :</label>
                                                         <textarea class="form-control validate" rows="5" id="description"
                                                                   name="description" data-name="Description"
-                                                                  placeholder="Vehicle Type Description" required
-                                                                  maxlength="300"></textarea>
+                                                                  placeholder="Vehicle Type Description" required></textarea>
                                                         @include('admin._partials._error-feedback',
                                                           ['message' => $errors->has('description') ? $errors->first('description') : 'description is required',
                                                            'role' => $errors->has('description') ? 'alert' : ''])

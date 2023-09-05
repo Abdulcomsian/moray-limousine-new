@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <p>moraylimousines, Mainzer Landstraße 49, 60329 Frankfurt am Main</p>
+                                <p>hathawaylimousines, Mainzer Landstraße 49, 60329 Frankfurt am Main</p>
                                 <p class="font-weight-bold">Google Cloud </p>
                                 <p>Belgrave House 76</p>
                                 <p>Buckingham Palace Rd </p>
@@ -35,12 +35,12 @@
                     </div>
                     <div class="pull-right w-25 text-left">
                         <img src="{{asset('images/moray-logo.png')}}" style="max-width: 6rem;">
-                        <p>moraylimousines</p>
+                        <p>hathawaylimousines</p>
                         <p> Mainzer Landstraße 49</p>
                         <p>60329 Frankfurt am Main</p>
-                        <p>Phone: 06933088908 </p>
-                        <p>info@moraylimousines.de</p>
-                        <p>www.moraylimousines.de</p>
+                        <p>Phone: +49 (0) 69 26022180</p>
+                        <p>info@hathaway-limousines.com</p>
+                        <p>www.hathaway-limousines.com</p>
                     </div>
                 </div>
             </div>
@@ -154,7 +154,7 @@
                         <div class="col-md-12">
                             <div class="w-50 pull-left">
                                 <div class="card-body mt-3" >
-                                    <p class="card-title font-weight-bold">Moray Limousines</p>
+                                    <p class="card-title font-weight-bold">Hathaway Limousines</p>
                                     <p class="card-text">
                                         <span>      ADDRESS :  {!! \App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADDRESS)!!}</span>
                                         Email : {{\App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS) }}
@@ -166,7 +166,7 @@
                             <div class="w-50 pull-right">
                                 <div class="card-body mt-3" >
                                     <h5 class="card-title"></h5>
-                                    <p>VAT ID no.: DE323733306 Eine Marke der Moray Group Frankfurt am Main Moheb Hussain</p>
+                                    <p>VAT ID no.: DE323733306 Eine Marke der Hathaway Group Frankfurt am Main Moheb Hussain</p>
                                     <p class="card-text" >
                                         {{\App\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS)}}
                                     </p>

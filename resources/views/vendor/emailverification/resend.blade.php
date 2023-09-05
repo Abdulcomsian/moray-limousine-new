@@ -9,7 +9,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Thanks For Registration On Moray Limousines</h2>
+                        <h2>Thanks For Registration On Hathaway Limousines</h2>
                         <h4 class="p-3"> Please verify your email for further Process .. </h4>
                     </div>
 

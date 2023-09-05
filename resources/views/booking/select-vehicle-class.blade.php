@@ -192,9 +192,11 @@
                 if($(".summary-bar-area").hasClass('open'))
                 {
                   $(".summary-bar-area").attr("style","position:fixed;top:0px !important;z-index:999999");
+                  $(".summary-bar-area").addClass("custom-top-setter")
                 }
              }else{
-                $(".summary-bar-area").attr("style","");
+                $(".summary-bar-area").attr("style", "");
+                $(".summary-bar-area").removeClass("custom-top-setter")
              }
         });
 </script>

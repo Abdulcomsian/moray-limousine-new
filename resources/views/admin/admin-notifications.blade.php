@@ -19,11 +19,11 @@
                                 </div>
                                 <div class="comment-content">
                                     <div class="name" style="font-weight: bold;">
-                                        Moray Limousine  - <span class="date"> {{$notification->created_at}}</span>
+                                        Hathaway Limousines - <span class="date"> {{$notification->created_at}}</span>
                                     </div>
                                     <p class="m-0" style="font-weight: bold;">{{$notification->data['body']}}</p>
                                     <div class="reply">
-                                        <a href="{{url($notification->data[0])}}">Thanks for choosing Moray Limousine</a>
+                                        <a href="{{url($notification->data[0])}}">Thanks for choosing Hathaway Limousines</a>
                                     </div>
                                 </div>
                             </li>
@@ -40,11 +40,11 @@
                         </div>
                         <div class="comment-content">
                             <div class="name">
-                                Moray Limousine  - <span class="date"> {{$notification->created_at}}</span>
+                                Hathaway Limousines - <span class="date"> {{$notification->created_at}}</span>
                             </div>
                             <p class="m-0">{{$notification->data['body']}}</p>
                             <div class="reply">
-                                <a href="{{url($notification->data[0])}}">Thanks for choosing Moray Limousine</a>
+                                <a href="{{url($notification->data[0])}}">Thanks for choosing Hathaway Limousines</a>
                             </div>
                         </div>
                     </li>

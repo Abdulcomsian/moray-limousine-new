@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Moray | @yield('title')</title>
+    <title>Hathaway Limousines | @yield('title')</title>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('css/jquery.validity.css')}}">
@@ -93,7 +93,7 @@
                                         <div class="preview-thumbnail" style="min-width: 10%;">
                                             <img src="{{asset('images/logo-new.png')}}" alt="image" class="img-sm profile-pic"></div>
                                         <div class="preview-item-content flex-grow py-2" style="min-width: 90%; overflow: hidden;" >
-                                            <p class="preview-subject ellipsis font-weight-medium text-dark">Moray Limousine </p>
+                                            <p class="preview-subject ellipsis font-weight-medium text-dark">Hathaway Limousines</p>
                                             <p class="font-weight-light small-text"> {{$notification->data['greeting']}} </p>
                                         </div>
                                     </a>
@@ -102,7 +102,7 @@
                                                 <div class="preview-thumbnail" style="min-width: 10%;">
                                                     <img src="{{asset('images/logo-new.png')}}" alt="image" class="img-sm profile-pic"></div>
                                                 <div class="preview-item-content flex-grow py-2" style="min-width: 90%; overflow: hidden;" >
-                                                    <p class="preview-subject ellipsis font-weight-medium text-dark">Moray Limousine </p>
+                                                    <p class="preview-subject ellipsis font-weight-medium text-dark">Hathaway Limousines</p>
                                                     <p class="font-weight-light small-text"> {{$notification->data['greeting']}} </p>
                                                 </div>
                                             </a>
@@ -111,7 +111,7 @@
                                                         <div class="preview-thumbnail" style="min-width: 10%;">
                                                             <img src="{{asset('images/logo-new.png')}}" alt="image" class="img-sm profile-pic"></div>
                                                         <div class="preview-item-content flex-grow py-2" style="min-width: 90%; overflow: hidden;" >
-                                                            <p class="preview-subject ellipsis font-weight-medium text-dark">Moray Limousine </p>
+                                                            <p class="preview-subject ellipsis font-weight-medium text-dark">Hathaway Limousines</p>
                                                             <p class="font-weight-light small-text"> {{$notification->data['greeting']}} </p>
                                                         </div>
                                                     </a>

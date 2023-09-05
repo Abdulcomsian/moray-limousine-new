@@ -125,7 +125,7 @@
                 </div>
                 <div class="lsp-page">
                     <div class="row lsp-page--header">
-                        <h2 class="lsp-page--title">Moray Limousines cities</h2>
+                        <h2 class="lsp-page--title">Hathaway Limousines cities</h2>
                         <h4 class="lsp-page--description">Where do you want to operate?</h4>
                     </div>
 
