@@ -190,14 +190,15 @@
                                                     </p>
                                                 </div>
 
-                                                    <div class="number w-25">
-                                                        <span class="minus"><i class="fa fa-minus"></i></span>
-                                                        <input type="text" class="counter" readonly
-                                                            maxlength="{{ $option->max_quantity }}" value="1" />
-                                                        <span class="plus" disabled id="{{ $option->max_quantity }}"><i
-                                                                class="fa fa-plus"></i></span>
-                                                    </div>
-    
+                                                    @if($option->is_quantity == 'yes')
+                                                        <div class="number w-25 text-right">
+                                                            <span class="minus"><i class="fa fa-minus"></i></span>
+                                                            <input type="text" class="counter" readonly maxlength="{{$option->max_quantity}}" value="1" />
+                                                            <span class="plus" disabled id="{{$option->max_quantity}}"><i class="fa fa-plus"></i></span>
+                                                        </div>
+                                                    @else
+                                                        <div class="number w-25 text-right"></div>
+                                                    @endif
                                                     <div class="number checkbox checkbox-success w-25">
                                                         <input id="{{ $option->id }}" style="margin-top: 60px;"
                                                             type="checkbox" name="{{ $option->title }}"

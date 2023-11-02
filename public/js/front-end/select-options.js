@@ -74,7 +74,7 @@ function getSelectedOptions() {
         option_name = $(this).attr('name');
         option_id = $(this).attr('id');
 
-        option_quantity = $(this).parent().prev().prev('.number').children('.counter').val();
+        option_quantity = $(this).parent().prev('.number').children('.counter').val();
         if(option_quantity === undefined || typeof option_quantity  == "undefined"){
             option_quantity = 1;
         }
