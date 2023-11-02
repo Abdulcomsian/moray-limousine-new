@@ -19,6 +19,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Pagination\Paginator;
 use Session;
 use DB;
 
@@ -60,6 +61,7 @@ class HomeController extends Controller
         $data['categories'] = VehicleCategory::all();
         $data['config'] = Configuration::first();
         $data['logos'] = HappyClient::all();
+        $data['services'] = CmsService::all();
 
         return view('home.index', $data);
     }
@@ -84,7 +86,7 @@ class HomeController extends Controller
             $home_content += [$item_name => $home->item_content];
         }
         $data['home_content'] = $home_content;
-        $categories = VehicleCategory::all();
+        $categories = VehicleCategory::paginate(6);
         $data['categories'] = $categories;
         return view('siteheader.our-feet', $data);
     }
@@ -93,22 +95,7 @@ class HomeController extends Controller
      * @return Factory|\Illuminate\View\View
      */
 
-    public function aboutus()
-    {
-        $homeCMS = CmsHomePage::all();
-        $home_content = [];
-        foreach ($homeCMS as $home) {
-            $item_name = $home->item_name;
-            $home_content += [$item_name => $home->item_content];
-        }
-        $data['home_content'] = $home_content;
-        return view('siteheader.about-us', $data);
-    }
-
-    /**
-     * @return Factory|\Illuminate\View\View
-     */
-    public function contantus()
+    public function contactUs()
     {
         $homeCMS = CmsHomePage::all();
         $home_content = [];
@@ -121,6 +108,21 @@ class HomeController extends Controller
     }
 
     /**
+     * @return Factory|\Illuminate\View\View
+     */
+    public function aboutUs()
+    {
+        $homeCMS = CmsHomePage::all();
+        $home_content = [];
+        foreach ($homeCMS as $home) {
+            $item_name = $home->item_name;
+            $home_content += [$item_name => $home->item_content];
+        }
+        $data['home_content'] = $home_content;
+        return view('siteheader.about-us', $data);
+    }
+
+    /**
      * @return \Illuminate\Http\RedirectResponse
      */
     public function contact_us_store(Request $request)
@@ -130,8 +132,25 @@ class HomeController extends Controller
             'first_name' => 'required|min:3 | max:20',
             'last_name' => 'required|min:3 | max:20',
             'cellno' => 'required|min:7 | max:20',
+            'email' => 'required',
             'comment' => 'required|min:3 | max:300'
-        ]);
+        ],
+        [
+            'first_name.min' => 'Please write your First Name with more than three characters',
+            'first_name.required' => 'Name field should not be empty',
+            'first_name.max' => 'Maximum characters for first_name is 20',
+            'last_name.min' => 'Please write your Last Name with more than three characters',
+            'last_name.required' => 'Name field should not be empty',
+            'last_name.max' => 'Maximum characters for first_name is 20',
+            'cellno.required' => 'Phone Number should not be empty',
+            'cellno.min' => 'Minimum integers for Phone Number is 7 integers',
+            'cellno.max' => 'Maximum integers of Phone Numbers is 20 integers',
+            'email.required' => 'Email is required',
+            'comment.required' => 'Description should not be empty',
+            'comment.min' => 'Minimum characters for Description is 7 characters',
+            'comment.max' => 'Maximum characters of Description is 20 characters',
+        ]    
+    );
         $from_data = request()->all();
         $enquiry_msg =  Contactus::create($from_data);
         $admin = $this->user->where('user_type', 'admin')->get();
@@ -154,7 +173,7 @@ class HomeController extends Controller
      */
     public function ourServices()
     {
-        $services = CmsService::all();
+        $services = CmsService::paginate(6);
         $config = Configuration::all()->first();
         return view('siteheader.airport-transfer')->with('services', $services)->with('config', $config);
     }

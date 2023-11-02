@@ -176,7 +176,6 @@ class Booking extends Model
      */
     public function classesWithPriceByDistance($classes, $d, $form_data)
     {
-
         $tax_rate = 0.0;
         if (!empty(Configuration::first()->tax_rate)) {
              $tax_rate = Configuration::first()->tax_rate;
@@ -262,10 +261,6 @@ class Booking extends Model
                        $class->setAttribute('class_price', number_format($class->class_price, 2));
                     }
                 }
-
-
-
-
             }
         }
         return $classesWithPrice;
@@ -447,8 +442,8 @@ class Booking extends Model
             'travel_amount' => $travel_amount + $extrapricetaxamount,
             'net_amount' => $travel_amount + $options_price + $extrapricetaxamount,
             'flight_no' => $form_data['flight_no'],
-            'sign_board' => $form_data['sign_board'],
-            'reference_code' => $form_data['reference_code'],
+            // 'sign_board' => $form_data['sign_board'],
+            // 'reference_code' => $form_data['reference_code'],
             'tax_amount' => $tax_amount + $extrapricetaxamount
         ]);
         $booking = $this::find($booking_id);

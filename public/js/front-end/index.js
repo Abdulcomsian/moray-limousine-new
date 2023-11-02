@@ -11,7 +11,7 @@ $.ajaxSetup({
 // Form Validations
 $('#pick-date').change(function () {
     $(this).siblings('.form-error').hide();
-    $(this).css('border-color','green');
+    $(this).css('background-color','black');
 });
 $('#pick_date_hour').change(function () {
     $(this).siblings('.form-error').hide();

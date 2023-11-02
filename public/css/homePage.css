@@ -1,0 +1,1274 @@
+@font-face {
+    font-family:Dosis;
+    src: url(fonts/Dosis/Dosis-VariableFont_wght.ttf);
+}
+
+
+     /* Container 1 NAVBAR */
+
+#nav{
+    padding: 0.8% 7%;
+}
+#logo{
+    width: 100px;
+    height: 30px;
+    margin-left: 0px;
+}
+.navbar-dark .navbar-nav .nav-link {
+    /* color: rgba(255,255,255,.5); */
+    color: white !important;
+}
+
+.navbar-nav .nav-item {
+    color: white;
+    font-family: Dosis;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.navbar-nav .nav-item:hover {
+    background-color: rgb(150, 152, 152);
+    border-radius: 20%;
+}
+
+
+ .phone{
+    font-family:Dosis;
+    color: white;
+    font-size: 10px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#login{
+    font-family:Dosis;
+    background-color: rgb(154, 149, 149);
+    border-radius: 40px;
+    font-size: 12px;
+    color: white;
+    margin-left: 0px;
+    width: 70px;
+    height: 30px;
+
+
+
+}
+#sign{
+    font-family:Dosis;
+    background-color: white;
+    font-size: 12px;
+    border-radius: 50px;
+    margin-left: 10px;
+    color: black;
+    width: 70px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.class1font
+{
+    font-family:Dosis;
+}
+/*contianer page content */
+
+.cont2{
+    z-index: 0;
+    height: 102vh;
+    background-image: url("../images/limo1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+
+.text{
+    font-family: Dosis;
+    font-size: 12px;
+    color: white;
+   margin-top: 120px;
+   
+
+}
+.text1{
+    font-family: Dosis;
+    font-size: 40px;
+   font-weight: 500;
+    color: white;
+    
+
+}
+.btn1611ID{
+   
+    background-color: transparent;
+    height: 40px;
+    max-width: 140px;
+    border-radius: 5px; 
+    color: white;
+    box-shadow: 5px ;
+    border:1px solid #e8e8e8 ;
+    box-shadow: 0 2px 2px 0 rgba(91, 91, 91, 0.24),0 2px 2px 0 rgba(103, 102, 102, 0.24);
+    
+}
+
+/* Container Roundbar */
+/* 
+.roundbar{
+    background-color: white;
+    border-radius: 50px;
+   padding: 10px;
+    margin-bottom: 90px;
+    z-index: 1;
+    margin-top: -120px;
+    max-width: 80%;
+
+}
+
+
+.adjustCenID
+{
+    display: flex;
+    justify-content: center;
+
+}
+#icon{
+    font-size: 20px;
+   
+
+}
+#date{
+    font-family:Dosis;
+    color:rgb(169, 167, 167);
+    margin-top: -30px;
+    margin-left: 30px;
+   font-size: 16px;
+}
+#date1{
+    font-family:Dosis;
+    color:black;
+    margin-top: -20px;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+
+
+.searchbtn22
+{
+    background-color:black ;
+    border: none;
+    border-radius: 30px;
+   
+} */
+
+/*con33 date time etc  */
+#con33 {
+   
+    border-radius: 10px;
+    
+    border-radius: 10px;
+    padding: 30px;
+    align-items: center;
+    background: transparent;
+   margin-top: 70px;
+   
+
+}
+.adjustgrid
+{
+    
+    display: grid;
+    justify-content: space-around;
+    align-content: center;
+
+}
+.colorclass
+{
+    width:50%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 10px 0 rgba(137, 136, 136, 0.24),0 10px 10px 0 rgba(137, 136, 136, 0.24);
+}
+
+/* Style the active tab link */
+.nav-tabs .nav-link.active {
+    position: relative;
+    border: none;
+    color: black
+}
+
+/* Style the bar below the active tab link */
+.nav-tabs .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    border: none;
+
+
+}
+
+.navbclass {
+    margin-bottom: 50px;
+
+}
+
+
+
+.input-group-text {
+    background-color: whitesmoke;
+    margin-bottom: 30px;
+    border: none;
+
+}
+
+.nav-link {
+    color: grey
+}
+.searchbtn22
+{
+    background-color:#d02121 ;
+    border: none;
+}
+
+ /* partners container*/
+ .partner_con
+{
+    color:black;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+#linex{
+    width: 100%;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #c5c3c3;
+    margin-left: px;
+    font-family:Dosis;
+ }
+  /* Container 5 Slider1 Our Fleets */
+
+
+  .slick-slide
+  {
+    height: auto !important;
+  }
+  .adjustCenID1{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+.fleetContainer
+{
+    margin-bottom: 30px;
+    background-color: #f7f6f6;
+}
+
+.car-container {
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    font-family:Dosis;
+     /* Set the desired width */
+  height: 400px;
+  margin-bottom: 50px;
+  background-color: white;
+  box-shadow: 0 2px 2px 0 rgba(86, 86, 86, 0.24),0 2px 2px 0 rgba(71, 71, 71, 0.19);
+  
+
+}
+/* Add a hover effect to elements with the .hover-element class */
+.hover-element:hover {
+    background-color:rgb(242, 241, 241); 
+    transition: background-color 0.3s ease; 
+    box-shadow: 0 10px 10px 0 rgba(166, 165, 165, 0.24),0 10px 10px 0 rgba(166, 165, 165, 0.24);
+
+  }
+
+
+.car-picture {
+    max-width: 100%;
+    max-height: fit-content;
+    margin-bottom: 30px;
+
+}
+
+.car-info
+{
+    max-width: 100%;
+    max-height: 100%;
+    font-family:Dosis;
+    margin-bottom: 1rem;
+    margin-top: 60px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#hrID
+{
+    margin:1px;
+}
+.txtheading
+{
+    font-family:Dosis;
+    font-size: 35px;
+    font-weight: 600;
+
+}
+
+#persons{
+    font-size: 15px;
+    text-align: left;
+    margin-left: -100px;
+  }
+  #person1{
+    font-size: 15px;
+    text-align: left;
+
+    margin-left: -100px;
+  }
+  #passenger{
+    align-items: left;
+    margin-top: -18px;
+
+  }
+  #passenger1{
+   align-items: center;
+   margin-top: -18px;
+
+  }
+
+
+/*make trip contianer */
+
+.BK{
+
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 50px;
+    font-weight: 600;
+ }
+ #cont7{
+    
+    margin-bottom: 50px;
+  
+
+ }
+
+
+ .encircled-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white; /* Light background color */
+    border-radius: 50%;
+    font-size: 20px;
+    border: 1px solid #1e1d1d;
+  }
+ .arrowbutton1
+ {
+    display: flex;
+    align-items: center;
+ }
+ .center {
+    text-align: left;
+    width: 100%;
+    display: flex;
+
+}
+
+ .BK1{
+
+    font-size: 35px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+ }
+ .BK4{
+
+    text-align: left;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+ }
+ .BK7{
+
+    color: black;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: 500;
+ }
+
+ #number_con
+{
+    background-color:rgb(231, 67, 67);
+    color:white;
+    margin-top: 60px;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+
+/*meet our team container*/
+
+.team-container {
+
+    padding-top: 80px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    margin-top: 50px;
+    /* width: 100%; */
+
+}
+
+.adjustCenID {
+    display: flex;
+    justify-content: center;
+}
+/* .marginleftcon{
+    justify-content: right;
+} */
+
+.member-name {
+    font-weight: bold;
+    margin-top: 35px;
+    color: white;
+}
+
+.member-description {
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+.team-member {
+    margin: 0px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: 300px;
+
+}
+
+.team-member img {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 2%;
+    transition: transform 0.3s, filter 0.3s;
+    margin-bottom: 20px;
+
+     object-fit: cover;
+
+}
+
+.team-member .overlay {
+    position: absolute;
+    top: 17px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.team-member .overlay-circle {
+
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.team-member .overlay i {
+    color: white;
+    font-size: 36px;
+}
+
+.team-member:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.7);
+    /* Darken the image */
+}
+
+.team-member:hover .overlay {
+    opacity: 1;
+}
+
+.check {
+    position: absolute;
+    top: 128px;
+    font-weight: bold;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.3s;
+    margin-left: 10px;
+}
+
+.team-member:hover .check {
+    opacity: 0;
+}
+#con222 {
+    width: 100%;
+
+}
+
+/* cont3434 hear what our customers say */
+#cont3434{
+   
+    
+    margin-top: 30px;
+    padding-bottom: 80px;
+    border-radius: 10px;
+    
+}
+.IK112{
+    
+    padding-top: 50px;
+    font-size: 35px;
+    font-weight: 600;
+    color: black;
+    
+}
+.IK1112{
+   
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color:black;
+}
+
+
+.btn161ID{
+   
+    background-color: rgb(254 108 102);
+    height: 40px;
+    width: 130px;
+    border-radius: 5px; 
+    color: white;
+    box-shadow: 5px ;
+    
+}
+
+.video-container {
+   
+    position: relative; 
+    margin-top: 60px;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 1px;
+    
+    
+}
+
+ .button-row {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+    text-align: center;
+    /* color: black; */
+}
+
+.button-row h4{
+    color: black;
+}
+
+.custom-button {
+    background-color: white; 
+    border: 1px solid #e8e8e8; 
+    box-shadow: 0 1px 1px 0 rgba(86, 86, 86, 0.24),0 1px 1px 0 rgba(71, 71, 71, 0.19);
+    margin: 5px; 
+    font-size: 16px; 
+    cursor: pointer;
+    width: 150px;
+    height: 60px;
+    border-radius: 6px;
+    
+} 
+
+.textbtnclass
+{
+    font-size: 10px;
+}
+
+.iframeClass
+{
+    border-radius: 8px;
+}
+.adjustCenID123
+{    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* #playButton {
+    background-color: white; 
+    color: black;
+    padding: 10px 20px; 
+    border: none;
+    position: absolute; 
+    bottom: 40px; 
+    align-items: left; 
+    transform: translateX(-50%);
+    cursor: pointer;
+    border-radius: 10px;
+    left:30%
+} */
+
+
+
+/* cont hear what our customers say */
+#cont2222{
+   
+    background-color: rgb(251, 217, 226);
+    margin-top: 30px;
+    padding-bottom: 80px;
+    border-radius: 10px;
+    padding-top: 40px;
+    
+}
+.IK11{
+    
+    margin-top: 30px;
+    font-size: 35px;
+    font-weight: 600;
+    color: black;
+    
+}
+.IK111{
+   
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color:black;
+}
+
+
+.btn16ID{
+   
+    background-color: rgb(254, 108, 102);
+    height: 40px;
+    width: 130px;
+    border-radius: 5px; 
+    color: white;
+    box-shadow: 5px ;
+    
+}
+.displaycon222
+{
+    display: flex;
+   align-items: flex-end;
+   margin-top: 30px;
+}
+.displaycon2221
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card1 {
+    margin-top: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 1px;
+    height: 280px;
+}
+
+.profile-photo {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 80%;
+    border: 1px solid black ;
+}
+
+.description {
+    font-size: 12px;
+    
+}
+
+
+.navigation {
+    display: flex;
+   
+}
+.displayarrow
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.carousel-control-next,.carousel-control-prev
+{
+    position: relative;
+}
+
+
+
+
+/* Custom arrow styles */
+ .custom-arrow {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content:space-evenly;
+    
+    cursor: pointer;
+    
+   
+} 
+
+/* Arrow text styles */
+ .arrow-text {
+    font-size: 16px;
+    margin-left: 10px;
+    
+} 
+
+ 
+ /* Container 12 Lastest news */
+
+ /* #cont12{
+    
+    background-color: white;
+  
+ } */
+
+ #GK{
+    font-family:Dosis;
+    font-size: 35px;
+    color: black;
+    margin-top: 50px;
+    font-weight: 500;
+    text-align: left;
+    align-items: flex-end;
+ }
+ .textalign
+ {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 45px;
+
+ }
+
+
+
+ #CARD{
+    border: none;
+    border-radius: 20px;
+   
+ }
+
+
+
+ #GK1{
+    position: relative;
+    font-family:Dosis;
+    color: white;
+    font-size: 40px;
+    margin-top: -190px;
+    font-weight: 600;
+    
+ }
+ #GK2{
+    position: relative;
+    font-family:Dosis;
+    color: white;
+    font-size: 15px;
+    margin-top: -30px;
+    margin-bottom: 110px;
+    font-weight: 500; 
+ }
+ #GK3{
+    font-family:Dosis;
+    color: balck;
+
+font-size: 12px;
+font-weight: 400;
+ }
+ #GK4{
+    font-family:Dosis;
+    color:black;
+    font-size: 15px;
+    font-weight: 500; 
+ }
+ #arbutton{
+    border-radius: 30px;
+    border: 1px solid;
+    height: 40px;
+    width: 40px;
+   color: black;
+ }
+ .class1font
+{
+    font-family: Dosis;
+}
+
+
+
+/*download app con*/
+
+#cont14{
+   
+    background-color: rgb(247, 206, 206);
+    margin-top: 30px;
+    padding-bottom: 50px;
+}
+.IK11{
+    
+    margin-top: 50px;
+    font-size: 35px;
+    font-weight: 600;
+    color: black;
+    
+}
+.IK111{
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    color: black;
+}
+#btn14
+{
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.btn14ID{
+    text-align: center;
+}
+#apple1{
+    font-size: 20px;
+    margin-right: 100px;   
+    margin-top: 5px; 
+}
+#lin11{
+font-size: 20px;
+margin-top: -27px;
+margin-right: 60px;  
+color: rgb(122, 128, 128);
+}
+.IK21{
+   
+    margin-top: -40px;
+    font-size: 9px;
+    color:white;
+    margin-left: 33px;
+    }
+
+.IK31 {
+    color:white;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: -20px;
+    margin-left: 30px;
+    }
+
+.imgClassCon14{
+
+ width: 300px; 
+     height: 280px;
+     margin-top: 46px;
+     border-radius: 5px;
+   }
+
+/*footer.....*/
+
+#cont15{
+    background-color: black;
+    padding: 0% 15%;
+}
+#logo2{
+    margin-top: 20px;
+width: 100px;
+height: 30px;
+margin-bottom: 20px;
+}
+.phone1{
+margin-bottom: 20px;
+font-size: 12px;
+margin-top: 30px;
+
+}
+.Number{
+    font-family:Dosis;
+    font-size: 15px;
+    color: white;
+    margin-right: 5px;
+    margin-top: -3px;
+}
+
+.JK2{
+    font-family:Dosis;
+    color: white;
+    font-size: 16px;
+   
+}
+#ul{
+    list-style: none;
+margin-left: -43px;
+    
+}
+
+.JK3{
+    font-family:Dosis;
+    color: white;
+    font-size: 13px;
+    padding: 5px;
+    font-weight: 300;
+    list-style: none;
+}
+.JK3:hover{
+    color: white;
+}
+
+ #BTM{
+    height: 40px;
+    width: 168px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  
+}
+#BTM1{
+    height: 40px;
+    width: 168px;
+    border-radius: 10px;
+ 
+} 
+#btn{
+    height: 45px;
+    width: 150px;
+    border-radius: 10px;
+    margin-left: 280px;
+    margin-bottom: 100px;
+}
+#apple{
+    font-size: 20px;
+margin-right: 100px;   
+margin-top: 5px; 
+}
+#lin1{
+font-size: 20px;
+margin-top: -27px;
+margin-right: 60px;  
+color: rgb(122, 128, 128);
+}
+#IK2{
+    font-family:Dosis;
+    margin-left: 40px;
+    margin-top: -45px;
+    font-size: 9px;
+    color: gainsboro;
+    }
+    #IK3{
+        font-size: 12px;
+        color: white;
+        margin-left: 40px;
+        font-weight: 600;
+        margin-top: -20px;
+    }
+#btn1{
+        height: 45px;
+        width: 150px;
+        border-radius: 10px;
+        margin-left: 10px;
+        margin-bottom: 100px;
+    }
+
+    #cont16{
+        max-width: 100%;
+        padding: 0% 15%;
+        background-color: black;
+    }
+    .KK{
+        font-family:Dosis;
+        color: white;
+        font-size: 12px;
+        margin-top: 30px;
+       
+    }
+    /* #KKK{
+        font-family:DMsanR;
+        color: white;
+        font-size: 12px;
+       
+    } */
+    .KK1{
+        font-family:Dosis;
+        color: white;
+        font-size: 10px;
+        
+    }
+    .ger{
+        border: 1px solid white;
+    }
+    #GER{
+        font-size: 10px;
+        border-radius: 50px;
+        color: white;
+        width: 80px;
+        background-color: #000000;
+        margin-left: 5px;
+  
+    }
+
+    
+    #eng{
+    font-size: 9px;
+
+    }
+    
+    #English{
+        font-size: 10px;
+            background-color: rgb(105, 103, 103);
+            border-radius: 50px;
+            color: white;
+            width: 70px;  
+    }
+    #endbutton{
+      display: flex;
+      justify-content: flex-end;
+    }
+    /* #k2k2{
+        text-align: center;
+        display: none;
+    } */
+
+    .footer-hr{
+        border: 0.5px solid rgb(61, 59, 44);
+    
+    }
+    @media screen and (max-width:2560px) {
+        .roundbar {
+            max-width: 70%;
+            
+        }
+        #con33
+    {
+        margin-top: 100px;
+    }
+    .text
+    {
+        margin-top: -10px;
+    }
+    #cont7
+    {
+        margin-top: 100px;
+    }
+    #GK2{
+        margin-bottom : 130px;
+    }
+   
+    }
+
+ @media screen and (max-width:1445px) {
+    #con33
+    {
+        margin-top: 135px;
+    }
+   
+        .roundbar {
+            max-width: 70%;
+            
+        }
+        #GK1
+        {
+            margin-top: -115px;
+        }
+        #GK3
+        {
+            margin-top: -20px;
+        }
+        #FK3
+        {
+            margin-top: 120px;
+        }
+        .text
+        {
+           
+            font-size: 12px;
+           
+        
+        }
+        .text1{
+            
+            font-size: 40px;
+            
+        }
+        .padbot
+        {
+        
+        margin-top: 10px;
+        padding: 0px;
+        margin-left:20px ;
+        }
+        
+    
+    }
+    @media screen and (max-width:1025px) {
+        #con33
+        {
+            margin-top: 120px;
+        }
+        .BK{
+            margin-top: 90px;
+        }
+        .ptextClass
+        {
+         font-size: 13px;
+        }
+       
+    #cont7
+    {
+        margin-top: 100px;
+    }
+    .colorclass
+    {
+        width:80%
+    }
+        #FK3
+        {
+            margin-top: 70px;
+
+        }
+        .member-name
+        {
+            margin-top: -30px;
+        }
+        .member-description
+        {
+            margin-top: -10px;
+        } 
+        .text
+        {
+           
+            font-size: 12px;
+           
+            margin-top: 35px;
+        }
+        .text1{
+            
+            font-size: 30px;
+            
+        }
+        .padbot
+        {
+            
+            margin-top: 10px;
+            padding: 0px;
+            margin-left:20px ;
+        }
+        .roundbar {
+            max-width: 85%;
+            
+        }
+        
+    
+    }
+
+   
+@media screen and (max-width:760px) {
+   
+   
+    #cont7
+    {
+        margin-top: 300px;
+    }
+   
+    .card1{
+        height: 280px;
+       }
+       .ptextClass
+       {
+        font-size: 13px;
+       }
+       .text
+       {
+          
+           font-size: 12px;
+          
+           margin-top: 50px;
+       }
+    #date1
+    {
+        margin-left: 50px;
+    }
+    .padbot
+    {
+        margin-bottom: 20px;
+        margin-top: 10px;
+        padding: 0px;
+        margin-left: -8px;
+    }
+    #icon
+    {
+        margin-left: -75px;
+    }
+    #GK1
+    {
+        margin-top: -69px;
+        margin-bottom: -70px;
+        font-size: 24px;
+    }
+    #FK3{
+        margin-top: 20px;
+     }
+     
+   
+
+}
+@media screen and (max-width:427px) {
+    
+    #cont7
+    {
+        margin-top: 400px;
+    }
+  
+    .card1{
+        height: 230px;
+       }
+#GK1
+{
+  margin-top: -160px;
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+#FK
+{
+    padding-bottom: 10px;
+}
+
+/* .check{
+    top:100px
+} */
+}

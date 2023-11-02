@@ -1,0 +1,780 @@
+@font-face {
+    font-family:Dosis;
+    src: url(fonts/Dosis/Dosis-VariableFont_wght.ttf);
+}
+
+
+/* Container 1 NAVBAR */
+
+/* CONTAINER 2 */
+
+#cont2 {
+    max-width: 100%;
+    padding: 0% 15%;
+}
+#ikons{
+    margin-top: 30px;
+    font-size: 25px;
+}
+.AK{
+    font-family: Dosis;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 35px;
+}
+
+.AK1{
+    font-family: Dosis;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+
+#lien{
+
+    color: rgb(0, 0, 0);
+    border: 1.5px solid;
+}
+/* PASSENGER DETAIL */
+#cont3{
+    max-width: 100%;
+}
+#SK{
+    font-family: Dosis;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.editbox{
+    font-family: Dosis;
+    color: black;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 45px;
+    margin-bottom: 30px;
+    background-color: rgb(242, 242, 242);
+    border-style: none;
+    padding-left: 10px;
+    width: 100%;
+}
+
+
+
+
+/* PASSENGER DETAIL */
+
+#cont3{
+    max-width: 100%;
+    padding: 0% 15%;
+}
+#SK{
+    font-family: Dosis;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+/* Edit BOX */
+
+.form-control {
+  
+    position: relative;
+    width: 100%;
+    height: 45px;
+    margin-right: 20px;
+    border: 0px solid transparent;
+    margin-left: -10px;
+    margin-bottom: 20px;
+   
+  }
+  .form-control input {
+    font-family: Dosis;
+    font-size: 12px;
+    font-weight: 600;
+    width: 100%;
+    border: 0;
+    outline: none;
+    height: 100%;
+    padding: 0 15px;
+    transition: 0.4s;
+    margin-top: -5px;
+  }
+  .form-control label {
+    font-family: Dosis;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: rgb(5, 5, 5);
+    pointer-events: none;
+  }
+  .form-control div.border-around {
+    position: absolute;
+    border: 2px solid black;
+    height: 100%;
+    width: 100%;
+    padding-right: 25px;
+    top: 0;
+    pointer-events: none;
+    border-radius: 3px;
+    transition: 0.2s;
+  }
+  .form-control input:valid + label {
+   
+    top: -0.45rem;
+    left: 10px;
+    font-size: 0.9rem;
+    z-index: 100;
+    width: auto;
+    height: 0.9rem;
+    padding: 0 10px;
+    color: rgba(0, 0, 0, 0.3);
+    background-color: white;
+  }
+  
+  /* input:not(:focus) {
+   
+    color: rgba(0, 0, 0, 0.5);
+  } */
+ 
+  .form-control input:focus + label {
+   
+    top: -0.45rem;
+    left: 10px;
+    font-size: 10px;
+    z-index: 100;
+    width: auto;
+    height: 0.9rem;
+    padding: 0 10px;
+    color: #9f9f9f;
+    background-color: white;
+  }
+  
+  .form-control input:focus ~ div.border-around {
+    border: 2px solid #000000;
+  }
+  #SK1{
+    font-family: Dosis;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+#dropdown{
+    font-family: Dosis;
+    color: black;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 45px;
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: rgb(242, 242, 242);
+    border-style: none;
+    padding-left: 10px;
+    margin-right: 10px;
+  }
+  #messagebox{
+    font-family: Dosis;
+    color: black;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 120px;
+    width:100%;
+    margin-bottom: 30px;
+    background-color: rgb(242, 242, 242);
+    border-style: none;
+    padding-bottom: 70px;
+    
+   
+   
+}
+
+#bttn{
+    width: 100%;
+    height: 55px;
+    border: none;
+    background-color: #000000;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+#bttn > span{
+    color:rgb(255, 255, 255);
+    font-family: Dosis;
+    font-size: 16px;
+    margin-right: 10px;
+   
+}
+
+#SK3{
+    color: rgb(252, 252, 252);
+    font-size: 13px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+/* BUTTON */
+#bttn{
+    width: 100%;
+    height: 55px;
+    border: none;
+    background-color: #000000;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+#SK23{
+    color:rgb(255, 255, 255);
+    font-family: Dosis;
+    font-size: 12px;
+    margin-right: 10px;
+   
+}
+
+#SK33{
+    color: rgb(252, 252, 252);
+    font-size: 13px; 
+} 
+
+
+
+/* MAPP */
+
+#curd2{
+    margin-top: 50px;
+    border-radius: 5px;
+    padding:   5% 15%;
+}
+.CK{
+    font-family: Dosis;
+    font-size: 15px;
+    font-weight:600 ;
+}
+.CK2{
+    font-family: Dosis;
+    font-size: 12px;
+    color: black;
+    font-weight:600 ;
+}
+
+
+
+
+#CK3{
+    font-size: 15px;
+    color: black;
+    margin-bottom: 20px;
+}
+#CK333{
+    font-size: 15px;
+    color: black;
+    margin-bottom: 20px;
+    margin-left: px;
+    margin-top: -25px;
+}
+.CK4{
+    font-family: Dosis;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 25px;
+
+}
+.CK44{
+    font-family: Dosis;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 25px;
+
+}
+#CK6{
+    font-size: 15px;
+    color: black;
+
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.CK5{
+    font-family: Dosis;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 25px;
+}
+#CK7{
+    height: 20%;
+    width: 100%;
+    border-radius: 5px;
+}
+.CK8{
+    font-family: Dosis;
+    font-size: 12px;
+    color: rgb(154, 154, 154);
+    margin-top: 5px;
+   
+   
+    
+
+}
+.CK9{
+    font-family: Dosis;
+    font-size: 12px;
+    color: rgb(154, 154, 154);
+    margin-top: 5px;
+
+}
+.CK10{
+    font-family: Dosis;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+
+
+}
+.CK11{
+    font-family: Dosis;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(7, 7, 7);
+}
+#curd2222{
+    padding:   5% 15%;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 120px;
+}
+.LK{
+    font-family: Dosis;
+    font-size: 12px;
+    color: rgb(154, 154, 154);
+    margin-top: 20px;
+
+}
+
+.LK1{
+    font-family: Dosis;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(7, 7, 7);
+}
+.LK2{
+    font-family: Dosis;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(7, 7, 7);
+}
+#LK3{
+    font-family: Dosis;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(7, 7, 7);
+}
+#LK4{
+    font-family: Dosis;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(7, 7, 7);
+    display: flex;
+    justify-content: flex-end;
+   
+}
+#LK7{
+    font-family: Dosis;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(7, 7, 7);
+}
+#LK8{
+    font-family: Dosis;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(7, 7, 7);
+    display: flex;
+    justify-content: flex-end;
+}
+
+#cont15{
+    max-width: 100%;
+    background-color: black;
+    padding: 0% 15%;
+}
+#logo2{
+    margin-top: 20px;
+width: 100px;
+height: 30px;
+margin-bottom: 20px;
+}
+#phone1{
+margin-bottom: 20px;
+font-size: 12px;
+margin-top: 30px;
+
+}
+#Number{
+    font-family:DMsanR;
+    font-size: 12px;
+    color: white;
+    margin-right: 5px;
+}
+/* #follow-us-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+} */
+#JK{
+    font-family:DMsanR;
+    color: white;
+    font-size: 15px;
+    padding-top: 10px;
+    margin-top: 20px;
+    display: inline;
+    margin-bottom: 30px;
+}
+#BRAND{
+    font-size: 15px;
+margin-left: 30px;
+display: inline;
+}
+#brands{
+    font-size: 15px;
+    padding: 5px;
+}
+
+#JK1{
+    width: 960px;
+    margin-left: 260px;
+    color: white;
+}
+#cont155{
+    max-width: 100%;
+    background-color: black;
+    padding: 0% 15%;
+}
+#JK2{
+    font-family:DMsanR;
+    color: white;
+    font-size: 15px;
+   
+}
+#ul{
+    list-style: none;
+margin-left: -43px;
+    
+}
+
+#JK3{
+    font-family:DMsanR;
+    color: white;
+    font-size: 11px;
+    padding: 5px;
+    font-weight: 300;
+}
+#JK33{
+    font-family:DMsanR;
+    color: white;
+    font-size: 11px;
+    padding: 5px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+
+#JK10{
+    font-family:DMsanR;
+    color: white;
+    font-size: 15px;
+
+}
+#JK4{
+    font-family:DMsanR;
+    color: white;
+    font-size: 11px;
+    padding: 5px;
+    font-weight: 300;
+}
+#JK11{
+    font-family:DMsanR;
+    color: white;
+    font-size: 15px;
+  
+}
+#JK6{
+    font-family:DMsanR;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    font-weight: 300;
+}
+#JK12{
+    font-family:DMsanR;
+    color: white;
+    font-size: 15px;
+   
+}
+#JK8{
+    font-family:DMsanR;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    font-weight: 300;
+ 
+}
+#JK13{
+    font-family:DMsanR;
+    color: white;
+    font-size: 15px;
+    /* margin-left: 80px; */
+}
+#BTM{
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  
+}
+#BTM1{
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+ 
+}
+#IK1{
+    font-family:DMsanR;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 280px;
+    margin-bottom: 50px;
+}
+#btn{
+    height: 45px;
+    width: 150px;
+    border-radius: 10px;
+    margin-left: 280px;
+    margin-bottom: 100px;
+}
+#apple{
+    font-size: 20px;
+margin-right: 100px;   
+margin-top: 5px; 
+}
+#lin1{
+font-size: 20px;
+margin-top: -27px;
+margin-right: 60px;  
+color: rgb(122, 128, 128);
+}
+#IK2{
+    font-family:DMsanR;
+    margin-left: 40px;
+    margin-top: -45px;
+    font-size: 9px;
+    color: gainsboro;
+    }
+    #IK3{
+        font-size: 12px;
+        color: white;
+        margin-left: 40px;
+        font-weight: 600;
+        margin-top: -20px;
+    }
+#btn1{
+        height: 45px;
+        width: 150px;
+        border-radius: 10px;
+        margin-left: 10px;
+        margin-bottom: 100px;
+    }
+
+    #cont16{
+        max-width: 100%;
+        padding: 0% 15%;
+        background-color: black;
+    }
+    #KK{
+        font-family:DMsanR;
+        color: white;
+        font-size: 12px;
+        margin-top: 30px;
+       
+    }
+    #KKK{
+        font-family:DMsanR;
+        color: white;
+        font-size: 12px;
+       
+    }
+    .KK1{
+        font-family:DMsanR;
+        color: white;
+        font-size: 10px;
+        
+    }
+    
+    #GER{
+        font-size: 10px;
+        border-radius: 50px;
+        color: white;
+        width: 80px;
+        background-color: #000000;
+        margin-left: 5px;
+  
+    }
+    #G{
+        font-size: 10px;
+    }
+    
+    #eng{
+    font-size: 9px;
+
+    }
+    
+    #English{
+        font-size: 10px;
+            background-color: rgb(105, 103, 103);
+            border-radius: 50px;
+            color: white;
+            width: 70px;  
+    }
+    #endbutton{
+      display: flex;
+      justify-content: flex-end;
+    }
+    #k2k2{
+        text-align: center;
+        display: none;
+    }
+
+@media screen and (min-width: 1272px){
+    .main_container{
+        margin-top: 90px;
+    }
+}
+
+@media screen and (min-width: 883px) and (max-width:992px) {
+    #cont2 , #cont3{
+        padding: 0 7%;
+    }
+
+    .main_container{
+        margin-top: 90px;
+    }
+}
+
+
+
+@media screen and (max-width:883px) 
+{
+    #KKK{
+        display: none;
+    }
+    #k2k2{
+        display: block;
+    }
+}
+@media screen and (max-width:570px) 
+{
+    #Number{
+        display: none;
+    }
+   #phone1{
+    display: none;
+   }
+}
+
+@media screen and (max-width:500px) 
+{
+    #cont2{
+        padding: 0% 5%;
+       }
+       #cont3{
+        padding: 0% 5%;
+       }
+       #cont15{
+        padding: 0% 5%; 
+       }
+       #cont155{
+        padding: 0% 5%;
+       }
+       #cont16{
+        padding: 0% 5%; 
+       }
+    #KK{
+        font-family:DMsanR;
+        color: white;
+        font-size: 10px;
+        margin-top: 30px;
+    }
+    #GER{
+        font-size: 10px;
+        border-radius: 50px;
+        color: white;
+        width: 80px;
+        background-color: #000000;
+        margin-left: 5px;
+  
+    }
+}
+@media screen and (max-width:376px) 
+{
+   #cont2{
+    padding: 0% 5%;
+   }
+   #cont3{
+    padding: 0% 5%;
+   }
+   #cont15{
+    padding: 0% 5%; 
+   }
+   #cont155{
+    padding: 0% 5%;
+   }
+   #cont16{
+    padding: 0% 5%; 
+   }
+   #KK{
+    font-size: 8px
+   }
+}
+@media screen and (max-width:320px) 
+{
+   #cont2{
+    padding: 0% 5%;
+   }
+   #cont3{
+    padding: 0% 5%;
+   }
+   #cont15{
+    padding: 0% 5%; 
+   }
+   #cont155{
+    padding: 0% 5%;
+   }
+   #cont16{
+    padding: 0% 5%; 
+   }
+   #KK{
+    font-size: 8px
+   }
+}
+
+
+
+

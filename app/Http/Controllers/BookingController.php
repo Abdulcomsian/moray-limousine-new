@@ -24,6 +24,9 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 use Session;
 use Stripe;
 use DB;
@@ -60,27 +63,33 @@ class BookingController extends Controller
      * @return Factory|View
      */
     public function selectClassByDistance(BookingRequest $request)
-    {
-        $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        if (Auth()->check() == false)
-        {
-            Session::put('search', $actual_link);
-        }
-        $validated = $request->validated();
-        $dist = (float)$request['total_distance'];
-        $durationInHours = $this->durationInHour($request->total_duration);
-        $distance_in_km=$dist/1000;
-        //$distance_in_km = $this->calculateDistance($dist);
-        $classes = $this->classes->all();
-        //    Set Prices and also set the discounts & markup with classes
+    { 
+            $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+            if (Auth()->check() == false)
+            {
+                Session::put('search', $actual_link);
+            }
+            $validated = $request->validated();
+            $dist = (float)$request['total_distance'];
+            $durationInHours = $this->durationInHour($request->total_duration);
+            $distance_in_km=$dist/1000;
+            //$distance_in_km = $this->calculateDistance($dist);
+            $classes = $this->classes->all();
+            //    Set Prices and also set the discounts & markup with classes
+            $classes =  $this->booking->classesWithPriceByDistance($classes, $distance_in_km, $request->all());
 
-        $classes =  $this->booking->classesWithPriceByDistance($classes, $distance_in_km, $request->all());
-        $data['booking_type'] = 'distance';
-        $data['form_data'] = $request->except('_token');
-        $data['distance'] = $distance_in_km;
-        $data['classes'] = $classes;
-        $data['travel_duration'] = $durationInHours;
-        return view('booking.select-vehicle-class', $data);
+             // Paginate the array manually
+            $perPage = 4; // Number of items per page
+            $currentPage = request('page', 1); // Get the current page from the request
+            $pagedData = array_slice($classes, ($currentPage - 1) * $perPage, $perPage);
+            $paginatedClasses = new LengthAwarePaginator($pagedData, count($classes), $perPage);
+
+            $data['booking_type'] = 'distance';
+            $data['form_data'] = $request->except('_token');
+            $data['distance'] = $distance_in_km;
+            $data['classes'] = $paginatedClasses;
+            $data['travel_duration'] = $durationInHours;
+            return view('booking.select-vehicle-class', $data);
     }
 
     /**
@@ -93,9 +102,16 @@ class BookingController extends Controller
         $selected_hour = $request['selected_hour'];
         //           set prices and set discounts or markup with given classes
         $classes = $this->booking->classesWithPriceByDuration($classes, $selected_hour,$request->all());
+
+         // Paginate the array manually
+        $perPage = 4; // Number of items per page
+        $currentPage = request('page', 1); // Get the current page from the request
+        $pagedData = array_slice($classes, ($currentPage - 1) * $perPage, $perPage);
+        $paginatedClasses = new LengthAwarePaginator($pagedData, count($classes), $perPage);
+
         $data['booking_type'] = 'time';
         $data['form_data'] = array_merge($request->except('_token'), ['drop_address' => "This Booking Is For " . $selected_hour . " Hours  : "]);
-        $data['classes'] = $classes;
+        $data['classes'] = $paginatedClasses;
         $data['selected_hours'] = $selected_hour;
         $data['travel_duration'] = $selected_hour;
         return view('booking.select-vehicle-class', $data);
@@ -144,6 +160,7 @@ class BookingController extends Controller
     {
         $options_data = $request->optionsData;
         $options_data = json_decode($options_data);
+        // dd($options_data);
         if ($options_data == null)
         {
             $options_data = [];
@@ -205,14 +222,13 @@ class BookingController extends Controller
          $booking = Booking::find($booking_id);
          $amount=$booking->extra_options_amount+$booking->travel_amount;
        try{
-             Stripe\Stripe::setApiKey('sk_test_51LevsRISpHce1qMwlDWCUFsQ6PjUitmrrwWVDrCYnpdCXgpGLgBXIWnbPXiCuHgoOMeZzO6J6ASsu3IYoWKr41uv00l3bMBJaG');
+             Stripe\Stripe::setApiKey('sk_test_51O79eiJ1EtA0iMLv07oP8GXAxnJsE2E85sssHiqm1v19axnc0blY8LvOqEByDhYKDl5YeW6belFYNKMBg8lAjez500zxYuPrwZ');
              $stripedata=Stripe\Charge::create ([
                     "amount" => $amount*100,
                     "currency" => "eur",
                     "source" => $request->stripeToken,
                     "description" => "This payment is for tested purpose"
             ]);
-
 
             $booking->orderId = $stripedata->id;
             $booking->userDetail = json_encode($stripedata, JSON_PRETTY_PRINT);
@@ -495,6 +511,10 @@ class BookingController extends Controller
             'enduser_billing_details' => $enduser_billing_details
         ]);
     }
+
+    // public function bookingDetailsUser(){
+    //     return view('booking.booking-details');
+    // }
 
     /**
      * @param Request $request

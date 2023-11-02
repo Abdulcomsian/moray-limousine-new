@@ -67,7 +67,24 @@ class RegisterController extends Controller
             'phone_number' => 'required|max:25',
             'password' => 'required|string|min:6|confirmed',
             'user_type' => 'required|string|max:15',
-        ]);
+        ],[
+            'first_name.required' => 'First Name Field cannot be empty',
+            'first_name.string'   => 'First Name must be a String',
+            'first_name.max'      => 'You have reached the limit of maximum characters of 50',
+            'last_name.required' => 'Last Name Field cannot be empty',
+            'last_name.string'   => 'Last Name must be a String',
+            'last_name.max'      => 'You have reached the limit of maximum characters of 50',
+            'email.required'     => 'Email field should not be empty',
+            'email.max'          => 'You have reached the maximum of limit of characters (255)',
+            'email.unique'       => 'Email is already registered.',
+            'phone_number.required' => 'Phone number is required',
+            'phone_number.max'      => 'Maximum characters for Phone Number is 25',
+            'password.required'  => 'Password field should not be empty',
+            'password.min'       => 'Minimum limit of password is 6 characters',
+            'password.confirmed' => 'Password doesn`t matched',           
+        ]
+    
+    );
     }
 
     protected function partnervalidator(array $data)
@@ -127,7 +144,6 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'phone_number' => $data['phone_number'],

@@ -63,8 +63,8 @@ Route::get('/ariport-transfer', [HomeController::class, 'ariporttransfer']);
 Route::get('/limousine-service', [HomeController::class, 'limousineservice']);
 Route::get('home/free-waiting-time', [HomeController::class, 'freewaitingtime']);
 Route::get('/our-feet', [HomeController::class, 'ourfeet']);
-Route::get('/about-us', [HomeController::class, 'contantus']);
-Route::get('/contact-us', [HomeController::class, 'aboutus']);
+Route::get('/about-us', [HomeController::class, 'aboutUs']);
+Route::get('/contact-us', [HomeController::class, 'contactUs']);
 Route::get('/services-rates', [HomeController::class, 'servicesrates']);
 Route::get('/our-services', [HomeController::class, 'ourServices']);
 Route::get('service/details/{id}', [HomeController::class, 'serviceDetail']);
@@ -102,6 +102,8 @@ Route::group(['middleware' => ['web', 'auth']], function ()
     Route::get('/booking/selebooking-detailscted-class/{id}', [BookingController::class, 'selectedClass']);
 
     Route::get('/booking/extra-options-details', [BookingController::class, 'extraOptionsDetails'])->name('extra.option.details');
+
+    // Route::get('/booking/booking-details-user', [BookingController::class, 'bookingDetailsUser'])->name('booking.details.user');
 
     Route::get('/booking/payment-form', [BookingController::class, 'bookingPayment'])->name('booking.payment');
 

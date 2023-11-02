@@ -43,7 +43,6 @@ class LoginController extends Controller
 
     protected function authenticated($request, $user)
     {
-
         if (session('link')) {
             return redirect(session('link'));
         }
