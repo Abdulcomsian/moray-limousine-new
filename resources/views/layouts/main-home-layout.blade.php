@@ -92,8 +92,9 @@
             display: block;
             text-align: center;
         }
-        .nav-active{
-            background-color: rgb(150, 152, 152);  
+
+        .nav-active {
+            background-color: rgb(150, 152, 152);
             border-radius: 20%;
         }
     </style>
@@ -118,18 +119,20 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'index.php' ? 'nav-active' : ''; ?>" aria-current="page" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'index.php' ? 'nav-active' : ''; ?>" aria-current="page"
+                                href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'about-us' ? 'nav-active' : ''; ?>" aria-current="page" href="{{ url('/about-us') }}">About Us</a>
+                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'about-us' ? 'nav-active' : ''; ?>" aria-current="page"
+                                href="{{ url('/about-us') }}">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'our-feet' ? 'nav-active' : ''; ?>" aria-current="page" href="{{ url('/our-feet') }}">Our Fleet</a>
-                        </li>   
+                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'our-fleet' ? 'nav-active' : ''; ?>" aria-current="page"
+                                href="{{ url('/our-fleet') }}">Our Fleet</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'our-services' ? 'nav-active' : ''; ?>" aria-current="page"
                                 href="{{ url('/our-services') }}">Services</a>
@@ -138,7 +141,8 @@
                             <a class="nav-link bar" aria-current="page" href="#">Blog</a>
                         </li> --}}
                         <li class="nav-item">
-                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'contact-us' ? 'nav-active' : ''; ?>" aria-current="page" href="{{ url('/contact-us') }}">Contact</a>
+                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'contact-us' ? 'nav-active' : ''; ?>" aria-current="page"
+                                href="{{ url('/contact-us') }}">Contact</a>
                         </li>
                     </ul>
                     <div class="form-inline my-2 my-lg-0">

@@ -62,7 +62,7 @@ Route::get('/booking-by-hours', [BookingController::class, 'selectClassByHour'])
 Route::get('/ariport-transfer', [HomeController::class, 'ariporttransfer']);
 Route::get('/limousine-service', [HomeController::class, 'limousineservice']);
 Route::get('home/free-waiting-time', [HomeController::class, 'freewaitingtime']);
-Route::get('/our-feet', [HomeController::class, 'ourfeet']);
+Route::get('/our-fleet', [HomeController::class, 'ourfleet']);
 Route::get('/about-us', [HomeController::class, 'aboutUs']);
 Route::get('/contact-us', [HomeController::class, 'contactUs']);
 Route::get('/services-rates', [HomeController::class, 'servicesrates']);

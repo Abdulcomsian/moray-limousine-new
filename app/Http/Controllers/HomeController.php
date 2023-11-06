@@ -77,7 +77,7 @@ class HomeController extends Controller
     }
 
 
-    public function ourfeet()
+    public function ourfleet()
     {
         $homeCMS = CmsHomePage::all();
         $home_content = [];
@@ -88,7 +88,7 @@ class HomeController extends Controller
         $data['home_content'] = $home_content;
         $categories = VehicleCategory::paginate(6);
         $data['categories'] = $categories;
-        return view('siteheader.our-feet', $data);
+        return view('siteheader.our-fleet', $data);
     }
 
     /**
@@ -112,14 +112,17 @@ class HomeController extends Controller
      */
     public function aboutUs()
     {
-        $homeCMS = CmsHomePage::all();
-        $home_content = [];
-        foreach ($homeCMS as $home) {
-            $item_name = $home->item_name;
-            $home_content += [$item_name => $home->item_content];
-        }
-        $data['home_content'] = $home_content;
-        return view('siteheader.about-us', $data);
+    //     $homeCMS = CmsHomePage::all();
+    //     $home_content = [];
+    //     foreach ($homeCMS as $home) {
+    //         $item_name = $home->item_name;
+    //         $home_content += [$item_name => $home->item_content];
+    //     }
+    //     $data['home_content'] = $home_content;
+
+        $faqs = CmsFaq::all();
+        // dd($faqs);
+        return view('siteheader.about-us', compact('faqs'));
     }
 
     /**

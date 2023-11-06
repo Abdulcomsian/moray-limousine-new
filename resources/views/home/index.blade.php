@@ -89,7 +89,7 @@
                 <p class="text">Where Would You Like To Go?</p>
                 <p class="text1">A new Class of Luxury<br />Limo Service</p>
                 <div calss="row " class="btn1611ID">
-                    <a href="{{ url('/our-feet') }}">
+                    <a href="{{ url('/our-fleet') }}">
                         <button type="button" class="btn" style="color: white;width: 100%;">Visit Our Fleet<i
                                 class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button></a>
 
@@ -150,13 +150,13 @@
                                         <div class="row adjustCenID">
 
                                             <div class="input-group">
-                                                <div class="input-group-prepend">
+                                                {{-- <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
-                                                </div>
+                                                </div> --}}
                                                 <div class="date form_date" data-date="3" data-date-format="dd MM yyyy"
                                                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                                                    <input size="31" type="text" id="pick-date"
+                                                    <input size="100%" class="mt-0 mb-0"  type="text" id="pick-date"
                                                         placeholder="{{ date('d-M-Y') }}" readonly>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
                                                     <span class="add-on"><i class="icon-th"></i></span>
@@ -171,13 +171,13 @@
                                         <div class="row adjustCenID">
                                             <!-- Time Picker -->
                                             <div class="input-group">
-                                                <div class="input-group-append">
+                                                {{-- <div class="input-group-append">
                                                     <span class="input-group-text"><i class="far fa-clock"></i></span>
-                                                </div>
+                                                </div> --}}
                                                 <div class="controls input-append date form_time" data-date=""
                                                     data-date-format="hh:ii p" data-link-field="dtp_input3"
                                                     data-link-format="hh:ii">
-                                                    <input size="31" type="text" value="" id="pick-time"
+                                                    <input size="100%" class="mb-0 mt-0" type="text" value="" id="pick-time"
                                                         placeholder="12:25 am" readonly>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
                                                     <span class="add-on"><i class="icon-th"></i></span>
@@ -397,7 +397,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="slider">
+                <div class="services-slider">
                     @if (count($services) > 0)
                         @foreach ($services as $service)
                             <div class="col-md-5 team-member">
@@ -434,9 +434,9 @@
 
             @if (count($categories) > 0)
                 <div class="col-md-12">
-                    <div class="slider">
+                    <div class="fleet-slider">
                         @foreach ($categories as $category)
-                            <div class="col-md-2">
+                            <div class="col-md-2 slick-slide">
                                 <div class="car-container hover-element">
                                     <p class="text-left font-weight-bold">{{ $category->name }}</p>
                                     {{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}
@@ -453,9 +453,10 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @endforeach    
                     </div>
                 </div>
+
         </div>
         @endif
     </div>

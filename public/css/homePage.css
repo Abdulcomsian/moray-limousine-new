@@ -112,6 +112,8 @@
     
 }
 
+
+
 /* Container Roundbar */
 /* 
 .roundbar{
@@ -268,11 +270,18 @@
 
 
 
+
+
 .fleetContainer
 {
     margin-bottom: 30px;
     background-color: #f7f6f6;
 }
+
+.slider {
+    display: flex; /* Ensure the slider container uses flex layout */
+    justify-content: space-between; /* Distribute slides evenly */
+  }
 
 .car-container {
     margin-top: 30px;
@@ -281,6 +290,7 @@
     padding: 10px;
     text-align: center;
     font-family:Dosis;
+    /* width: 200px; */
      /* Set the desired width */
   height: 400px;
   margin-bottom: 50px;
