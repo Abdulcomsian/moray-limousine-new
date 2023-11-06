@@ -280,13 +280,13 @@
                                         <div class="row adjustCenID">
                                             <!-- Date Picker -->
                                             <div class="input-group">
-                                                <div class="input-group-prepend">
+                                                {{-- <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
-                                                </div>
+                                                </div> --}}
                                                 <div class="date form_date" data-date="" data-date-format="dd MM yyyy"
                                                     data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-                                                    <input size="31" type="text" id="pick_date_hour"
+                                                    <input class="mt-0 mb-0" size="100%" type="text" id="pick_date_hour"
                                                         placeholder="Wed 19 July, 2017" readonly>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
                                                     <span class="add-on"><i class="icon-th"></i></span>
@@ -299,13 +299,13 @@
                                         <div class="row adjustCenID">
                                             <!-- Time Picker -->
                                             <div class="input-group">
-                                                <div class="input-group-append">
+                                                {{-- <div class="input-group-append">
                                                     <span class="input-group-text"><i class="far fa-clock"></i></span>
-                                                </div>
+                                                </div> --}}
                                                 <div class="controls input-append date form_time" data-date=""
                                                     data-date-format="hh:ii p" data-link-field="dtp_input4"
                                                     data-link-format="hh:ii">
-                                                    <input size="31" type="text" value=""
+                                                    <input class="mt-0 mb-0" size="100%" type="text" value=""
                                                         id="pick_time_hour" placeholder="12:25 am" readonly>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
                                                     <span class="add-on"><i class="icon-th"></i></span>
