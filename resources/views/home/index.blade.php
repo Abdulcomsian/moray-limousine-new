@@ -85,14 +85,15 @@
     <div class="container-fluid cont2 class1font">
 
         <div class="row">
-            <div class="col-md-6 adjustgrid">
-                <p class="text">Where Would You Like To Go?</p>
-                <p class="text1">A new Class of Luxury<br />Limo Service</p>
-                <div calss="row " class="btn1611ID">
-                    <a href="{{ url('/our-fleet') }}">
-                        <button type="button" class="btn" style="color: white;width: 100%;">Visit Our Fleet<i
-                                class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button></a>
-
+            <div class="col-md-6 ">
+                <div>
+                    <p class="text">Where Would You Like To Go?</p>
+                    <p class="text1">A new Class of Luxury<br />Limo Service</p>
+                    <div calss="row " class="btn1611ID">
+                        <a href="{{ url('/our-fleet') }}">
+                            <button type="button" class="btn" style="color: white;width: 100%;">Visit Our Fleet<i
+                                    class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button></a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">

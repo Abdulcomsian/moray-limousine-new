@@ -95,7 +95,39 @@
 
         .nav-active {
             background-color: rgb(150, 152, 152);
-            border-radius: 20%;
+            border-radius: 10px;
+        }
+        .navbar-dark .navbar-toggler{
+            position: absolute;
+            padding: 2px;
+            height: 33px;
+            margin-left: 23px
+        }
+        @media (max-width: 992px){
+            .nav-bar{
+                margin-top: 3rem;
+                align-self: flex-start;
+            }
+            .nav-bar ul.navbar-nav{
+                flex-grow: 1;
+            }
+            .navbar-nav .nav-link{
+                padding: .5rem 1rem;
+            }
+            .nav-active {
+            background-color: rgb(150, 152, 152);
+            border-radius: 25px;
+        }
+        }
+        @media (max-width:425px){
+            .nav-bar{
+                margin: 3rem auto 0;
+            }
+        }
+        @media (max-width:392px){
+            .form-inline{
+                justify-content: center
+            }
         }
     </style>
 </head>
@@ -114,13 +146,13 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav">
                 <a href="{{ url('/') }}"><img src="{{ asset('images/moray-logo.png') }}" id="logo"
                         alt="Hathaway Limousines" /></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                <div class="collapse navbar-collapse nav-bar justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'index.php' ? 'nav-active' : ''; ?>" aria-current="page"
                                 href="{{ url('/') }}">Home</a>
