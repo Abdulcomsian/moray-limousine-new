@@ -395,16 +395,18 @@
                     <span class="mx-1 Number" id="">+49 (0) 69 26022180</span>
                 </div>
 
-                <div class="col-md-5 mt-4 d-flex justify-content-md-end ">
+                <div class="col-md-5 mt-4 d-flex justify-content-md-end social-icons">
                     <span class="mx-1 Number" id="">Follow Us</span>
-                    <a href="#"><i class="fa-brands fa-facebook mx-2 "
-                            style="color: white; display: inline-block;"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter mx-2"
-                            style="color: white; display: inline-block; "></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram mx-2"
-                            style="color: white; display: inline-block;"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin mx-2"
-                            style="color: white; display: inline-block;"></i></a>
+                    <div>
+                        <a href="#"><i class="fa-brands fa-facebook mx-2 "
+                                style="color: white; display: inline-block;"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter mx-2"
+                                style="color: white; display: inline-block; "></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram mx-2"
+                                style="color: white; display: inline-block;"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin mx-2"
+                                style="color: white; display: inline-block;"></i></a>
+                    </div>
                 </div>
             </div>
 
@@ -456,7 +458,7 @@
                 </div>
                 <div class="col">
                     <p class="JK2">Download The App</p>
-                    <div class="d-flex flex-column justify-content-md-end">
+                    <div class="d-flex flex-column justify-content-md-end storeIcons">
                         <button type="button" class="btn-dark" id="BTM"><a href="#"><i
                                     class="fa-brands fa-apple" id="apple" style="color:white"></i></a>
                             <p id="lin1"> | </p>

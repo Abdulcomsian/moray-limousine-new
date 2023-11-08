@@ -69,7 +69,7 @@
 
 .cont2 {
     z-index: 0;
-    height: 102vh;
+    /* height: 100vh; */
     background-image: url("../images/limo1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -168,7 +168,7 @@
     padding: 30px;
     align-items: center;
     background: transparent;
-    margin-top: 70px;
+    /* margin-top: 70px; */
 }
 .adjustgrid {
     display: grid;
@@ -176,7 +176,7 @@
     align-content: center;
 }
 .colorclass {
-    width: 50%;
+    width: 75%;
     background-color: white;
     border-radius: 10px;
     padding: 30px;
@@ -242,6 +242,9 @@
 .slick-slide {
     height: auto !important;
 }
+.slick-center {
+    padding-top: 0px !important;
+}
 .adjustCenID1 {
     display: flex;
     justify-content: space-evenly;
@@ -266,7 +269,7 @@
     font-family: Dosis;
     /* width: 200px; */
     /* Set the desired width */
-    height: 400px;
+    height: 360px;
     margin-bottom: 50px;
     background-color: white;
     box-shadow: 0 2px 2px 0 rgba(86, 86, 86, 0.24),
@@ -290,39 +293,46 @@
     max-width: 100%;
     max-height: 100%;
     font-family: Dosis;
-    margin-bottom: 1rem;
-    margin-top: 60px;
+    margin: 60px 0 1rem 0;
+}
+.car-info .info {
     font-size: 14px;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
 }
 
 #hrID {
     margin: 1px;
 }
-.txtheading {
+.section-title {
     font-family: Dosis;
     font-size: 35px;
     font-weight: 600;
+    text-align: center;
+}
+.fleet-card--title {
+    font-size: 1.2rem;
 }
 
 #persons {
     font-size: 15px;
-    text-align: left;
-    margin-left: -100px;
 }
 #person1 {
     font-size: 15px;
-    text-align: left;
-
-    margin-left: -100px;
 }
 #passenger {
     align-items: left;
-    margin-top: -18px;
+    margin-bottom: 0;
+    /* margin-top: -18px; */
 }
 #passenger1 {
     align-items: center;
-    margin-top: -18px;
+    margin-bottom: 0;
+    /* margin-top: -18px; */
 }
 
 /*make trip contianer */
@@ -348,6 +358,10 @@
     font-size: 20px;
     border: 1px solid #1e1d1d;
 }
+.encircled-arrow svg {
+    width: 23px;
+    height: 23px;
+}
 .arrowbutton1 {
     display: flex;
     align-items: center;
@@ -363,12 +377,13 @@
     margin-bottom: 20px;
     margin-top: 20px;
 }
-.BK4 {
+.workFLow-heading {
+    font-size: 1.4rem;
     text-align: left;
     color: black;
-    font-size: 16px;
     font-weight: 600;
 }
+
 .BK7 {
     color: black;
     font-size: 12px;
@@ -396,10 +411,10 @@
     /* width: 100%; */
 }
 
-.adjustCenID {
+/* .adjustCenID {
     display: flex;
     justify-content: center;
-}
+} */
 /* .marginleftcon{
     justify-content: right;
 } */
@@ -419,7 +434,6 @@
     margin: 0px;
     position: relative;
     overflow: hidden;
-    margin-bottom: 20px;
     height: 300px;
 }
 
@@ -505,7 +519,7 @@
 .btn161ID {
     background-color: rgb(254 108 102);
     height: 40px;
-    width: 130px;
+    width: 177px !important;
     border-radius: 5px;
     color: white;
     box-shadow: 5px;
@@ -575,10 +589,10 @@
 /* cont hear what our customers say */
 #cont2222 {
     background-color: rgb(251, 217, 226);
-    margin-top: 30px;
+    margin-top: 0px;
     padding-bottom: 80px;
     border-radius: 10px;
-    padding-top: 40px;
+    padding: 48px 146px;
 }
 .IK11 {
     margin-top: 30px;
@@ -734,6 +748,11 @@
 }
 .class1font {
     font-family: Dosis;
+}
+
+.hero-form {
+    position: relative;
+    top: 100px;
 }
 
 /*download app con*/
@@ -958,14 +977,14 @@
     .roundbar {
         max-width: 70%;
     }
-    #con33 {
+    /* #con33 {
         margin-top: 100px;
-    }
+    } */
     .text {
         margin-top: -10px;
     }
     #cont7 {
-        margin-top: 100px;
+        margin-top: 155px;
     }
     #GK2 {
         margin-bottom: 130px;
@@ -973,9 +992,9 @@
 }
 
 @media screen and (max-width: 1445px) {
-    #con33 {
+    /* #con33 {
         margin-top: 135px;
-    }
+    } */
 
     .roundbar {
         max-width: 70%;
@@ -1002,9 +1021,9 @@
     }
 }
 @media screen and (max-width: 1025px) {
-    #con33 {
+    /* #con33 {
         margin-top: 120px;
-    }
+    } */
     .BK {
         margin-top: 90px;
     }
@@ -1016,7 +1035,7 @@
         margin-top: 100px;
     }
     .colorclass {
-        width: 80%;
+        width: 100%;
     }
     #FK3 {
         margin-top: 70px;
@@ -1047,7 +1066,7 @@
 
 @media screen and (max-width: 760px) {
     #cont7 {
-        margin-top: 300px;
+        margin-top: 50px;
     }
 
     .card1 {
@@ -1081,12 +1100,59 @@
     #FK3 {
         margin-top: 20px;
     }
+    .adjustCenID {
+        display: block;
+    }
+    .iframeClass {
+        width: 100%;
+    }
 }
+@media (max-width: 765px) {
+    .arrowbutton1 {
+        margin-bottom: 30px;
+        justify-content: center;
+        transform: rotate(90deg);
+    }
+    .workFlow-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .workFlow-desc {
+        text-align: center;
+        font-size: 1rem;
+    }
+    .workFLow-heading {
+        font-size: 1.2rem;
+    }
+    .social-icons {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .storeIcons {
+        justify-content: center;
+        align-items: center;
+    }
+    #GER,
+    #English {
+        height: 32px;
+        margin-bottom: 5px;
+    }
+}
+@media (max-width: 576px) {
+    .hero-form {
+        top: 95px;
+        padding: 0px !important;
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 427px) {
     #cont7 {
-        margin-top: 400px;
+        margin-top: 44px;
     }
-
     .card1 {
         height: 230px;
     }
@@ -1097,6 +1163,21 @@
     }
     #FK {
         padding-bottom: 10px;
+    }
+    #cont15 {
+        text-align: center;
+    }
+    .social-icons {
+        align-items: center;
+    }
+    .storeIcons {
+        justify-content: center;
+        align-items: center;
+    }
+    #GER,
+    #English {
+        height: 32px;
+        margin-bottom: 5px;
     }
 
     /* .check{

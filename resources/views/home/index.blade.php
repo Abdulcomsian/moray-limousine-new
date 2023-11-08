@@ -85,23 +85,22 @@
     <div class="container-fluid cont2 class1font">
 
         <div class="row">
-            <div class="col-md-6 ">
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <div>
                     <p class="text">Where Would You Like To Go?</p>
                     <p class="text1">A new Class of Luxury<br />Limo Service</p>
-                    <div calss="row " class="btn1611ID">
-                        <a href="{{ url('/our-fleet') }}">
-                            <button type="button" class="btn" style="color: white;width: 100%;">Visit Our Fleet<i
-                                    class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button></a>
-                    </div>
+                        <a type="button" href="{{ url('/our-fleet') }}" class=" btn btn1611ID">
+                            Visit Our Fleet<i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
+                        </a>
+
                 </div>
             </div>
             <div class="col-md-6">
 
-                <div class="container class1font" style="z-index: 1;" id="con33">
+                <div class="container class1font hero-form" style="z-index: 1;" id="con33">
                     <!-- Navigation Tabs -->
-                    <div class="row adjustCenID">
-                        <div class="col-md-8 colorclass">
+                    <div class="w-100 ">
+                        <div class=" colorclass">
                             <div class="row navbclass adjustCenID">
                                 <!-- Date Picker -->
 
@@ -346,43 +345,62 @@
                 </div>
             </div>
         </div>
-        <div class="row adjustCenID">
-            <div class="col-md-3">
+        <div class="row justify-content-center">
+            <div class="col-md-3 workFlow-content">
                 <a href="#">
-                    <i class="fa-solid fa-route center BK1" style="color: black"></i></a>
-                <p class="BK4">Create Your Route</p>
-                <p class="BK7">
-                    At Safety First Car Company, your well-<br />being is paramount.
-                    Drive with confidence,<br />
-                    knowing our vehicles prioritize your safety<br />
+                    <i class="fa-solid fa-route center BK1 " style="color: #562525"></i></a>
+                <p class=" workFLow-heading">Create Your Route</p>
+                <p class="BK7 workFlow-desc">
+                    At Safety First Car Company, your well-being is paramount.
+                    Drive with confidence,
+                    knowing our vehicles prioritize your safety
                     at every turn.
                 </p>
             </div>
             <div class="col-md-1 arrowbutton1">
                 <div class="encircled-arrow">
-                    &rarr;
+                    <svg
+
+                        viewBox="0 0 20 20"
+                        fill="black"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.3901 3.54917C10.1197 3.81575 10.0944 4.23698 10.316 4.53253L10.3826 4.60981L14.9583 9.24992L3.25 9.24992C2.83579 9.24992 2.5 9.5857 2.5 9.99992C2.5 10.3823 2.78611 10.6978 3.15592 10.7441L3.25 10.7499H14.9583L10.3826 15.39C10.116 15.6604 10.0966 16.082 10.3224 16.3743L10.3901 16.4507C10.6605 16.7172 11.082 16.7366 11.3744 16.5108L11.4507 16.4431L17.2841 10.5265C17.548 10.2588 17.57 9.84232 17.3501 9.54985L17.2841 9.47336L11.4507 3.5567C11.1599 3.26173 10.6851 3.25837 10.3901 3.54917Z"
+                          fill="black"
+                        />
+                      </svg>
                 </div>
             </div>
-            <div class="col-md-3">
-                <a href="#"><i class="fa-solid fa-hand-holding-dollar center BK1" style="color: black"></i></a>
-                <p class="BK4">Choose Vehicle for You</p>
-                <p class="BK7">
-                    Experience transparent pricing at its finest with our cars<br />
-                    no surprises, just straightforward and honest pricing practices.<br />
+            <div class="col-md-3 workFlow-content">
+                <a href="#"><i class="fa-solid fa-hand-holding-dollar center BK1 " style="color: #562525"></i></a>
+                <p class=" workFLow-heading">Choose Vehicle for You</p>
+                <p class="BK7 workFlow-desc">
+                    Experience transparent pricing at its finest with our cars
+                    no surprises, just straightforward and honest pricing practices.
                     at every turn.
                 </p>
             </div>
             <div class="col-md-1 arrowbutton1">
                 <div class="encircled-arrow">
-                    &rarr;
+                    <svg
+                        viewBox="0 0 20 20"
+                        fill="black"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.3901 3.54917C10.1197 3.81575 10.0944 4.23698 10.316 4.53253L10.3826 4.60981L14.9583 9.24992L3.25 9.24992C2.83579 9.24992 2.5 9.5857 2.5 9.99992C2.5 10.3823 2.78611 10.6978 3.15592 10.7441L3.25 10.7499H14.9583L10.3826 15.39C10.116 15.6604 10.0966 16.082 10.3224 16.3743L10.3901 16.4507C10.6605 16.7172 11.082 16.7366 11.3744 16.5108L11.4507 16.4431L17.2841 10.5265C17.548 10.2588 17.57 9.84232 17.3501 9.54985L17.2841 9.47336L11.4507 3.5567C11.1599 3.26173 10.6851 3.25837 10.3901 3.54917Z"
+                          fill="black"
+                        />
+                      </svg>
                 </div>
             </div>
-            <div class="col-md-3">
-                <a href="#"><i class="fa-solid fa-car-rear center BK1" style="color: black"></i></a>
-                <p class="BK4">Enjoy The Journey</p>
-                <p class="BK7">
-                    Discover the ultimate private travel solution,<br />
-                    tailored to provide luxury, comfort, and<br />
+            <div class="col-md-3 workFlow-content">
+                <a href="#"><i class="fa-solid fa-car-rear center BK1 " style="color: #562525"></i></a>
+                <p class=" workFLow-heading">Enjoy The Journey</p>
+                <p class="BK7 workFlow-desc">
+                    Discover the ultimate private travel solution,
+                    tailored to provide luxury, comfort, and
                     convenience for your journeys.
                 </p>
             </div>
@@ -394,10 +412,10 @@
     {{-- Start of Services  --}}
 
     <div class="container team-container class1font">
-        <p class="txtheading">Our Services</p>
+        <p class="section-title">Our Services</p>
 
-        <div class="row">
-            <div class="col-md-12">
+        {{-- <div class="row"> --}}
+            {{-- <div class="col-md-12"> --}}
                 <div class="services-slider">
                     @if (count($services) > 0)
                         @foreach ($services as $service)
@@ -421,8 +439,8 @@
                         @endforeach
                     @endif
                 </div>
-            </div>
-        </div>
+            {{-- </div> --}}
+        {{-- </div> --}}
     </div>
 
     {{-- End of Services  --}}
@@ -430,35 +448,32 @@
     {{-- Start of our fleet  --}}
 
     <div class="container fleetContainer class1font">
-        <p class="txtheading">Our Fleet</p>
-        <div class="row">
-
-            @if (count($categories) > 0)
-                <div class="col-md-12">
-                    <div class="fleet-slider">
-                        @foreach ($categories as $category)
-                            <div class="col-md-2 slick-slide">
-                                <div class="car-container hover-element">
-                                    <p class="text-left font-weight-bold">{{ $category->name }}</p>
-                                    {{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}
-                                    <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
-                                        alt="Car" class="car-picture" />
-                                    <div class="car-info">
-                                        <div>
-                                            <span><i class="fa-solid fa-people-group" id="persons"></i>
-                                                <p id="passenger">Passangers {{ $category->max_seats }}</p>
-                                                <i class="fa-solid fa-briefcase" id="person1"></i>
-                                                <p id="passenger1">Luggage {{ $category->max_bags }}</p>
-                                            </span>
-                                        </div>
+        <p class="section-title">Our Fleet</p>
+        @if (count($categories) > 0)
+            <div class="w-95">
+                <div class="fleet-slider">
+                    @foreach ($categories as $category)
+                        <div class="col-md-2 slick-slide">
+                            <div class="car-container hover-element">
+                                <p class="text-left font-weight-bold fleet-card--title">{{ $category->name }}</p>
+                                {{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}
+                                <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
+                                    alt="Car" class="car-picture" />
+                                <div class="car-info">
+                                    <div class="info">
+                                        <i class="fa-solid fa-people-group" id="persons"></i>
+                                        <p id="passenger" style="margin-bottom: 0">Passangers {{ $category->max_seats }}</p>
+                                    </div>
+                                    <div class="info">
+                                        <i class="fa-solid fa-briefcase" id="person1"></i>
+                                        <p id="passenger1">Luggage {{ $category->max_bags }}</p>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach    
-                    </div>
+                        </div>
+                    @endforeach    
                 </div>
-
-        </div>
+            </div>
         @endif
     </div>
 
@@ -489,26 +504,24 @@
                     <p class="IK1112">PO Box 1611 Collins Street West Victoria 8007 Australia</p>
                 </div>
                 <div class="button-row">
-                    <button class="custom-button">
+                    <div class="custom-button">
                         <h4>285<h4>
-                                <p class="textbtnclass">Vehicles</p>
-                    </button>
-                    <button class="custom-button">
+                        <p class="textbtnclass">Vehicles</p>
+                    </div>
+                    <div class="custom-button">
                         <h4>97<h4>
-                                <p class="textbtnclass">Awards</p>
-                    </button>
-                    <button class="custom-button">
+                        <p class="textbtnclass">Awards</p>
+                    </div>
+                    <div class="custom-button">
                         <h4>13K<h4>
-                                <p class="textbtnclass">Happy Customers</p>
-                    </button>
+                        <p class="textbtnclass">Happy Customers</p>
+                    </div>
 
                 </div>
 
-                <div calss="row " class="btn161ID">
-                    <button type="button" class="btn" style="color: white;width: 100%;">Learn More <a
-                            href="#"><i class="fas fa-arrow-trend-up" id="arrw"
-                                style="color:white"></i></a></button>
-                </div>
+                <button class="btn161ID" type="button" class="btn" style="color: white;width: 100%;">Learn More
+                    <i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -518,8 +531,8 @@
     {{-- Start of Testimonial  --}}
 
     <div class="container displaycon222 class1font" id="cont2222">
-        <div class="row displaycon2221">
-            <div class="col-md-4">
+        <div class="row ">
+            <div class="col-md-6">
                 <div class="row">
                     <p class="IK11">Hear what our amazing<br> customers say</p>
                 </div>
@@ -535,7 +548,7 @@
             </div>
 
 
-            <div class="col-md-3 displaycon222">
+            <div class="col-md-6 displaycon222">
                 <div id="carouselExampleControls" class="carousel" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -548,9 +561,9 @@
                                         <h6>Hamza Awan</h6>
                                         <p class="description">Web Developer</p>
                                     </div>
-                                    <p class="ptextClass">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                        Cum ex in ea consequuntur natus est recusandae corporis nobis qui quos!</p>
                                 </div>
+                                <p class="ptextClass">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Cum ex in ea consequuntur natus est recusandae corporis nobis qui quos!</p>
 
                             </div>
                         </div>
