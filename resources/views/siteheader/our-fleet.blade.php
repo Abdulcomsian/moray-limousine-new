@@ -39,7 +39,7 @@
                             <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
                                 alt="Car" class="car-picture" />
                             <div class="car-info">
-                                <div class="row adjustCenID4242" style="margin-right: -115px;">
+                                <div class="row adjustCenID4242" >
                                     <div class="col-md-5">
                                         <span class="icon-text">
                                             <i class="fa-solid fa-people-group" id="persons"></i>
