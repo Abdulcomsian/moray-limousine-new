@@ -1,12 +1,9 @@
 @font-face {
-    font-family:Dosis;
+    font-family: Dosis;
     src: url(fonts/Dosis/Dosis-VariableFont_wght.ttf);
 }
 
-
 /* Container 1 NAVBAR */
-
-
 
 /* CONTAINER 2 */
 
@@ -27,8 +24,6 @@
     margin-top: 35px;
 }
 
-
-
 .AK1 {
     font-family: Dosis;
     font-size: 20px;
@@ -36,9 +31,7 @@
     margin-top: 30px;
 }
 
-
 #lien {
-
     color: rgb(0, 0, 0);
     border: 1.5px solid;
 }
@@ -52,23 +45,21 @@
 
 .SK {
     font-family: Dosis;
-    font-size: 20px;
+    font-size: 27px;
     font-weight: 600;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 26px;
+    margin-bottom: 31px;
 }
 
 /* Edit BOX */
 
 .form-control {
-
     position: relative;
     width: 100%;
     height: 45px;
     margin-right: 20px;
     border: 0px solid transparent;
     margin-left: -5px;
-
 }
 
 .form-control input {
@@ -111,8 +102,7 @@
     transition: 0.2s;
 }
 
-.form-control input:valid+label {
-
+.form-control input:valid + label {
     top: -0.45rem;
     left: 10px;
     font-size: 0.9rem;
@@ -129,8 +119,7 @@
     color: rgba(0, 0, 0, 0.5);
   } */
 
-.form-control input:focus+label {
-
+.form-control input:focus + label {
     top: -0.45rem;
     left: 10px;
     font-size: 10px;
@@ -142,7 +131,7 @@
     background-color: white;
 }
 
-.form-control input:focus~div.border-around {
+.form-control input:focus ~ div.border-around {
     border: 2px solid #000000;
 }
 
@@ -175,9 +164,6 @@
     padding-left: 10px;
     margin-right: 12px;
 }
-
-
-
 
 #dropdown3 {
     font-family: Dosis;
@@ -245,9 +231,6 @@
     margin-top: 10px;
 }
 
-
-
-
 #messagebox {
     font-family: Dosis;
     color: black;
@@ -262,7 +245,6 @@
     padding-bottom: 70px;
     padding-left: 10px;
     margin-right: 10px;
-
 }
 
 #bttn {
@@ -273,20 +255,17 @@
     margin-top: 20px;
     margin-bottom: 100px;
 }
-#bttn > span{
+#bttn > span {
     color: rgb(255, 255, 255);
     font-family: Dosis;
     font-size: 16px;
     margin-right: 10px;
-
 }
 
 #SK8 {
     color: rgb(252, 252, 252);
     font-size: 13px;
 }
-
-
 
 /* BUTTON */
 #bttn {
@@ -303,7 +282,6 @@
     font-family: Dosis;
     font-size: 12px;
     margin-right: 10px;
-
 }
 
 #SK33 {
@@ -311,21 +289,13 @@
     font-size: 13px;
 }
 
-
-
-
-
-
-
-
-
-
 /* MAPP */
 
 #curd2 {
     margin-top: 50px;
     border-radius: 5px;
     padding: 5% 15%;
+    gap: 10px;
 }
 
 #CK {
@@ -340,9 +310,6 @@
     color: black;
     font-weight: 600;
 }
-
-
-
 
 #CK3 {
     font-size: 15px;
@@ -363,7 +330,6 @@
     font-size: 12px;
     font-weight: 600;
     margin-left: 25px;
-
 }
 
 #CK44 {
@@ -371,7 +337,6 @@
     font-size: 12px;
     font-weight: 600;
     margin-left: 25px;
-
 }
 
 .CK6 {
@@ -386,7 +351,7 @@
     font-family: Dosis;
     font-size: 16px;
     font-weight: 600;
-    margin-left: 25px;
+    margin-left: 0px !important;
 }
 
 #CK7 {
@@ -400,10 +365,6 @@
     font-size: 12px;
     color: rgb(154, 154, 154);
     margin-top: 5px;
-
-
-
-
 }
 
 #CK9 {
@@ -411,7 +372,6 @@
     font-size: 12px;
     color: rgb(154, 154, 154);
     margin-top: 5px;
-
 }
 
 .CK10 {
@@ -419,8 +379,6 @@
     font-size: 12px;
     color: rgb(0, 0, 0);
     font-weight: 600;
-
-
 }
 
 #CK11 {
@@ -442,7 +400,6 @@
     font-size: 12px;
     color: rgb(154, 154, 154);
     margin-top: 20px;
-
 }
 
 #LK1 {
@@ -473,7 +430,6 @@
     color: rgb(7, 7, 7);
     display: flex;
     justify-content: flex-end;
-
 }
 
 #LK7 {
@@ -491,26 +447,35 @@
     display: flex;
     justify-content: flex-end;
 }
+.totalPayment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-
+.reservation-form label {
+    margin-bottom: 3px;
+    margin-top: 20px;
+}
 
 /*footer.....*/
-@media screen and (min-width: 883px) and (max-width:992px) {
-    #cont2 , #cont3{
+@media screen and (min-width: 883px) and (max-width: 992px) {
+    #cont2,
+    #cont3 {
         padding: 0 7%;
     }
-    .main_container{
+    .main_container {
         margin-top: 90px;
     }
 }
 
-@media screen and (min-width: 1272px){
-    .main_container{
+@media screen and (min-width: 1272px) {
+    .main_container {
         margin-top: 90px;
     }
 }
 
-@media screen and (max-width:883px) {
+@media screen and (max-width: 883px) {
     #KKK {
         display: none;
     }
@@ -520,7 +485,23 @@
     }
 }
 
-@media screen and (max-width:570px) {
+@media screen and (max-width: 765px) {
+    #cont3 {
+        padding: 0% 14% !important;
+    }
+    #curd2 {
+        width: 60% !important;
+        padding: 5% 11% !important;
+        margin: auto;
+        margin-bottom: 57px !important;
+        margin-top: 0 !important;
+    }
+    .payment-card--image {
+        width: auto !important;
+    }
+}
+
+@media screen and (max-width: 570px) {
     #Number {
         display: none;
     }
@@ -530,7 +511,7 @@
     }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
     #cont2 {
         padding: 0% 5%;
     }
@@ -566,11 +547,13 @@
         width: 80px;
         background-color: #000000;
         margin-left: 5px;
-
+    }
+    .strip-container {
+        padding: 10px 5px !important;
     }
 }
 
-@media screen and (max-width:376px) {
+@media screen and (max-width: 376px) {
     #cont2 {
         padding: 0% 5%;
     }
@@ -592,11 +575,11 @@
     }
 
     #KK {
-        font-size: 8px
+        font-size: 8px;
     }
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width: 320px) {
     #cont2 {
         padding: 0% 5%;
     }
@@ -618,6 +601,6 @@
     }
 
     #KK {
-        font-size: 8px
+        font-size: 8px;
     }
 }

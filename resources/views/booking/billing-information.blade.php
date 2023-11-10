@@ -172,7 +172,7 @@
                     </table>
                 @endif
 
-                    <div class="row">
+                    <div class="row reservation-form">
                         <div class="col-md-6">
                             <label for="pickAddress">From</label>
                             <input type="text" value="{{ $form_data->pick_address }}" disabled />
@@ -185,17 +185,15 @@
                                     <label for="pickAddress">To</label>
                                 @endif
                             </div>
-                            <p>
                                 @if ($form_data->booking_type === 'time')
                                     <input type="text" value="{{ $form_data->estimated_time }}" disabled />
                                 @else
                                     <input type="text" value="{{ $form_data->drop_address }}" disabled />
                                 @endif
-                            </p>
 
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row reservation-form">
                         <div class="col-md-12">
                             <label for="date">Date</label>
                             <input type="text" value="{{ date_format(date_create($form_data->pick_date), 'd/m/Y') }}"
@@ -204,7 +202,7 @@
                             <input type="text" value="{{ $form_data->pick_time }}" disabled />
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row reservation-form">
                         <div class="col-md-6">
                             <label for="date">Total Time</label>
                             <input type="text" value="{{ $form_data->estimated_time }} Hours" disabled />
@@ -222,12 +220,12 @@
                             <input type="hidden" name="selected_category" value="{{ json_encode($class) }}">
                             <input type="hidden" name="selected_category" value="{{ json_encode($options_data) }}">
                             <input type="hidden" name="optionsData" value="{{ json_encode($options_data) }}">
-                            <div class="bottom p-5 col-md-12">
+                            <div class="bottom p-5 col-md-12 strip-container">
                                 @if ($form_data->orderId == '' || $form_data->orderId == null)
                                     <div id="strip-button-container">
                                     </div>
                                     <br>
-                                    <p><img src="{{ asset('images/creditcard.png') }}" alt="credit card icons"
+                                    <p><img class="payment-card--image" src="{{ asset('images/creditcard.png') }}" alt="credit card icons"
                                             style="width:30%;" /></p>
                                     {{-- <button>Pay With Credit Card</button> --}}
                                     <button class="btn" id="bttn">
@@ -255,19 +253,19 @@
                 {{-- sidebar  --}}
                 <div class="col-md-4">
                     <div class="card" id="curd2">
-                        <a> <i class="fa fa-clock"></i> Amount<span
+                        <div class="d-flex justify-content-between align-items-center"> <div><i class="fa fa-clock"></i><span> Amount</span></div><span
                                 class="CK5">{{ $form_data->travel_amount - $form_data->tax_amount }}
-                                EUR</span></a><br />
-                        <a> <i class="fa fa-clock"></i> Extras<span class="CK5">{{ $form_data->extra_options_amount }}
-                                EUR </span></a><br />
-                        <a> <i class="fa fa-clock"></i> Summery<span
+                                EUR</span></div>
+                        <div class="d-flex justify-content-between align-items-center"> <div><i class="fa fa-clock"></i><span> Extras</span></div><span class="CK5">{{ $form_data->extra_options_amount }}
+                                EUR </span></div>
+                        <div class="d-flex justify-content-between align-items-center"> <div><i class="fa fa-clock"></i><span> Summery</span></div><span
                                 class="CK5">{{ $form_data->extra_options_amount + ($form_data->travel_amount - $form_data->tax_amount) }}
-                                EUR </span></a><br />
+                                EUR </span></div>
                         {{ $tax_rate }}% MwSt. <span class="w-50 float-right">
                             {{ $form_data->tax_amount }} EUR </span>
-                        <a style="margin-top: 10px;"> <i class="fa fa-eur"></i> Total<span
+                        <div style="margin-top: 10px;" class="totalPayment"> <div><i class="fa fa-eur"></i> <span>Total</span></div><span
                                 class="CK5">{{ $form_data->extra_options_amount + $form_data->travel_amount }}
-                                EUR </span></a><br />
+                                EUR </span></div>
 
                     </div>
                 </div>
