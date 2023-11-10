@@ -34,6 +34,15 @@
 
         .number{
             display: flex;
+            /* justify-content: space-evenly; */
+            align-items: center;
+            gap: 6px
+        }
+        .form-options{
+            margin-left: 0
+        }
+        .minus, .plus{
+            display: flex;
             justify-content: center;
             align-items: center;
         }
@@ -47,7 +56,7 @@
             <div class="row">
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa-solid fa-car-side" id="ikons"></i>
                             </div>
@@ -66,7 +75,7 @@
 
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa-solid fa-sliders" id="ikons"></i>
                             </div>
@@ -104,7 +113,7 @@
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
 
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa-regular fa-credit-card" id="ikons"></i>
                             </div>
@@ -124,7 +133,7 @@
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
 
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa fa-check" id="ikons" aria-hidden="true"></i>
                             </div>
@@ -158,20 +167,20 @@
                             <p class=SK>Flight Information</p>
                             <div class="form-control flight-info--form">
                                 <input type="text" id="flight"
-                                    style="height: 151%; border: 1px solid black; font-size: 10px;" name="flight_no"
+                                    style="height: 100%; border: 1px solid black; font-size: 10px;" name="flight_no"
                                     maxlength="60" placeholder="Flight/Train Number">
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-control">
-                                        <input type="text" id="sign-board" style="height: 151%; border: 1px solid black"
+                                        <input type="text" id="sign-board" style="height: 100%; border: 1px solid black"
                                             name="sign-board" maxlength="60" placeholder="MAX MUSTREMANN">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-control">
-                                        <input type="text" id="ref" style="height: 151%; border: 1px solid black"
+                                        <input type="text" id="ref" style="height: 100%; border: 1px solid black"
                                             name="reference_code" maxlength="60" placeholder="Reference Code">
                                     </div>
                                 </div>
@@ -184,7 +193,7 @@
                                     @if (count($options) > 0)
                                         @foreach ($options as $option)
                                             <div class=" extra">
-                                                <div style="flex-grow: 1">
+                                                <div class="w-50 seats" style="flex-grow: 1">
                                                     <p class="SK1">{{ $option->title }}</p>
                                                     <p class="SK3">
                                                         {{ \Illuminate\Support\Str::limit($option->description, 50) }}
@@ -193,18 +202,18 @@
 
                                                     @if($option->is_quantity == 'yes')
                                                         <div class="number w-25 text-right">
-                                                            <span class="minus"><i class="fa fa-minus"></i></span>
+                                                            <span class="minus"><i class="fa fa-minus" style="margin-top: 0"></i></span>
                                                             <input type="text" class="counter" readonly maxlength="{{$option->max_quantity}}" value="1" />
-                                                            <span class="plus" disabled id="{{$option->max_quantity}}"><i class="fa fa-plus"></i></span>
+                                                            <span class="plus" disabled id="{{$option->max_quantity}}"><i class="fa fa-plus" style="margin-top: 0"></i></span>
                                                         </div>
                                                     @else
                                                         <div class="number w-25 text-right"></div>
                                                     @endif
                                                     <div class="number checkbox checkbox-success w-25">
-                                                        <input id="{{ $option->id }}" style="position: static;margin: 0px;"
+                                                        <input class="check-option" id="{{ $option->id }}" style="position: static;margin: 0px;"
                                                             type="checkbox" name="{{ $option->title }}"
                                                             value="{{ $option->price }}">
-                                                        <label for="{{ $option->id }}" style="padding-left: 0px">
+                                                        <label for="{{ $option->id }}" style="padding-left: 0px; margin-bottom:0">
                                                             Select Option
                                                         </label>
                                                     </div>                                                    
@@ -250,9 +259,9 @@
                                 {{ substr($booking['drop_address'], 0, 40) }}...</p>
                         @endif
 
-                        <a><i class="fa-solid fa-calendar-days"> </i><span
+                        <a class="timeDate"><i class="fa-solid fa-calendar-days"> </i><span
                                 class="CK5">{{ date('d - M - Y', strtotime($booking['pick_date'])) }}</span></a><br>
-                        <a><i class="fa-solid fa-clock "> </i><span
+                        <a class="timeDate"><i class="fa-solid fa-clock "> </i><span
                                 class="CK5">{{ $booking['pick_time'] }}</span></a><br>
                         <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $selected_category->picture }}"
                             class="CK6">

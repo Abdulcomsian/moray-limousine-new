@@ -57,6 +57,7 @@
     height: 40px;
     border: 0px solid transparent;
     margin-left: -5px;
+    padding: 0;
 }
 
 .form-control input {
@@ -288,8 +289,8 @@ input:not(:focus) {
 
 #CK {
     font-family: Dosis;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 #CK2 {
@@ -675,10 +676,18 @@ input:not(:focus) {
     border-bottom: 1px solid lightgray;
 }
 
+@media screen and (max-width: 1024px) {
+    .extra {
+        gap: 10px;
+    }
+}
 @media screen and (max-width: 989px) {
     #cont2,
     #cont3 {
         padding: 0 7%;
+    }
+    #cont2 {
+        margin-top: 30px;
     }
 }
 
@@ -689,6 +698,27 @@ input:not(:focus) {
 
     #k2k2 {
         display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .SK {
+        font-size: 24px;
+        margin-top: 22px;
+        margin-bottom: 21px;
+    }
+    .number .counter {
+        height: 26px;
+        width: 43px;
+        font-size: 18px;
+    }
+    .minus,
+    .plus {
+        width: 25px !important;
+        height: 25px !important;
+    }
+    .checkbox label {
+        font-size: 14px;
     }
 }
 
@@ -753,6 +783,32 @@ input:not(:focus) {
     .flight-info--form {
         margin-left: 0;
     }
+    .seats {
+        width: 43% !important;
+    }
+    .SK1 {
+        font-size: 15px;
+    }
+    .SK3 {
+        font-size: 13px;
+    }
+    .check-option {
+        width: 14px !important;
+    }
+    .checkbox label {
+        font-size: 11px;
+    }
+    .timeDate {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .CK5 {
+        margin-left: 0 !important;
+    }
+    .CK6 {
+        margin-bottom: 8px;
+    }
 }
 
 @media screen and (max-width: 376px) {
@@ -778,6 +834,16 @@ input:not(:focus) {
 
     #KK {
         font-size: 8px;
+    }
+    .extra {
+        flex-direction: column;
+    }
+    .seats {
+        text-align: center;
+    }
+    .number {
+        width: 45% !important;
+        justify-content: center;
     }
 }
 

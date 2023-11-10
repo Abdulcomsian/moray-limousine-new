@@ -4,6 +4,7 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/payment1.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/Vehicle.css') }}">
 @endsection
 
 @section('content-area')
@@ -41,7 +42,7 @@
             <div class="row">
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa-solid fa-car-side" id="ikons"></i>
                             </div>
@@ -60,7 +61,7 @@
 
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa-solid fa-sliders" id="ikons"></i>
                             </div>
@@ -98,7 +99,7 @@
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
 
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa-regular fa-credit-card" id="ikons"></i>
                             </div>
@@ -118,7 +119,7 @@
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
 
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa fa-check" id="ikons" aria-hidden="true"></i>
                             </div>
