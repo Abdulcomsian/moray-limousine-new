@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa-solid fa-car-side" id="ikons"></i>
                             </div>
@@ -36,7 +36,7 @@
 
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa-solid fa-sliders" id="ikons"></i>
                             </div>
@@ -74,7 +74,7 @@
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
 
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa-regular fa-credit-card" id="ikons"></i>
                             </div>
@@ -94,7 +94,7 @@
                 <div class="col-sm-3 bax active">
                     <div class="d-flex justify-content-between">
 
-                        <div class="d-flex gap-5">
+                        <div class="d-flex gap-5 booking-step">
                             <div class="mdclass">
                                 <i class="fa fa-check" id="ikons" aria-hidden="true"></i>
                             </div>
@@ -114,15 +114,12 @@
             </div>
         </div>
         <!-- PASSENGER DETAIL -->
+        
         <div class="container" id="cont3">
             <div class="row">
 
                 <div class="col-md-8">
-                    <div>
-                        <p class=BK> Select Your Car</p>
-                    </div>
-
-
+                    <p class=BK> Select Your Car</p>
 
                     @if (count($classes) > 0)
                         @foreach ($classes as $class)
@@ -133,22 +130,22 @@
                                         <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $class->picture }}"
                                             class="card-img-top BK1" alt="...">
                                         <div class="row">
-                                            <div class="col-lg-6 d-flex ">
+                                            <div class="col-lg-6 d-flex services">
                                                 <i class="fa-solid fa-award BK2"> </i><span class="BK3 mx-2">Meet & Greet
                                                     include</span>
                                             </div>
-                                            <div class="col-lg-6  d-flex ">
+                                            <div class="col-lg-6  d-flex services">
                                                 <i class="fa-solid fa-xmark BK2"> </i><span class="BK3 mx-2">Free
                                                     Cancellation</span>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-6 d-flex ">
+                                            <div class="col-lg-6 d-flex services">
                                                 <a><i class="fa-regular fa-clock BK2"> </i><span class="BK3 mx-2">Free
                                                         Waiting
                                                         time</span></a>
                                             </div>
-                                            <div class="col-lg-6  d-flex ">
+                                            <div class="col-lg-6  d-flex services">
                                                 <a><i class="fa-solid fa-user-shield BK2 "> </i><span
                                                         class="BK3 mx-2">Safety &
                                                         secure </span></a>
@@ -160,16 +157,15 @@
                                     </div>
                                     <div class="col-md-5">
                                         <p class="BK6">{{ $class->name }}</p>
-                                        <p class="BK7">
+                                        <p class="BK7 ">
                                             {{ strip_tags(\Illuminate\Support\Str::limit($class->description, 70)) }}</p>
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <a><i class="fa-solid fa-people-group BK2"> </i><span
-                                                        class="BK9">Passengers
+                                        <div class="luggage-info">
+                                            <div class="passenger-info">
+                                                <a><i class="fa-solid fa-people-group"> </i><span>Passengers
                                                         {{ $class->max_seats }}</span></a>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <a><i class="fa-solid fa-briefcase BK2"> </i><span class="BK9">Lagguage
+                                            <div class="luggage-info">
+                                                <a><i class="fa-solid fa-briefcase"> </i><span>Lagguage
                                                         {{ $class->max_bags }}</span></a>
                                                 <!-- <i class="fa-solid fa-briefcase">  </i>Lagguage 2 -->
                                             </div>
@@ -274,12 +270,12 @@
                         </div>
 
                         <a><i class="fa-solid fa-location-dot" id="CK6"> </i><span class="CK5">Manchester,
-                                UK</span></a><br>
+                                UK</span></a>
                         <a><i class="fa-solid fa-location-dot" id="CK333"> </i><span class="CK44">London,
-                                UK</span></a><br>
+                                UK</span></a>
                         <a><i class="fa-solid fa-calendar-days" id="CK3"> </i><span class="CK4">Thur, Oct 06,
-                                2022</span></a><br>
-                        <a><i class="fa-solid fa-clock" id="Ck3"> </i><span class="CK4">6 PM : 15</span></a><br>
+                                2022</span></a>
+                        <a><i class="fa-solid fa-clock" id="Ck3"> </i><span class="CK4">6 PM : 15</span></a>
                         <img src="images/map.jpg" class="" id="CK7">
 
                         <div class="d-flex justify-content-between align-items-center m-0 p-0">

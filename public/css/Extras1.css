@@ -1,10 +1,9 @@
 @font-face {
-    font-family:Dosis;
+    font-family: Dosis;
     src: url(fonts/Dosis/Dosis-VariableFont_wght.ttf);
 }
 
 /* Container 1 NAVBAR */
-
 
 /* CONTAINER 2 */
 
@@ -25,8 +24,6 @@
     margin-top: 35px;
 }
 
-
-
 .AK1 {
     font-family: Dosis;
     font-size: 20px;
@@ -34,11 +31,7 @@
     margin-top: 30px;
 }
 
-
-
-
 #lien {
-
     color: rgb(0, 0, 0);
     border: 1.5px solid;
 }
@@ -106,8 +99,7 @@
     transition: 0.2s;
 }
 
-.form-control input:valid+label {
-
+.form-control input:valid + label {
     top: -0.45rem;
     left: 10px;
     font-size: 0.9rem;
@@ -120,12 +112,10 @@
 }
 
 input:not(:focus) {
-
     color: rgba(0, 0, 0, 0.5);
 }
 
-.form-control input:focus+label {
-
+.form-control input:focus + label {
     top: -0.45rem;
     left: 10px;
     font-size: 10px;
@@ -137,17 +127,16 @@ input:not(:focus) {
     background-color: white;
 }
 
-.form-control input:focus~div.border-around {
+.form-control input:focus ~ div.border-around {
     border: 2px solid #000000;
 }
 
-
 .SK1 {
     font-family: Dosis;
-    margin-top: 30px;
+    /* margin-top: 30px; */
+    margin-bottom: 0;
     font-weight: 600;
     font-size: 18px;
-
 }
 
 .SK2 {
@@ -163,10 +152,8 @@ input:not(:focus) {
     font-family: Dosis;
     color: #9f9f9f;
     font-size: 16px;
-    margin-bottom: 30px;
-
+    margin-bottom: 0;
 }
-
 
 #counter {
     font-family: Dosis;
@@ -204,7 +191,7 @@ input:not(:focus) {
     font-size: 15px;
 }
 
-.extra_submit_btn{
+.extra_submit_btn {
     width: 100%;
     height: 55px;
     border: none;
@@ -227,14 +214,12 @@ input:not(:focus) {
     margin-top: -10px;
 }
 
-
 #SK4 {
     color: rgb(0, 0, 0);
     font-family: Dosis;
     font-size: 13px;
     margin-right: 10px;
 }
-
 
 #SK5 {
     color: rgb(0, 0, 0);
@@ -271,7 +256,6 @@ input:not(:focus) {
     margin-top: -35px;
 }
 
-
 /* BUTTON */
 #bttn {
     width: 100%;
@@ -287,28 +271,12 @@ input:not(:focus) {
     font-family: Dosis;
     font-size: 16px;
     margin-right: 10px;
-
 }
 
 .SK33 {
     color: rgb(252, 252, 252);
     font-size: 13px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* MAPP */
 
@@ -331,9 +299,6 @@ input:not(:focus) {
     font-weight: 600;
 }
 
-
-
-
 #CK3 {
     font-size: 15px;
     color: black;
@@ -353,7 +318,6 @@ input:not(:focus) {
     font-size: 12px;
     font-weight: 600;
     margin-left: 25px;
-
 }
 
 #CK44 {
@@ -361,7 +325,6 @@ input:not(:focus) {
     font-size: 12px;
     font-weight: 600;
     margin-left: 25px;
-
 }
 
 .CK6 {
@@ -377,29 +340,19 @@ input:not(:focus) {
     margin-left: 25px;
 }
 
-
 .CK8 {
     font-family: Dosis;
     font-size: 14px;
     color: rgb(154, 154, 154);
     margin-top: 5px;
-
-
-
-
 }
-
 
 .CK10 {
     font-family: Dosis;
     font-size: 14px;
     color: rgb(0, 0, 0);
     font-weight: 600;
-
-
 }
-
-
 
 #curd2222 {
     padding: 5% 15%;
@@ -413,7 +366,6 @@ input:not(:focus) {
     font-size: 12px;
     color: rgb(154, 154, 154);
     margin-top: 20px;
-
 }
 
 #LK1 {
@@ -444,7 +396,6 @@ input:not(:focus) {
     color: rgb(7, 7, 7);
     display: flex;
     justify-content: flex-end;
-
 }
 
 .LK7 {
@@ -463,8 +414,6 @@ input:not(:focus) {
     justify-content: flex-end;
 }
 
-
-
 #cont15 {
     max-width: 100%;
     background-color: black;
@@ -482,7 +431,6 @@ input:not(:focus) {
     margin-bottom: 20px;
     font-size: 12px;
     margin-top: 30px;
-
 }
 
 #Number {
@@ -534,13 +482,11 @@ input:not(:focus) {
     font-family: Dosis;
     color: white;
     font-size: 15px;
-
 }
 
 #ul {
     list-style: none;
     margin-left: -43px;
-
 }
 
 #JK3 {
@@ -560,12 +506,10 @@ input:not(:focus) {
     margin-bottom: 50px;
 }
 
-
 #JK10 {
     font-family: Dosis;
     color: white;
     font-size: 15px;
-
 }
 
 #JK4 {
@@ -580,7 +524,6 @@ input:not(:focus) {
     font-family: Dosis;
     color: white;
     font-size: 15px;
-
 }
 
 #JK6 {
@@ -595,7 +538,6 @@ input:not(:focus) {
     font-family: Dosis;
     color: white;
     font-size: 15px;
-
 }
 
 #JK8 {
@@ -604,7 +546,6 @@ input:not(:focus) {
     font-size: 12px;
     padding: 5px;
     font-weight: 300;
-
 }
 
 #JK13 {
@@ -613,8 +554,6 @@ input:not(:focus) {
     font-size: 15px;
     /* margin-left: 80px; */
 }
-
-
 
 #IK1 {
     font-family: Dosis;
@@ -680,21 +619,18 @@ input:not(:focus) {
     color: white;
     font-size: 12px;
     margin-top: 30px;
-
 }
 
 #KKK {
     font-family: Dosis;
     color: white;
     font-size: 12px;
-
 }
 
 .KK1 {
     font-family: Dosis;
     color: white;
     font-size: 10px;
-
 }
 
 #GER {
@@ -704,7 +640,6 @@ input:not(:focus) {
     width: 80px;
     background-color: #000000;
     margin-left: 5px;
-
 }
 
 #G {
@@ -713,7 +648,6 @@ input:not(:focus) {
 
 #eng {
     font-size: 9px;
-
 }
 
 #English {
@@ -734,15 +668,21 @@ input:not(:focus) {
     display: none;
 }
 
+.extra {
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid lightgray;
+}
 
-@media screen and (max-width:989px) {
-    #cont2 , #cont3{
+@media screen and (max-width: 989px) {
+    #cont2,
+    #cont3 {
         padding: 0 7%;
     }
 }
 
-
-@media screen and (max-width:883px) {
+@media screen and (max-width: 883px) {
     #KKK {
         display: none;
     }
@@ -752,13 +692,13 @@ input:not(:focus) {
     }
 }
 
-@media screen and (min-width: 1274px){
-    .main_container{
+@media screen and (min-width: 1274px) {
+    .main_container {
         margin-top: 90px;
     }
 }
 
-@media screen and (max-width:570px) {
+@media screen and (max-width: 570px) {
     #Number {
         display: none;
     }
@@ -768,7 +708,7 @@ input:not(:focus) {
     }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
     #cont2 {
         padding: 0% 5%;
     }
@@ -803,11 +743,19 @@ input:not(:focus) {
         width: 80px;
         background-color: #000000;
         margin-left: 5px;
-
+    }
+}
+@media screen and (max-width: 425px) {
+    .SK {
+        font-size: 24px;
+        text-align: center;
+    }
+    .flight-info--form {
+        margin-left: 0;
     }
 }
 
-@media screen and (max-width:376px) {
+@media screen and (max-width: 376px) {
     #cont2 {
         padding: 0% 5%;
     }
@@ -829,11 +777,11 @@ input:not(:focus) {
     }
 
     #KK {
-        font-size: 8px
+        font-size: 8px;
     }
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width: 320px) {
     #cont2 {
         padding: 0% 5%;
     }
@@ -855,6 +803,6 @@ input:not(:focus) {
     }
 
     #KK {
-        font-size: 8px
+        font-size: 8px;
     }
 }

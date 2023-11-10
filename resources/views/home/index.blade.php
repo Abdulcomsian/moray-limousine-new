@@ -699,7 +699,7 @@
 
     {{-- Start of Partners --}}
 
-    <div class="container-fluid class1font">
+    <div class="container class1font">
         <div class="col-md-12">
             <div class="partner_con">
                 <div class="row">
@@ -729,39 +729,40 @@
     {{-- Start of Mobile Apps  --}}
 
     <div class="container-fluid class1font" id="cont14">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="row adjustCenID text-center">
-                    <p class="IK11">Download the app</p>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="row adjustCenID text-center">
+                        <p class="IK11">Download the app</p>
+                    </div>
+                    <div class="row text-center">
+                        <p class="IK111">To download our app, simply visit your device's app store<br> (iOS App Store or
+                            Google Play
+                            Store).</p>
+                    </div>
+                    <div calss="row" class="btn14ID">
+                        <button type="button" class="btn btn-dark" id="btn14"><a href="#"><i
+                                    class="fa-brands fa-apple" id="apple1" style="color:white"></i></a>
+                            <p id="lin11"> | </p>
+                            <p class="IK21">Download on the</p>
+                            </p>
+                            <p class="IK31">Apple Store</p>
+                        </button>
+                        <button type="button" class="btn btn-dark" id="btn14"><a href="#"><i
+                                    class="fa-brands fa-google-play" id="apple1" style="color:white"></i></a>
+                            <p id="lin11"> | </p>
+                            <p class="IK21">Get in on</p>
+                            </p>
+                            <p class="IK31">Play Store</p>
+                        </button>
+                    </div>
                 </div>
-                <div class="row text-center">
-                    <p class="IK111">To download our app, simply visit your device's app store<br> (iOS App Store or
-                        Google Play
-                        Store).</p>
-                </div>
-                <div calss="row" class="btn14ID">
-                    <button type="button" class="btn btn-dark" id="btn14"><a href="#"><i
-                                class="fa-brands fa-apple" id="apple1" style="color:white"></i></a>
-                        <p id="lin11"> | </p>
-                        <p class="IK21">Download on the</p>
-                        </p>
-                        <p class="IK31">Apple Store</p>
-                    </button>
-                    <button type="button" class="btn btn-dark" id="btn14"><a href="#"><i
-                                class="fa-brands fa-google-play" id="apple1" style="color:white"></i></a>
-                        <p id="lin11"> | </p>
-                        <p class="IK21">Get in on</p>
-                        </p>
-                        <p class="IK31">Play Store</p>
-                    </button>
+                <div class="col-md-6 adjustCenID">
+                    <div>
+                        <a href="#"><img src="{{ asset('images/C7.jpg') }}" class="imgClassCon14" alt="Avatar"></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 adjustCenID">
-                <div>
-                    <a href="#"><img src="{{ asset('images/C7.jpg') }}" class="imgClassCon14" alt="Avatar"></a>
-                </div>
-            </div>
-
         </div>
     </div>
     {{-- End of Mobile Apps --}}

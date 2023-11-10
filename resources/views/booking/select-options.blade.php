@@ -4,6 +4,7 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/Extras1.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Vehicle.css') }}">
     <style>
         .minus,
         .plus {
@@ -36,6 +37,7 @@
             justify-content: center;
             align-items: center;
         }
+        
     </style>
 @endsection
 @section('content-area')
@@ -154,7 +156,7 @@
                             id="selectedcalss">
                         <div class="container">
                             <p class=SK>Flight Information</p>
-                            <div class="form-control">
+                            <div class="form-control flight-info--form">
                                 <input type="text" id="flight"
                                     style="height: 151%; border: 1px solid black; font-size: 10px;" name="flight_no"
                                     maxlength="60" placeholder="Flight/Train Number">
@@ -181,10 +183,9 @@
                                 <ul class="list-group" id="options_checkboxes">
                                     @if (count($options) > 0)
                                         @foreach ($options as $option)
-                                            <div class="row justify-content-between">
-                                                <div class="col-md-6">
-                                                    <p class="SK1">{{ $option->title }}<button class="btn SK2"
-                                                            type="button">&euro; {{ $option->price }}</button></p>
+                                            <div class=" extra">
+                                                <div style="flex-grow: 1">
+                                                    <p class="SK1">{{ $option->title }}</p>
                                                     <p class="SK3">
                                                         {{ \Illuminate\Support\Str::limit($option->description, 50) }}
                                                     </p>
@@ -200,7 +201,7 @@
                                                         <div class="number w-25 text-right"></div>
                                                     @endif
                                                     <div class="number checkbox checkbox-success w-25">
-                                                        <input id="{{ $option->id }}" style="margin-top: 60px;"
+                                                        <input id="{{ $option->id }}" style="position: static;margin: 0px;"
                                                             type="checkbox" name="{{ $option->title }}"
                                                             value="{{ $option->price }}">
                                                         <label for="{{ $option->id }}" style="padding-left: 0px">
@@ -208,7 +209,7 @@
                                                         </label>
                                                     </div>                                                    
                                             </div>                                        
-                                            <hr id="sline">
+                                            {{-- <hr id="sline"> --}}
                                         @endforeach
                                     @endif
                                    
