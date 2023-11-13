@@ -18,13 +18,13 @@
 
         <div class="row">
             <div class="col-md-6">
-                <p id="GK">Choose Your Fleet</p>
+                <p id="GK" style="margin-top: 0">Choose Your Fleet</p>
             </div>
-            <div class="col-md-3 textalign">
+            <div class="col-md-3 textalign fleet-btn">
                 <button class="btn btn" id="lastest" type="submit">Vehicle Type <i class="fa-solid fa-arrow-trend-up"
                         id="late" style="color:black;margin-bottom: 23px;"></i></button>
             </div>
-            <div class="col-md-3 textalign">
+            <div class="col-md-3 textalign fleet-btn">
                 <button class="btn btn" id="lastest" type="submit">Vehicle Make <i class="fa-solid fa-arrow-trend-up"
                         id="late" style="color:black;margin-bottom: 23px;"></i></button>
             </div>
@@ -33,8 +33,8 @@
                 @foreach ($categories as $category)
                     <div class="col-md-4">
 
-                        <div class="car-container hover-element">
-                            <p class="text-left font-weight-bold">{{ $category->name }}</p>
+                        <div class="car-container hover-element" style="height: auto">
+                            <p class="text-left font-weight-bold car-container-text">{{ $category->name }}</p>
                             {{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}
                             <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
                                 alt="Car" class="car-picture" />

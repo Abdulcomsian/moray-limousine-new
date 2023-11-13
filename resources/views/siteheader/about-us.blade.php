@@ -89,25 +89,25 @@
         <div class="row adjustCenID">
             <div class="col-md-3">
 
-                <a href="#"><i class="fa-solid fa-user-shield center BK1" style="color:black;"></i></a>
+                <a href="#"><i class="fa-solid fa-user-shield center  trip-way--icon" style="color:black;"></i></a>
                 <p class="BK4">Safety First</p>
-                <p class="BK7">At Safety First Car Company, your well-<br>being is paramount. Drive with confidence,<br>
+                <p class="BK7">At Safety First Car Company, your well-being is paramount. Drive with confidence,
                     knowing
-                    our vehicles prioritize your safety<br> at every turn.</p>
+                    our vehicles prioritize your safety at every turn.</p>
             </div>
             <div class="col-md-3">
-                <a href="#"><i class="fa-solid fa-hand-holding-dollar center BK1" style="color:black;"></i></a>
+                <a href="#"><i class="fa-solid fa-hand-holding-dollar center trip-way--icon" style="color:black;"></i></a>
                 <p class="BK4">Price With No Suprise</p>
-                <p class="BK7">Experience transparent pricing at its finest with our cars<br> no surprises, just
+                <p class="BK7">Experience transparent pricing at its finest with our cars no surprises, just
                     straightforward
-                    and honest pricing practices.<br> at every turn.</p>
+                    and honest pricing practices. at every turn.</p>
 
             </div>
             <div class="col-md-3">
-                <a href="#"><i class="fa-solid fa-car-rear center BK1" style="color:black;"></i></a>
+                <a href="#"><i class="fa-solid fa-car-rear center  trip-way--icon" style="color:black;"></i></a>
                 <p class="BK4">Private Travel Solutions</p>
-                <p class="BK7">Discover the ultimate private travel solution,<br> tailored to provide luxury, comfort,
-                    and<br>
+                <p class="BK7">Discover the ultimate private travel solution, tailored to provide luxury, comfort,
+                    and
                     convenience for your journeys.</p>
             </div>
 
@@ -115,48 +115,57 @@
     </div>
 
     <div class="container-fluid class1font" id="cont10">
-        <div class="row">
-            <div class="col-md-6 adjustCenID">
-
-                <ul class="custom-list2">
-                    <h1 style="color: White">How It Works</h1>
-                    <li class="liID21">Create Your Route.</li>
-                    <p class="txtpara1">Enter your pickup and drop<br> of loaction or the number of hours<br>
-                        you wish to book a car</p>
-                    <li class="liID22">Choose Vehicle For You</li>
-                    <p class="txtpara">Enter your pickup and drop<br> of loaction or the number of hours<br>
-                        you wish to book a car</p>
-                    <li class="liID21">Enjoy The Journey</li>
-                    <p class="txtpara1">Enter your pickup and drop<br> of loaction or the number of hours<br>
-                        you wish to book a car</p>
-                </ul>
-
-            </div>
-            <div class="col-md-4 adjustCenID">
-                <div>
-                    <a href="#"><img src="images/DD2.jpg" class="EK4" alt="Avatar"></a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ">
+                    <ul class="custom-list2">
+                        <h1 style="color: White; margin-bottom: 33px">How It Works</h1>
+                        <li class="liID21">
+                            <span>Create Your Route.</span>
+                            <p class="txtpara1">Enter your pickup and drop of loaction or the number of hours you wish to book a car</p>
+                        </li>
+                        
+                        <li class="liID22">
+                            <span>Choose Vehicle For You</span>
+                            <p class="txtpara">Enter your pickup and drop of loaction or the number of hours you wish to book a car</p>
+                        </li>
+                        
+                        <li class="liID21">
+                            <span>Enjoy The Journey</span>
+                            <p class="txtpara1">Enter your pickup and drop of loaction or the number of hours you wish to book a car</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 ">
+                    <div style="height: 405px">
+                        <img src="images/DD2.jpg" class="EK4" alt="Avatar">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container-fluid class1font" id="cont11">
-        <div class="row">
-            <div class="col-md-6 adjustCenID">
-
-                <div class="Devtxt">
-                    <a href="#"><i class="fa-regular fa-user EK" style="color:white;"></i></a>
-                    <p class="EK1">Hamza</p>
-                    <p class="EK2">Web-Developer</p>
-                    <p class="EK3">I really recommend this theme,<br>because it's coded very well and it's<br>really easy
-                        to build
-                        your own websites!</p>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 ">
+                    <div class="Devtxt">
+                        <div class="d-flex gap-3 header-devText">
+                            <i class="fa-regular fa-user EK" style="color:white;font-size:77px"></i>
+                            <div class="devText-content">
+                                <p class="EK1">Hamza</p>
+                                <p class="EK2">Web-Developer</p>
+                            </div>
+                        </div>
+                        <p class="EK3">I really recommend this theme, because it's coded very well and it's really easy
+                            to build
+                            your own websites!</p>
+                    </div>
                 </div>
-
-            </div>
-            <div class="col-md-4 adjustCenID">
-                <div>
-                    <a href="#"><img src="images/C8.jpg" class="EK41" alt="Avatar"></a>
+                <div class="col-md-6 adjustCenID">
+                    <div>
+                        <img src="images/C8.jpg" class="EK41" alt="Avatar"> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -189,11 +198,11 @@
     </div>
 
     {{-- Start of FAQs  --}}
-    <div class="container adjustCenID class1font">
+    <div class="container adjustCenID text-center class1font">
         <div class="col-md-6">
-            <p class="ptitle adjustCenID">Frequently Asked Questions</p>
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 @if (count($faqs) > 0)
+                <p class="ptitle ">Frequently Asked Questions</p>
                     @foreach ($faqs as $index => $faq)
                         <div class="accordion-item">
                             <p class="accordion-header">
@@ -220,7 +229,7 @@
 
 
     <div class="container-fluid class1font" id="cont14">
-        <div class="row align-items-center">
+        <div class="container row align-items-center justify-content-center mx-auto">
             <div class="col-md-5">
                 <div class="row adjustCenID text-center">
                     <p class="IK11">Download the app</p>

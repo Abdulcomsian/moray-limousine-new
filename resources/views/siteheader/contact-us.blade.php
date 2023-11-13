@@ -40,7 +40,7 @@
                         <div class="icon">
                             <i class="fa-solid fa-phone"></i>
                         </div>
-                        <div class="text">
+                        <div class="">
                             <p class="heaidng1">Phone</p>
                             <p class="description">03346669972</p>
                         </div>

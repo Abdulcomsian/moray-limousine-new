@@ -58,14 +58,14 @@
                         </div>
 
 
-                        <div class="adjustCenID123">
+                        <div class="adjustCenID123" style="align-items: center; margin-bottom:10px">
                             <div class="remember">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                <input class="form-check-input" style="margin: 0" type="checkbox" name="remember" id="remember"
                                     {{ old('remember') ? 'checked' : '' }}>
-                                <label for="remember">Remember me</label>
+                                <label for="remember" style="margin-bottom: 0">Remember me</label>
                             </div>
 
-                            <p><a href="{{ route('password.request') }}">Lost your password?</a></p>
+                            <p style="margin-bottom: 0"><a href="{{ route('password.request') }}">Lost your password?</a></p>
                         </div>
                         <button type="submit" class="btn1 btn-dark btn-block" style="background-color: black">
                             Log in

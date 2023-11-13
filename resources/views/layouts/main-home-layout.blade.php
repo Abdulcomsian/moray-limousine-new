@@ -76,21 +76,28 @@
         .profile-drop-down {
             background: #fff;
             position: absolute;
-            right: 136px;
+            right: 10px;
+            /* top: 66px; */
             z-index: 9999;
             text-align: center;
-            height: 137px;
+            /* height: 137px; */
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+            border-radius: 5px;
             display: none;
+        }
+        .profile-drop-down ul{
+            padding-left: 0px;
+            margin-bottom: 0;
         }
 
         .profile-drop-down li>a {
             color: black;
-            padding: 12px 16px;
+            padding: 6px 16px;
             text-decoration: none;
             display: block;
             text-align: center;
+            font-size: 15px;
         }
 
         .nav-active {
@@ -190,17 +197,19 @@
 
                             @if (Auth()->user()->user_type == 'end_user')
                                 <!-- <a class="text-white mr-4" href="{{ url('user/profile') }}">Profil</a> -->
-                                <a style="text-decoration: none;" class="text-white mr-4 profileText"
-                                    href="#">Profil</a>
-                                <div class="profile-drop-down">
-                                    <ul>
-                                        <li>
-                                            <a href="{{ url('user/reservation') }}">Meine Buchungen</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ url('user/profile') }}">Account</a>
-                                        </li>
-                                    </ul>
+                                <div style="position: relative">
+                                    <a style="text-decoration: none;" class="text-white mr-4 profileText"
+                                        href="#">Profil</a>
+                                    <div class="profile-drop-down">
+                                        <ul>
+                                            <li>
+                                                <a href="{{ url('user/reservation') }}">Meine Buchungen</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('user/profile') }}">Account</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             @elseif(Auth()->user()->user_type == 'admin')
                                 <a style="text-decoration: none;" class="text-white mr-4"

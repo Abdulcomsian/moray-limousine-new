@@ -1,11 +1,9 @@
 @font-face {
-    font-family:Dosis;
+    font-family: Dosis;
     src: url(fonts/Dosis/Dosis-VariableFont_wght.ttf);
 }
 
-
 /* Container 1 NAVBAR */
-
 
 /*contianer page content */
 
@@ -17,15 +15,12 @@
 }
 
 #txt1ID {
-    font-size: xx-large
+    font-size: xx-large;
 }
 
-.class1font
-{
-    font-family:Dosis;
+.class1font {
+    font-family: Dosis;
 }
-
-
 
 .car-container {
     margin-top: 30px;
@@ -33,71 +28,61 @@
     border-radius: 5px;
     padding: 20px;
     text-align: center;
-    font-family:Dosis;
-     /* Set the desired width */
-  /* height: 400px; */
-  margin-bottom: 50px;
-  background-color: white;
-  box-shadow: 0 1px 1px 0 rgba(234, 234, 234, 0.24),0 1px 1px 0 rgba(227, 227, 227, 0.19);
-  
-
+    font-family: Dosis;
+    /* Set the desired width */
+    /* height: 400px; */
+    margin-bottom: 50px;
+    background-color: white;
+    box-shadow: 0 1px 1px 0 rgba(234, 234, 234, 0.24),
+        0 1px 1px 0 rgba(227, 227, 227, 0.19);
 }
 /* Add a hover effect to elements with the .hover-element class */
 .hover-element:hover {
-    background-color:rgb(242, 241, 241); 
-    transition: background-color 0.3s ease; 
-    box-shadow: 0 10px 10px 0 rgba(166, 165, 165, 0.24),0 10px 10px 0 rgba(166, 165, 165, 0.24);
-
-  }
-
+    background-color: rgb(242, 241, 241);
+    transition: background-color 0.3s ease;
+    box-shadow: 0 10px 10px 0 rgba(166, 165, 165, 0.24),
+        0 10px 10px 0 rgba(166, 165, 165, 0.24);
+}
 
 .car-picture {
     max-width: 100%;
     max-height: fit-content;
     margin-bottom: 30px;
-
 }
 
-.car-info
-{
+.car-info {
     max-width: 100%;
     max-height: 100%;
-    font-family:Dosis;
+    font-family: Dosis;
     margin-bottom: 1rem;
     margin-top: 60px;
     font-size: 14px;
     font-weight: 500;
 }
-.fleetContainer
-{
+.fleetContainer {
     margin-bottom: 30px;
     margin-top: 70px;
     background-color: white;
 }
-.adjustCenID4242{
+.adjustCenID4242 {
     display: flex;
     justify-content: space-evenly;
 }
-#GK{
-    font-family:Dosis;
+#GK {
+    font-family: Dosis;
     font-size: 35px;
     color: black;
     margin-top: 50px;
     font-weight: 500;
     text-align: left;
     align-items: flex-end;
- }
- .textalign
- {
+}
+.textalign {
     display: flex;
     align-items: flex-end;
     flex-direction: row;
-    justify-content:end;
-    
-
- }
-
-
+    justify-content: end;
+}
 
 /*meet our team container*/
 
@@ -107,11 +92,11 @@
 }
 .icon-text i {
     margin-right: 5px; /* Adjust the spacing between the icon and text as needed */
-  }
-  
-  .icon-text p {
+}
+
+.icon-text p {
     display: inline; /* Make the text inline with the icon */
-  }
+}
 
 .pagination {
     display: flex;
@@ -148,13 +133,11 @@
 
 #con222 {
     width: 100%;
-
 }
 
 @media screen and (max-width: 3000px) {
     #con222 {
         width: 100%;
-
     }
     .black-box {
         background-color: #000;
@@ -162,85 +145,64 @@
         padding: 10px;
         margin-top: 80px;
     }
-
-   
-
-
 }
-
-
-
 
 @media screen and (min-width: 992px) and (max-width: 1272px) {
     #con222 {
         width: 100%;
-
     }
     .black-box {
         background-color: #000;
         color: #fff;
         padding: 10px;
-        margin-top: 0px ;
+        margin-top: 0px;
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
     #con222 {
         width: 100%;
-
     }
 
     .black-box {
         background-color: #000;
         color: #fff;
         padding: 10px;
-        margin-top: 0px ;
+        margin-top: 0px;
+    }
+    .car-container-text {
+        text-align: center !important;
+        font-size: 25px;
+    }
+    .fleet-btn {
+        margin-bottom: 0 !important;
     }
 }
 
-
-@media screen and (max-width :525px) {
+@media screen and (max-width: 525px) {
     #con222 {
         width: 100%;
-
     }
-
-   
-
 }
 
-@media screen and (max-width :425px) {
+@media screen and (max-width: 425px) {
     #con222 {
         width: 100%;
-
     }
-
-   
-
 }
 
-@media screen and (max-width :375px) {
+@media screen and (max-width: 375px) {
     #con222 {
         width: 100%;
-
     }
-
-  
-
 }
 
-@media screen and (min-width :1272px) {
-   
-
-  
-
+@media screen and (min-width: 1272px) {
 }
-
-
 
 /*footer.....*/
 
-@media screen and (max-width:883px) {
+@media screen and (max-width: 883px) {
     #KKK {
         display: none;
     }
@@ -250,7 +212,7 @@
     }
 }
 
-@media screen and (max-width:570px) {
+@media screen and (max-width: 570px) {
     #Number {
         display: none;
     }
@@ -260,10 +222,9 @@
     }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
     #cont2 {
         padding: 0% 5%;
-
     }
 
     #cont3 {
@@ -283,7 +244,7 @@
     }
 
     #KK {
-        font-family:Dosis;
+        font-family: Dosis;
         color: white;
         font-size: 10px;
         margin-top: 30px;
@@ -296,11 +257,10 @@
         width: 80px;
         background-color: #000000;
         margin-left: 5px;
-
     }
 }
 
-@media screen and (max-width:376px) {
+@media screen and (max-width: 376px) {
     #cont2 {
         padding: 0% 5%;
     }
@@ -322,11 +282,11 @@
     }
 
     #KK {
-        font-size: 8px
+        font-size: 8px;
     }
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width: 320px) {
     #cont222 {
         padding: 0% 5%;
     }
@@ -348,6 +308,6 @@
     }
 
     #KK {
-        font-size: 8px
+        font-size: 8px;
     }
 }

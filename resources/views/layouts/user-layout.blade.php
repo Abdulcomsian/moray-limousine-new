@@ -62,6 +62,17 @@
             display: block;
             text-align: center;
         }
+        @media screen and (max-width: 992px) {
+        .footer-resp {
+            flex-direction: column;
+            align-items: center;
+        }
+        }
+        @media screen and (max-width: 590px) {
+        .card-body.nbookings_list {
+            overflow-x: auto;
+        }
+        }
     </style>
 </head>
 <body>
@@ -194,7 +205,7 @@ $user_type = Auth()->user()->user_type;
 
     <footer id="footer" class="footer-04">
         <div class="container">
-            <div class="row">
+            <div class="row footer-resp">
                 <div class="col-md-3 col-sm-6 text-center ft1">
                     <div class="widget-footer widget-about">
                         <div class="logo-ft m-0">

@@ -115,9 +115,9 @@
                             <label>Confirm Password </label>
                             <div class="border-around"></div>
                         </div>
-                        <div class="col-md-7 pt-4">
-                            <div class="w-100 checkbox">
-                                <input type="checkbox" name="accept" id="accept" required>
+                        <div class=" pt-4">
+                            <div class="w-100 checkbox px-4 d-flex gap-3">
+                                <input type="checkbox" name="accept" id="accept" required style="margin: 0; position:static">
                                 <label for="accept" style="padding-left:0px !important">Ich akzeptiere die
                                     <span>AGB's</span> & die <span>Datenschutzbestimmungen</span> </label>
                             </div>
@@ -136,7 +136,7 @@
                         <i class="fab fa-google" style="color: black;float: left; margin-right: 10px;margin-top: 5px;"></i>
                         Continue with Google
                     </button>
-                    <button type="submit" class="btn3 btn-primary btn-block">
+                    <button type="submit" class="btn3 btn-primary btn-block" style="background-color: #0f66ff; border:1px solid #0f66ff">
                         <i class="fab fa-facebook"
                             style="color: white;float: left; margin-right: 10px;margin-top: 5px;"></i> Continue with
                         Facebook

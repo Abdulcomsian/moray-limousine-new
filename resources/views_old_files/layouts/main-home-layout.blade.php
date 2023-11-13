@@ -46,6 +46,8 @@
         display: block;
         text-align: center;
     }
+    
+   
     </style>
 </head>
 <body>
@@ -195,7 +197,7 @@
 
     <footer id="footer" class="footer-04">
         <div class="container">
-            <div class="row">
+            <div class="row ">
                 <div class="col-md-2 col-sm-6 text-center ft1">
                     <div class="widget-footer widget-about">
                         <div class="logo-ft m-0">

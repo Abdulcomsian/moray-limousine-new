@@ -38,14 +38,14 @@ function checkDataAndTime($time , $date ,$hour){
                     @elseif($booking->booking_status == 'canceled')  <div class="badge badge-danger p-2">Storniert</div>
                     @endif
                 </td>
-                <td style="font-size: 1.8rem;">
+                <td style="font-size: 1.8rem;" class="icon-container">
 
-                    <a href="{{url('/user/booking-details/')}}/{{$booking->id}}" title="Booking Details" class="text-info booking-detail">
-                        <i class="fa fa-eye"></i> </a>
+                    <a href="{{url('/user/booking-details/')}}/{{$booking->id}}" title="Booking Details" class="text-info booking-detail " >
+                        <i class="fa fa-eye icon"></i> </a>
 
                     @if(checkDataAndTime($booking->pick_time , $booking->pick_date ,2) and $booking->booking_status !== 'canceled' and $booking->booking_status !== 'completed')
                         <a href="{{url('/user/cancel-booking/')}}/{{$booking->id}}" title="Cancel This Booking" class="text-danger cancel-bookings">
-                            <i class="fa fa-times-circle-o"></i> </a>
+                            <i class="fa fa-times-circle-o icon"></i> </a>
                     @endif
                     @php
                         if(!empty($booking)){
@@ -53,8 +53,8 @@ function checkDataAndTime($time , $date ,$hour){
                                   }
                     @endphp
                     @if(count($extendedBooking) == 0 and $booking->booking_status !== "completed" and $booking->booking_status !== "canceled" and checkDataAndTime($booking->pick_time , $booking->pick_date ,2))
-                        <a href="{{url('/user/extend-booking/')}}/{{$booking->id}}" title="Extend Booking Time Or Distance" class="text-success pl-3">
-                            <i class="fa fa-expand"></i>
+                        <a href="{{url('/user/extend-booking/')}}/{{$booking->id}}" title="Extend Booking Time Or Distance" class="text-success">
+                            <i class="fa fa-expand icon"></i>
                         </a>
                     @endif
                     @if($booking->booking_status === "completed")

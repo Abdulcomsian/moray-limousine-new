@@ -36,7 +36,7 @@ function checkDataAndTime1($time , $date ,$hour){
                 </td>
                 <td style="font-size: 1.8rem;">
 
-                    <a href="{{url('/user/booking-details/')}}/{{$booking->id}}" title="Booking Details" class="text-info booking-detail">
+                    <a href="{{url('/user/booking-details/')}}/{{$booking->id}}" title="Booking Details" class="text-info booking-detail ">
                         <i class="fa fa-eye"></i> </a>
                    <!--  <a href="{{url('/user/booking-confirm/')}}/{{$booking->id}}" title="Confirm Booking" class="text-info booking-detail">
                         <i class="fa fa-check"></i> </a> -->
