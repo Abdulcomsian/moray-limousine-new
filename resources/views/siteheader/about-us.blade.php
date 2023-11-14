@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="{{ asset('css/aboutus.css') }}" />
 
     <div class="black-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p id="txt1ID">About Us</p>
-                    <p>Home-About</p>
-                </div>
-            </div>
+        <div class="container ">
+            <p id="txt1ID" class="mb-0">About Us</p>
+            <p>Home-About</p>
+        </div>
         </div>
     </div>
 
@@ -86,16 +83,15 @@
                 </div>
             </div>
         </div>
-        <div class="row adjustCenID">
-            <div class="col-md-3">
-
-                <a href="#"><i class="fa-solid fa-user-shield center  trip-way--icon" style="color:black;"></i></a>
+        <div class="row justify-content-center">
+            <div class="col-md-3 trip-content">
+                <i class="fa-solid fa-user-shield center  trip-way--icon" style="color:black;"></i>
                 <p class="BK4">Safety First</p>
                 <p class="BK7">At Safety First Car Company, your well-being is paramount. Drive with confidence,
                     knowing
                     our vehicles prioritize your safety at every turn.</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 trip-content">
                 <a href="#"><i class="fa-solid fa-hand-holding-dollar center trip-way--icon" style="color:black;"></i></a>
                 <p class="BK4">Price With No Suprise</p>
                 <p class="BK7">Experience transparent pricing at its finest with our cars no surprises, just
@@ -103,7 +99,7 @@
                     and honest pricing practices. at every turn.</p>
 
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 trip-content">
                 <a href="#"><i class="fa-solid fa-car-rear center  trip-way--icon" style="color:black;"></i></a>
                 <p class="BK4">Private Travel Solutions</p>
                 <p class="BK7">Discover the ultimate private travel solution, tailored to provide luxury, comfort,
@@ -119,7 +115,7 @@
             <div class="row">
                 <div class="col-md-6 ">
                     <ul class="custom-list2">
-                        <h1 style="color: White; margin-bottom: 33px">How It Works</h1>
+                        <h1 style="color: White; margin-bottom: 28px">How It Works</h1>
                         <li class="liID21">
                             <span>Create Your Route.</span>
                             <p class="txtpara1">Enter your pickup and drop of loaction or the number of hours you wish to book a car</p>

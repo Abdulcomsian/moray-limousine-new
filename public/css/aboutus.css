@@ -10,8 +10,7 @@
 .black-box {
     background-color: #000;
     color: #fff;
-    padding: 20px;
-    font-family: Dosis;
+    padding: 0px;
 }
 
 .imgClass {
@@ -25,9 +24,7 @@
 #txt1ID {
     font-size: xx-large;
 }
-.class1font {
-    font-family: Dosis;
-}
+
 .custom-list {
     list-style: none;
 }
@@ -80,12 +77,12 @@
 .BK4 {
     text-align: center;
     color: black;
-    font-size: 22px;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 .BK7 {
     color: black;
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 10px;
     text-align: center;
     font-weight: 500;
@@ -115,7 +112,7 @@
     margin-right: 5px;
     color: #d02121; /* Customize the bullet color */
     display: inline-block;
-    font-size: 21px;
+    font-size: 17px;
 }
 .custom-list2 {
     list-style: none;
@@ -128,7 +125,7 @@
 }
 .liID21 span,
 .liID22 span {
-    font-size: 24px;
+    font-size: 18px;
 }
 .liID22 {
     padding-bottom: 20px;
@@ -176,7 +173,7 @@
 }
 .EK3 {
     color: black;
-    font-size: 27px;
+    font-size: 21px;
     font-weight: 600;
     margin-top: 50px;
     padding-bottom: 10px;
@@ -300,7 +297,7 @@
 /*footer.....*/
 
 .trip-way--icon {
-    font-size: 32px;
+    font-size: 45px;
     margin-bottom: 20px;
 }
 
@@ -356,7 +353,6 @@
         padding: 0% 5%;
     }
     #KK {
-        font-family: Dosis;
         color: white;
         font-size: 10px;
         margin-top: 30px;

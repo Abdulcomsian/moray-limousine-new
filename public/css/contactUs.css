@@ -24,9 +24,6 @@
 #txt1ID {
     font-size: xx-large;
 }
-.class1font {
-    font-family: Dosis;
-}
 
 .img-fluid {
     max-width: 100%;
@@ -96,12 +93,12 @@
 .BK4 {
     text-align: center;
     color: black;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
 }
 .BK7 {
     color: black;
-    font-size: 10px;
+    font-size: 13px;
     margin-bottom: 10px;
     text-align: center;
     font-weight: 500;
@@ -203,7 +200,6 @@ textarea {
         padding: 0% 5%;
     }
     #KK {
-        font-family: Dosis;
         color: white;
         font-size: 10px;
         margin-top: 30px;

@@ -84,7 +84,7 @@
 
     <div class="container-fluid cont2 class1font">
 
-        <div class="row">
+        <div class="row h-100">
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <div>
                     <p class="text">Where Would You Like To Go?</p>
@@ -347,8 +347,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-3 workFlow-content">
-                <a href="#">
-                    <i class="fa-solid fa-route center BK1 " style="color: #562525"></i></a>
+                    <i class="fa-solid fa-route center icon " ></i>
                 <p class=" workFLow-heading">Create Your Route</p>
                 <p class="BK7 workFlow-desc">
                     At Safety First Car Company, your well-being is paramount.
@@ -373,7 +372,7 @@
                 </div>
             </div>
             <div class="col-md-3 workFlow-content">
-                <a href="#"><i class="fa-solid fa-hand-holding-dollar center BK1 " style="color: #562525"></i></a>
+                <i class="fa-solid fa-hand-holding-dollar center icon " ></i>
                 <p class=" workFLow-heading">Choose Vehicle for You</p>
                 <p class="BK7 workFlow-desc">
                     Experience transparent pricing at its finest with our cars
@@ -396,7 +395,7 @@
                 </div>
             </div>
             <div class="col-md-3 workFlow-content">
-                <a href="#"><i class="fa-solid fa-car-rear center BK1 " style="color: #562525"></i></a>
+                <a href="#"><i class="fa-solid fa-car-rear center icon " ></i></a>
                 <p class=" workFLow-heading">Enjoy The Journey</p>
                 <p class="BK7 workFlow-desc">
                     Discover the ultimate private travel solution,
@@ -498,7 +497,7 @@
 
             <div class="col-md-6">
                 <div class="row">
-                    <p class="IK112">Showcase some<br> impressive numbers.</p>
+                    <p class="IK112">Showcase some impressive numbers.</p>
                 </div>
                 <div class="row">
                     <p class="IK1112">PO Box 1611 Collins Street West Victoria 8007 Australia</p>
@@ -541,9 +540,7 @@
                 </div>
 
                 <div calss="row " class="btn16ID">
-                    <button type="button" class="btn" style="color: white;width: 100%;">Get Started <a
-                            href="#"><i class="fas fa-arrow-trend-up" id="arrw"
-                                style="color:white"></i></a></button>
+                    <button type="button" class="btn" style="color: white;width: 100%;">Get Started <i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button>
                 </div>
             </div>
 
@@ -631,30 +628,53 @@
 
     {{-- Start of news  --}}
 
-    <div class="container class1font" id="cont12">
-        <div class="row">
+    <div class="container class1font mt-5" id="cont12">
+        <div class="row justify-content-center align-items-center mb-4">
 
-            <div class="col-md-6 textalign">
-                <p id="GK">Latest From News</p>
+            <div class="col-md-5 ">
+                <p class="section-title text-left mb-0">Latest From News</p>
             </div>
-            <div class="col-md-6 textalign">
-                <button class="btn btn" id="lastest" type="submit">More News <i class="fa-solid fa-arrow-trend-up"
-                        id="late" style="color:black;margin-bottom: 23px;"></i></button>
+            <div class="col-md-4 text-right">
+                <button class="btn btn" id="lastest" type="submit">More News <i class="fa-solid fa-arrow-trend-up" id="late" style="color:black;"></i></button>
             </div>
         </div>
 
-        <div class="row text-left adjustCenID">
+        <div class="row justify-content-center news-cards">
             <div class="col-md-3">
                 <div class="card" id="CARD">
-                    <div class="card-body">
-                        <a href="#"><img class="card-img-top" src="images/C5.jpg" alt="Card image cap"></a>
-
-                        <p id="GK1">14.</p>
-                        <p id="GK2">August,23</p>
-                        <p id="GK3">Travel</p>
-                        <p id="GK4">3 hidden-gem destination for your<br> wish list</p>
-                        <button type="button" class="btn btn-light" id="arbutton"><a href="#"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></a></button>
+                    <div class="card-body latest-news--card">
+                        <div class="card-image image1">
+                            {{-- <img class="card-img-top" src="images/C5.jpg" alt="Card image cap"> --}}
+                            <div class="image-content">
+                                <h2>14.</h2>
+                                <p>August,23</p>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p id="GK3">Travel</p>
+                            <p id="GK4">3 hidden-gem destination for your wish list</p>
+                            <button type="button" class="btn btn-light" id="arbutton"><i
+                                class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" id="CARD">
+                    <div class="card-body latest-news--card">
+                        <div class="card-image image2">
+                            {{-- <img class="card-img-top" src="images/C3.jpg" alt="Card image cap" id="opacitty"> --}}
+                            <div class="image-content">
+                                <h2>14.</h2>
+                                <p>August,23</p>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p id="GK3">Travel</p>
+                            <p id="GK4">3 hidden-gem destination for your wish list</p>
+                            <button type="button" class="btn btn-light" id="arbutton"><i
+                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
+                        </div>
 
                     </div>
                 </div>
@@ -663,32 +683,21 @@
             </div>
             <div class="col-md-3">
                 <div class="card" id="CARD">
-                    <div class="card-body">
-                        <a href="#"><img class="card-img-top" src="images/C3.jpg" alt="Card image cap"
-                                id="opacitty"></a>
-                        <p id="GK1">14.</p>
-                        <p id="GK2">August,23</p>
-                        <p id="GK3">Travel</p>
-                        <p id="GK4">3 hidden-gem destination for your<br> wish list</p>
-                        <button type="button" class="btn btn-light" id="arbutton"><a href="#"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></a></button>
-
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="col-md-3">
-                <div class="card" id="CARD">
-                    <div class="card-body">
-                        <a href="#"><img class="card-img-top" src="images/c2.jpg" alt="Card image cap"
-                                id="opacitty"></a>
-                        <p id="GK1">14.</p>
-                        <p id="GK2">August,23</p>
-                        <p id="GK3">Travel</p>
-                        <p id="GK4">3 hidden-gem destination for your<br> wish list</p>
-                        <button type="button" class="btn btn-light" id="arbutton"><a href="#"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></a></button>
+                    <div class="card-body latest-news--card">
+                        <div class="card-image image3">
+                            {{-- <img class="card-img-top" src="images/c2.jpg" alt="Card image cap"
+                            id="opacitty"> --}}
+                            <div class="image-content">
+                                <h2>14.</h2>
+                                <p >August,23</p>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p id="GK3">Travel</p>
+                            <p id="GK4">3 hidden-gem destination for your wish list</p>
+                            <button type="button" class="btn btn-light" id="arbutton"><i
+                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -758,8 +767,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 adjustCenID">
-                    <div>
-                        <a href="#"><img src="{{ asset('images/C7.jpg') }}" class="imgClassCon14" alt="Avatar"></a>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img src="{{ asset('images/C7.jpg') }}" class="imgClassCon14" alt="Avatar">
                     </div>
                 </div>
             </div>

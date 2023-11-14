@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Responsive style -->
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     {{-- hamza files Links  --}}
 
@@ -184,14 +187,18 @@
                                 href="{{ url('/contact-us') }}">Contact</a>
                         </li>
                     </ul>
-                    <div class="form-inline my-2 my-lg-0">
-                        <a href="#"><i class="fa fa-phone" style="color: white"></i></a>
-                        <p class="phone">
-                            {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) : '+49 (0) 69 330 889 08' }}
-                        </p>
+                    <div class="form-inline my-2 my-lg-0 gap-4 nav-login">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa fa-phone" style="color: white"></i>
+                            <span class="phone">
+                                {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) : '+49 (0) 69 330 889 08' }}
+                            </span>
+                        </div>
 
-                        <a href="#"><i class="fa-solid fa-globe" style="color: white"></i></a>
-                        <p class="phone">GER</p>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-globe" style="color: white"></i>
+                            <span class="phone">GER</span>
+                        </div>
 
                         @if (Auth()->check())
 

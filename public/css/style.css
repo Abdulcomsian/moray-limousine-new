@@ -124,7 +124,6 @@ u,
 ul,
 var,
 video {
-    font-family: inherit;
     font-size: 100%;
     font-weight: inherit;
     font-style: inherit;
@@ -238,7 +237,7 @@ input[type="submit"] {
     font-size: 18px;
     color: #ffffff;
     background: #1e1e1e;
-    font-family: "Dosis", sans-serif;
+
     position: relative;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -265,7 +264,6 @@ input[type="color"],
 input[type="email"] {
     position: relative;
     display: block;
-    font-family: "Dosis";
     width: 100%;
     padding: 8px 15px 8px 16px;
     color: #969696;
@@ -380,7 +378,6 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Dosis", sans-serif;
     font-weight: 400;
     line-height: 30px;
     color: #1e1e1e;
@@ -408,6 +405,8 @@ h5 {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 *,
 *:before,
@@ -417,7 +416,6 @@ h5 {
     box-sizing: border-box;
 }
 body {
-    font-family: "Dosis", sans-serif;
     font-size: 16px;
     line-height: 30px;
     font-weight: 400;
@@ -425,6 +423,9 @@ body {
     color: #969696;
     overflow: hidden;
     position: relative;
+}
+h1 {
+    line-height: 1.1;
 }
 a {
     text-decoration: none;
@@ -829,7 +830,6 @@ button:focus {
 }
 .header-03 .info-contact .vehicle.active:before {
     content: "\f404";
-    font-family: "ionicons";
     position: absolute;
     font-size: 50px;
     color: #1e1e1e;
@@ -989,7 +989,6 @@ button:focus {
 .main-menu .button a:before {
     content: "\f3d6";
     position: absolute;
-    font-family: "ionicons";
     top: 0;
     right: 30px;
     font-size: 26px;
@@ -1145,7 +1144,6 @@ button:focus {
     vertical-align: middle;
 }
 .tr-drop {
-    font-family: Dosis;
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
@@ -1310,7 +1308,6 @@ button:focus {
     padding-right: 30px;
 }
 .header-05 .main-menu ul .logo-pro_text a {
-    font-family: LOBSTER TWO;
     font-size: 45px;
     line-height: 45px;
     text-transform: capitalize;

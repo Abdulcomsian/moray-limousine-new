@@ -57,7 +57,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $data['categories'] = VehicleCategory::all();
         $data['config'] = Configuration::first();
         $data['logos'] = HappyClient::all();
