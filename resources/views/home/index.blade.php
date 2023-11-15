@@ -480,7 +480,7 @@
 
     {{-- Start of Showcase section  --}}
 
-    <div class="container adjustCenID123 class1font" id="cont3434">
+    <div class="container  class1font" id="cont3434">
         <div class="row align-items-center">
 
             <div class="col-md-6 adjustCenID">
@@ -738,7 +738,7 @@
     {{-- Start of Mobile Apps  --}}
 
     <div class="container-fluid class1font" id="cont14">
-        <div class="container">
+        <div class="container" style="padding: 55px 0">
             <div class="row justify-content-center">
                 <div class="col-md-5">
                     <div class="row adjustCenID text-center">

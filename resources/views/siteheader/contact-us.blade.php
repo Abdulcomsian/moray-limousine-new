@@ -14,7 +14,7 @@
 
     <div class="container-fluid black-box class1font">
         <div class="row adjustCenID12">
-            <div class="col-md-5">
+            <div class="col-md-5 contact-us--details">
                 <p id="txt1ID">Contact Us</p>
                 <p>Home-Contact</p>
                 <div class="row">
@@ -77,7 +77,7 @@
       </div> -->
       
     <div class="container adjustCenID mb-5 class1font">
-        <div class="row">
+        <div class="row contact-form--container">
             <div class="col-md-6 mrgintop">
                 <div class="row mrgintop">
                     <div class="col-md-12 text-center mb-5">

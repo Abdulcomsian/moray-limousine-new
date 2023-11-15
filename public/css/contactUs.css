@@ -11,7 +11,7 @@
     color: #fff;
     padding: 20px;
     z-index: 0;
-    height: 520px;
+    /* height: 520px; */
     margin-bottom: 70px;
 }
 .mrgintop {
@@ -19,7 +19,7 @@
 }
 .adjustCenID12 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 #txt1ID {
     font-size: xx-large;
@@ -36,7 +36,7 @@
 }
 .container1212 {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .icon {
@@ -50,15 +50,22 @@
     padding: 10px;
 }
 .heaidng1 {
-    margin-top: 10px;
     font-size: 16px;
+    margin-bottom: 1px;
 }
 .text {
     flex-grow: 1;
+    margin-top: 0;
 }
 
 .description {
     font-size: 12px;
+    margin-bottom: 0;
+}
+.contact-us--details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /*make trip contianer */
@@ -161,10 +168,16 @@ textarea {
 }
 @media screen and (max-width: 767px) {
     .mrgintop {
-        margin-top: 10rem;
+        margin-top: 0px;
     }
-    .img-fluid {
+    /* .img-fluid {
         height: auto;
+    } */
+    .contact-form--container {
+        gap: 60px;
+    }
+    .imgcon33 {
+        margin-top: 45px;
     }
     .BK4 {
         font-size: 24px;
