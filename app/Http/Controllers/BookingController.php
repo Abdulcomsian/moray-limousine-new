@@ -62,8 +62,21 @@ class BookingController extends Controller
      * @param BookingRequest $request
      * @return Factory|View
      */
-    public function selectClassByDistance(BookingRequest $request)
+    public function selectClassByDistance(Request $request)
     { 
+        // dd($request->all());
+            $request->validate([
+                'pick_date' => 'required',
+                'pick_time' => 'required',
+                'pick_address' => 'required',
+                'drop_address' => 'required'
+            ],[
+                'pick_date.required' => 'This field is required',
+                'pick_time.required' => 'This field is required',
+                'pick_address.required' => 'This field is required',
+                'drop_address.required' => 'This field is required',
+            ]
+        );
             $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             if (Auth()->check() == false)
             {
@@ -98,6 +111,18 @@ class BookingController extends Controller
      */
     public function selectClassByHour(Request $request)
     {
+        // dd($request->all());
+        $request->validate([
+            'pick_address' => 'required',
+            'selected_hour' => 'required',
+            'pick_date'    => 'required',
+            'pick_time'    => 'required',
+        ],[
+            'pick_address.required' => 'This field is required',
+            'selected_hour.required' => 'This field is required',
+            'pick_date.required'  => 'This field is required',
+            'pick_time.required'  => 'This field is required',
+        ]);
         $classes = $this->classes->all();
         $selected_hour = $request['selected_hour'];
         //           set prices and set discounts or markup with given classes

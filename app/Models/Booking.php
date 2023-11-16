@@ -273,6 +273,7 @@ class Booking extends Model
      */
     public function classesWithPriceByDuration($classes, $durationInHours,$form_data=null)
     {
+        // dd($request->all());
         $classesWithPrice = array();
         $tax_rate = 0.0;
         if (!empty(Configuration::first()->tax_rate)) {

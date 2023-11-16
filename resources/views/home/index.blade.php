@@ -89,9 +89,9 @@
                 <div>
                     <p class="text">Where Would You Like To Go?</p>
                     <p class="text1">A new Class of Luxury<br />Limo Service</p>
-                        <a type="button" href="{{ url('/our-fleet') }}" class=" btn btn1611ID">
-                            Visit Our Fleet<i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
-                        </a>
+                    <a type="button" href="{{ url('/our-fleet') }}" class=" btn btn1611ID">
+                        Visit Our Fleet<i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
+                    </a>
 
                 </div>
             </div>
@@ -112,10 +112,10 @@
                                     <li class="nav-item">
                                         <a class="nav-link" id="hourly-tab" data-toggle="tab" href="#hourly">Hourly</a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a class="nav-link" id="flat-rate-tab" data-toggle="tab" href="#flat-rate">Flat
                                             Rate</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                             <!-- Tab Content -->
@@ -148,7 +148,9 @@
 
                                         {{-- Date --}}
                                         <div class="row adjustCenID">
-
+                                            @error('pick_date')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                             <div class="input-group">
                                                 {{-- <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
@@ -156,8 +158,8 @@
                                                 </div> --}}
                                                 <div class="date form_date" data-date="3" data-date-format="dd MM yyyy"
                                                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                                                    <input size="100%" class="mt-0 mb-0"  type="text" id="pick-date"
-                                                        placeholder="{{ date('d-M-Y') }}" readonly>
+                                                    <input size="100%" class="mt-0 mb-0" type="text" id="pick-date"
+                                                        placeholder="{{ date('d-M-Y') }}" readonly required>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
                                                     <span class="add-on"><i class="icon-th"></i></span>
                                                 </div>
@@ -170,6 +172,9 @@
                                         {{-- Time --}}
                                         <div class="row adjustCenID">
                                             <!-- Time Picker -->
+                                            @error('pick_time')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                             <div class="input-group">
                                                 {{-- <div class="input-group-append">
                                                     <span class="input-group-text"><i class="far fa-clock"></i></span>
@@ -177,8 +182,8 @@
                                                 <div class="controls input-append date form_time" data-date=""
                                                     data-date-format="hh:ii p" data-link-field="dtp_input3"
                                                     data-link-format="hh:ii">
-                                                    <input size="100%" class="mb-0 mt-0" type="text" value="" id="pick-time"
-                                                        placeholder="12:25 am" readonly>
+                                                    <input size="100%" class="mb-0 mt-0" type="text"
+                                                        value="" id="pick-time" placeholder="12:25 am" readonly>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
                                                     <span class="add-on"><i class="icon-th"></i></span>
                                                 </div>
@@ -191,6 +196,9 @@
 
                                         {{-- Pick address  --}}
                                         <div class="row adjustCenID">
+                                            @error('pick_address')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
@@ -203,6 +211,9 @@
 
                                         {{-- Drop Address  --}}
                                         <div class="row adjustCenID">
+                                            @error('drop_address')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
@@ -232,6 +243,9 @@
                                         <input type="hidden" name="booking_country" value="">
 
                                         <div class="row adjustCenID">
+                                            @error('pick_address')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
@@ -244,8 +258,11 @@
 
                                         <div class="row adjustCenID">
                                             <div class="pick-drop-day mb-2">
+                                                @error('selected_hour')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                                 <select class="form-control browser-default custom-select"
-                                                    name="selected_hour" id="location-hour" required>
+                                                    name="selected_hour" id="location-hour">
                                                     <option selected value="">Length of Time</option>
                                                     <option class="select-it" value="1"> 1 Hour</option>
                                                     <option value="2"> 2 Hours </option>
@@ -280,14 +297,17 @@
                                         <div class="row adjustCenID">
                                             <!-- Date Picker -->
                                             <div class="input-group">
+                                                @error('pick_date')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                                 {{-- <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
                                                 </div> --}}
                                                 <div class="date form_date" data-date="" data-date-format="dd MM yyyy"
                                                     data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-                                                    <input class="mt-0 mb-0" size="100%" type="text" id="pick_date_hour"
-                                                        placeholder="Wed 19 July, 2017" readonly>
+                                                    <input class="mt-0 mb-0" size="100%" type="text"
+                                                        id="pick_date_hour" placeholder="Wed 19 July, 2017" readonly>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
                                                     <span class="add-on"><i class="icon-th"></i></span>
                                                 </div>
@@ -299,14 +319,18 @@
                                         <div class="row adjustCenID">
                                             <!-- Time Picker -->
                                             <div class="input-group">
+                                                @error('pick_time')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                                 {{-- <div class="input-group-append">
                                                     <span class="input-group-text"><i class="far fa-clock"></i></span>
                                                 </div> --}}
                                                 <div class="controls input-append date form_time" data-date=""
                                                     data-date-format="hh:ii p" data-link-field="dtp_input4"
                                                     data-link-format="hh:ii">
-                                                    <input class="mt-0 mb-0" size="100%" type="text" value=""
-                                                        id="pick_time_hour" placeholder="12:25 am" readonly>
+                                                    <input class="mt-0 mb-0" size="100%" type="text"
+                                                        value="" id="pick_time_hour" placeholder="12:25 am"
+                                                        readonly>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
                                                     <span class="add-on"><i class="icon-th"></i></span>
                                                 </div>
@@ -347,7 +371,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-3 workFlow-content">
-                    <i class="fa-solid fa-route center icon " ></i>
+                <i class="fa-solid fa-route center icon "></i>
                 <p class=" workFLow-heading">Create Your Route</p>
                 <p class="BK7 workFlow-desc">
                     At Safety First Car Company, your well-being is paramount.
@@ -358,21 +382,15 @@
             </div>
             <div class="col-md-1 arrowbutton1">
                 <div class="encircled-arrow">
-                    <svg
-
-                        viewBox="0 0 20 20"
-                        fill="black"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
+                    <svg viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
                         <path
-                          d="M10.3901 3.54917C10.1197 3.81575 10.0944 4.23698 10.316 4.53253L10.3826 4.60981L14.9583 9.24992L3.25 9.24992C2.83579 9.24992 2.5 9.5857 2.5 9.99992C2.5 10.3823 2.78611 10.6978 3.15592 10.7441L3.25 10.7499H14.9583L10.3826 15.39C10.116 15.6604 10.0966 16.082 10.3224 16.3743L10.3901 16.4507C10.6605 16.7172 11.082 16.7366 11.3744 16.5108L11.4507 16.4431L17.2841 10.5265C17.548 10.2588 17.57 9.84232 17.3501 9.54985L17.2841 9.47336L11.4507 3.5567C11.1599 3.26173 10.6851 3.25837 10.3901 3.54917Z"
-                          fill="black"
-                        />
-                      </svg>
+                            d="M10.3901 3.54917C10.1197 3.81575 10.0944 4.23698 10.316 4.53253L10.3826 4.60981L14.9583 9.24992L3.25 9.24992C2.83579 9.24992 2.5 9.5857 2.5 9.99992C2.5 10.3823 2.78611 10.6978 3.15592 10.7441L3.25 10.7499H14.9583L10.3826 15.39C10.116 15.6604 10.0966 16.082 10.3224 16.3743L10.3901 16.4507C10.6605 16.7172 11.082 16.7366 11.3744 16.5108L11.4507 16.4431L17.2841 10.5265C17.548 10.2588 17.57 9.84232 17.3501 9.54985L17.2841 9.47336L11.4507 3.5567C11.1599 3.26173 10.6851 3.25837 10.3901 3.54917Z"
+                            fill="black" />
+                    </svg>
                 </div>
             </div>
             <div class="col-md-3 workFlow-content">
-                <i class="fa-solid fa-hand-holding-dollar center icon " ></i>
+                <i class="fa-solid fa-hand-holding-dollar center icon "></i>
                 <p class=" workFLow-heading">Choose Vehicle for You</p>
                 <p class="BK7 workFlow-desc">
                     Experience transparent pricing at its finest with our cars
@@ -382,20 +400,15 @@
             </div>
             <div class="col-md-1 arrowbutton1">
                 <div class="encircled-arrow">
-                    <svg
-                        viewBox="0 0 20 20"
-                        fill="black"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
+                    <svg viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
                         <path
-                          d="M10.3901 3.54917C10.1197 3.81575 10.0944 4.23698 10.316 4.53253L10.3826 4.60981L14.9583 9.24992L3.25 9.24992C2.83579 9.24992 2.5 9.5857 2.5 9.99992C2.5 10.3823 2.78611 10.6978 3.15592 10.7441L3.25 10.7499H14.9583L10.3826 15.39C10.116 15.6604 10.0966 16.082 10.3224 16.3743L10.3901 16.4507C10.6605 16.7172 11.082 16.7366 11.3744 16.5108L11.4507 16.4431L17.2841 10.5265C17.548 10.2588 17.57 9.84232 17.3501 9.54985L17.2841 9.47336L11.4507 3.5567C11.1599 3.26173 10.6851 3.25837 10.3901 3.54917Z"
-                          fill="black"
-                        />
-                      </svg>
+                            d="M10.3901 3.54917C10.1197 3.81575 10.0944 4.23698 10.316 4.53253L10.3826 4.60981L14.9583 9.24992L3.25 9.24992C2.83579 9.24992 2.5 9.5857 2.5 9.99992C2.5 10.3823 2.78611 10.6978 3.15592 10.7441L3.25 10.7499H14.9583L10.3826 15.39C10.116 15.6604 10.0966 16.082 10.3224 16.3743L10.3901 16.4507C10.6605 16.7172 11.082 16.7366 11.3744 16.5108L11.4507 16.4431L17.2841 10.5265C17.548 10.2588 17.57 9.84232 17.3501 9.54985L17.2841 9.47336L11.4507 3.5567C11.1599 3.26173 10.6851 3.25837 10.3901 3.54917Z"
+                            fill="black" />
+                    </svg>
                 </div>
             </div>
             <div class="col-md-3 workFlow-content">
-                <a href="#"><i class="fa-solid fa-car-rear center icon " ></i></a>
+                <a href="#"><i class="fa-solid fa-car-rear center icon "></i></a>
                 <p class=" workFLow-heading">Enjoy The Journey</p>
                 <p class="BK7 workFlow-desc">
                     Discover the ultimate private travel solution,
@@ -414,31 +427,31 @@
         <p class="section-title">Our Services</p>
 
         {{-- <div class="row"> --}}
-            {{-- <div class="col-md-12"> --}}
-                <div class="services-slider">
-                    @if (count($services) > 0)
-                        @foreach ($services as $service)
-                            <div class="col-md-5 team-member">
-                                <a href="{{ url('service/details', $service->id) }}">
-                                    <img src="{{ asset('files/services-images' . '/' . $service->service_image) }}"
-                                        style="height: 170px" alt="services" id="con222">
-                                    <div class="check">{{ $service->service_title }}</div>
-                                    <div class="overlay">
+        {{-- <div class="col-md-12"> --}}
+        <div class="services-slider">
+            @if (count($services) > 0)
+                @foreach ($services as $service)
+                    <div class="col-md-5 team-member">
+                        <a href="{{ url('service/details', $service->id) }}">
+                            <img src="{{ asset('files/services-images' . '/' . $service->service_image) }}"
+                                style="height: 170px" alt="services" id="con222">
+                            <div class="check">{{ $service->service_title }}</div>
+                            <div class="overlay">
 
-                                        <div class="overlay-circle">
-                                            <div class="member-name">{{ $service->service_title }}</div>
-                                            <div class="member-description">
-                                                {{ strip_tags(\Illuminate\Support\Str::limit($service->long_description, 20)) }}
-                                            </div>
-                                            <i class="fas fa-arrow-trend-up"></i>
-                                        </div>
+                                <div class="overlay-circle">
+                                    <div class="member-name">{{ $service->service_title }}</div>
+                                    <div class="member-description">
+                                        {{ strip_tags(\Illuminate\Support\Str::limit($service->long_description, 20)) }}
                                     </div>
-                                </a>
+                                    <i class="fas fa-arrow-trend-up"></i>
+                                </div>
                             </div>
-                        @endforeach
-                    @endif
-                </div>
-            {{-- </div> --}}
+                        </a>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+        {{-- </div> --}}
         {{-- </div> --}}
     </div>
 
@@ -461,7 +474,8 @@
                                 <div class="car-info">
                                     <div class="info">
                                         <i class="fa-solid fa-people-group" id="persons"></i>
-                                        <p id="passenger" style="margin-bottom: 0">Passangers {{ $category->max_seats }}</p>
+                                        <p id="passenger" style="margin-bottom: 0">Passangers {{ $category->max_seats }}
+                                        </p>
                                     </div>
                                     <div class="info">
                                         <i class="fa-solid fa-briefcase" id="person1"></i>
@@ -470,7 +484,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach    
+                    @endforeach
                 </div>
             </div>
         @endif
@@ -505,15 +519,15 @@
                 <div class="button-row">
                     <div class="custom-button">
                         <h4>285<h4>
-                        <p class="textbtnclass">Vehicles</p>
+                                <p class="textbtnclass">Vehicles</p>
                     </div>
                     <div class="custom-button">
                         <h4>97<h4>
-                        <p class="textbtnclass">Awards</p>
+                                <p class="textbtnclass">Awards</p>
                     </div>
                     <div class="custom-button">
                         <h4>13K<h4>
-                        <p class="textbtnclass">Happy Customers</p>
+                                <p class="textbtnclass">Happy Customers</p>
                     </div>
 
                 </div>
@@ -540,7 +554,8 @@
                 </div>
 
                 <div calss="row " class="btn16ID">
-                    <button type="button" class="btn" style="color: white;width: 100%;">Get Started <i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button>
+                    <button type="button" class="btn" style="color: white;width: 100%;">Get Started <i
+                            class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button>
                 </div>
             </div>
 
@@ -635,7 +650,8 @@
                 <p class="section-title text-left mb-0">Latest From News</p>
             </div>
             <div class="col-md-4 text-right">
-                <button class="btn btn" id="lastest" type="submit">More News <i class="fa-solid fa-arrow-trend-up" id="late" style="color:black;"></i></button>
+                <button class="btn btn" id="lastest" type="submit">More News <i class="fa-solid fa-arrow-trend-up"
+                        id="late" style="color:black;"></i></button>
             </div>
         </div>
 
@@ -654,7 +670,7 @@
                             <p id="GK3">Travel</p>
                             <p id="GK4">3 hidden-gem destination for your wish list</p>
                             <button type="button" class="btn btn-light" id="arbutton"><i
-                                class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
+                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
                         </div>
                     </div>
                 </div>
@@ -689,7 +705,7 @@
                             id="opacitty"> --}}
                             <div class="image-content">
                                 <h2>14.</h2>
-                                <p >August,23</p>
+                                <p>August,23</p>
                             </div>
                         </div>
                         <div class="card-content">
