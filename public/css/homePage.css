@@ -870,7 +870,11 @@
 
 .JK2 {
     color: white;
-    font-size: 16px;
+    font-size: 25px;
+    text-align: center;
+    font-family: Dosis, sans-serif;
+    margin-bottom: 2px;
+    text-transform: uppercase;
 }
 #ul {
     list-style: none;
@@ -962,24 +966,22 @@
     border: 1px solid white;
 }
 #GER {
-    font-size: 10px;
+    font-size: 14px;
     border-radius: 50px;
     color: white;
-    width: 80px;
     background-color: #000000;
     margin-left: 5px;
 }
 
 #eng {
-    font-size: 9px;
+    font-size: 16px;
 }
 
 #English {
-    font-size: 10px;
+    font-size: 14px;
     background-color: rgb(105, 103, 103);
     border-radius: 50px;
     color: white;
-    width: 70px;
 }
 #endbutton {
     display: flex;

@@ -431,51 +431,56 @@
 
             <div class="row justify-content-between">
                 <div class="col">
-                    <p class="JK2">Company</p>
-                    <ul id="ul">
-                        <li><a class="nav-link JK3" href="#">About us</a></li>
-                        <li><a class="nav-link JK3" href="#">Our offerings</a></li>
-                        <li><a class="nav-link JK3" href="#">Newroom us</a></li>
-                        <li><a class="nav-link JK3" href="#">Investors</a></li>
-                        <li><a class="nav-link JK3" href="#">Blogs</a></li>
-                        <li><a class="nav-link JK3" href="#">Career</a></li>
-                        <li><a class="nav-link JK3" href="#">Gift cards</a></li>
+                    <p class="JK2">SERVICES</p>
+                    <ul  class="list footer-list">
+                        <li><a href="#">VIP airport transfer</a></li>
+                        {{-- <li><a href="#">Our offerings</a></li> --}}
+                        <li><a href="#">Corporate events</a></li>
+                        <li><a href="#">Limousine service</a></li>
+                        <li><a href="#">Business Solutions</a></li>
                     </ul>
                 </div>
                 <div class="col">
-                    <p class="JK2">Top Cities</p>
-                    <ul id="ul">
-                        <li><a class="nav-link JK3" href="#">New York</a></li>
-                        <li><a class="nav-link JK3" href="#">London</a></li>
-                        <li><a class="nav-link JK3" href="#">Berlin</a></li>
-                        <li><a class="nav-link JK3" href="#">Los Angeles</a></li>
-                        <li><a class="nav-link JK3" href="#">Paris</a></li>
+                    <p class="JK2">Worldwide Service</p>
+                    <ul  class="list footer-list">
+                        <li>Frankfurt am Main</li>
+                        <li>Munich</li>
+                        <li>Berlin</li>
+                        <li>Amsterdam</li>
+                        <li>Zurich</li>
+                        <li>Dubai</li>
                     </ul>
                 </div>
                 <div class="col">
-                    <p class="JK2">Explore</p>
-                    <ul id="ul">
-                        <li><a class="nav-link JK3" href="#">Intercity Rides</a></li>
-                        <li><a class="nav-link JK3" href="#">Limousine Service</a></li>
-                        <li><a class="nav-link JK3" href="#">Chauffeur Service</a></li>
-                        <li><a class="nav-link JK3" href="#">Private Car Service</a></li>
-                        <li><a class="nav-link JK3" href="#">Ground Transportation</a></li>
-                        <li><a class="nav-link JK3" href="#">Airport Transfer</a></li>
+                    <p class="JK2">Über uns</p>
+                    <ul class="list footer-list">
+                        <li><a href="#">Über uns</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Kontakt</a></li>
                     </ul>
                 </div>
                 <div class="col">
-                    <p class="JK2">Classes</p>
-                    <ul id="ul">
-                        <li><a class="nav-link JK3" href="#">Business</a></li>
-                        <li><a class="nav-link JK3" href="#">First</a></li>
-                        <li><a class="nav-link JK3" href="#">XL</a></li>
-                        <li><a class="nav-link JK3" href="#">Assistant</a></li>
+                    <p class="JK2">PARTNER WERDEN</p>
+                    <ul class="list footer-list">
+                        <li><a href="#">Für Fahrer</a></li>
+                        <li><a href="#">Für Partnerunternehmen</a></li>
                     </ul>
                 </div>
                 <div class="col">
-                    <p class="JK2">Download The App</p>
-                    <div class="d-flex flex-column justify-content-md-end storeIcons">
-                        <button type="button" class="btn-dark" id="BTM"><a href="#"><i
+                    <p class="JK2">KONTAKT</p>
+                    <ul class="list footer-list">
+                        <li>Hathaway Limousines</li>
+                        <li>Friedrich-Ebert-Anlage 36</li>
+                        <li>60325 Frankfurt am Main</li>
+                        <li>+49 (0) 69 26022180</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <p class="JK2">Payment</p>
+                    <div class="d-flex flex-column justify-content-md-end storeIcons gap-2">
+                        <img src="images/all/paymentMethod1.png" class="EK41" alt="Avatar"> 
+                        <img src="images/all/paymentMethod2.png" class="EK41" alt="Avatar"> 
+                        {{-- <button type="button" class="btn-dark" id="BTM"><a href="#"><i
                                     class="fa-brands fa-apple" id="apple" style="color:white"></i></a>
                             <p id="lin1"> | </p>
                             <p id="IK2">Download on the</p>
@@ -486,7 +491,7 @@
                             <p id="lin1"> | </p>
                             <p id="IK2">Get in on</p>
                             <p id="IK3">Play Store</p>
-                        </button>
+                        </button> --}}
                     </div>
                 </div>
             </div>

@@ -753,7 +753,7 @@
 
     {{-- Start of Mobile Apps  --}}
 
-    <div class="container-fluid class1font" id="cont14">
+    {{-- <div class="container-fluid class1font" id="cont14">
         <div class="container" style="padding: 55px 0">
             <div class="row justify-content-center">
                 <div class="col-md-5">
@@ -789,7 +789,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- End of Mobile Apps --}}
 @endsection
 @section('js')

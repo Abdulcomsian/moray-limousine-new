@@ -23,9 +23,11 @@
                             <i class="fa fa-map-marker"></i>
                         </div>
                         <div class="text">
-                            <p class="heaidng1">Location</p>
+                            <p class="heaidng1">Adresse</p>
                             <p class="description">
-                                This is the description of the location.
+                                Hathaway Limousines<br/>
+                                Friedrich-Ebert-Anlage 36<br/>
+                                60325 Frankfurt am Main<br/>
                             </p>
                             <button type="button" class="btn111 btn-dark w-100 p-0" style="font-size: 12px; display: flex">
                                 View on Google Map
@@ -41,8 +43,8 @@
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div class="">
-                            <p class="heaidng1">Phone</p>
-                            <p class="description">03346669972</p>
+                            <p class="heaidng1">Telefon</p>
+                            <p class="description">+49 (0) 69 26022180</p>
                         </div>
                     </div>
                 </div>
@@ -53,7 +55,7 @@
                         </div>
                         <div class="text">
                             <p class="heaidng1">Email</p>
-                            <p class="description">hamzamalik72111@gmail.com</p>
+                            <p class="description">info@hathaway-limousines.com</p>
                         </div>
                     </div>
                 </div>
@@ -96,8 +98,9 @@
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
+                            <label for="">Vorname</label>
                             <input type="text" id="first_name" required name="first_name"
-                            placeholder="First Name" value="{{ old('first_name') }}">
+                            placeholder="Geben Sie ihren Vornamen ein" value="{{ old('first_name') }}">
                             @error('first_name')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -106,8 +109,9 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
+                            <label for="">Name</label>
                             <input type="text" id="last_name" name="last_name"
-                                    placeholder="Last Name" value="{{ old('last_name') }}">
+                                    placeholder="Geben Sie ihren Namen ein" value="{{ old('last_name') }}">
                             @error('last_name')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -116,15 +120,17 @@
 
                     <div class="row">
                         <div class="col-md-12">
+                            <label for="">Email</label>
                             <input type="email" id="email" name="email"
-                            placeholder="Email" value="{{ old('email') }}">
+                            placeholder="Geben Sie ihre E-Mail ein" value="{{ old('email') }}">
                            
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
+                            <label for="">Telefon</label>
                             <input type="text" id="cellno" required name="cellno"
-                            placeholder="Phone Number" value="{{ old('cellno') }}">
+                            placeholder="Geben Sie ihre Telefonnummer ein" value="{{ old('cellno') }}">
                             @error('cellno')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -132,6 +138,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
+                            <label for="">Nachricht</label>
                             <textarea name="comment" id="comment" placeholder="Message" required></textarea>
                             @error('comment')
                             <span class="text-danger">{{ $message }}</span>
