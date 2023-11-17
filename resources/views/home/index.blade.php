@@ -732,17 +732,20 @@
                         <h4>The Partners who sell<br />our products</h4>
                     </div>
                     <div class="col-md-2 text-center mb-3">
-                        <i class="fa-solid fa-car fa-3x"></i>
+                        <img src="images/all/imagee1.jpeg"/>
+                        {{-- <i class="fa-solid fa-car fa-3x"></i> --}}
                     </div>
                     <div class="col-md-2 text-center mb-3">
-                        <i class="fa-solid fa-motorcycle fa-3x"></i>
+                        <img src="images/all/imagee2.jpeg"/>
+                        {{-- <i class="fa-solid fa-motorcycle fa-3x"></i> --}}
                     </div>
                     <div class="col-md-2 text-center mb-3">
-                        <i class="fa-solid fa-business-time fa-3x"></i>
+                        <img src="images/all/imagee3.jpeg"/>
+                        {{-- <i class="fa-solid fa-business-time fa-3x"></i> --}}
                     </div>
-                    <div class="col-md-2 text-center mb-3">
+                    {{-- <div class="col-md-2 text-center mb-3">
                         <i class="fa-solid fa-user-secret fa-3x"></i>
-                    </div>
+                    </div> --}}
                 </div>
                 <hr id="linex" />
             </div>
