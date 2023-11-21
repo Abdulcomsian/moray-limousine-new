@@ -401,27 +401,27 @@
 
         <div class="container-fluid class1font" id="cont15">
 
-            <div class="row justify-content-between">
-                <div class="col-md-2 ">
-                    <img src="{{ asset('images/moray-logo.png') }}" id="logo2" alt="Avatar">
-                </div>
+            <div class="d-flex justify-content-between footer-content">
+                <img src="{{ asset('images/moray-logo.png') }}" id="logo2" alt="Avatar">
 
-                <div class="col-md-4">
-                    <a href="#"><i class="fa fa-phone phone1" style="color: white;" id=""></i></a>
-                    <span class="mx-1 Number" id="">+49 (0) 69 26022180</span>
-                </div>
 
-                <div class="col-md-5 mt-4 d-flex justify-content-md-end social-icons">
-                    <span class="mx-1 Number" id="">Follow Us</span>
+                <div class="d-flex justify-content-between gap-4 connection-list">
                     <div>
-                        <a href="#"><i class="fa-brands fa-facebook mx-2 "
-                                style="color: white; display: inline-block;"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter mx-2"
-                                style="color: white; display: inline-block; "></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram mx-2"
-                                style="color: white; display: inline-block;"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin mx-2"
-                                style="color: white; display: inline-block;"></i></a>
+                        <a href="#"><i class="fa fa-phone phone1" style="color: white;" id=""></i></a>
+                        <span class="mx-1 Number" id="">+49 (0) 69 26022180</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="mx-1 Number" id="">Follow Us</span>
+                        <div>
+                            <a href="https://www.facebook.com/moraylimousines" target="_blank"><i class="fa-brands fa-facebook mx-2 footer--brand-icon"
+                                    style="color: white; display: inline-block;"></i></a>
+                            {{-- <a href="#"><i class="fa-brands fa-twitter mx-2"
+                                    style="color: white; display: inline-block; "></i></a> --}}
+                            <a href="https://www.instagram.com/moraylimousines"><i class="fa-brands fa-instagram mx-2 footer--brand-icon"
+                                    style="color: white; display: inline-block;"></i></a>
+                            {{-- <a href="#"><i class="fa-brands fa-linkedin mx-2"
+                                    style="color: white; display: inline-block;"></i></a> --}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -433,11 +433,12 @@
                 <div class="col">
                     <p class="JK2">SERVICES</p>
                     <ul  class="list footer-list">
-                        <li><a href="#">VIP airport transfer</a></li>
-                        {{-- <li><a href="#">Our offerings</a></li> --}}
-                        <li><a href="#">Corporate events</a></li>
-                        <li><a href="#">Limousine service</a></li>
-                        <li><a href="#">Business Solutions</a></li>
+                        @foreach(\App\Models\CmsService::all()->take(4) as $service)
+                        <li>
+                            <a href="{{url('/service/details/'.$service->id)}}" title="">{{$service->service_title}}</a>
+                        </li>
+                    @endforeach
+
                     </ul>
                 </div>
                 <div class="col">
@@ -454,16 +455,16 @@
                 <div class="col">
                     <p class="JK2">Über uns</p>
                     <ul class="list footer-list">
-                        <li><a href="#">Über uns</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="{{url('/about-us')}}">Über uns</a></li>
+                        <li><a href="{{url('/Faq')}}">FAQs</a></li>
+                        <li><a href="{{url('/contact-us')}}">Kontakt</a></li>
                     </ul>
                 </div>
                 <div class="col">
                     <p class="JK2">PARTNER WERDEN</p>
                     <ul class="list footer-list">
-                        <li><a href="#">Für Fahrer</a></li>
-                        <li><a href="#">Für Partnerunternehmen</a></li>
+                        <li><a href="{{url('/become-driver')}}">Für Fahrer</a></li>
+                        <li><a href="{{url('/become-partner')}}">Für Partnerunternehmen</a></li>
                     </ul>
                 </div>
                 <div class="col">
@@ -498,21 +499,19 @@
 
 
 
-            <div class="row justify-content-between">
-                <div class="col-3">
+            <div class="mt-4 footer-termsLink">
+                {{-- <div class="col-md-6"> --}}
                     <p class="KK"> @ 2023 HATHWAY-LIMOUSINES</p>
-                </div>
+                {{-- </div> --}}
 
-                <div class="col mt-4">
-                    <ul style="list-style: none; padding: 0;">
-                        <li class="KK1" style="display: inline-block; padding-right: 8px;">Terms</li>
-                        <li class="KK1" style="display: inline-block; padding-right: 8px;">Privacy policy</li>
-                        <li class="KK1" style="display: inline-block; padding-right: 8px;">Legal notice</li>
-                        <li class="KK1" style="display: inline-block; padding-right: 8px;">Accessibility</li>
-                    </ul>
-                </div>
-
-                <div class="col-4 d-flex justify-content-md-end mt-4">
+                {{-- <div class="col-md-6 "> --}}
+                    <p class="copyRightText text-center">Copyright DPQP-labs : © {{date('Y')}}.  All Rights Reserved
+                        {{-- <a href="{{url('/mpressum')}}" class="pl-2 pr-2" style="color: goldenrod; text-decoration: underline;"> Impressum</a>
+                        <a href="{{url('/datenschutz')}}" class="pl-2" style="color: goldenrod;text-decoration: underline;"> Datenschutz</a> --}}
+                    </p>
+                {{-- </div> --}}
+                
+                {{-- <div class="col-4 d-flex justify-content-md-end mt-4">
                     <div class="">
                         <button class="btn btn-dark" id="GER" type="submit"><i
                                 class="fa-solid fa-location-dot" id="eng" style="color: white"></i> Germany
@@ -521,8 +520,11 @@
                             <i class="fa-solid fa-earth-americas" id="eng" style="color: white"></i> English
                         </button>
                     </div>
-                </div>
+                </div> --}}
             </div>
+            {{-- <div>
+                
+            </div> --}}
         </div>
 
         {{-- 

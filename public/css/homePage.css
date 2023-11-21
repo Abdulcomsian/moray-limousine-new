@@ -847,8 +847,8 @@
 /*footer.....*/
 
 #cont15 {
-    background-color: black;
-    padding: 0% 15%;
+    background-color: #1e1e1e;
+    padding: 0% 10%;
 }
 #logo2 {
     margin-top: 20px;
@@ -872,9 +872,17 @@
     color: white;
     font-size: 25px;
     text-align: center;
-    font-family: Dosis, sans-serif;
+    /* font-family: Dosis, sans-serif; */
     margin-bottom: 2px;
     text-transform: uppercase;
+    white-space: nowrap;
+}
+.copyRightText {
+    color: white;
+}
+.EK41 {
+    width: 250px;
+    margin: auto;
 }
 #ul {
     list-style: none;
@@ -949,8 +957,8 @@
 }
 .KK {
     color: white;
-    font-size: 12px;
-    margin-top: 30px;
+    font-size: 15px;
+    margin-bottom: 0px;
 }
 /* #KKK{
         font-family:DMsanR;
@@ -960,7 +968,7 @@
     } */
 .KK1 {
     color: white;
-    font-size: 10px;
+    font-size: 15px;
 }
 .ger {
     border: 1px solid white;
@@ -994,6 +1002,14 @@
 
 .footer-hr {
     border: 0.5px solid rgb(61, 59, 44);
+}
+
+.footer-termsLink {
+    display: flex;
+    justify-content: space-between;
+}
+.footer--brand-icon {
+    font-size: 22px;
 }
 @media screen and (max-width: 2560px) {
     .roundbar {
@@ -1088,6 +1104,17 @@
     }
 }
 
+@media screen and (max-width: 910px) {
+    .footer-termsLink {
+        flex-direction: column;
+        align-items: center;
+    }
+    .terms-link,
+    .KK {
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 760px) {
     #cont7 {
         margin-top: 432px;
@@ -1132,6 +1159,9 @@
     }
     .iframeClass {
         width: 100%;
+    }
+    .footer-content {
+        flex-direction: column;
     }
 }
 @media (max-width: 765px) {
@@ -1179,6 +1209,16 @@
     }
     .card-content {
         padding: 10px;
+    }
+}
+@media screen and (max-width: 529px) {
+    .connection-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-content {
+        align-items: center;
     }
 }
 @media (max-width: 576px) {
