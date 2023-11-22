@@ -195,10 +195,10 @@
                             </span>
                         </div>
 
-                        <div class="d-flex align-items-center gap-2">
+                        {{-- <div class="d-flex align-items-center gap-2">
                             <i class="fa-solid fa-globe" style="color: white"></i>
                             <span class="phone">GER</span>
-                        </div>
+                        </div> --}}
 
                         @if (Auth()->check())
 
@@ -479,8 +479,8 @@
                 <div class="col">
                     <p class="JK2">Payment</p>
                     <div class="d-flex flex-column justify-content-md-end storeIcons gap-2">
-                        <img src="images/all/paymentMethod1.png" class="EK41" alt="Avatar"> 
-                        <img src="images/all/paymentMethod2.png" class="EK41" alt="Avatar"> 
+                        <img src="{{asset('images/all/paymentMethod1.png')}}" class="EK41" alt="Avatar"> 
+                        <img src="{{asset('images/all/paymentMethod2.png')}}" class="EK41" alt="Avatar"> 
                         {{-- <button type="button" class="btn-dark" id="BTM"><a href="#"><i
                                     class="fa-brands fa-apple" id="apple" style="color:white"></i></a>
                             <p id="lin1"> | </p>
@@ -505,7 +505,7 @@
                 {{-- </div> --}}
 
                 {{-- <div class="col-md-6 "> --}}
-                    <p class="copyRightText text-center">Copyright DPQP-labs : © {{date('Y')}}.  All Rights Reserved
+                    <p class="copyRightText text-center">Developed by <a href="https://dbqplabs.com/" title="Software development agency in Finland" nofollow style="color: inherit">dpqp</a> 
                         {{-- <a href="{{url('/mpressum')}}" class="pl-2 pr-2" style="color: goldenrod; text-decoration: underline;"> Impressum</a>
                         <a href="{{url('/datenschutz')}}" class="pl-2" style="color: goldenrod;text-decoration: underline;"> Datenschutz</a> --}}
                     </p>

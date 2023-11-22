@@ -494,7 +494,7 @@
 
     {{-- Start of Showcase section  --}}
 
-    <div class="container  class1font" id="cont3434">
+    {{-- <div class="container  class1font" id="cont3434">
         <div class="row align-items-center">
 
             <div class="col-md-6 adjustCenID">
@@ -537,7 +537,7 @@
                 </button>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- End of Showcase  --}}
 
@@ -545,70 +545,57 @@
 
     <div class="container displaycon222 class1font" id="cont2222">
         <div class="row ">
-            <div class="col-md-6">
-                <div class="row">
-                    <p class="IK11">Hear what our amazing<br> customers say</p>
-                </div>
-                <div class="row">
-                    <p class="IK111">PO Box 1611 Collins Street West Victoria 8007 Australia</p>
-                </div>
+            <div class="col-md-6 d-flex flex-column gap-4">
+                <p class="IK11">Hear what our amazing<br> customers say</p>
+                <p class="IK111">Ensuring global customer satisfaction, we consistently deliver high-quality services with prompt efficiency. Our commitment extends beyond borders, providing excellence to customers around the world.</p>
 
-                <div calss="row " class="btn16ID">
+                {{-- <div calss="row " class="btn16ID">
                     <button type="button" class="btn" style="color: white;width: 100%;">Get Started <i
                             class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button>
-                </div>
+                </div> --}}
             </div>
 
 
-            <div class="col-md-6 displaycon222">
+            <div class="col-md-6">
                 <div id="carouselExampleControls" class="carousel" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="card1">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="profile-photo" src="images/AX.png" alt="Profile Photo">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h6>Hamza Awan</h6>
-                                        <p class="description">Web Developer</p>
+                                <div class="d-flex gap-3">
+                                    <img class="profile-photo" src="images/review.png" alt="Profile Photo">
+                                    <div>
+                                        <h6>George</h6>
+                                        <p class="description">Berlin</p>
                                     </div>
                                 </div>
-                                <p class="ptextClass">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Cum ex in ea consequuntur natus est recusandae corporis nobis qui quos!</p>
+                                <p class="ptextClass">"Exceptional service from start to finish! We recently used Hathaway Limousines in Germany, and the experience was nothing short of luxurious. The chauffeur was punctual, the limousine was immaculate, and the entire journey was a seamless blend of comfort and sophistication. Highly recommended for anyone seeking a premium transport experience!"</p>
 
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="card1">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="profile-photo" src="images/r2.jpg" alt="Profile Photo">
+                                <div class="d-flex gap-3">
+                                    <img class="profile-photo" src="images/r2.jpg" alt="Profile Photo">
+                                    <div>
+                                        <h6>Jacob</h6>
+                                        <p class="description">Frankfurt</p>
                                     </div>
-                                    <div class="col-md-6">
-                                        <h6>John Doe</h6>
-                                        <p class="description">Web Developer</p>
-                                    </div>
-                                    <p class="ptextClass">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                        Cum ex in ea consequuntur natus est recusandae corporis nobis qui quos!</p>
                                 </div>
+                                <p class="ptextClass">"Our special event was elevated to new heights thanks to Hathaway Limousines. The sleek and stylish limousine, coupled with a professional and courteous chauffeur, made our journey through Germany not just a transportation service but a memorable part of the celebration. Exemplary service that truly stands out!"</p>
 
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="card1">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="profile-photo" src="images/review.png" alt="Profile Photo">
+                                <div class="d-flex gap-3">
+                                    <img class="profile-photo" src="images/review.png" alt="Profile Photo">
+                                    <div>
+                                        <h6>Frederick</h6>
+                                        <p class="description">Hamburg</p>
                                     </div>
-                                    <div class="col-md-6">
-                                        <h6>Haseeb</h6>
-                                        <p class="description">Web Developer</p>
-                                    </div>
-                                    <p class="ptextClass">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque
-                                        eos placeat magnam dolorem voluptas culpa nemo
-                                        , iusto numquam deserunt eum suscipit minus totam ratione cupiditate.</p>
                                 </div>
+                                <p class="ptextClass">"A five-star experience! Hathaway Limousines in Germany exceeded our expectations in every way. The attention to detail, the luxurious fleet, and the friendly yet professional staff made our travel experience truly exceptional. If you're looking for a reliable and high-class limousine service in Germany, this is the company to choose."
+                                </p>
 
                             </div>
                         </div>
@@ -669,8 +656,8 @@
                         <div class="card-content">
                             <p id="GK3">Travel</p>
                             <p id="GK4">3 hidden-gem destination for your wish list</p>
-                            <button type="button" class="btn btn-light" id="arbutton"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
+                            {{-- <button type="button" class="btn btn-light" id="arbutton"><i
+                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button> --}}
                         </div>
                     </div>
                 </div>
@@ -688,8 +675,8 @@
                         <div class="card-content">
                             <p id="GK3">Travel</p>
                             <p id="GK4">3 hidden-gem destination for your wish list</p>
-                            <button type="button" class="btn btn-light" id="arbutton"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
+                            {{-- <button type="button" class="btn btn-light" id="arbutton"><i
+                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button> --}}
                         </div>
 
                     </div>
@@ -711,8 +698,8 @@
                         <div class="card-content">
                             <p id="GK3">Travel</p>
                             <p id="GK4">3 hidden-gem destination for your wish list</p>
-                            <button type="button" class="btn btn-light" id="arbutton"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
+                            {{-- <button type="button" class="btn btn-light" id="arbutton"><i
+                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button> --}}
                         </div>
                     </div>
                 </div>
@@ -727,7 +714,7 @@
     <div class="container class1font">
         <div class="col-md-12">
             <div class="partner_con">
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-md-4 text-center mb-3">
                         <h4>The Partners who sell<br />our products</h4>
                     </div>
