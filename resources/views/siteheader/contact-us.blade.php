@@ -78,10 +78,10 @@
           </div>
       </div> -->
       
-    <div class="container adjustCenID mb-5 class1font">
+    <div class="container mb-5 ">
         <div class="row contact-form--container">
-            <div class="col-md-6 mrgintop">
-                <div class="row mrgintop">
+            <div class="col-md-8">
+                <div class="row">
                     <div class="col-md-12 text-center mb-5">
                         <h1>Leave us your information</h1>
                     </div>
@@ -93,7 +93,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-            @endif
+                @endif
                 <form action="{{ route('contact.us') }}" method="post" accept-charset="utf-8">
                     @csrf
                     <div class="row">
@@ -156,23 +156,23 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-6 mrgintop">
-                <div class="row mrgintop">
+            <div class="col-md-4">
+                <div class="row">
                     <div class="col-md-12 text-center mb-5">
-                        <h1>Our Offices</h1>
+                        <h1>Our Office</h1>
                     </div>
                 </div>
-                <div class="row adjustCenID">
-                    <div class="col-md-6">
-                        <a href="#"><i class="fa-solid fa-briefcase center BK1" style="color: black"></i></a>
-                        <p class="BK4">New York Office</p>
+                <div class="">
+                    <div class="">
+                        <i class="fa-solid fa-briefcase center BK1" style="color: black; margin-bottom:17px"></i>
+                        <p class="BK4">Germany</p>
                         <p class="BK7">
-                            PO Box 1611 Collins Street<br />West Victoria 8007 Australia
+                            Friedrich-Ebert-Anlage 36<br />60325 Frankfurt am Main
                         </p>
-                        <p class="BK7">+32 2 512 08 15</p>
-                        <p class="BK7">newyork@hathaway.com</p>
+                        <p class="BK7">Email: info@hathaway-limousines.com</p>
+                        <a class="BK7 text-center" style="color:#F3972D; display:inline-block; width:100%" href="tel:+49 (0) 69 26022180">+49 (0) 69 26022180</a>
                     </div>
-                    <div class="col-md-6">
+                    {{-- <div class="col-md-6">
                         <a href="#"><i class="fa-solid fa-city center BK1" style="color: black"></i></a>
                         <p class="BK4">Istanbul Office</p>
                         <p class="BK7">
@@ -180,8 +180,8 @@
                         </p>
                         <p class="BK7">+32 2 512 08 15</p>
                         <p class="BK7">istanbul@hathaway.com</p>
-                    </div>
-                    <div class="col-md-6">
+                    </div> --}}
+                    {{-- <div class="col-md-6">
                         <a href="#"><i class="fa-regular fa-building center BK1" style="color: black"></i></a>
                         <p class="BK4">Paris Office</p>
                         <p class="BK7">
@@ -189,8 +189,8 @@
                         </p>
                         <p class="BK7">+32 2 512 08 15</p>
                         <p class="BK7">paris@hathaway.com</p>
-                    </div>
-                    <div class="col-md-6">
+                    </div> --}}
+                    {{-- <div class="col-md-6">
                         <a href="#"><i class="fa-solid fa-building-columns center BK1"
                                 style="color: black"></i></a>
                         <p class="BK4">London Office</p>
@@ -199,7 +199,7 @@
                         </p>
                         <p class="BK7">+32 2 512 08 15</p>
                         <p class="BK7">london@hathaway.com</p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

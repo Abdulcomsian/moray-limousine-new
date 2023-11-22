@@ -24,18 +24,12 @@
 
     <div class="container class1font">
         <div class="row mt-4">
-            <div class="col-md-12">
-                <h1>We remagine the way the world moves for the better</h1>
-                <p>Welcome to [Company Name], your trusted partner for all your transportation needs. With [X] years of
-                    experience in the industry, we take pride in offering safe,
-                    reliable, and convenient taxi services to our valued customers.</p>
-                <p>At [Company Name], we understand the importance of punctuality, comfort, and
-                    affordability when it comes to getting from one place to another. Our dedicated team
-                    of professional drivers and a modern fleet of vehicles are at your service 24/7, ensuring
-                    that you reach your destination comfortably and on time.</p>
+            <div class="text-center">
+                <h1>Über Uns</h1>
+                <p class="w-50 mx-auto">Wir von Hathaway Limousines haben uns zum Ziel gesetzt das Premiumreisen auf der Straße noch komfortabler und luxuriöser zu gestalten. Dabei steht das Wohlbefinden unserer Gäste stets an erster Stelle. Wir freuen uns bald auch Sie als Fahrgast an Board begrüßen zu dürfen!</p>
             </div>
         </div>
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-6">
                 <ul class="custom-list">
                     <li id="listID1">Lorem ipsum dolor sit amet.</li>
@@ -45,10 +39,10 @@
                     <li id="listID1">Etiam consequat lacus eu odio dictum.</li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
     </div>
 
-    <div class="container-fluid adjustCenID class1font">
+    {{-- <div class="container-fluid adjustCenID class1font">
 
         <div class="col-md-12">
             <div id="number_con">
@@ -73,7 +67,7 @@
             </div>
         </div>
 
-    </div>
+    </div> --}}
 
     <div class="container class1font" id="cont7">
         <div class="row">
@@ -141,7 +135,7 @@
         </div>
     </div>
 
-    <div class="container-fluid class1font" id="cont11">
+    {{-- <div class="container-fluid class1font" id="cont11">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 ">
@@ -165,9 +159,91 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+
+    <div class="container displaycon222 class1font mt-5" id="cont2222">
+        <div class="row ">
+            <div class="col-md-6 d-flex flex-column gap-4">
+                <p class="IK11" style="color: black">Hear what our amazing<br> customers say</p>
+                <p class="IK111" style="color: black; font-size:14px">Ensuring global customer satisfaction, we consistently deliver high-quality services with prompt efficiency. Our commitment extends beyond borders, providing excellence to customers around the world.</p>
+
+                {{-- <div calss="row " class="btn16ID">
+                    <button type="button" class="btn" style="color: white;width: 100%;">Get Started <i
+                            class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button>
+                </div> --}}
+            </div>
+
+
+            <div class="col-md-6">
+                <div id="carouselExampleControls" class="carousel" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card1">
+                                <div class="d-flex gap-3">
+                                    <img class="profile-photo" src="images/review.png" alt="Profile Photo">
+                                    <div>
+                                        <h6>George</h6>
+                                        <p class="description">Berlin</p>
+                                    </div>
+                                </div>
+                                <p class="ptextClass">"Exceptional service from start to finish! We recently used Hathaway Limousines in Germany, and the experience was nothing short of luxurious. The chauffeur was punctual, the limousine was immaculate, and the entire journey was a seamless blend of comfort and sophistication. Highly recommended for anyone seeking a premium transport experience!"</p>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card1">
+                                <div class="d-flex gap-3">
+                                    <img class="profile-photo" src="images/r2.jpg" alt="Profile Photo">
+                                    <div>
+                                        <h6>Jacob</h6>
+                                        <p class="description">Frankfurt</p>
+                                    </div>
+                                </div>
+                                <p class="ptextClass">"Our special event was elevated to new heights thanks to Hathaway Limousines. The sleek and stylish limousine, coupled with a professional and courteous chauffeur, made our journey through Germany not just a transportation service but a memorable part of the celebration. Exemplary service that truly stands out!"</p>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card1">
+                                <div class="d-flex gap-3">
+                                    <img class="profile-photo" src="images/review.png" alt="Profile Photo">
+                                    <div>
+                                        <h6>Frederick</h6>
+                                        <p class="description">Hamburg</p>
+                                    </div>
+                                </div>
+                                <p class="ptextClass">"A five-star experience! Hathaway Limousines in Germany exceeded our expectations in every way. The attention to detail, the luxurious fleet, and the friendly yet professional staff made our travel experience truly exceptional. If you're looking for a reliable and high-class limousine service in Germany, this is the company to choose."
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="navigation">
+                        <a class="carousel-control-prev " href="#carouselExampleControls" role="button"
+                            data-slide="prev"id="prev-slide">
+                            <span class="fa fa-arrow-alt-circle-left" style="color:black ;font-size: 20px;"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next displayarrow" href="#carouselExampleControls" role="button"
+                            data-slide="next"id="next-slide">
+                            <span class="fa fa-arrow-alt-circle-right" style="color:black ;font-size: 20px;"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        <div class="slide-number">
+                            <span id="current-slide">1</span> / <span id="total-slides">3</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
     </div>
 
-    <div class="container-fluid class1font">
+    {{-- <div class="container-fluid class1font">
         <div class="col-md-12">
             <div class="partner_con border-bottom">
                 <div class="row">
@@ -191,7 +267,37 @@
             </div>
         </div>
 
+    </div> --}}
+
+    {{-- UpdatedCode  --}}
+    <div class="container class1font">
+        <div class="col-md-12">
+            <div class="partner_con pb-0">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 text-center mb-3">
+                        <h4>The Partners who sell<br />our products</h4>
+                    </div>
+                    <div class="col-md-2 text-center mb-3">
+                        <img src="images/all/imagee1.jpeg"/>
+                        {{-- <i class="fa-solid fa-car fa-3x"></i> --}}
+                    </div>
+                    <div class="col-md-2 text-center mb-3">
+                        <img src="images/all/imagee2.jpeg"/>
+                        {{-- <i class="fa-solid fa-motorcycle fa-3x"></i> --}}
+                    </div>
+                    <div class="col-md-2 text-center mb-3">
+                        <img src="images/all/imagee3.jpeg"/>
+                        {{-- <i class="fa-solid fa-business-time fa-3x"></i> --}}
+                    </div>
+                    {{-- <div class="col-md-2 text-center mb-3">
+                        <i class="fa-solid fa-user-secret fa-3x"></i>
+                    </div> --}}
+                </div>
+                <hr id="linex" />
+            </div>
+        </div>
     </div>
+
 
     {{-- Start of FAQs  --}}
     <div class="container adjustCenID text-center class1font">
@@ -224,7 +330,7 @@
 
 
 
-    <div class="container-fluid class1font" id="cont14">
+    {{-- <div class="container-fluid class1font" id="cont14">
         <div class="container row align-items-center justify-content-center mx-auto">
             <div class="col-md-5">
                 <div class="row adjustCenID text-center">
@@ -259,7 +365,7 @@
             </div>
 
         </div>
-    </div>
+    </div> --}}
 
 
 

@@ -2394,9 +2394,9 @@ ul.social-ft li:last-child {
     border: 2px solid #bf9c60;
 }
 
-span {
+/* span {
     cursor: pointer;
-}
+} */
 .minus,
 .plus {
     background: #bf9c60;
