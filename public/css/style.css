@@ -552,14 +552,16 @@ button:focus {
 /*========== Page Title ==========*/
 .top-title {
     background: url("../images/template/page-title.jpg") no-repeat top center;
-    height: 394px;
+    /* height: 394px; */
     position: relative;
 }
 .top-title.ver-1 {
     background: url("../images/template/services-single.jpg") no-repeat top
         center;
-    height: 394px;
+    /* height: 394px; */
     position: relative;
+    margin-top: 60px;
+    background-repeat: no-repeat;
 }
 .top-title .top-page {
     position: absolute;
