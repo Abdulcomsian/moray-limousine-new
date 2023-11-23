@@ -159,7 +159,7 @@
                                                 </div> --}}
                                                 <div class="date form_date d-flex align-items-center form-input--container" data-date="3" data-date-format="dd MM yyyy"
                                                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                                                    <span class="icon--container" ><img src="{{asset('images/icon/chevron-back-sharp.svg')}}" alt=""></span>
+                                                    <span class="icon--container" ><img src="{{asset('images/icon/calender.svg')}}" alt=""></span>
                                                     <input size="100%" class="mt-0 mb-0" type="text" id="pick-date"
                                                         placeholder="{{ date('d-M-Y') }}" readonly required>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
@@ -186,7 +186,7 @@
                                                 <div class="controls input-append date form_time d-flex align-items-center form-input--container" data-date=""
                                                     data-date-format="hh:ii p" data-link-field="dtp_input3"
                                                     data-link-format="hh:ii">
-                                                    <span class="icon--container" ><img src="{{asset('images/icon/chevron-back.svg')}}" alt=""></span>
+                                                    <span class="icon--container" ><img src="{{asset('images/icon/clock.svg')}}" alt=""></span>
                                                     <input size="100%" class="mb-0 mt-0" type="text"
                                                         value="" id="pick-time" placeholder="12:25 am" readonly>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
