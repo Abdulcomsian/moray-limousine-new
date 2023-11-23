@@ -177,7 +177,7 @@
 
                                         <div class="row adjustCenID">
                                             <button type="submit" class="btn btn-dark w-100 searchbtn22">
-                                                <i class="fa fa-search"></i> Search
+                                                <i class="fa fa-search mr-1" style="vertical-align: middle"></i> Search
                                             </button>
                                         </div>
                                     </form>
@@ -289,9 +289,9 @@
                                                     value="" /><br />
                                             </div>
                                         </div>
-                                        <div class="row adjustCenID">
+                                        <div class="row ">
                                             <button type="submit" class="btn btn-dark w-100 searchbtn22">
-                                                <i class="fa fa-search"></i> Search
+                                                <i class="fas fas-search"></i> Search
                                             </button>
                                         </div>
                                     </form>

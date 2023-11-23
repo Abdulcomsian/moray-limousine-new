@@ -90,9 +90,9 @@
                 <div>
                     <p class="text">Where Would You Like To Go?</p>
                     <p class="text1">A new Class of Luxury<br />Limo Service</p>
-                    <a type="button" href="{{ url('/our-fleet') }}" class=" btn btn1611ID">
+                    <button type="button" href="{{ url('/our-fleet') }}" class=" btn1611ID">
                         Visit Our Fleet<i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
-                    </a>
+                    </button>
 
                 </div>
             </div>
@@ -339,7 +339,7 @@
                                         </div>
                                         <div class="row adjustCenID">
                                             <button type="submit" class="btn btn-dark w-100 searchbtn22">
-                                                <i class="fa fa-search"></i> Search
+                                                <i class="fa fa-search mr-1" style="vertical-align: middle"></i> Search
                                             </button>
                                         </div>
                                     </form>

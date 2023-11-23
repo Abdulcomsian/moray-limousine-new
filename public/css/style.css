@@ -549,6 +549,15 @@ button:focus {
 .box-right .login a {
     color: #ffffff;
 }
+.btn1611ID {
+    padding: 6px;
+    width: fit-content;
+}
+.btn1611ID:hover {
+    padding: 6px;
+    width: fit-content;
+    border: 1px solid rgb(212, 212, 212);
+}
 /*========== Page Title ==========*/
 .top-title {
     background: url("../images/template/page-title.jpg") no-repeat top center;
