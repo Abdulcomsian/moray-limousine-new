@@ -38,7 +38,7 @@
         direction: ltr;
         background-color: #151515;
         width: 300px !important;
-        left: 844px !important;
+        left: 934px !important;
     }
 </style>
     <section class="top-title ver-1">
