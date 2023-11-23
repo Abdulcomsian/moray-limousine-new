@@ -505,7 +505,7 @@
                 {{-- </div> --}}
 
                 {{-- <div class="col-md-6 "> --}}
-                    <p class="copyRightText text-center">Developed by <a href="https://dbqplabs.com/" title="Software development agency in Finland" nofollow style="color: inherit">dpqp</a> 
+                    <p class="copyRightText text-center">Developed by <a href="https://dbqplabs.com/" target="_blank" title="Software development agency in Finland" nofollow style="color: inherit">dpqp</a> 
                         {{-- <a href="{{url('/mpressum')}}" class="pl-2 pr-2" style="color: goldenrod; text-decoration: underline;"> Impressum</a>
                         <a href="{{url('/datenschutz')}}" class="pl-2" style="color: goldenrod;text-decoration: underline;"> Datenschutz</a> --}}
                     </p>

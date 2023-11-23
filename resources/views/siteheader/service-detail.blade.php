@@ -14,6 +14,13 @@
         background: url({{asset('images/template/services-single.jpg')}});
     }
     @endif
+    ul{
+        padding-left:0 ;
+    }
+    a, a:hover{
+        color: dodgerblue;
+        text-decoration: none
+    }
 </style>
     <section class="top-title ver-1">
         <div class="top-page">
@@ -22,6 +29,7 @@
                     <div class="col-md-12">
                         <div class="top-page-heading">
                             <h1>{{$service->service_title}} </h1>
+                        
                             <p class="sub-title">{{$service->short_description}}</p>
                         </div>
                     </div>
@@ -39,7 +47,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-8">
+                <div class="col">
                     <article class="block-customs-single ver-1">
                         <div class="featured-customs">
                             <div class="images">
@@ -54,52 +62,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-md-4">
-                    <div class="sidebar">
-                        <div class="widget widget-category">
-                            <h3>Service</h3>
-                            <ul>
-                                @foreach($services as $service)
-                                <li>
-                                    <a href="{{url('service/details/'.$service->id)}}" title="Service Detail">
-                                        <img src="{{asset('images/icon/next.png')}}" alt="">{{$service->service_title}}</a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="widget-infomation">
-                            <ul>
-                                <li>
-                                    <div class="text">
-                                        <h5>Address</h5>
-                                        <p>{!! \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADDRESS) !!}</p>
-                                    </div>
-                                    <div class="icon">
-                                        <img src="{{asset('images/icon/address.png')}}" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="text">
-                                        <h5>Phone</h5>
-                                        <p>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) : '+49 (0) 69 330 889 08'}}</p>
-                                    </div>
-                                    <div class="icon">
-                                        <img src="{{asset('images/icon/phone.png')}}" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="text">
-                                        <h5>Email</h5>
-                                        <p>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_EMAIL_ADDRESS)}}</p>
-                                    </div>
-                                    <div class="icon">
-                                        <img src="{{asset('images/icon/email.png')}}" alt="">
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
