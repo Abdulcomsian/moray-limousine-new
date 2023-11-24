@@ -493,7 +493,7 @@
 
     {{-- Start of Showcase section  --}}
 
-    {{-- <div class="container  class1font" id="cont3434">
+    <div class="container  class1font" id="cont3434">
         <div class="row align-items-center">
 
             <div class="col-md-6 adjustCenID">
@@ -536,7 +536,7 @@
                 </button>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     {{-- End of Showcase  --}}
 
@@ -629,7 +629,7 @@
 
     {{-- Start of news  --}}
 
-    <div class="container class1font mt-5" id="cont12">
+    {{-- <div class="container class1font mt-5" id="cont12">
         <div class="row justify-content-center align-items-center mb-4">
 
             <div class="col-md-5 ">
@@ -646,7 +646,6 @@
                 <div class="card" id="CARD">
                     <div class="card-body latest-news--card">
                         <div class="card-image image1">
-                            {{-- <img class="card-img-top" src="images/C5.jpg" alt="Card image cap"> --}}
                             <div class="image-content">
                                 <h2>14.</h2>
                                 <p>August,23</p>
@@ -655,8 +654,6 @@
                         <div class="card-content">
                             <p id="GK3">Travel</p>
                             <p id="GK4">3 hidden-gem destination for your wish list</p>
-                            {{-- <button type="button" class="btn btn-light" id="arbutton"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button> --}}
                         </div>
                     </div>
                 </div>
@@ -665,7 +662,6 @@
                 <div class="card" id="CARD">
                     <div class="card-body latest-news--card">
                         <div class="card-image image2">
-                            {{-- <img class="card-img-top" src="images/C3.jpg" alt="Card image cap" id="opacitty"> --}}
                             <div class="image-content">
                                 <h2>14.</h2>
                                 <p>August,23</p>
@@ -674,8 +670,6 @@
                         <div class="card-content">
                             <p id="GK3">Travel</p>
                             <p id="GK4">3 hidden-gem destination for your wish list</p>
-                            {{-- <button type="button" class="btn btn-light" id="arbutton"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button> --}}
                         </div>
 
                     </div>
@@ -687,8 +681,6 @@
                 <div class="card" id="CARD">
                     <div class="card-body latest-news--card">
                         <div class="card-image image3">
-                            {{-- <img class="card-img-top" src="images/c2.jpg" alt="Card image cap"
-                            id="opacitty"> --}}
                             <div class="image-content">
                                 <h2>14.</h2>
                                 <p>August,23</p>
@@ -697,14 +689,12 @@
                         <div class="card-content">
                             <p id="GK3">Travel</p>
                             <p id="GK4">3 hidden-gem destination for your wish list</p>
-                            {{-- <button type="button" class="btn btn-light" id="arbutton"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button> --}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- End of news  --}}
 
