@@ -191,7 +191,7 @@
                         <div class="d-flex align-items-center gap-2">
                             <i class="fa fa-phone" style="color: white"></i>
                             <span class="phone">
-                                {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) : '+49 (0) 69 330 889 08' }}
+                                {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) : '+49 69 26022180' }}
                             </span>
                         </div>
 
@@ -408,7 +408,7 @@
                 <div class="d-flex justify-content-between gap-4 connection-list">
                     <div>
                         <a href="#"><i class="fa fa-phone phone1" style="color: white;" id=""></i></a>
-                        <span class="mx-1 Number" id="">+49 (0) 69 26022180</span>
+                        <span class="mx-1 Number" id="">+49 69 26022180</span>
                     </div>
                     <div class="d-flex align-items-center">
                         <span class="mx-1 Number" id="">Follow Us</span>
@@ -473,14 +473,14 @@
                         <li>Hathaway Limousines</li>
                         <li>Friedrich-Ebert-Anlage 36</li>
                         <li>60325 Frankfurt am Main</li>
-                        <li>+49 (0) 69 26022180</li>
+                        <li>+49 69 26022180</li>
                     </ul>
                 </div>
                 <div class="col">
                     <p class="JK2">Payment</p>
                     <div class="d-flex flex-column justify-content-md-end storeIcons gap-2">
-                        <img src="images/all/paymentMethod1.png" class="EK41" alt="Avatar"> 
-                        <img src="images/all/paymentMethod2.png" class="EK41" alt="Avatar"> 
+                        <img src="{{asset('images/all/paymentMethod1.png')}}" class="EK41" alt="Avatar"> 
+                        <img src="{{asset('images/all/paymentMethod2.png')}}" class="EK41" alt="Avatar"> 
                         {{-- <button type="button" class="btn-dark" id="BTM"><a href="#"><i
                                     class="fa-brands fa-apple" id="apple" style="color:white"></i></a>
                             <p id="lin1"> | </p>

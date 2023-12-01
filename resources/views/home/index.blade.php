@@ -642,8 +642,9 @@
 
 
     {{-- Start of news  --}}
+    {{-- Client Says hide this section for now. Please don`t delete this section as we will use this later  --}}
 
-    <div class="container class1font mt-5" id="cont12">
+    {{-- <div class="container class1font mt-5" id="cont12">
         <div class="row justify-content-center align-items-center mb-4">
 
             <div class="col-md-5 ">
@@ -659,9 +660,9 @@
             <div class="col-md-3">
                 <div class="card" id="CARD">
                     <div class="card-body latest-news--card">
-                        <div class="card-image image1">
+                        <div class="card-image image1"> --}}
                             {{-- <img class="card-img-top" src="images/C5.jpg" alt="Card image cap"> --}}
-                            <div class="image-content">
+                            {{-- <div class="image-content">
                                 <h2>14.</h2>
                                 <p>August,23</p>
                             </div>
@@ -678,9 +679,9 @@
             <div class="col-md-3">
                 <div class="card" id="CARD">
                     <div class="card-body latest-news--card">
-                        <div class="card-image image2">
+                        <div class="card-image image2"> --}}
                             {{-- <img class="card-img-top" src="images/C3.jpg" alt="Card image cap" id="opacitty"> --}}
-                            <div class="image-content">
+                            {{-- <div class="image-content">
                                 <h2>14.</h2>
                                 <p>August,23</p>
                             </div>
@@ -701,8 +702,8 @@
                 <div class="card" id="CARD">
                     <div class="card-body latest-news--card">
                         <div class="card-image image3">
-                            {{-- <img class="card-img-top" src="images/c2.jpg" alt="Card image cap"
-                            id="opacitty"> --}}
+                            <img class="card-img-top" src="images/c2.jpg" alt="Card image cap"
+                            id="opacitty">
                             <div class="image-content">
                                 <h2>14.</h2>
                                 <p>August,23</p>
@@ -718,7 +719,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- End of news  --}}
 
