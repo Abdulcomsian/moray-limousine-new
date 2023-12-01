@@ -245,57 +245,59 @@
                                             @error('pick_address')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i
-                                                            class="fas fa-map-marker-alt"></i></span>
+                                            <div class="">
+                                                <div class="input-group-prepend d-flex align-items-center form-input--container">
+                                                    <span class="icon--container ml-3" ><span class="icon-border"><img src="{{asset('images/icon/from.svg')}}" alt=""></span></span>
                                                             <input type="text" id="pick-location-hour" name="pick_address"
-                                                                class="form-control pick-address" placeholder="From" />
+                                                                class="form-control pick-address mb-0" placeholder="From" />
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="row adjustCenID">
-                                            <div class="pick-drop-day mb-2">
-                                                @error('selected_hour')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                                <select class="form-control browser-default custom-select"
-                                                    name="selected_hour" id="location-hour">
-                                                    <option selected value="">Length of Time</option>
-                                                    <option class="select-it" value="1"> 1 Hour</option>
-                                                    <option value="2"> 2 Hours </option>
-                                                    <option value="3">3 Hours</option>
-                                                    <option value="4">4 Hours</option>
-                                                    <option value="5">5 Hours</option>
-                                                    <option value="6">6 Hours</option>
-                                                    <option value="7">7 Hours</option>
-                                                    <option value="8">8 Hours</option>
-                                                    <option value="9">9 Hours</option>
-                                                    <option value="10">10 Hours</option>
-                                                    <option value="11">11 Hours</option>
-                                                    <option value="12">12 Hours</option>
-                                                    <option value="13">13 Hours</option>
-                                                    <option value="14">14 Hours</option>
-                                                    <option value="15">15 Hours</option>
-                                                    <option value="16">16 Hours</option>
-                                                    <option value="17">17 Hours</option>
-                                                    <option value="18">18 Hours</option>
-                                                    <option value="19">19 Hours</option>
-                                                    <option value="20">20 Hours</option>
-                                                    <option value="21">21 Hours</option>
-                                                    <option value="22">22 Hours</option>
-                                                    <option value="23">23 Hours</option>
-                                                    <option value="24">24 Hours</option>
-                                                </select>
-                                                <span class="hide valid-drop" style="color: rgba(190,181,12,0.97)"></span>
+                                            <div>
+                                                <div class="pick-drop-day mb-2 d-flex align-items-center form-input--container">
+                                                    @error('selected_hour')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                    <span class="icon--container ml-3" ><span class="icon-border"><img src="{{asset('images/icon/from.svg')}}" alt=""></span></span>
+                                                    <select class="form-control browser-default custom-select mb-0"
+                                                        name="selected_hour" id="location-hour">
+                                                        <option selected value="">Length of Time</option>
+                                                        <option class="select-it" value="1"> 1 Hour</option>
+                                                        <option value="2"> 2 Hours </option>
+                                                        <option value="3">3 Hours</option>
+                                                        <option value="4">4 Hours</option>
+                                                        <option value="5">5 Hours</option>
+                                                        <option value="6">6 Hours</option>
+                                                        <option value="7">7 Hours</option>
+                                                        <option value="8">8 Hours</option>
+                                                        <option value="9">9 Hours</option>
+                                                        <option value="10">10 Hours</option>
+                                                        <option value="11">11 Hours</option>
+                                                        <option value="12">12 Hours</option>
+                                                        <option value="13">13 Hours</option>
+                                                        <option value="14">14 Hours</option>
+                                                        <option value="15">15 Hours</option>
+                                                        <option value="16">16 Hours</option>
+                                                        <option value="17">17 Hours</option>
+                                                        <option value="18">18 Hours</option>
+                                                        <option value="19">19 Hours</option>
+                                                        <option value="20">20 Hours</option>
+                                                        <option value="21">21 Hours</option>
+                                                        <option value="22">22 Hours</option>
+                                                        <option value="23">23 Hours</option>
+                                                        <option value="24">24 Hours</option>
+                                                    </select>
+                                                    <span class="hide valid-drop" style="color: rgba(190,181,12,0.97)"></span>
+                                                </div>
                                             </div>
                                         </div>
 
 
                                         <div class="row adjustCenID">
                                             <!-- Date Picker -->
-                                            <div class="input-group">
+                                            <div class="">
                                                 @error('pick_date')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
@@ -303,38 +305,45 @@
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
                                                 </div> --}}
-                                                <div class="date form_date" data-date="" data-date-format="dd MM yyyy"
-                                                    data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-                                                    <input class="mt-0 mb-0" size="100%" type="text"
-                                                        id="pick_date_hour" placeholder="Wed 19 July, 2017" readonly>
-                                                    <span class="add-on"><i class="icon-remove"></i></span>
-                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                                
+                                                <div class="d-flex align-items-center form-input--container">
+                                                    <div class="date form_date d-flex" data-date="" data-date-format="dd MM yyyy"
+                                                        data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
+                                                        <span class="icon--container ml-3" ><img src="{{asset('images/icon/calender.svg')}}" alt=""></span>
+                                                        <input class="mt-0 mb-0" size="100%" type="text"
+                                                            id="pick_date_hour" placeholder="Wed 19 July, 2017" readonly>
+                                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                                        <span class="add-on"><i class="icon-th"></i></span>
+                                                    </div>
+                                                    <input type="hidden" name="pick_date" id="dtp_input1"
+                                                        class="pick_date" /><br />
                                                 </div>
-                                                <input type="hidden" name="pick_date" id="dtp_input1"
-                                                    class="pick_date" /><br />
                                             </div>
                                         </div>
 
                                         <div class="row adjustCenID">
                                             <!-- Time Picker -->
-                                            <div class="input-group">
-                                                @error('pick_time')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                                {{-- <div class="input-group-append">
-                                                    <span class="input-group-text"><i class="far fa-clock"></i></span>
-                                                </div> --}}
-                                                <div class="controls input-append date form_time" data-date=""
-                                                    data-date-format="hh:ii p" data-link-field="dtp_input4"
-                                                    data-link-format="hh:ii">
-                                                    <input class="mt-0 mb-0" size="100%" type="text"
-                                                        value="" id="pick_time_hour" placeholder="12:25 am"
-                                                        readonly>
-                                                    <span class="add-on"><i class="icon-remove"></i></span>
-                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                            <div>
+                                                <div class="d-flex align-items-center form-input--container">
+                                                    @error('pick_time')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                    {{-- <div class="input-group-append">
+                                                        <span class="input-group-text"><i class="far fa-clock"></i></span>
+                                                    </div> --}}
+                                                    <div class="controls input-append date form_time d-flex" data-date=""
+                                                        data-date-format="hh:ii p" data-link-field="dtp_input4"
+                                                        data-link-format="hh:ii">
+                                                        <span class="icon--container ml-3" ><img src="{{asset('images/icon/clock.svg')}}" alt=""></span>
+                                                        <input class="mt-0 mb-0" size="100%" type="text"
+                                                            value="" id="pick_time_hour" placeholder="12:25 am"
+                                                            readonly>
+                                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                                        <span class="add-on"><i class="icon-th"></i></span>
+                                                    </div>
+                                                    <input type="hidden" name="pick_time" id="dtp_input4"
+                                                        value="" /><br />
                                                 </div>
-                                                <input type="hidden" name="pick_time" id="dtp_input4"
-                                                    value="" /><br />
                                             </div>
                                         </div>
                                         <div class="row adjustCenID">

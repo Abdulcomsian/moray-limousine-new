@@ -2483,6 +2483,10 @@ ul.social-ft li:last-child {
     padding-bottom: 10px;
 }
 
+#location-hour:focus {
+    box-shadow: none;
+}
+
 @media screen and (max-width: 584px) {
     .icon {
         font-size: 20px;
