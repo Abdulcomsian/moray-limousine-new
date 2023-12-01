@@ -404,7 +404,9 @@
 	margin-bottom: 3px;
 }
 .widget-infomation ul li .text p {
-	line-height: 24px;
+	line-height: 1.4;
+	margin-bottom: 5px;
+	color: lightslategray;
 }
 .widget-infomation ul li .icon {
 	text-align: right;

@@ -47,6 +47,8 @@
             direction: ltr;
             background-color: #151515;
             width: 300px !important;
+            left: 844px !important;
+            /* top: 392.5px !important; */
         }
 
         .schedule-booking .form-booking select {
@@ -68,7 +70,6 @@
 
         #pick-date,
         #pick-time,
-        #pick-location,
         #drop-location,
         #pick-location-hour,
         #location-hour,
@@ -89,9 +90,9 @@
                 <div>
                     <p class="text">Where Would You Like To Go?</p>
                     <p class="text1">A new Class of Luxury<br />Limo Service</p>
-                    <a type="button" href="{{ url('/our-fleet') }}" class=" btn btn1611ID">
+                    <button type="button" href="{{ url('/our-fleet') }}" class=" btn1611ID">
                         Visit Our Fleet<i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
-                    </a>
+                    </button>
 
                 </div>
             </div>
@@ -151,13 +152,14 @@
                                             @error('pick_date')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
-                                            <div class="input-group">
+                                            {{-- <div class="input-group"> --}}
                                                 {{-- <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
                                                 </div> --}}
-                                                <div class="date form_date" data-date="3" data-date-format="dd MM yyyy"
+                                                <div class="date form_date d-flex align-items-center form-input--container" data-date="3" data-date-format="dd MM yyyy"
                                                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                                    <span class="icon--container" ><img src="{{asset('images/icon/calender.svg')}}" alt=""></span>
                                                     <input size="100%" class="mt-0 mb-0" type="text" id="pick-date"
                                                         placeholder="{{ date('d-M-Y') }}" readonly required>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
@@ -165,7 +167,7 @@
                                                 </div>
                                                 <input type="hidden" name="pick_date" id="dtp_input2"
                                                     class="pick_date" /><br />
-                                            </div>
+                                            {{-- </div> --}}
                                         </div>
 
 
@@ -175,13 +177,16 @@
                                             @error('pick_time')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
-                                            <div class="input-group">
+                                            {{-- <div class="input-group"> --}}
                                                 {{-- <div class="input-group-append">
-                                                    <span class="input-group-text"><i class="far fa-clock"></i></span>
+                                                    <span class="input-group-text"><div class="input-group-prepend">
+                                                    <span class="input-group-text"> <img src="{{asset('images/icon/backArrow.svg')}}"/></span>
+                                                </div></span>
                                                 </div> --}}
-                                                <div class="controls input-append date form_time" data-date=""
+                                                <div class="controls input-append date form_time d-flex align-items-center form-input--container" data-date=""
                                                     data-date-format="hh:ii p" data-link-field="dtp_input3"
                                                     data-link-format="hh:ii">
+                                                    <span class="icon--container" ><img src="{{asset('images/icon/clock.svg')}}" alt=""></span>
                                                     <input size="100%" class="mb-0 mt-0" type="text"
                                                         value="" id="pick-time" placeholder="12:25 am" readonly>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
@@ -189,7 +194,7 @@
                                                 </div>
                                                 <input type="hidden" name="pick_time" id="dtp_input3"
                                                     value="" /><br />
-                                            </div>
+                                            {{-- </div> --}}
                                         </div>
 
 
@@ -199,13 +204,10 @@
                                             @error('pick_address')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i
-                                                            class="fas fa-map-marker-alt"></i></span>
-                                                </div>
+                                            <div class="d-flex align-items-center form-input--container">
+                                                    <span class="icon--container" > <span class="icon-border"><img src="{{asset('images/icon/from.svg')}}"/></span></span>
                                                 <input type="text" id="pick-location" name="pick_address"
-                                                    class="form-control pick-address" placeholder="From" />
+                                                    class="form-control pick-address mb-0" placeholder="From" />
                                             </div>
                                         </div>
 
@@ -214,13 +216,10 @@
                                             @error('drop_address')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i
-                                                            class="fas fa-map-marker-alt"></i></span>
-                                                </div>
+                                            <div class="d-flex align-items-center form-input--container">
+                                                <span class="icon--container"><span class="icon-border"> <img src="{{asset('images/icon/backArrow.svg')}}"/></span></span>
                                                 <input type="text" id="drop-location" name="drop_address"
-                                                    class="form-control drop-address" placeholder="To" />
+                                                    class="form-control drop-address mb-0" placeholder="To" />
                                             </div>
                                         </div>
 
@@ -250,9 +249,9 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
                                                             class="fas fa-map-marker-alt"></i></span>
+                                                            <input type="text" id="pick-location-hour" name="pick_address"
+                                                                class="form-control pick-address" placeholder="From" />
                                                 </div>
-                                                <input type="text" id="pick-location-hour" name="pick_address"
-                                                    class="form-control pick-address" placeholder="From" />
                                             </div>
                                         </div>
 
@@ -340,7 +339,7 @@
                                         </div>
                                         <div class="row adjustCenID">
                                             <button type="submit" class="btn btn-dark w-100 searchbtn22">
-                                                <i class="fa fa-search"></i> Search
+                                                <i class="fa fa-search mr-1" style="vertical-align: middle"></i> Search
                                             </button>
                                         </div>
                                     </form>
@@ -545,70 +544,57 @@
 
     <div class="container displaycon222 class1font" id="cont2222">
         <div class="row ">
-            <div class="col-md-6">
-                <div class="row">
-                    <p class="IK11">Hear what our amazing<br> customers say</p>
-                </div>
-                <div class="row">
-                    <p class="IK111">PO Box 1611 Collins Street West Victoria 8007 Australia</p>
-                </div>
+            <div class="col-md-6 d-flex flex-column gap-4">
+                <p class="IK11">Hear what our amazing<br> customers say</p>
+                <p class="IK111">Ensuring global customer satisfaction, we consistently deliver high-quality services with prompt efficiency. Our commitment extends beyond borders, providing excellence to customers around the world.</p>
 
-                <div calss="row " class="btn16ID">
+                {{-- <div calss="row " class="btn16ID">
                     <button type="button" class="btn" style="color: white;width: 100%;">Get Started <i
                             class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button>
-                </div>
+                </div> --}}
             </div>
 
 
-            <div class="col-md-6 displaycon222">
+            <div class="col-md-6">
                 <div id="carouselExampleControls" class="carousel" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="card1">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="profile-photo" src="images/AX.png" alt="Profile Photo">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h6>Hamza Awan</h6>
-                                        <p class="description">Web Developer</p>
+                                <div class="d-flex gap-3">
+                                    <img class="profile-photo" src="images/review.png" alt="Profile Photo">
+                                    <div>
+                                        <h6>George</h6>
+                                        <p class="description">Berlin</p>
                                     </div>
                                 </div>
-                                <p class="ptextClass">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Cum ex in ea consequuntur natus est recusandae corporis nobis qui quos!</p>
+                                <p class="ptextClass">"Exceptional service from start to finish! We recently used Hathaway Limousines in Germany, and the experience was nothing short of luxurious. The chauffeur was punctual, the limousine was immaculate, and the entire journey was a seamless blend of comfort and sophistication. Highly recommended for anyone seeking a premium transport experience!"</p>
 
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="card1">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="profile-photo" src="images/r2.jpg" alt="Profile Photo">
+                                <div class="d-flex gap-3">
+                                    <img class="profile-photo" src="images/r2.jpg" alt="Profile Photo">
+                                    <div>
+                                        <h6>Jacob</h6>
+                                        <p class="description">Frankfurt</p>
                                     </div>
-                                    <div class="col-md-6">
-                                        <h6>John Doe</h6>
-                                        <p class="description">Web Developer</p>
-                                    </div>
-                                    <p class="ptextClass">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                        Cum ex in ea consequuntur natus est recusandae corporis nobis qui quos!</p>
                                 </div>
+                                <p class="ptextClass">"Our special event was elevated to new heights thanks to Hathaway Limousines. The sleek and stylish limousine, coupled with a professional and courteous chauffeur, made our journey through Germany not just a transportation service but a memorable part of the celebration. Exemplary service that truly stands out!"</p>
 
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="card1">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="profile-photo" src="images/review.png" alt="Profile Photo">
+                                <div class="d-flex gap-3">
+                                    <img class="profile-photo" src="images/review.png" alt="Profile Photo">
+                                    <div>
+                                        <h6>Frederick</h6>
+                                        <p class="description">Hamburg</p>
                                     </div>
-                                    <div class="col-md-6">
-                                        <h6>Haseeb</h6>
-                                        <p class="description">Web Developer</p>
-                                    </div>
-                                    <p class="ptextClass">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque
-                                        eos placeat magnam dolorem voluptas culpa nemo
-                                        , iusto numquam deserunt eum suscipit minus totam ratione cupiditate.</p>
                                 </div>
+                                <p class="ptextClass">"A five-star experience! Hathaway Limousines in Germany exceeded our expectations in every way. The attention to detail, the luxurious fleet, and the friendly yet professional staff made our travel experience truly exceptional. If you're looking for a reliable and high-class limousine service in Germany, this is the company to choose."
+                                </p>
 
                             </div>
                         </div>
@@ -670,8 +656,6 @@
                         <div class="card-content">
                             <p id="GK3">Travel</p>
                             <p id="GK4">3 hidden-gem destination for your wish list</p>
-                            <button type="button" class="btn btn-light" id="arbutton"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
                         </div>
                     </div>
                 </div>
@@ -689,8 +673,6 @@
                         <div class="card-content">
                             <p id="GK3">Travel</p>
                             <p id="GK4">3 hidden-gem destination for your wish list</p>
-                            <button type="button" class="btn btn-light" id="arbutton"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
                         </div>
 
                     </div>
@@ -712,8 +694,6 @@
                         <div class="card-content">
                             <p id="GK3">Travel</p>
                             <p id="GK4">3 hidden-gem destination for your wish list</p>
-                            <button type="button" class="btn btn-light" id="arbutton"><i
-                                    class="fa-solid fa-arrow-trend-up" style="color:black"></i></button>
                         </div>
                     </div>
                 </div>
@@ -728,7 +708,7 @@
     <div class="container class1font">
         <div class="col-md-12">
             <div class="partner_con">
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-md-4 text-center mb-3">
                         <h4>The Partners who sell<br />our products</h4>
                     </div>
