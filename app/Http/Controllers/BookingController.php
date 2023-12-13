@@ -82,7 +82,7 @@ class BookingController extends Controller
             {
                 Session::put('search', $actual_link);
             }
-            $validated = $request->validated();
+            // $validated = $request->validated(); $request->validate([]) gives us a validated data so Don`t need to add this
             $dist = (float)$request['total_distance'];
             $durationInHours = $this->durationInHour($request->total_duration);
             $distance_in_km=$dist/1000;
