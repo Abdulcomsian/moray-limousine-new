@@ -184,6 +184,7 @@ return [
         // Unisharp\Ckeditor\ServiceProvider::class,
         // Lunaweb\EmailVerification\Providers\EmailVerificationServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Mailjet\LaravelMailjet\MailjetServiceProvider::class,
 
 
         /*
@@ -252,6 +253,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Mailjet' => Mailjet\LaravelMailjet\Facades\Mailjet::class,
     ],
 
 ];

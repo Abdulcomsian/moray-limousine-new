@@ -87,13 +87,12 @@
 
         <div class="row h-100">
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div>
-                    <p class="text">Where Would You Like To Go?</p>
-                    <p class="text1">A new Class of Luxury<br />Limo Service</p>
+                <div style="max-width: 500px;">
+                    <p class="text">Where Would You Like To Go?</p> 
+                    <p class="text1">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE_TEXT) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE_TEXT) : 'A new Class of Luxury<br />Limo Service'}}</p>                    
                     <button type="button" href="{{ url('/our-fleet') }}" class=" btn1611ID">
                         Visit Our Fleet<i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
                     </button>
-
                 </div>
             </div>
             <div class="col-md-6">
@@ -432,7 +431,7 @@
     {{-- Start of Services  --}}
 
     <div class="container team-container class1font">
-        <p class="section-title">Our Services</p>
+        <p class="section-title">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_TITLE) : 'Our Services'}}</p>
 
         {{-- <div class="row"> --}}
         {{-- <div class="col-md-12"> --}}
@@ -468,7 +467,7 @@
     {{-- Start of our fleet  --}}
 
     <div class="container fleetContainer class1font">
-        <p class="section-title">Our Fleet</p>
+        <p class="section-title">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_FLEET_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_FLEET_TITLE) : 'Our Fleet'}}</p>
         @if (count($categories) > 0)
             <div class="w-95">
                 <div class="fleet-slider">
@@ -508,7 +507,7 @@
             <div class="col-md-6 adjustCenID">
                 <div class="video-container">
                     <iframe class ="iframeClass" width="280" height="375"
-                        src="https://www.youtube.com/embed/jhS22Jqy3cc?si=9sKXxikC4zkUlfLj">
+                        src="https://www.youtube.com/embed/Ri8qrzOBSYA?si=cW7kzqD4oGt-ooo0">
                     </iframe>
 
                     <!-- <button id="playButton">Play Video</button> -->
@@ -721,21 +720,11 @@
                     <div class="col-md-4 text-center mb-3">
                         <h4>The Partners who sell<br />our products</h4>
                     </div>
-                    <div class="col-md-2 text-center mb-3">
-                        <img src="images/all/imagee1.jpeg"/>
-                        {{-- <i class="fa-solid fa-car fa-3x"></i> --}}
-                    </div>
-                    <div class="col-md-2 text-center mb-3">
-                        <img src="images/all/imagee2.jpeg"/>
-                        {{-- <i class="fa-solid fa-motorcycle fa-3x"></i> --}}
-                    </div>
-                    <div class="col-md-2 text-center mb-3">
-                        <img src="images/all/imagee3.jpeg"/>
-                        {{-- <i class="fa-solid fa-business-time fa-3x"></i> --}}
-                    </div>
-                    {{-- <div class="col-md-2 text-center mb-3">
-                        <i class="fa-solid fa-user-secret fa-3x"></i>
-                    </div> --}}
+                    @foreach ($logos as $logo)
+                        <div class="col-md-2 text-center mb-3">
+                            <img src="{{asset('files/clients-images/'.$logo->client_image)}}"/>
+                        </div>
+                    @endforeach
                 </div>
                 <hr id="linex" />
             </div>

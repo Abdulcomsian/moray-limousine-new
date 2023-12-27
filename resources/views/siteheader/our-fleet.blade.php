@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p id="txt1ID">Our Fleet</p>
+                    <p id="txt1ID">{{$home_content['our_fleet_title']}}</p>
                     <p>Home-Our Fleet</p>
                 </div>
             </div>

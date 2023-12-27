@@ -111,17 +111,17 @@ class HomeController extends Controller
      */
     public function aboutUs()
     {
-    //     $homeCMS = CmsHomePage::all();
-    //     $home_content = [];
-    //     foreach ($homeCMS as $home) {
-    //         $item_name = $home->item_name;
-    //         $home_content += [$item_name => $home->item_content];
-    //     }
-    //     $data['home_content'] = $home_content;
+        $homeCMS = CmsHomePage::all();
+        $home_content = [];
+        foreach ($homeCMS as $home) {
+            $item_name = $home->item_name;
+            $home_content += [$item_name => $home->item_content];
+        }
+        $data['home_content'] = $home_content;
 
         $faqs = CmsFaq::all();
-        // dd($faqs);
-        return view('siteheader.about-us', compact('faqs'));
+        $happyClients = HappyClient::all();
+        return view('siteheader.about-us', compact('faqs', 'home_content' , 'happyClients'));
     }
 
     /**
@@ -176,8 +176,15 @@ class HomeController extends Controller
     public function ourServices()
     {
         $services = CmsService::paginate(6);
+        $homeCMS = CmsHomePage::all();
+        $home_content = [];
+        foreach ($homeCMS as $home) {
+            $item_name = $home->item_name;
+            $home_content += [$item_name => $home->item_content];
+        }
+        $data['home_content'] = $home_content;
         $config = Configuration::all()->first();
-        return view('siteheader.airport-transfer')->with('services', $services)->with('config', $config);
+        return view('siteheader.airport-transfer', compact('home_content', 'services', 'config'));
     }
 
     public function serviceDetail($id)

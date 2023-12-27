@@ -24,11 +24,7 @@
                         </div>
                         <div class="text">
                             <p class="heaidng1">Adresse</p>
-                            <p class="description">
-                                Hathaway Limousines<br/>
-                                Friedrich-Ebert-Anlage 36<br/>
-                                60325 Frankfurt am Main<br/>
-                            </p>
+                               {!!$home_content['address']!!} 
                             <button type="button" class="btn111 btn-dark w-100 p-0" style="font-size: 12px; display: flex">
                                 View on Google Map
                                 <a href="#"><i class="fas fa-arrow-trend-up" id="arrw"
@@ -44,7 +40,7 @@
                         </div>
                         <div class="">
                             <p class="heaidng1">Telefon</p>
-                            <p class="description">+49 (0) 69 26022180</p>
+                            <p class="description">{{$home_content['phone_number']}}</p>
                         </div>
                     </div>
                 </div>
@@ -55,7 +51,7 @@
                         </div>
                         <div class="text">
                             <p class="heaidng1">Email</p>
-                            <p class="description">info@hathaway-limousines.com</p>
+                            <p class="description">{{$home_content['email']}}</p>
                         </div>
                     </div>
                 </div>
@@ -166,11 +162,11 @@
                     <div class="">
                         <i class="fa-solid fa-briefcase center BK1" style="color: black; margin-bottom:17px"></i>
                         <p class="BK4">Germany</p>
-                        <p class="BK7">
-                            Friedrich-Ebert-Anlage 36<br />60325 Frankfurt am Main
-                        </p>
-                        <p class="BK7">Email: info@hathaway-limousines.com</p>
-                        <a class="BK7 text-center" style="color:#F3972D; display:inline-block; width:100%" href="tel:+49 (0) 69 26022180">+49 (0) 69 26022180</a>
+                        <div style="text-align: center; font-weight: 600;">
+                            {!!$home_content['address']!!}
+                        </div>
+                        <p class="BK7">Email: {{$home_content['email']}}</p>
+                        <a class="BK7 text-center" style="color:#F3972D; display:inline-block; width:100%" href="tel:{{$home_content['phone_number']}}">{{$home_content['phone_number']}}</a>
                     </div>
                     {{-- <div class="col-md-6">
                         <a href="#"><i class="fa-solid fa-city center BK1" style="color: black"></i></a>

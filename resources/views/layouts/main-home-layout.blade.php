@@ -408,7 +408,7 @@
                 <div class="d-flex justify-content-between gap-4 connection-list">
                     <div>
                         <a href="#"><i class="fa fa-phone phone1" style="color: white;" id=""></i></a>
-                        <span class="mx-1 Number" id="">+49 69 26022180</span>
+                        <span class="mx-1 Number" id="">{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) : '+49 69 26022180' }}</span>
                     </div>
                     <div class="d-flex align-items-center">
                         <span class="mx-1 Number" id="">Follow Us</span>

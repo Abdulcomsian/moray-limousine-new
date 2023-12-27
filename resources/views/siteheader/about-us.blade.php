@@ -8,7 +8,7 @@
 
     <div class="black-box">
         <div class="container ">
-            <p id="txt1ID" class="mb-0">About Us</p>
+            <p id="txt1ID" class="mb-0">{{$home_content['about_us_title']}}</p>
             <p>Home-About</p>
         </div>
         </div>
@@ -25,8 +25,8 @@
     <div class="container class1font">
         <div class="row mt-4">
             <div class="text-center">
-                <h1>Über Uns</h1>
-                <p class="w-50 mx-auto">Wir von Hathaway Limousines haben uns zum Ziel gesetzt das Premiumreisen auf der Straße noch komfortabler und luxuriöser zu gestalten. Dabei steht das Wohlbefinden unserer Gäste stets an erster Stelle. Wir freuen uns bald auch Sie als Fahrgast an Board begrüßen zu dürfen!</p>
+                <h1>{{$home_content['about_us_title']}}</h1>
+                <p class="w-50 mx-auto">{{$home_content['about_us_description']}}</p>
             </div>
         </div>
         {{-- <div class="row">
@@ -277,21 +277,11 @@
                     <div class="col-md-4 text-center mb-3">
                         <h4>The Partners who sell<br />our products</h4>
                     </div>
+                    @foreach($happyClients as $client)
                     <div class="col-md-2 text-center mb-3">
-                        <img src="images/all/imagee1.jpeg"/>
-                        {{-- <i class="fa-solid fa-car fa-3x"></i> --}}
+                        <img src="{{asset('files/clients-images/'.$client->client_image)}}"/>
                     </div>
-                    <div class="col-md-2 text-center mb-3">
-                        <img src="images/all/imagee2.jpeg"/>
-                        {{-- <i class="fa-solid fa-motorcycle fa-3x"></i> --}}
-                    </div>
-                    <div class="col-md-2 text-center mb-3">
-                        <img src="images/all/imagee3.jpeg"/>
-                        {{-- <i class="fa-solid fa-business-time fa-3x"></i> --}}
-                    </div>
-                    {{-- <div class="col-md-2 text-center mb-3">
-                        <i class="fa-solid fa-user-secret fa-3x"></i>
-                    </div> --}}
+                    @endforeach
                 </div>
                 <hr id="linex" />
             </div>

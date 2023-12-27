@@ -34,9 +34,6 @@ use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\DocumentsController;
 use App\Http\Controllers\UploadedDocumentController;
 use App\Http\Controllers\LocationController;
-
-
-
 use App\Models\Document;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;

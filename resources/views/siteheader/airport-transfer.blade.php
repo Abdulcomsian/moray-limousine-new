@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p id="txt1ID">Services</p>
+                    <p id="txt1ID">{{$home_content['our_services_title']}}</p>
                     <p>Home-Services</p>
                 </div>
             </div>
