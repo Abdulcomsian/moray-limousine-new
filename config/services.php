@@ -1,5 +1,14 @@
 <?php
-
+// dd(env('MAIL_DRIVER'), 
+// env('MAIL_HOST'),
+// env('MAIL_PORT'), 
+// env('MAIL_USERNAME'), 
+// env('MAIL_PASSWORD'), 
+// env('MAIL_ENCRYPTION'), 
+// env('MAIL_FROM_ADDRESS'), 
+// env('MAILJET_APIKEY'),
+// env('MAILJET_APISECRET'),
+// );
 return [
 
     /*
@@ -34,6 +43,33 @@ return [
     'mailjet' => [
         'key' => env('MAILJET_APIKEY'),
         'secret' => env('MAILJET_APISECRET'),
+        'transactional' => [
+            'call' => true,
+            'options' => [
+                'url' => 'api.mailjet.com',
+                'version' => 'v3.1',
+                'call' => true,
+                'secured' => true
+            ]
+        ],
+        'common' => [
+            'call' => true,
+            'options' => [
+                'url' => 'api.mailjet.com',
+                'version' => 'v3',
+                'call' => true,
+                'secured' => true
+            ]
+        ],
+        'v4' => [
+            'call' => true,
+            'options' => [
+                'url' => 'api.mailjet.com',
+                'version' => 'v4',
+                'call' => true,
+                'secured' => true
+            ]
+        ],
     ]
 
 ];

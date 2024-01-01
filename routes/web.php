@@ -42,6 +42,10 @@ use App\Models\Vehicle;
 use App\Models\VehicleCategory;
 use App\Models\VehicleSubtype;
 use GuzzleHttp\Psr7\Request;
+use Mailjet\LaravelMailjet\Facades\Mailjet;
+use Mailjet\Resources;
+use App\Notifications\BookingNotification;
+use Illuminate\Support\Facades\Notification;
 
 Auth::routes();
 
@@ -258,6 +262,8 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
     Route::get('admin/booking-checkout', [booking::class, 'bookingcheckout']);
 
+    
+
     // Admin Routes
 
     Route::group(['middleware' => 'auth'], function ()
@@ -455,6 +461,10 @@ Route::group(['middleware' => ['web', 'auth']], function ()
             Route::get('driver/my-partners', [DriverController::class, 'myPartners']);
         });
     });
+
+    Route::get('email/notify-user', function(){
+        return view('mail.notifyUser');
+    })->name('email.notify.user');
 
     // booking
 
@@ -797,5 +807,32 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 });
 
 Auth::routes();
+
+Route::get('test', function(){
+    $admin = "m.muneebulrahman@gmail.com";
+    $notification = new BookingNotification();
+
+    try {
+        Notification::route('mail', $admin)->notify($notification);
+        echo "success";
+    } catch (\Exception $e) {
+        echo "error: " . $e->getMessage();
+    }
+
+
+    
+    // if ($route) {
+    //     $notification = $route->notify(new BookingNotification());
+        
+    //     if ($notification && $notification->failed()) {
+    //         echo "Email notification failed to send.";
+    //     } else {
+    //         echo "Email notification sent successfully.";
+    //     }
+    // } else {
+    //     echo "Invalid notification route.";
+    // }
+    
+});
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

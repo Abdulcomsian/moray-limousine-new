@@ -27,6 +27,8 @@ use Illuminate\View\View;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use Mailjet\LaravelMailjet\Facades\Mailjet;
+use Mailjet\Resources;
 use Session;
 use Stripe;
 use DB;
@@ -66,6 +68,12 @@ class BookingController extends Controller
     { 
         // dd($request->all());
             $request->validate([
+                'lat_pck' => 'required',
+                'long_pck' => 'required',
+                'lat_drop' => 'required',
+                'long_drop' => 'required',
+                'total_distance' => 'required',
+                'total_duration' => 'required',
                 'pick_date' => 'required',
                 'pick_time' => 'required',
                 'pick_address' => 'required',
@@ -102,6 +110,8 @@ class BookingController extends Controller
             $data['distance'] = $distance_in_km;
             $data['classes'] = $paginatedClasses;
             $data['travel_duration'] = $durationInHours;
+            // echo "<pre>";
+            // print_r($data); exit;
             return view('booking.select-vehicle-class', $data);
     }
 
@@ -265,9 +275,59 @@ class BookingController extends Controller
             $notify_booking_admin = $this->notificationMsg($booking);
             $user = $booking->user;
 
-            $admin = User::where('user_type', 'admin')->get();
-            $user->notify(new MorayLimousineNotifications($notify_booking_user));
-            Notification::send($admin, new BookingNotification($notify_booking_admin));
+            // $admin = User::where('user_type', 'admin')->get();
+            // $user->notify(new MorayLimousineNotifications($notify_booking_user));
+            // Notification::send($admin, new BookingNotification($notify_booking_admin));
+            // $admin = "m.muneebulrahman@gmail.com";
+            // Notification::route('mail', $admin)->notify(new BookingNotification($notify_booking_admin));
+
+
+            // Mailjet Email Integration  - Email sending to notify User
+            // $templateData = [
+            //     'booking' => $booking,
+            // ];
+
+            // $view = view('mail.notifyUser', $templateData)->render();
+
+            // $mj = Mailjet::getClient();
+
+            // $body = [
+            //   'FromEmail' => env('MAIL_FROM_ADDRESS'),
+            //   'FromName' => env('MAIL_FROM_NAME'),
+            //   'Subject' => "Your Booking has Confirmed",
+            // //   'HTML-part' => $view,  
+            //   'Text-part' => "Hello how are YOU",
+            //   'Recipients' => [['Email' => "m.muneebulrahman@gmail.com"]]
+            // ];
+        
+            // $response = $mj->post(Resources::$Email, ['body' => $body]);
+        
+            // if($response->success()){
+            //   echo "Email send";
+            // } else {
+            //   echo "Email not sent"; exit;
+            // }
+
+
+            // Mailjet Integration - Email sending to Admin for the Booking Detail
+
+            // $templateDataAdmin = [
+            //     'details' => $notify_booking_admin,
+            // ];
+
+            // $viewAdmin = view('mail.bookingemail', $templateDataAdmin)->render();
+
+            // $mj = Mailjet::getClient();
+
+            // $body = [
+            //   'FromEmail' => env('MAIL_FROM_ADDRESS'),
+            //   'FromName' => env('MAIL_FROM_NAME'),
+            //   'Subject' => "Your Booking has Confirmed",
+            //   'HTML-part' => $viewAdmin,
+            //   'Recipients' => [['Email' => "m.muneebulrahman@gmail.com"]]
+            // ];
+        
+            // $response = $mj->post(Resources::$Email, ['body' => $body]);
 
 
 
