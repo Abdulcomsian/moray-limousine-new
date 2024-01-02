@@ -300,6 +300,28 @@
                         </div>
                     </div>
 
+                    {{-- <div class="row">
+                        <div class="col-md-4 mt-3">
+                            <h6>Customers Reviews</h6>
+                            <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE)) : 'https://via.placeholder.com/1500x1000'}}" class="img-fluid {{\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE}}"
+                                 alt="placeholder iamge">
+                            <label class="mt-2">
+                                <input type="file"
+                                       name="{{\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE}}"
+                                       class="d-none image-pick">
+                                <span class="btn btn-dark"><i class="fa fa-picture-o"></i></span>
+                            </label>
+                            <label for="advantageTitleCol1" class="d-block">Customer Name:</label>
+                            <input type="text"
+                                   name="{{\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE}}"
+                                   class="form-control" placeholder="Title" id="advantageTitleCol1" value="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE) : ''}}">
+                            <label for="advantageDescriptionCol1" class="mt-2">Customer Feedback:</label>
+                            <textarea class="form-control" id="advantageDescriptionCol1"
+                                      name="{{\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION}}"
+                                      placeholder="Description">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION) : ''}}</textarea>
+                        </div>
+                    </div> --}}
+
                     <button class="btn btn-dark my-3">Update</button>
                 </form>
             </div>

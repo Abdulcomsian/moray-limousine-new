@@ -275,61 +275,9 @@ class BookingController extends Controller
             $notify_booking_admin = $this->notificationMsg($booking);
             $user = $booking->user;
 
-            // $admin = User::where('user_type', 'admin')->get();
-            // $user->notify(new MorayLimousineNotifications($notify_booking_user));
-            // Notification::send($admin, new BookingNotification($notify_booking_admin));
-            // $admin = "m.muneebulrahman@gmail.com";
-            // Notification::route('mail', $admin)->notify(new BookingNotification($notify_booking_admin));
-
-
-            // Mailjet Email Integration  - Email sending to notify User
-            // $templateData = [
-            //     'booking' => $booking,
-            // ];
-
-            // $view = view('mail.notifyUser', $templateData)->render();
-
-            // $mj = Mailjet::getClient();
-
-            // $body = [
-            //   'FromEmail' => env('MAIL_FROM_ADDRESS'),
-            //   'FromName' => env('MAIL_FROM_NAME'),
-            //   'Subject' => "Your Booking has Confirmed",
-            // //   'HTML-part' => $view,  
-            //   'Text-part' => "Hello how are YOU",
-            //   'Recipients' => [['Email' => "m.muneebulrahman@gmail.com"]]
-            // ];
-        
-            // $response = $mj->post(Resources::$Email, ['body' => $body]);
-        
-            // if($response->success()){
-            //   echo "Email send";
-            // } else {
-            //   echo "Email not sent"; exit;
-            // }
-
-
-            // Mailjet Integration - Email sending to Admin for the Booking Detail
-
-            // $templateDataAdmin = [
-            //     'details' => $notify_booking_admin,
-            // ];
-
-            // $viewAdmin = view('mail.bookingemail', $templateDataAdmin)->render();
-
-            // $mj = Mailjet::getClient();
-
-            // $body = [
-            //   'FromEmail' => env('MAIL_FROM_ADDRESS'),
-            //   'FromName' => env('MAIL_FROM_NAME'),
-            //   'Subject' => "Your Booking has Confirmed",
-            //   'HTML-part' => $viewAdmin,
-            //   'Recipients' => [['Email' => "m.muneebulrahman@gmail.com"]]
-            // ];
-        
-            // $response = $mj->post(Resources::$Email, ['body' => $body]);
-
-
+            $admin = User::where('user_type', 'admin')->get();
+            $user->notify(new MorayLimousineNotifications($notify_booking_user));
+            Notification::send($admin, new BookingNotification($notify_booking_admin));
 
             //invoice work here
             $users = user::find($user->id);

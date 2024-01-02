@@ -23,10 +23,9 @@ class BookingNotification extends Notification
      *
      * @return void
      */
-    // public function __construct($details)
-    public function __construct()
+    public function __construct($details)
     {
-        // $this->details = $details;
+        $this->details = $details;
     }
 
     /**
@@ -37,8 +36,7 @@ class BookingNotification extends Notification
      */
     public function via($notifiable)
     {
-        // return ['database','mail'];
-        return ['mail'];
+        return ['database','mail'];
     }
 
     /**
@@ -50,10 +48,9 @@ class BookingNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-        ->line('Hello test email');
-            // ->greeting(new HtmlString($this->details['greeting']))
-            // ->subject($this->details['subject'])
-            // ->view('mail.bookingemail',['details'=> $this->details,'url'=>url($this->details['action_url'])]);
+            ->greeting(new HtmlString($this->details['greeting']))
+            ->subject($this->details['subject'])
+            ->view('mail.bookingemail',['details'=> $this->details,'url'=>url($this->details['action_url'])]);
             /*->line($this->details['body'])
             ->action($this->details['action_text'], url($this->details['action_url']))
             ->line($this->details['thanks_text']);*/

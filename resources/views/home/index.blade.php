@@ -81,6 +81,29 @@
             border-radius: 9px;
             margin-bottom: 30px;
         }
+
+        .card-heading-para{
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .card-title-para{
+            font-size: 15px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .card-main-image{
+            border-radius: 8px; 
+            transition: transform .2s;
+        }
+
+        .card-main-image:hover{
+            -ms-transform: scale(1.5); /* IE 9 */
+            -webkit-transform: scale(1.5); /* Safari 3-8 */
+            transform: scale(1.02); 
+        }
     </style>
 
     <div class="container-fluid cont2 class1font">
@@ -552,7 +575,7 @@
 
     <div class="container displaycon222 class1font" id="cont2222">
         <div class="row ">
-            <div class="col-md-6 d-flex flex-column gap-4">
+            <div class="col-md-6 d-flex flex-column gap-4 justify-content-center">
                 <p class="IK11">Hear what our amazing<br> customers say</p>
                 <p class="IK111">Ensuring global customer satisfaction, we consistently deliver high-quality services with prompt efficiency. Our commitment extends beyond borders, providing excellence to customers around the world.</p>
 
@@ -568,18 +591,25 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="card1">
-                                <div class="d-flex gap-3">
-                                    <img class="profile-photo" src="images/review.png" alt="Profile Photo">
-                                    <div>
-                                        <h6>George</h6>
-                                        <p class="description">Berlin</p>
-                                    </div>
+                                <div style="text-align: center;">
+                                    <p class="card-heading-para mb-2">Vehicles Designed By</p>
+                                    <img class="mb-2" src="{{asset('images/Rolf Partner.png')}}" alt="Profile Photo" style="width: auto; height: 70px;">
                                 </div>
-                                <p class="ptextClass">"Exceptional service from start to finish! We recently used Hathaway Limousines in Germany, and the experience was nothing short of luxurious. The chauffeur was punctual, the limousine was immaculate, and the entire journey was a seamless blend of comfort and sophistication. Highly recommended for anyone seeking a premium transport experience!"</p>
+                                <div>
+                                    <p class="card-title-para">The Office Van</p>
+                                    <a href="https://www.rolfhartge.de/rolfhartge-office-van/" target="_blank">
+                                        <img class="card-main-image" src="{{asset('images/office-van.jpg')}}" alt="office van">
+                                    </a>
+                                </div>
+                                    {{-- <div>
+                                        <h6>Rolf Hartge</h6>
+                                        <p class="description">Berlin</p>
+                                    </div> --}}
+                                {{-- <p class="ptextClass">"Exceptional service from start to finish! We recently used Hathaway Limousines in Germany, and the experience was nothing short of luxurious. The chauffeur was punctual, the limousine was immaculate, and the entire journey was a seamless blend of comfort and sophistication. Highly recommended for anyone seeking a premium transport experience!"</p> --}}
 
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        {{-- <div class="carousel-item">
                             <div class="card1">
                                 <div class="d-flex gap-3">
                                     <img class="profile-photo" src="images/r2.jpg" alt="Profile Photo">
@@ -605,10 +635,10 @@
                                 </p>
 
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
-                    <div class="navigation">
+                    {{-- <div class="navigation">
                         <a class="carousel-control-prev " href="#carouselExampleControls" role="button"
                             data-slide="prev"id="prev-slide">
                             <span class="fa fa-arrow-alt-circle-left" style="color:black ;font-size: 20px;"></span>
@@ -622,7 +652,7 @@
                         <div class="slide-number">
                             <span id="current-slide">1</span> / <span id="total-slides">3</span>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>

@@ -47,6 +47,7 @@ use Mailjet\Resources;
 use App\Notifications\BookingNotification;
 use Illuminate\Support\Facades\Notification;
 
+
 Auth::routes();
 
 //work for cron job here
@@ -807,32 +808,5 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 });
 
 Auth::routes();
-
-Route::get('test', function(){
-    $admin = "m.muneebulrahman@gmail.com";
-    $notification = new BookingNotification();
-
-    try {
-        Notification::route('mail', $admin)->notify($notification);
-        echo "success";
-    } catch (\Exception $e) {
-        echo "error: " . $e->getMessage();
-    }
-
-
-    
-    // if ($route) {
-    //     $notification = $route->notify(new BookingNotification());
-        
-    //     if ($notification && $notification->failed()) {
-    //         echo "Email notification failed to send.";
-    //     } else {
-    //         echo "Email notification sent successfully.";
-    //     }
-    // } else {
-    //     echo "Invalid notification route.";
-    // }
-    
-});
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

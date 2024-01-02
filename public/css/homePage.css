@@ -638,7 +638,7 @@
     padding: 20px;
     margin-bottom: 10px;
     box-shadow: 1px;
-    height: 280px;
+    height: auto;
 }
 
 .profile-photo {
@@ -1130,7 +1130,7 @@
     }
 
     .card1 {
-        height: 280px;
+        height: auto;
     }
     .ptextClass {
         font-size: 13px;
@@ -1252,7 +1252,7 @@
         margin-top: 420px;
     }
     .card1 {
-        height: 230px;
+        height: auto;
     }
     #GK1 {
         margin-top: -160px;
