@@ -1130,6 +1130,7 @@
     }
 
     .card1 {
+        /* for adjusting the height of a card  */
         height: auto;
     }
     .ptextClass {
