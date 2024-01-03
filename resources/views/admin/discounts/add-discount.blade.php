@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{asset('css/wickedpicker.css')}}">
     @endsection
 @section('main-content')
+
 {{--    Modal for add discounts and price uo--}}
 <!-- Modal -->
 <div style="width: 80%">
@@ -148,9 +149,9 @@
 
                             @foreach($discounts as $discount)
                                 <tr>
-                                    <td class="py-1">
+                                    {{-- <td class="py-1">
                                         {{$discount->category->name}}
-                                    </td>
+                                    </td> --}} 
                                     <td class="py-1">
                                         {{$discount->start_date}}
                                     </td>

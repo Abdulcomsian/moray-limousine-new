@@ -21,6 +21,13 @@
                                     <div class="name" style="font-weight: bold;">
                                         Hathaway Limousines - <span class="date"> {{$notification->created_at}}</span>
                                     </div>
+                                    @if(is_array($notification->data['body']))
+                                        @foreach($notification->data['body'] as $not)
+                                            {{$not}}
+                                        @endforeach
+                                    @else
+                                        <p class="m-0">{{$notification->data['body']}}</p>
+                                    @endif
                                     <p class="m-0" style="font-weight: bold;">{{$notification->data['body']}}</p>
                                     <div class="reply">
                                         <a href="{{url($notification->data[0])}}">Thanks for choosing Hathaway Limousines</a>
@@ -42,7 +49,13 @@
                             <div class="name">
                                 Hathaway Limousines - <span class="date"> {{$notification->created_at}}</span>
                             </div>
-                            <p class="m-0">{{$notification->data['body']}}</p>
+                            @if(is_array($notification->data['body']))
+                                @foreach($notification->data['body'] as $not)
+                                   {{$not}}
+                                @endforeach
+                            @else
+                                <p class="m-0">{{$notification->data['body']}}</p>                                
+                            @endif
                             <div class="reply">
                                 <a href="{{url($notification->data[0])}}">Thanks for choosing Hathaway Limousines</a>
                             </div>
