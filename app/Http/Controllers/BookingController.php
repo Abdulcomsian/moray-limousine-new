@@ -257,7 +257,7 @@ class BookingController extends Controller
          $booking = Booking::find($booking_id);
          $amount=$booking->extra_options_amount+$booking->travel_amount;
        try{
-             Stripe\Stripe::setApiKey('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');
+             Stripe\Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
              $stripedata=Stripe\Charge::create ([
                     "amount" => $amount*100,
                     "currency" => "eur",

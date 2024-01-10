@@ -349,7 +349,7 @@
             // );
 
             var stripe = Stripe(
-                'pk_live_51MxWCKA83G8PuaM5gAG5xLiAymA6JDSBhbpazXnG383CHhBNALCSnvtbvegaklNuBl1kBwjo9CHTpn34X6xSPe3Q00X4hx9FfI'
+                env('STRIPE_PUBLIC_KEY')
             );
             var elements = stripe.elements();
 
