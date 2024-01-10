@@ -49,10 +49,9 @@ class BookingNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-        ->line("This is the test Email");
-            // ->greeting(new HtmlString($this->details['greeting']))
-            // ->subject($this->details['subject'])
-            // ->view('mail.bookingemail',['details'=> $this->details,'url'=>url($this->details['action_url'])]);
+            ->greeting(new HtmlString($this->details['greeting']))
+            ->subject($this->details['subject'])
+            ->view('mail.bookingemail',['details'=> $this->details,'url'=>url($this->details['action_url'])]);
             /*->line($this->details['body'])
             ->action($this->details['action_text'], url($this->details['action_url']))
             ->line($this->details['thanks_text']);*/

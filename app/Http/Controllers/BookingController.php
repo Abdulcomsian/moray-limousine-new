@@ -257,7 +257,7 @@ class BookingController extends Controller
          $booking = Booking::find($booking_id);
          $amount=$booking->extra_options_amount+$booking->travel_amount;
        try{
-             Stripe\Stripe::setApiKey('sk_test_51O79eiJ1EtA0iMLv07oP8GXAxnJsE2E85sssHiqm1v19axnc0blY8LvOqEByDhYKDl5YeW6belFYNKMBg8lAjez500zxYuPrwZ');
+             Stripe\Stripe::setApiKey('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');
              $stripedata=Stripe\Charge::create ([
                     "amount" => $amount*100,
                     "currency" => "eur",
@@ -1058,8 +1058,8 @@ class BookingController extends Controller
 
     protected $notify_booking_user = [
         'greeting' => 'Your request is submitted successfully',
-        'subject' => 'Welcome To Moray Limousines',
-        'thanks_text' => 'Thanks For Choosing Moray Limousine',
+        'subject' => 'Welcome To Hathaway Limousines',
+        'thanks_text' => 'Thanks For Choosing Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
 
@@ -1070,7 +1070,7 @@ class BookingController extends Controller
     public $notify_driver_assign = [
         'greeting' => 'New Booking Is Assigned',
         'subject' => 'New Ride Is Assigned To You',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
     ];
 
@@ -1078,17 +1078,17 @@ class BookingController extends Controller
      * @var array
      */
     public $approve_booking_msg = [
-        'greeting' => 'Your Booking Request is approved by Moray Limousine',
-        'subject' => 'Booking Request is approved by Moray Limousine',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'greeting' => 'Your Booking Request is approved by Hathaway Limousine',
+        'subject' => 'Booking Request is approved by Hathaway Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
     ];
 
     public $approve_booking_msg_admin = [
-        'greeting' => 'Your Booking Confirm is approved by Moray Limousine',
-        'subject' => 'Booking Confirm is approved by Moray Limousine',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'greeting' => 'Your Booking Confirm is approved by Hathaway Limousine',
+        'subject' => 'Booking Confirm is approved by Hathaway Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
     ];
@@ -1096,9 +1096,9 @@ class BookingController extends Controller
      * @var array
      */
     protected $disapprove_booking_msg = [
-        'greeting' => 'Your Booking Request is  not approved by Moray Limousine',
+        'greeting' => 'Your Booking Request is  not approved by Hathaway Limousine',
         'subject' => 'Booking Request Disapproved',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
     ];

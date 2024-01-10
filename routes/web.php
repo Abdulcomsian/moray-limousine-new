@@ -810,23 +810,3 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::get('test', function(){
-    // $admin = "m.muneebulrahman@gmail.com";
-    // // $notification = Notification::send($admin, new BookingNotification());
-    // $notification = Notification::route('mail', $admin)->notify(new BookingNotification());
-    // if($notification){
-    //     echo "success";
-    // }else{
-    //     echo "error";
-    // }
-
-    $admin = "m.muneebulrahman@gmail.com";
-
-    try {
-        $notification = Notification::route('mail', $admin)->notify(new BookingNotification());
-        echo "success";
-    } catch (\Exception $e) {
-        echo "error: " . $e->getMessage();
-    }
-});

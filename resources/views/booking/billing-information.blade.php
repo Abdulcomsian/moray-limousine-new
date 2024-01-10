@@ -344,12 +344,12 @@
 
     <script>
         $(document).ready(function() {
-           //  var stripe = Stripe(
-         //     'pk_test_51LevsRISpHce1qMwKr8rZn4M1gkcDDYWjJSu5Y3JVsTVrJKOOjXhQ1Xyfz3Qs8PrzSxv5PL65iZYRi2WuyOTZ1BX00ewppUhkw'
-             //   );
+            // var stripe = Stripe(
+            //     'pk_test_51O79eiJ1EtA0iMLvT0268GL0tPpUIxwatoUqobeqd13qCAhsHOZRkKDGs0yAgZmNZBwfApo5uMaJn9G0Yrhx14Vf00ga5LlUGa'
+            // );
 
             var stripe = Stripe(
-                'pk_test_51O79eiJ1EtA0iMLvT0268GL0tPpUIxwatoUqobeqd13qCAhsHOZRkKDGs0yAgZmNZBwfApo5uMaJn9G0Yrhx14Vf00ga5LlUGa'
+                'pk_live_51MxWCKA83G8PuaM5gAG5xLiAymA6JDSBhbpazXnG383CHhBNALCSnvtbvegaklNuBl1kBwjo9CHTpn34X6xSPe3Q00X4hx9FfI'
             );
             var elements = stripe.elements();
 
