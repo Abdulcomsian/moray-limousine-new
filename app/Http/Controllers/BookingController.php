@@ -100,7 +100,7 @@ class BookingController extends Controller
             $classes =  $this->booking->classesWithPriceByDistance($classes, $distance_in_km, $request->all());
 
              // Paginate the array manually
-            $perPage = 4; // Number of items per page
+            $perPage = 50; // Number of items per page
             $currentPage = request('page', 1); // Get the current page from the request
             $pagedData = array_slice($classes, ($currentPage - 1) * $perPage, $perPage);
             $paginatedClasses = new LengthAwarePaginator($pagedData, count($classes), $perPage);
