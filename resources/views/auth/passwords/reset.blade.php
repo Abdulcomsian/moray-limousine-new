@@ -43,7 +43,7 @@
                                     <input id="password" type="password" placeholder="New Password" class="form-control" name="password" required autocomplete="new-password">
                                     @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message }}</strong>
+                                        <strong>{{isset($message) ?? $message }}</strong>
                                     </span>
                                     @endif
                                 </div>
