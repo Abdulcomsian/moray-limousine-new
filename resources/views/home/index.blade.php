@@ -252,7 +252,7 @@
                                         </div>
 
                                         <div class="row adjustCenID">
-                                            <button type="submit" class="btn btn-dark w-100 searchbtn22" id="enable" disabled>
+                                            <button type="submit" class="btn btn-dark w-100 searchbtn22" style="background-color: #CCA642;" id="enable" disabled>
                                                 <i class="fa fa-search"></i> Search
                                             </button>
                                         </div>
@@ -375,7 +375,7 @@
                                             </div>
                                         </div>
                                         <div class="row adjustCenID">
-                                            <button type="submit" class="btn btn-dark w-100 searchbtn22">
+                                            <button type="submit" class="btn btn-dark w-100 searchbtn22" style="background-color: #CCA642;">
                                                 <i class="fa fa-search mr-1" style="vertical-align: middle"></i> Search
                                             </button>
                                         </div>
