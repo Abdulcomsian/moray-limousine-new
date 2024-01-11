@@ -268,7 +268,14 @@ function initMap() {
                    console.log(longitude_drop);
                    console.log(route_options[0]['distance']);
                    console.log(duration);
-
+                   let letPik = document.getElementsByClassName('lat_pck');
+                   let longPik = document.getElementsByClassName('long_pck');
+                   let lat_drop = document.getElementsByClassName('lat_drop');
+                   let long_drop = document.getElementsByClassName('long_drop');
+                            //    if(letPik.value != undefined && longPik.value != undefined){
+                       console.log("hree", letPik.value, longPik.value);
+                       $('#enable').removeAttr('disabled');     
+                        //   }
                 //    return;
                }
            });

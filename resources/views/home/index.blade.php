@@ -246,7 +246,7 @@
                                         </div>
 
                                         <div class="row adjustCenID">
-                                            <button type="submit" class="btn btn-dark w-100 searchbtn22">
+                                            <button type="submit" class="btn btn-dark w-100 searchbtn22" id="enable" disabled>
                                                 <i class="fa fa-search"></i> Search
                                             </button>
                                         </div>
@@ -813,6 +813,12 @@
         function bookinghoururl() {
             return '{{ url('home/getLocationsbookinghours') }}';
         }
+        // <input type="hidden" name="lat_pck" class="lat_pck">
+        //                                 <input type="hidden" name="long_pck" class="long_pck">
+        //                                 <input type="hidden" name="lat_drop" class="lat_drop">
+        //                                 <input type="hidden" name="long_drop" class="long_drop">
+
+     
     </script>
     <script src="{{ asset('js/front-end/index.js') }}"></script>
     <script
