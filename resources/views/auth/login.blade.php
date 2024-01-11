@@ -72,8 +72,8 @@
                             <i class="fas fa-arrow-trend-up" id="arrw" style="color: white"></i>
                         </button>
                     </form>
-                    <p class="mt-4 mb-4 text-center">OR</p>
-                    <button type="submit" class="btn2 btn-primary btn-block"
+                    {{-- <p class="mt-4 mb-4 text-center">OR</p> --}}
+                    {{-- <button type="submit" class="btn2 btn-primary btn-block"
                         style="color:black;background-color:white; border: 1px solid black">
                         <i class="fab fa-google" style="color: black; float: left; margin-right: 10px;margin-top: 5px;"></i>
                         Continue with Google
@@ -88,7 +88,7 @@
                         <i class="fab fa-apple" style="color: white ;float: left; margin-right: 10px;margin-top: 5px;"></i>
                         Continue with
                         Apple
-                    </button>
+                    </button> --}}
                     <p class="mt-4 mb-5 text-center">
                         Not signed up? <a href="{{ url('register') }}">Create an account.</a>
                     </p>

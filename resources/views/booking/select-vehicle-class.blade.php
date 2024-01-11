@@ -9,6 +9,12 @@
         .active {
             color: #bf9c60;
         }
+        .new-style{
+            font-family: Dosis;
+            font-size: 15px;
+            font-weight: 600;
+            margin-left: 25px;
+        }
     </style>
 @endsection
 @section('content-area')
@@ -269,10 +275,10 @@
                             </div> --}}
                         </div>
 
-                        <a><i class="fa-solid fa-location-dot" id="CK6"> </i><span class="CK5">{{$form_data['pick_address']}}</span></a>
-                        <a><i class="fa-solid fa-location-dot" id="CK333"> </i><span class="CK44">{{$form_data['drop_address']}}</span></a>
-                        <a><i class="fa-solid fa-calendar-days" id="CK3"> </i><span class="CK4">{{date('d - M - Y',strtotime($form_data['pick_date'])) }}</span></a>
-                        <a><i class="fa-solid fa-clock" id="Ck3"> </i><span class="CK4">{{$form_data['pick_time']}}</span></a>
+                        <a class="new-style"><i class="fa-solid fa-location-dot" id="CK6"> </i><span class="CK5">{{$form_data['pick_address']}}</span></a>
+                        <a class="new-style"><i class="fa-solid fa-location-dot" id="CK333"> </i><span class="CK44">{{$form_data['drop_address']}}</span></a>
+                        <a class="new-style"><i class="fa-solid fa-calendar-days" id="CK3"> </i><span class="CK4">{{date('d - M - Y',strtotime($form_data['pick_date'])) }}</span></a>
+                        <a class="new-style"><i class="fa-solid fa-clock" id="Ck3"> </i><span class="CK4">{{$form_data['pick_time']}}</span></a>
                         <img src="images/map.jpg" class="" id="CK7">
 
                         <div class="d-flex justify-content-between align-items-center m-0 p-0">
@@ -286,10 +292,11 @@
 
                         <div class="d-flex justify-content-between align-items-center m-0 p-0">
                             <div class="">
-                                <p class="CK10">311/km/194 miles</p>
+                                <p class="CK10">{{ isset($form_data['total_distance']) ? number_format($form_data['total_distance'] / 1000 , 1) : $form_data['selected_hour'] * 25}} km
+                                    </p>
                             </div>
                             <div class="CK11">
-                                <p class="CK11">3h 43m</p>
+                                <p class="CK11">{{isset($form_data['total_duration']) ? number_format($form_data['total_duration'] / 3600, 2) : $form_data['selected_hour'] }}</p>
                             </div>
                         </div>
 
