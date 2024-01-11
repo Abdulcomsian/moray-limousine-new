@@ -58,11 +58,9 @@
 }
 
 /*contianer page content */
-
 .cont2 {
     z-index: 0;
     height: 600px;
-    background-image: url("../images/limo1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

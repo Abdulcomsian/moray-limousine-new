@@ -68,6 +68,10 @@
 
         }
 
+        .cont2{
+            background-image: url("{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE)) : asset('images/slider/home04.jpg') }}") !important;
+        }
+
         #pick-date,
         #pick-time,
         #drop-location,
@@ -111,6 +115,8 @@
         <div class="row h-100">
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <div style="max-width: 500px;">
+                    {{-- <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE)) : asset('images/slider/home04.jpg')}}"  alt=""> --}}
+
                     <p class="text">Where Would You Like To Go?</p> 
                     <p class="text1">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE_TEXT) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE_TEXT) : 'A new Class of Luxury<br />Limo Service'}}</p>                    
                     <button type="button" href="{{ url('/our-fleet') }}" class=" btn1611ID">
