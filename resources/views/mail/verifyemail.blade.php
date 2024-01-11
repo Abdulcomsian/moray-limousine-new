@@ -374,8 +374,7 @@
                                                      <td valign="top" id="x_m_-728614054202185312hotlines" style="padding:0cm 0cm 0pt 0cm">
                                                          <p align="center" style="text-align:center; line-height:18.0pt; margin-top: 10px;">
 
-                                                             <span style="font-size:9.0pt;   color:white; letter-spacing:.7pt; ">Contact Us:<br>Mainzer Landstrasse 49<br>Hathaway Limousines<br>60329 Frankfurt am Main<br>+49 69 26022180<u></u><u></u></span>
-
+                                                            <span style="font-size:9.0pt; font-family:&quot;Source Sans Pro&quot;,sans-serif; color:white; letter-spacing:.7pt">Contact Us:<br>A Brand of The Hathaway Group GmbH<br>Westendstrasse 16-22<br>60325 Frankfurt am Main<br>+49 69 26022180<u></u><u></u></span>
                                                          </p>
                                                      </td>
                                                  </tr>
