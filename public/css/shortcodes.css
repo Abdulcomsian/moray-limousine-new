@@ -1648,8 +1648,8 @@ ul.booking-steps li .text {
 .login-booking .login-content .login-form .one-half {
 	width: 50%;
 	float: left;
-	padding-right: 15px;
-	padding-left: 15px;
+	/* padding-right: 15px; */
+	padding-left: 1px;
 }
 .login-booking .login-content .login-form {
 	margin-right: -15px;
@@ -1767,6 +1767,7 @@ position: absolute;
 	right: 35px;
 	font-weight: 400;
 	font-size: 28px;
+	margin-top: -3px;
 }
 .login-social {
 	text-align: center;

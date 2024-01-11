@@ -120,7 +120,7 @@
             </div>
             <div class="col-md-6">
 
-                <div class="container class1font hero-form" style="z-index: 1;" id="con33">
+                <div class="container class1font hero-form" style="z-index: 1; display: flex; justify-content: center;" id="con33">
                     <!-- Navigation Tabs -->
                     <div class="w-100 ">
                         <div class=" colorclass">

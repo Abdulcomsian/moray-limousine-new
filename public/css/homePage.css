@@ -179,7 +179,7 @@
     align-content: center;
 }
 .colorclass {
-    width: 75%;
+    max-width: 430px;
     /* height: 501px; */
     background-color: white;
     border-radius: 10px;
@@ -488,7 +488,9 @@
     position: absolute;
     top: 128px;
     font-weight: bold;
-    color: white;
+    color:#000;
+    background:#ffffff9e;
+    padding: 0 10px;
     opacity: 1;
     transition: opacity 0.3s;
     margin-left: 10px;

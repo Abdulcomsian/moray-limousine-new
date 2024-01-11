@@ -118,10 +118,13 @@
                         <div class=" pt-4">
                             <div class="w-100 checkbox px-4 d-flex gap-3">
                                 <input type="checkbox" name="accept" id="accept" required style="margin: 0; position:static">
-                                <label for="accept" style="padding-left:0px !important">Ich akzeptiere die
-                                    <span>AGB's</span> & die <span>Datenschutzbestimmungen</span> </label>
+                                <a href="{{asset('files/HL_logo.pdf')}}">
+                                    <label style="padding-left:0px !important">Ich akzeptiere die
+                                        <span>AGB's</span> & die <span>Datenschutzbestimmungen</span> </label>
+                                </a>
+                                </div>
                             </div>
-                        </div>
+                        
 
 
 
@@ -130,7 +133,7 @@
                             <i class="fas fa-arrow-trend-up" id="arrw" style="color: white"></i>
                         </button>
                     </form>
-                    <p class="mt-4 mb-4 text-center">OR</p>
+                    {{-- <p class="mt-4 mb-4 text-center">OR</p>
                     <button type="submit" class="btn2 btn-info btn-block"
                         style="color:black;background-color:white ; border: 1px solid black;">
                         <i class="fab fa-google" style="color: black;float: left; margin-right: 10px;margin-top: 5px;"></i>
@@ -144,7 +147,7 @@
                     <button type="submit" class="btn4 btn-dark btn-block" style="background-color: black">
                         <i class="fab fa-apple" style="color: white;float: left; margin-right: 10px;margin-top: 5px;"></i>
                         Continue with Apple
-                    </button>
+                    </button> --}}
                     <p class="mt-4 mb-5 text-center">Already a member? <a href="{{ url('/login') }}">Login</a></p>
 
                 </div>

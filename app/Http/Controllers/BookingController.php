@@ -66,7 +66,7 @@ class BookingController extends Controller
      */
     public function selectClassByDistance(Request $request)
     { 
-        // dd($request->all());
+        dd($request->all());
             $request->validate([
                 'lat_pck' => 'required',
                 'long_pck' => 'required',

@@ -264,18 +264,15 @@
                             <div class="">
                                 <p id="" class="CK m-0 p-0">Rides Summary</p>
                             </div>
-                            <div class="">
+                            {{-- <div class="">
                                 <a href="#" class="CK2">Edit</a>
-                            </div>
+                            </div> --}}
                         </div>
 
-                        <a><i class="fa-solid fa-location-dot" id="CK6"> </i><span class="CK5">Manchester,
-                                UK</span></a>
-                        <a><i class="fa-solid fa-location-dot" id="CK333"> </i><span class="CK44">London,
-                                UK</span></a>
-                        <a><i class="fa-solid fa-calendar-days" id="CK3"> </i><span class="CK4">Thur, Oct 06,
-                                2022</span></a>
-                        <a><i class="fa-solid fa-clock" id="Ck3"> </i><span class="CK4">6 PM : 15</span></a>
+                        <a><i class="fa-solid fa-location-dot" id="CK6"> </i><span class="CK5">{{$form_data['pick_address']}}</span></a>
+                        <a><i class="fa-solid fa-location-dot" id="CK333"> </i><span class="CK44">{{$form_data['drop_address']}}</span></a>
+                        <a><i class="fa-solid fa-calendar-days" id="CK3"> </i><span class="CK4">{{date('d - M - Y',strtotime($form_data['pick_date'])) }}</span></a>
+                        <a><i class="fa-solid fa-clock" id="Ck3"> </i><span class="CK4">{{$form_data['pick_time']}}</span></a>
                         <img src="images/map.jpg" class="" id="CK7">
 
                         <div class="d-flex justify-content-between align-items-center m-0 p-0">
