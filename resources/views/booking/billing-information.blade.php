@@ -347,10 +347,12 @@
             // var stripe = Stripe(
             //     'pk_test_51O79eiJ1EtA0iMLvT0268GL0tPpUIxwatoUqobeqd13qCAhsHOZRkKDGs0yAgZmNZBwfApo5uMaJn9G0Yrhx14Vf00ga5LlUGa'
             // );
-
+            let publicStripeKey = '{{env('STRIPE_PUBLIC_KEY')}}'
             var stripe = Stripe(
-                env('STRIPE_PUBLIC_KEY')
+                publicStripeKey
             );
+
+            // console.log(stripe); 
             var elements = stripe.elements();
 
             // Custom styling can be passed to options when creating an Element.
