@@ -401,22 +401,22 @@
         <div class="row">
             <div class="col">
                 <div>
-                    <p class="BK">How it Works</p>
+                    <p class="BK">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_TITLE) : 'Your Advantages'}}</p>
                 </div>
             </div>
         </div>
+
         <div class="row justify-content-center">
             <div class="col-md-3 workFlow-content">
-                <i class="fa-solid fa-route center icon "></i>
-                <p class=" workFLow-heading">Create Your Route</p>
+                <div class="iconbox-icon">
+                 <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE)) : asset('images/iconbox/001.png')}}" alt="">
+                </div>
+                <p class=" workFLow-heading"><span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE) : 'Easy Online Booking'}}</span></p>
                 <p class="BK7 workFlow-desc">
-                    At Safety First Car Company, your well-being is paramount.
-                    Drive with confidence,
-                    knowing our vehicles prioritize your safety
-                    at every turn.
+                    {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION) : 'The most efficient booking system in this industry geared towards  handling single bookings to a full-fledged event'}}
                 </p>
             </div>
-            <div class="col-md-1 arrowbutton1">
+            {{-- <div class="col-md-1 arrowbutton1">
                 <div class="encircled-arrow">
                     <svg viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -424,17 +424,17 @@
                             fill="black" />
                     </svg>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-3 workFlow-content">
-                <i class="fa-solid fa-hand-holding-dollar center icon "></i>
-                <p class=" workFLow-heading">Choose Vehicle for You</p>
+                <div class="iconbox-icon">
+                    <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_IMAGE)) : asset('images/iconbox/002.png')}}" style="max-width: 20%;" alt="">
+                </div>
+                <p class=" workFLow-heading"> <span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_TITLE) : 'Professional Drivers'}}</span></p>
                 <p class="BK7 workFlow-desc">
-                    Experience transparent pricing at its finest with our cars
-                    no surprises, just straightforward and honest pricing practices.
-                    at every turn.
+                    {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_DESCRIPTION) : 'Our professional drivers are licensed, insured and are required to comply with local laws and regulations. '}}
                 </p>
             </div>
-            <div class="col-md-1 arrowbutton1">
+            {{-- <div class="col-md-1 arrowbutton1">
                 <div class="encircled-arrow">
                     <svg viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -442,16 +442,36 @@
                             fill="black" />
                     </svg>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-3 workFlow-content">
-                <a href="#"><i class="fa-solid fa-car-rear center icon "></i></a>
-                <p class=" workFLow-heading">Enjoy The Journey</p>
+                <div class="iconbox-icon">
+                    <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_IMAGE)) : asset('images/iconbox/003.png')}}" alt="" style="max-width: 50%;">
+                </div>  
+                <p class=" workFLow-heading" style="margin-top: 14px;"><span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) : 'Guaranteed fixed prices'}}</span></p>
                 <p class="BK7 workFlow-desc">
-                    Discover the ultimate private travel solution,
-                    tailored to provide luxury, comfort, and
-                    convenience for your journeys.
+                    {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) : 'At Moray Limousines there are no hidden costs. Our prices include all fees, taxes and are guaranteed with the booking.'}}
                 </p>
             </div>
+            {{-- <div class="col-md-1 arrowbutton1">
+                <div class="encircled-arrow">
+                    <svg viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.3901 3.54917C10.1197 3.81575 10.0944 4.23698 10.316 4.53253L10.3826 4.60981L14.9583 9.24992L3.25 9.24992C2.83579 9.24992 2.5 9.5857 2.5 9.99992C2.5 10.3823 2.78611 10.6978 3.15592 10.7441L3.25 10.7499H14.9583L10.3826 15.39C10.116 15.6604 10.0966 16.082 10.3224 16.3743L10.3901 16.4507C10.6605 16.7172 11.082 16.7366 11.3744 16.5108L11.4507 16.4431L17.2841 10.5265C17.548 10.2588 17.57 9.84232 17.3501 9.54985L17.2841 9.47336L11.4507 3.5567C11.1599 3.26173 10.6851 3.25837 10.3901 3.54917Z"
+                            fill="black" />
+                    </svg>
+                </div>
+            </div> --}}
+            <div class="col-md-3 workFlow-content">
+                <div class="iconbox-icon">
+                    <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_IMAGE)) :asset('images/iconbox/004.png')}}" alt="">
+                </div>
+                <p class=" workFLow-heading"> <span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_TITLE) : 'Free waiting time'}}</span></p>
+                <p class="BK7 workFlow-desc">
+                    {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_DESCRIPTION) : 'When picking up from the airport we wait 60 minutes for you. For all other pickups the free waiting time is 15 minutes'}}
+                </p>
+            </div>
+
+            
         </div>
     </div>
 
