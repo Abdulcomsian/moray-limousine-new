@@ -279,8 +279,7 @@
                         <a class="new-style"><i class="fa-solid fa-location-dot" id="CK333"> </i><span class="CK44">{{$form_data['drop_address']}}</span></a>
                         <a class="new-style"><i class="fa-solid fa-calendar-days" id="CK3"> </i><span class="CK4">{{date('d - M - Y',strtotime($form_data['pick_date'])) }}</span></a>
                         <a class="new-style"><i class="fa-solid fa-clock" id="Ck3"> </i><span class="CK4">{{$form_data['pick_time']}}</span></a>
-                        <img src="images/map.jpg" class="" id="CK7">
-
+                        {{-- <img src="images/map.jpg" class="" id="CK7"> --}}
                         <div class="d-flex justify-content-between align-items-center m-0 p-0">
                             <div class="">
                                 <p id="" class="CK8" style="font-weight: 750;

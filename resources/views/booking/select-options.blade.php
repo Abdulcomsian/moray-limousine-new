@@ -263,8 +263,10 @@
                                 class="CK5">{{ date('d - M - Y', strtotime($booking['pick_date'])) }}</span></a><br>
                         <a class="timeDate"><i class="fa-solid fa-clock "> </i><span
                                 class="CK5">{{ $booking['pick_time'] }}</span></a><br>
-                        <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $selected_category->picture }}"
-                            class="CK6">
+                        {{-- <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $selected_category->picture }}"
+                            class="CK6"> --}}
+
+                        <div id="route_map" style="height: 16rem;border: 2px solid black; border-radius: 14px;"></div>
 
                         <div class="d-flex justify-content-between align-items-center m-0 p-0">
                             <div class="">
