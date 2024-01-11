@@ -283,10 +283,14 @@
 
                         <div class="d-flex justify-content-between align-items-center m-0 p-0">
                             <div class="">
-                                <p id="" class="CK8">Total Distance</p>
+                                <p id="" class="CK8" style="font-weight: 750;
+                                color: black;
+                                font-size: 13px;">Total Distance</p>
                             </div>
                             <div class="">
-                                <p class="CK9">Total time</p>
+                                <p class="CK9" style="font-weight: 750;
+                                color: black;
+                                font-size: 13px;">Total time</p>
                             </div>
                         </div>
 

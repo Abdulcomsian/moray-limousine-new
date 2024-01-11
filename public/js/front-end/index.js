@@ -261,6 +261,15 @@ function initMap() {
                    $('.long_drop').val(longitude_drop);
                    $('.total_distance').val(route_options[0]['distance']);
                    $('.total_duration').val(duration);
+
+                   console.log(latitude_pick);
+                   console.log(longitude_pick);
+                   console.log(latitude_drop);
+                   console.log(longitude_drop);
+                   console.log(route_options[0]['distance']);
+                   console.log(duration);
+
+                //    return;
                }
            });
        }
@@ -270,7 +279,7 @@ function initMap() {
     function getCity(lat , lng){
         let latlng = new google.maps.LatLng(lat , lng);
         let geocoder = new google.maps.Geocoder;
-
+console.log("GetCoder", geocoder); 
         geocoder.geocode({'latLng': latlng}, function(results, status,timeZoneId) {
             console.log(timeZoneId);
             if (status === google.maps.GeocoderStatus.OK) {
