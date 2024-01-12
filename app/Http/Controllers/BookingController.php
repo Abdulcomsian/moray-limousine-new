@@ -170,6 +170,12 @@ class BookingController extends Controller
             $selected_category =  $this->classes->find($id);
             $travel_amount = str_replace(',', '', $travel_amount);
             $booking = $this->booking->saveBookingOnSelect($form_data, $id, $travel_amount, $distance, $tax_amount);
+
+            $tax_rate = "";
+            if (!empty(Configuration::first()->tax_rate))
+            {
+                $tax_rate = Configuration::first()->tax_rate;
+            }
             //get enduser billing details if have
             $enduser_billing_details = Enduser::where('user_id', Auth()->id())->first();
             $data['options'] = $selected_category->options()->get();
@@ -178,6 +184,8 @@ class BookingController extends Controller
             $data['booking'] = $booking;
             $data['travel_amount'] = $travel_amount;
             $data['enduser_billing_details'] = $enduser_billing_details;
+            $data['tax_rate'] = $tax_rate;
+            
             return view('booking.select-options', $data);
         } else
         {

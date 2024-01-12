@@ -46,7 +46,12 @@
             justify-content: center;
             align-items: center;
         }
-        
+        .totalPayment{
+            margin-top: 10px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
     </style>
 @endsection
 @section('content-area')
@@ -189,6 +194,7 @@
                             <div class="form-options">
                                 <p class=SK>Extras</p>
                                 @csrf
+                                {{-- @dd($options[0]['max_quantity']) --}}
                                 <ul class="list-group" id="options_checkboxes">
                                     @if (count($options) > 0)
                                         @foreach ($options as $option)
@@ -203,14 +209,14 @@
                                                     @if($option->is_quantity == 'yes')
                                                         <div class="number w-25 text-right">
                                                             <span class="minus"><i class="fa fa-minus" style="margin-top: 0"></i></span>
-                                                            <input type="text" class="counter" readonly maxlength="{{$option->max_quantity}}" value="1" />
+                                                            <input type="text" class="counter quantity-input" readonly maxlength="{{$option->max_quantity}}" value="1" />
                                                             <span class="plus" disabled id="{{$option->max_quantity}}"><i class="fa fa-plus" style="margin-top: 0"></i></span>
                                                         </div>
                                                     @else
                                                         <div class="number w-25 text-right"></div>
                                                     @endif
                                                     <div class="number checkbox checkbox-success w-25">
-                                                        <input class="check-option" id="{{ $option->id }}" style="position: static;margin: 0px;"
+                                                        <input class="check-option amount-function" id="{{ $option->id }}" style="position: static;margin: 0px;"
                                                             type="checkbox" name="{{ $option->title }}"
                                                             value="{{ $option->price }}">
                                                         <label for="{{ $option->id }}" style="padding-left: 0px; margin-bottom:0">
@@ -220,6 +226,9 @@
                                             </div>                                        
                                             {{-- <hr id="sline"> --}}
                                         @endforeach
+
+                                    @else
+                                    <p style="text-align: center;">No Extras Included</p>                                
                                     @endif
                                    
                                 </ul>
@@ -296,7 +305,25 @@
                         <p class="CK10">1 x Bodyguard Service -$750.00</p> --}}
 
                     </div>
-                    <div class="card" id="curd2222">
+{{-- @dd($booking) --}}
+                        <div class="card" id="curd2">
+                            <div class="d-flex justify-content-between align-items-center"> <div><i class="fa fa-clock"></i><span> Amount</span></div><span
+                                    class="CK5">{{ $booking->travel_amount - $booking->tax_amount }}
+                                    EUR</span></div>
+                            {{-- <div class="d-flex justify-content-between align-items-center"> <div><i class="fa fa-clock"></i><span> Extras</span></div><span class="CK5" id="extra_amount">0.00
+                                    EUR </span></div> --}}
+                            <div class="d-flex justify-content-between align-items-center"> <div><i class="fa fa-clock"></i><span> Summery</span></div><span
+                                    class="CK5" id="summeryAmount">
+                                    {{ $booking->travel_amount - $booking->tax_amount }}
+                                    EUR </span></div>
+                            {{ $tax_rate }}% MwSt. <span class="w-50 float-right" id="taxAmount">
+                                {{ $booking->tax_amount }} EUR </span>
+                            <div class="totalPayment"> <div><i class="fa fa-eur"></i> <span>Total</span></div><span
+                                    class="CK5" id="totalFinalAmount">
+                                    {{ $booking->tax_amount + ($booking->travel_amount - $booking->tax_amount) }}
+                                    EUR </span></div>
+                        </div>
+                    {{-- <div class="card" id="curd2222">
                         <div class="d-flex justify-content-between align-items-center m-0 p-0">
                             <div class="">
                                 <p class="CK10">Selected Vehicles</p>
@@ -323,7 +350,7 @@
                                 <p class="LK7">&euro; {{ $travel_amount }}</p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -380,6 +407,7 @@
         }
 
         $(document).ready(function() {
+            $('.amount-function').prop('checked', false);
             // Replace 'current-page' with the actual name of your page or route
             var currentPage = window.location.href;
 
@@ -390,7 +418,48 @@
                 $('.bax').removeClass('active');
                 $('.bax:contains(' + url + ')').addClass('active');
             }
-        });
+        
+    //     $('.plus').click(function(){
+    //         let checkBox = $(this).closest('.extra').find('.amount-function');
+    
+    // if (checkBox.prop('checked')) {
+    //     checkBox.prop('checked', false);
+    // } else {
+    //     checkBox.prop('checked', true);
+    // }
+    //     });
+
+
+        // let totalExtraAmount = 0;
+
+        // $('.amount-function').click(function () {
+        //     let optionAmount = parseFloat($(this).val());
+        //     if ($(this).prop('checked')) {
+        //         totalExtraAmount += optionAmount;
+        //     } else {
+        //         totalExtraAmount -= optionAmount;
+        //     }
+        //     let quantityValue = $(this).closest('.extra').find('.quantity-input').val();
+        //     // console.log(quantityValue);
+
+        //     let finalExtraAmount = totalExtraAmount * quantityValue;
+            
+        //     $('#extra_amount').text(finalExtraAmount.toFixed(2) + ' EUR');
+
+        //     let travelTaxAmount = {{$booking->travel_amount - $booking->tax_amount}};
+        //     let totalSummeryAmount = finalExtraAmount + travelTaxAmount;
+
+
+        //     let taxRate = totalSummeryAmount*0.19; // calculating the 19% VAT
+        //     let totalFinalAmount = taxRate+totalSummeryAmount;
+        //     $('#taxAmount').text(taxRate.toFixed(2) + ' EUR')
+        //     $('#summeryAmount').text(totalSummeryAmount.toFixed(2) + ' EUR');
+        //     $('#totalFinalAmount').text(totalFinalAmount.toFixed(2) + ' EUR');
+
+        // });
+
+    });
+
     </script>
     <script src="{{ asset('js/Extras.js') }}"></script>
     <script src="{{ url('js/front-end/select-options.js') }}"></script>

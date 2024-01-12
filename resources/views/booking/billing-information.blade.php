@@ -266,7 +266,6 @@
                         <div style="margin-top: 10px;" class="totalPayment"> <div><i class="fa fa-eur"></i> <span>Total</span></div><span
                                 class="CK5">{{ $form_data->extra_options_amount + $form_data->travel_amount }}
                                 EUR </span></div>
-
                     </div>
                 </div>
             </div>
