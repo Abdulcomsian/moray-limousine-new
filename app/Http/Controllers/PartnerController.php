@@ -501,9 +501,9 @@ class PartnerController extends Controller
         auth()->user()->users()->attach($driver_id, ['status' => 'active']);
         //notify admin
         $admin = User::where('user_type', 'admin')->first();
-        $registered_msg = array_merge($this->notifyDriverMsg, ['body' => 'A New Partner On Moray Limousines Added You As Driver For More Details visit web']);
+        $registered_msg = array_merge($this->notifyDriverMsg, ['body' => 'A New Partner On Hathaway Limousines Added You As Driver For More Details visit web']);
         $user->notify(new MorayLimousineNotifications($registered_msg));
-        $registered_msg = array_merge($this->adminnotifyDriverMsg, ['body' => 'A New Driver On Moray Limousines is Added']);
+        $registered_msg = array_merge($this->adminnotifyDriverMsg, ['body' => 'A New Driver On Hathaway Limousines is Added']);
         $admin->notify(new MorayLimousineNotifications($registered_msg));
         return redirect(route('partner.driver.list'))->with('success', '"Success... !" New Driver Created Successfully ');
     }
@@ -744,7 +744,7 @@ class PartnerController extends Controller
     private $temporay_driver_message = [
         'greeting' => 'Temporary Password',
         'subject' => 'Temporary Password',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/driver/dashboard',
     ];
@@ -925,18 +925,18 @@ class PartnerController extends Controller
         }
     }
     protected $notifyAdminMsg = [
-        'greeting' => 'A New Partner On Moray Limousines is registered ',
+        'greeting' => 'A New Partner On Hathaway Limousines is registered ',
         'subject' => 'New Partner have Registered',
-        'body'   => 'A New Partner On Moray Limousines is registered please approved. For More Details visit web',
-        'thanks_text' => 'Thanks For Using Moray Limousines',
+        'body'   => 'A New Partner On Hathaway Limousines is registered please approved. For More Details visit web',
+        'thanks_text' => 'Thanks For Using Hathaway Limousines',
         'action_text' => 'View My Site',
         'action_url' => '/partner/dashboard'
     ];
     private  $vehicle_added_partner = [
         'greeting' => "New Vehicle is Added Successfully",
         'subject' => 'New Vehicle Added Successfully',
-        'body'   => 'You Add a new Vehicle On Moray Limousines  Please Upload Vehicle Documents In order to get Approved By Admin ! Enjoy With Us.  ',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'body'   => 'You Add a new Vehicle On Hathaway Limousines  Please Upload Vehicle Documents In order to get Approved By Admin ! Enjoy With Us.  ',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => 'partner/dashboard',
     ];
@@ -948,36 +948,36 @@ class PartnerController extends Controller
     public function notifyVehicleAdded($id)
     {
         return  [
-            'greeting' => 'A New Vehicle Successfully Added on Moray-Limousines',
+            'greeting' => 'A New Vehicle Successfully Added on Hathaway-Limousines',
             'subject' => 'New Vehicle is Added By a Partner.',
-            'body'   => 'A New Vehicle Added on Moray-Limousines Please check the Details of vehicle by visiting the web site',
-            'thanks_text' => 'Moray Limousine Site',
+            'body'   => 'A New Vehicle Added on Hathaway-Limousines Please check the Details of vehicle by visiting the web site',
+            'thanks_text' => 'Hathaway Limousine Site',
             'action_text' => 'View My Site',
             'action_url' => 'admin/vehicle/vehicleDetail/' . $id,
         ];
     }
 
     protected $notifyDriverMsg = [
-        'greeting' => 'A New Partner On Moray Limousines Added You As Driver',
+        'greeting' => 'A New Partner On Hathaway Limousines Added You As Driver',
         'subject' => 'New Partner Added You As Driver',
-        'body'   => 'A New Partner On Moray Limousines Added You As Driver For More Details visit web',
-        'thanks_text' => 'Thanks For Using Moray Limousines',
+        'body'   => 'A New Partner On Hathaway Limousines Added You As Driver For More Details visit web',
+        'thanks_text' => 'Thanks For Using Hathaway Limousines',
         'action_text' => 'View My Site',
         'action_url' => '/driver/dashboard'
     ];
     protected $notifyDocumentMsg = [
-        'greeting' => 'A New Partner On Moray Limousines Added Document',
+        'greeting' => 'A New Partner On Hathaway Limousines Added Document',
         'subject' => 'New Partner Added Document',
-        'body'   => 'A New Partner On Moray Limousines Added Document For More Details visit web',
-        'thanks_text' => 'Thanks For Using Moray Limousines',
+        'body'   => 'A New Partner On Hathaway Limousines Added Document For More Details visit web',
+        'thanks_text' => 'Thanks For Using Hathaway Limousines',
         'action_text' => 'View My Site',
         'action_url' => '/admin/index'
     ];
     protected $adminnotifyDriverMsg = [
-        'greeting' => 'A New Partner On Moray Limousines Added ',
+        'greeting' => 'A New Partner On Hathaway Limousines Added ',
         'subject' => 'New Driver is Added by Partner',
-        'body'   => 'A New Partner On Moray Limousines is Added For More Details visit web',
-        'thanks_text' => 'Thanks For Using Moray Limousines',
+        'body'   => 'A New Partner On Hathaway Limousines is Added For More Details visit web',
+        'thanks_text' => 'Thanks For Using Hathaway Limousines',
         'action_text' => 'View My Site',
         'action_url' => '/driver/dashboard'
     ];

@@ -119,9 +119,11 @@
 
                     <p class="text">Where Would You Like To Go?</p> 
                     <p class="text1">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE_TEXT) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE_TEXT) : 'A new Class of Luxury<br />Limo Service'}}</p>                    
-                    <button type="button" href="{{ url('/our-fleet') }}" class=" btn1611ID">
-                        Visit Our Fleet<i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
-                    </button>
+                    <a href="{{ url('/our-fleet') }}" target="_blank">
+                        <button type="button" class=" btn1611ID">
+                            Visit Our Fleet<i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
             <div class="col-md-6">
@@ -449,7 +451,7 @@
                 </div>  
                 <p class=" workFLow-heading" style="margin-top: 14px;"><span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) : 'Guaranteed fixed prices'}}</span></p>
                 <p class="BK7 workFlow-desc">
-                    {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) : 'At Moray Limousines there are no hidden costs. Our prices include all fees, taxes and are guaranteed with the booking.'}}
+                    {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) : 'At Hathaway Limousines there are no hidden costs. Our prices include all fees, taxes and are guaranteed with the booking.'}}
                 </p>
             </div>
             {{-- <div class="col-md-1 arrowbutton1">
@@ -556,7 +558,7 @@
             <div class="col-md-6 adjustCenID">
                 <div class="video-container">
                     <iframe class ="iframeClass" width="280" height="375"
-                        src="https://www.youtube.com/embed/Ri8qrzOBSYA?si=cW7kzqD4oGt-ooo0">
+                        src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) : 'https://www.youtube.com/embed/Ri8qrzOBSYA?si=cW7kzqD4oGt-ooo0'}}">
                     </iframe>
 
                     <!-- <button id="playButton">Play Video</button> -->
@@ -567,28 +569,28 @@
 
             <div class="col-md-6">
                 <div class="row">
-                    <p class="IK112">Showcase some impressive numbers.</p>
+                    <p class="IK112">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) : 'Showcase some impressive numbers.'}}</p>
                 </div>
                 <div class="row">
-                    <p class="IK1112">PO Box 1611 Collins Street West Victoria 8007 Australia</p>
+                    <p class="IK1112">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) : 'PO Box 1611 Collins Street West Victoria 8007 Australia'}}</p>
                 </div>
                 <div class="button-row">
                     <div class="custom-button">
-                        <h4>285<h4>
+                        <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) : '285'}}<h4>
                                 <p class="textbtnclass">Vehicles</p>
                     </div>
                     <div class="custom-button">
-                        <h4>97<h4>
+                        <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) : '97'}}<h4>
                                 <p class="textbtnclass">Awards</p>
                     </div>
                     <div class="custom-button">
-                        <h4>13K<h4>
+                        <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) : '13K'}}<h4>
                                 <p class="textbtnclass">Happy Customers</p>
                     </div>
 
                 </div>
 
-                <button class="btn161ID" type="button" class="btn" style="color: white;width: 100%;">Learn More
+                <button class="btn161ID" type="button" class="btn" style="color: white;width: 100%; background-color: #CCA642;">Learn More
                     <i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
                 </button>
             </div>
@@ -774,7 +776,7 @@
             <div class="partner_con">
                 <div class="row justify-content-center">
                     <div class="col-md-4 text-center mb-3">
-                        <h4>The Partners who sell<br />our products</h4>
+                        {!!\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HAPPY_CLIENTS_TEXT) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HAPPY_CLIENTS_TEXT) : '<h2>Partners Who Sell Our Product</h2>'!!}
                     </div>
                     @foreach ($logos as $logo)
                         <div class="col-md-2 text-center mb-3">

@@ -93,16 +93,16 @@ class VehicleController extends Controller
             $vehicle_added_partner = [
                 'greeting' => "New Vehicle is Added Successfully",
                 'subject' => 'New Vehicle Added Successfully',
-                'body'   => 'You Add a new Vehicle On Moray Limousines  Please Upload Vehicle Documents In order to get Approved By Admin ! Enjoy With Us.  ',
-                'thanks_text' => 'Thanks For Using Moray Limousine',
+                'body'   => 'You Add a new Vehicle On Hathaway Limousines  Please Upload Vehicle Documents In order to get Approved By Admin ! Enjoy With Us.  ',
+                'thanks_text' => 'Thanks For Using Hathaway Limousine',
                 'action_text' => 'View My Site',
                 'action_url' => 'partner/dashboard',
             ];
             $vehicle_admin = [
-                'greeting' => 'A New Vehicle Successfully Added on Moray-Limousines',
+                'greeting' => 'A New Vehicle Successfully Added on Hathaway-Limousines',
                 'subject' => 'New Vehicle is Added By a Partner.',
-                'body'   => 'A New Vehicle Added on Moray-Limousines Please check the Details of vehicle by visiting the web site',
-                'thanks_text' => 'Moray Limousine Site',
+                'body'   => 'A New Vehicle Added on Hathaway-Limousines Please check the Details of vehicle by visiting the web site',
+                'thanks_text' => 'Hathaway Limousine Site',
                 'action_text' => 'View My Site',
                 'action_url' => 'admin/vehicle/vehicleDetail/' . $new_vehicle->id,
             ];
@@ -391,18 +391,18 @@ class VehicleController extends Controller
     }
 
     protected $notifyvehicleapprovedMsg = [
-        'greeting' => 'A New vehicle On Moray Limousines is Approved',
+        'greeting' => 'A New vehicle On Hathaway Limousines is Approved',
         'subject' => 'New vehicle is Approved',
-        'body'   => 'A New vehicle On Moray Limousines is Approved',
-        'thanks_text' => 'Thanks For Using Moray Limousines',
+        'body'   => 'A New vehicle On Hathaway Limousines is Approved',
+        'thanks_text' => 'Thanks For Using Hathaway Limousines',
         'action_text' => 'View My Site',
         'action_url' => '/partner/dashboard'
     ];
     protected $notifyvehicledisapprovedMsg = [
-        'greeting' => 'A New vehicle On Moray Limousines is DisApproved',
+        'greeting' => 'A New vehicle On Hathaway Limousines is DisApproved',
         'subject' => 'New vehicle is DisApproved',
-        'body'   => 'A New vehicle On Moray Limousines is DisApproved',
-        'thanks_text' => 'Thanks For Using Moray Limousines',
+        'body'   => 'A New vehicle On Hathaway Limousines is DisApproved',
+        'thanks_text' => 'Thanks For Using Hathaway Limousines',
         'action_text' => 'View My Site',
         'action_url' => '/partner/dashboard'
     ];

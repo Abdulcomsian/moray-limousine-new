@@ -200,7 +200,7 @@
                             </div>
                         @endforeach
                         {{-- pagination  -This Pagination will occur when Items are  more than 4  --}}
-                        {{ $classes->links() }}
+                        {{-- {{ $classes->links() }} --}}
                     @endif
 
                     {{-- old Pagination - Static - Not working --}}

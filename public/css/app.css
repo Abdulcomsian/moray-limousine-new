@@ -937,7 +937,7 @@ button:focus {
 	color: #fff
 }
 #header.header-04{
-	line-height: 35px;
+	/* line-height: 35px; */
 	border-top:0;
 }
 .header-04 .main-menu .menu > li{

@@ -100,15 +100,15 @@ class BookingController extends Controller
             $classes =  $this->booking->classesWithPriceByDistance($classes, $distance_in_km, $request->all());
 
              // Paginate the array manually
-            $perPage = 50; // Number of items per page
-            $currentPage = request('page', 1); // Get the current page from the request
-            $pagedData = array_slice($classes, ($currentPage - 1) * $perPage, $perPage);
-            $paginatedClasses = new LengthAwarePaginator($pagedData, count($classes), $perPage);
+            // $perPage = 50; // Number of items per page
+            // $currentPage = request('page', 1); // Get the current page from the request
+            // $pagedData = array_slice($classes, ($currentPage - 1) * $perPage, $perPage);
+            // $paginatedClasses = new LengthAwarePaginator($pagedData, count($classes), $perPage);
 
             $data['booking_type'] = 'distance';
             $data['form_data'] = $request->except('_token');
             $data['distance'] = $distance_in_km;
-            $data['classes'] = $paginatedClasses;
+            $data['classes'] = $classes;
             $data['travel_duration'] = $durationInHours;
             // echo "<pre>";
             // print_r($data); exit;
@@ -133,20 +133,27 @@ class BookingController extends Controller
             'pick_date.required'  => 'This field is required',
             'pick_time.required'  => 'This field is required',
         ]);
+
+        $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        if (Auth()->check() == false)
+        {
+            Session::put('search', $actual_link);
+        }
+
         $classes = $this->classes->all();
         $selected_hour = $request['selected_hour'];
         //           set prices and set discounts or markup with given classes
         $classes = $this->booking->classesWithPriceByDuration($classes, $selected_hour,$request->all());
 
          // Paginate the array manually
-        $perPage = 4; // Number of items per page
-        $currentPage = request('page', 1); // Get the current page from the request
-        $pagedData = array_slice($classes, ($currentPage - 1) * $perPage, $perPage);
-        $paginatedClasses = new LengthAwarePaginator($pagedData, count($classes), $perPage);
+        // $perPage = 50; // Number of items per page
+        // $currentPage = request('page', 1); // Get the current page from the request
+        // $pagedData = array_slice($classes, ($currentPage - 1) * $perPage, $perPage);
+        // $paginatedClasses = new LengthAwarePaginator($pagedData, count($classes), $perPage);
 
         $data['booking_type'] = 'time';
         $data['form_data'] = array_merge($request->except('_token'), ['drop_address' => "This Booking Is For " . $selected_hour . " Hours  : "]);
-        $data['classes'] = $paginatedClasses;
+        $data['classes'] = $classes;
         $data['selected_hours'] = $selected_hour;
         $data['travel_duration'] = $selected_hour;
         return view('booking.select-vehicle-class', $data);
@@ -328,7 +335,7 @@ class BookingController extends Controller
                     'pendingamount' =>'',
                     'filename' => $fileName,
                 ],
-                'thanks_text' => 'Thanks For Using Moray Limousines',
+                'thanks_text' => 'Thanks For Using Hathaway Limousines',
                 'action_text' => '',
                 'action_url' => '',
             ];
@@ -383,7 +390,7 @@ class BookingController extends Controller
         $booking->booking_status = 'approved';
         $booking->save();
         $user = $booking->user;
-        $approve_msg = array_merge($this->approve_booking_msg, ['body' => 'Your Booking Request is approved by Moray Limousine which ' .
+        $approve_msg = array_merge($this->approve_booking_msg, ['body' => 'Your Booking Request is approved by Hathaway Limousine which ' .
             $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time'] . ' ! Enjoy With Us.  ']);
         $user->notify(new MorayLimousineNotifications($approve_msg));
         return redirect()->back();
@@ -411,7 +418,7 @@ class BookingController extends Controller
             $booking->booking_status = 'approved';
             $booking->save();
             $user = $booking->user;
-            $approve_msg = array_merge($this->approve_booking_msg_admin, ['body' => 'Your Booking Confirm is approved by Moray Limousine which ' .
+            $approve_msg = array_merge($this->approve_booking_msg_admin, ['body' => 'Your Booking Confirm is approved by Hathaway Limousine which ' .
             $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time'] . ' is Assigned to '.$driveruser->first_name .' '.$driveruser->last_name.' having phone number is '.$driveruser->phone_number.' ! Enjoy With Us.  ']);
             $user->notify(new MorayLimousineNotifications($approve_msg));
             return redirect()->back();
@@ -436,7 +443,7 @@ class BookingController extends Controller
             $booking->booking_status = 'approved';
             $booking->save();
             $user = $booking->user;
-            $approve_msg = array_merge($this->approve_booking_msg_admin, ['body' => 'Your Booking Confirm is updated by Moray Limousine which ' .
+            $approve_msg = array_merge($this->approve_booking_msg_admin, ['body' => 'Your Booking Confirm is updated by Hathaway Limousine which ' .
             $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time'] . ' is Assigned to '.$driveruser->first_name .' '.$driveruser->last_name.' having phone number is '.$driveruser->phone_number.' ! Enjoy With Us.  ']);
             $user->notify(new MorayLimousineNotifications($approve_msg));
             return redirect()->back();
@@ -452,7 +459,7 @@ class BookingController extends Controller
         $booking->save();
         $user = $booking->user;
         //        Send Notification
-        $disapprove_msg = array_merge($this->disapprove_booking_msg, ['body' => 'Your Booking Request is not approved by Moray Limousine which ' .
+        $disapprove_msg = array_merge($this->disapprove_booking_msg, ['body' => 'Your Booking Request is not approved by Hathaway Limousine which ' .
             $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time']]);
         $user->notify(new MorayLimousineNotifications($disapprove_msg));
         return redirect()->back();
@@ -474,8 +481,8 @@ class BookingController extends Controller
     {
         return  [
             'greeting' => 'You Have a New Booking Request.',
-            'subject' => 'Moray Limousine .  New Booking Request',
-            'thanks_text' => 'Thanks For Choosing Moray Limousine',
+            'subject' => 'Hathaway Limousine .  New Booking Request',
+            'thanks_text' => 'Thanks For Choosing Hathaway Limousine',
             'action_text' => 'View My Site',
             'action_url' => 'https://moray-limousines.de/booking/details/187',
             'body' => [
@@ -496,8 +503,8 @@ class BookingController extends Controller
         $class = VehicleCategory::find($booking['vehicle_type_id ']);
         return  [
             'greeting' => 'You Have a New Booking Request .',
-            'subject' => 'Moray Limousine .  New Booking Request',
-            'thanks_text' => 'Thanks For Choosing Moray Limousine',
+            'subject' => 'Hathaway Limousine .  New Booking Request',
+            'thanks_text' => 'Thanks For Choosing Hathaway Limousine',
             'action_text' => 'View My Site',
             'action_url' => '/booking/details/' . $booking->id,
             'body' => [
@@ -782,8 +789,8 @@ class BookingController extends Controller
         $notify_driver_msg = [
             'greeting' => 'You ' . $status . ' a Booking With Booking Id = ' . $bookingId,
             'subject' => 'Booking ' . $status . ' By You',
-            'body'   => 'A Booking With Booking Id ' . $bookingId . ' Assigned To You By Moray Limousines ' . $status . ' By You For Details Of booking Follow The link Given Blow Or Login And check Booking Details With Booking Id' . $bookingId,
-            'thanks_text' => 'Thanks For Using Moray Limousines',
+            'body'   => 'A Booking With Booking Id ' . $bookingId . ' Assigned To You By Hathaway Limousines ' . $status . ' By You For Details Of booking Follow The link Given Blow Or Login And check Booking Details With Booking Id' . $bookingId,
+            'thanks_text' => 'Thanks For Using Hathaway Limousines',
             'action_text' => 'View My Site',
             'action_url' => '/booking/details/' . $bookingId,
         ];
@@ -792,11 +799,11 @@ class BookingController extends Controller
         if (auth()->user()->user_type == 'driver')
         {
             $notify_admins_msg = [
-                'greeting' => 'A Booking With Booking Id ' . $bookingId . ' Assigned To Driver By a Partner ' . $status . ' By Driver On Moray-Limousines',
+                'greeting' => 'A Booking With Booking Id ' . $bookingId . ' Assigned To Driver By a Partner ' . $status . ' By Driver On Hathaway-Limousines',
                 'subject' => 'Booking ' . $status . ' By Driver',
                 'body'   => 'A Booking With Booking Id ' . $bookingId . ' Assigned To Driver By a Partner ' . $status . ' By Driver For Details Of booking Follow The link Given Blow Or Login And check Booking Details With Booking Id ' . $bookingId . '
                  Driver name is ' . auth()->user()->first_name . ' ' . auth()->user()->last_name . ' having phone number is ' . auth()->user()->phone_number . ' vehicle is ' . $booking->vehicle[0]->title . ' having plate no is ' . $booking->vehicle[0]->plate,
-                'thanks_text' => 'Thanks For Using Moray Limousines',
+                'thanks_text' => 'Thanks For Using Hathaway Limousines',
                 'action_text' => 'View My Site',
                 'action_url' => '/booking/details/' . $bookingId,
             ];
@@ -804,10 +811,10 @@ class BookingController extends Controller
         } elseif (auth()->user()->user_type == 'partner')
         {
             $notify_admins_msg = [
-                'greeting' => 'A Booking With Booking Id ' . $bookingId . ' Assigned To  Partner ' . $status . ' By Partner On Moray-Limousines',
+                'greeting' => 'A Booking With Booking Id ' . $bookingId . ' Assigned To  Partner ' . $status . ' By Partner On Hathaway-Limousines',
                 'subject' => 'Booking ' . $status . ' By Partner',
                 'body'   => 'A Booking With Booking Id ' . $bookingId . ' Assigned Partner ' . $status . ' By Partner For Details Of booking Follow The link Given Blow Or Login And check Booking Details With Booking Id' . $bookingId,
-                'thanks_text' => 'Thanks For Using Moray Limousines',
+                'thanks_text' => 'Thanks For Using Hathaway Limousines',
                 'action_text' => 'View My Site',
                 'action_url' => '/booking/details/' . $bookingId,
             ];
@@ -860,7 +867,7 @@ class BookingController extends Controller
                 'pendingamount' => $booking->pending_payment,
                 'filename' => $fileName,
             ],
-            'thanks_text' => 'Thanks For Using Moray Limousines',
+            'thanks_text' => 'Thanks For Using Hathaway Limousines',
             'action_text' => '',
             'action_url' => '',
         ];

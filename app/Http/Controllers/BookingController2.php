@@ -219,7 +219,7 @@ class BookingController extends Controller
         $booking->booking_status = 'approved';
         $booking->save();
         $user = $booking->user;
-        $approve_msg = array_merge($this->approve_booking_msg, ['body' => 'Your Booking Request is approved by Moray Limousine which ' .
+        $approve_msg = array_merge($this->approve_booking_msg, ['body' => 'Your Booking Request is approved by Hathaway Limousine which ' .
             $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time'] . ' ! Enjoy With Us.  ']);
         $user->notify(new MorayLimousineNotifications($approve_msg));
         return redirect()->back();
@@ -236,7 +236,7 @@ class BookingController extends Controller
         $booking->save();
         $user = $booking->user;
         //        Send Notification
-        $disapprove_msg = array_merge($this->disapprove_booking_msg, ['body' => 'Your Booking Request is not approved by Moray Limousine which ' .
+        $disapprove_msg = array_merge($this->disapprove_booking_msg, ['body' => 'Your Booking Request is not approved by Hathaway Limousine which ' .
             $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time']]);
         $user->notify(new MorayLimousineNotifications($disapprove_msg));
         return redirect()->back();
@@ -258,8 +258,8 @@ class BookingController extends Controller
     {
         return  [
             'greeting' => 'You Have a New Booking Request.',
-            'subject' => 'Moray Limousine .  New Booking Request',
-            'thanks_text' => 'Thanks For Choosing Moray Limousine',
+            'subject' => 'Hathaway Limousine .  New Booking Request',
+            'thanks_text' => 'Thanks For Choosing Hathaway Limousine',
             'action_text' => 'View My Site',
             'action_url' => 'https://moray-limousines.de/booking/details/187',
             'body' => [
@@ -279,8 +279,8 @@ class BookingController extends Controller
     {
         return  [
             'greeting' => 'You Have a New Booking Request .',
-            'subject' => 'Moray Limousine .  New Booking Request',
-            'thanks_text' => 'Thanks For Choosing Moray Limousine',
+            'subject' => 'Hathaway Limousine .  New Booking Request',
+            'thanks_text' => 'Thanks For Choosing Hathaway Limousine',
             'action_text' => 'View My Site',
             'action_url' => '/booking/details/' . $booking->id,
             'body' => [
@@ -547,8 +547,8 @@ class BookingController extends Controller
         $notify_driver_msg = [
             'greeting' => 'You Successfully Accept a Booking With Booking Id = ' . $bookingId,
             'subject' => 'Booking Accepted By You',
-            'body'   => 'A Booking With Booking Id ' . $bookingId . 'Assigned To You By Moray Limousines Successfully Accepted By You For Details Of booking Follow The link Given Blow Or Login And check Booking Details With Booking Id' . $bookingId,
-            'thanks_text' => 'Thanks For Using Moray Limousines',
+            'body'   => 'A Booking With Booking Id ' . $bookingId . 'Assigned To You By Hathaway Limousines Successfully Accepted By You For Details Of booking Follow The link Given Blow Or Login And check Booking Details With Booking Id' . $bookingId,
+            'thanks_text' => 'Thanks For Using Hathaway Limousines',
             'action_text' => 'View My Site',
             'action_url' => '/booking/details/' . $bookingId,
         ];
@@ -557,7 +557,7 @@ class BookingController extends Controller
             'greeting' => 'A Booking With Booking Id ' . $bookingId . 'Assigned To Driver By a Partner Successfully Accepted By Driver On Moray-Limousines',
             'subject' => 'Booking Accepted By Driver',
             'body'   => 'A Booking With Booking Id ' . $bookingId . 'Assigned To Driver By a Partner Successfully Accepted By Driver For Details Of booking Follow The link Given Blow Or Login And check Booking Details With Booking Id' . $bookingId,
-            'thanks_text' => 'Thanks For Using Moray Limousines',
+            'thanks_text' => 'Thanks For Using Hathaway Limousines',
             'action_text' => 'View My Site',
             'action_url' => '/booking/details/' . $bookingId,
         ];
@@ -609,7 +609,7 @@ class BookingController extends Controller
                 'pendingamount' => $booking->pending_payment,
                 'filename' => $fileName,
             ],
-            'thanks_text' => 'Thanks For Using Moray Limousines',
+            'thanks_text' => 'Thanks For Using Hathaway Limousines',
             'action_text' => '',
             'action_url' => '',
         ];
@@ -778,8 +778,8 @@ class BookingController extends Controller
 
     protected $notify_booking_user = [
         'greeting' => 'Your request is submitted successfully',
-        'subject' => 'Welcome To Moray Limousines',
-        'thanks_text' => 'Thanks For Choosing Moray Limousine',
+        'subject' => 'Welcome To Hathaway Limousines',
+        'thanks_text' => 'Thanks For Choosing Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
 
@@ -790,7 +790,7 @@ class BookingController extends Controller
     public $notify_driver_assign = [
         'greeting' => 'New Booking Is Assigned',
         'subject' => 'New Ride Is Assigned To You',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
     ];
 
@@ -798,9 +798,9 @@ class BookingController extends Controller
      * @var array
      */
     public $approve_booking_msg = [
-        'greeting' => 'Your Booking Request is approved by Moray Limousine',
-        'subject' => 'Booking Request is approved by Moray Limousine',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'greeting' => 'Your Booking Request is approved by Hathaway Limousine',
+        'subject' => 'Booking Request is approved by Hathaway Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
     ];
@@ -808,9 +808,9 @@ class BookingController extends Controller
      * @var array
      */
     protected $disapprove_booking_msg = [
-        'greeting' => 'Your Booking Request is  not approved by Moray Limousine',
+        'greeting' => 'Your Booking Request is  not approved by Hathaway Limousine',
         'subject' => 'Booking Request Disapproved',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
     ];

@@ -64,6 +64,16 @@ class AppConsts
     public const FOOTER_PAGE_ONE = 'footer_page_one';
     public const FOOTER_PAGE_TWO = 'footer_page_two';
 
+    public const HAPPY_CLIENTS_TEXT = 'happy_clients_text';
+
+    // Showcase Constants
+    public const YOUTUBE_VIDEO_LINK = 'youtube_video_link';
+    public const SHOWCASE_TITLE = 'showcase_title';
+    public const SHOWCASE_DESCRIPTION = 'showcase_description';
+    public const SHOWCASE_VEHICLES = 'showcase_vehicles';
+    public const SHOWCASE_AWARDS = 'showcase_awards';
+    public const SHOWCASE_HAPPY_CUSTOMERS = 'showcase_happy_customers';
+
 
 
 //    Column Key for home page CMS END ===========================================================

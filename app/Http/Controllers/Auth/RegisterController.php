@@ -184,10 +184,10 @@ class RegisterController extends Controller
     }
     //
     protected $notifyAdminMsg = [
-        'greeting' => 'A New Partner On Moray Limousines is registered ',
+        'greeting' => 'A New Partner On Hathaway Limousines is registered ',
         'subject' => 'New Partner have Registered',
-        'body'   => 'A New Partner On Moray Limousines is registered please approved. For More Details visit web',
-        'thanks_text' => 'Thanks For Using Moray Limousines',
+        'body'   => 'A New Partner On Hathaway Limousines is registered please approved. For More Details visit web',
+        'thanks_text' => 'Thanks For Using Hathaway Limousines',
         'action_text' => 'View My Site',
         'action_url' => '/admin/dashboard'
     ];

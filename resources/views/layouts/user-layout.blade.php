@@ -153,7 +153,10 @@ $user_type = Auth()->user()->user_type;
                                     </g>
                                 </svg>
 
-                            </defs><image width="112" height="85" x="0" y="0" transform="" preserveAspectRatio="xMidYMid slice" id="comp-jgwzdv6cimgimage" data-type="image" xlink:href="https://static.wixstatic.com/media/1a8026_45000581fcae4bc39fc0c65536134632~mv2.png/v1/crop/x_121,y_0,w_542,h_425/fill/w_112,h_88,al_c,q_80,usm_0.66_1.00_0.01/1a8026_45000581fcae4bc39fc0c65536134632~mv2.webp" mask="url(#mask-comp-jgwzdv6cimg)" data-svg-mask="mask-comp-jgwzdv6cimg-svg"></image></svg>
+                            </defs>
+                            {{-- <image width="112" height="85" x="0" y="0" transform="" preserveAspectRatio="xMidYMid slice" id="comp-jgwzdv6cimgimage" data-type="image" xlink:href="https://static.wixstatic.com/media/1a8026_45000581fcae4bc39fc0c65536134632~mv2.png/v1/crop/x_121,y_0,w_542,h_425/fill/w_112,h_88,al_c,q_80,usm_0.66_1.00_0.01/1a8026_45000581fcae4bc39fc0c65536134632~mv2.webp" mask="url(#mask-comp-jgwzdv6cimg)" data-svg-mask="mask-comp-jgwzdv6cimg-svg"></image> --}}
+                            <image width="112" height="88" xlink:href="{{asset('/images/moray-logo.png')}}" ></image>
+                        </svg>
                     </a>
                 </div>
                 <div class="navigation w-75 pull-right">

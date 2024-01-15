@@ -14,6 +14,7 @@ use App\Models\Tax;
 use App\Models\User;
 use App\Models\Vehicle;
 use App\Models\VehicleCategory;
+use App\Models\CmsHomePage;
 use http\Env\Response;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -71,7 +72,7 @@ class AdminController extends Controller
         $booking->booking_status = 'approved';
         $booking->save();
         $user = $booking->user;
-        $approve_msg = array_merge($this->approve_booking_msg, ['body' => 'Your Booking Request is approved by Moray Limousine which ' .
+        $approve_msg = array_merge($this->approve_booking_msg, ['body' => 'Your Booking Request is approved by Hathaway Limousine which ' .
             $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time'] . ' ! Enjoy With Us.  ']);
         $user->notify(new MorayLimousineNotifications($approve_msg));
         return redirect(route('admin.index'));
@@ -116,7 +117,7 @@ class AdminController extends Controller
         $user = new User();
         $user = $user->registerDriver($request->all());
         $successMessage = 'Success !   Driver Created Successfully';
-        $registered_msg = array_merge($this->register_driver_msg, ['body' => 'You  Registered On Moray Limousine by Admin . Please Check your account By using password : " ' . $request['password'] . ' "  ! Enjoy With Us.  ']);
+        $registered_msg = array_merge($this->register_driver_msg, ['body' => 'You  Registered On Hathaway Limousine by Admin . Please Check your account By using password : " ' . $request['password'] . ' "  ! Enjoy With Us.  ']);
         $user->notify(new MorayLimousineNotifications($registered_msg));
         return response()->json($successMessage);
     }
@@ -143,7 +144,7 @@ class AdminController extends Controller
         $user =  User::find($id);
         $user->status = 'approved';
         $user->save();
-        $approve_msg = array_merge($this->approve_driver_msg, ['body' => 'Your Account is Registered On Moray Limousines is Approved by Admin . ! Enjoy With Us.  ']);
+        $approve_msg = array_merge($this->approve_driver_msg, ['body' => 'Your Account is Registered On Hathaway Limousines is Approved by Admin . ! Enjoy With Us.  ']);
         $user->notify(new MorayLimousineNotifications($approve_msg));
         $drivers = User::where('user_type', 'driver')->orderBy('id', 'desc')->get();
         $data['drivers'] = $drivers;
@@ -172,7 +173,7 @@ class AdminController extends Controller
         $user =  User::find($id);
         $user->status = 'disapproved';
         $user->save();
-        $disapprove_msg = array_merge($this->disapprove_driver_msg, ['body' => 'Your Account is Registered On Moray Limousines is Not Approved by Admin . ! ']);
+        $disapprove_msg = array_merge($this->disapprove_driver_msg, ['body' => 'Your Account is Registered On Hathaway Limousines is Not Approved by Admin . ! ']);
         $user->notify(new MorayLimousineNotifications($disapprove_msg));
 
         $drivers = User::where('user_type', 'driver')->orderBy('id', 'desc')->get();
@@ -190,7 +191,7 @@ class AdminController extends Controller
         $user =  User::find($id);
         $user->status = 'blocked';
         $user->save();
-        $approve_msg = array_merge($this->block_driver_msg, ['body' => 'Your Account Is Blocked By Admin On Moray Limousine']);
+        $approve_msg = array_merge($this->block_driver_msg, ['body' => 'Your Account Is Blocked By Admin On Hathaway Limousine']);
         $user->notify(new MorayLimousineNotifications($approve_msg));
 
         $drivers = User::where('user_type', 'driver')->orderBy('id', 'desc')->get();
@@ -261,7 +262,7 @@ class AdminController extends Controller
         $user = new User();
         $partner = $user->registerDriver($request->all());
         $message = 'Success !   Partner Created Successfully';
-        $registered_msg = array_merge($this->register_driver_msg, ['body' => 'You are Registered On Moray Limousines by Admin As a Partner. Please Check your account By using password : " ' . $request['password'] . ' "  ! Enjoy With Us.  ']);
+        $registered_msg = array_merge($this->register_driver_msg, ['body' => 'You are Registered On Hathaway Limousines by Admin As a Partner. Please Check your account By using password : " ' . $request['password'] . ' "  ! Enjoy With Us.  ']);
         $partner->notify(new MorayLimousineNotifications($registered_msg));
         return redirect(route('partners.list'))->with('success', $message);
     }
@@ -294,7 +295,7 @@ class AdminController extends Controller
         $partner->status = 'approved';
         $partner->save();
 
-        $approve_msg = array_merge($this->approve_driver_msg, ['body' => 'Your Account is Registered On Moray Limousines as Partner is  Approved by Admin . ! Enjoy With Us ']);
+        $approve_msg = array_merge($this->approve_driver_msg, ['body' => 'Your Account is Registered On Hathaway Limousines as Partner is  Approved by Admin . ! Enjoy With Us ']);
         $partner->notify(new MorayLimousineNotifications($approve_msg));
 
         $message = 'Success !   Partner Has Approved  Successfully';
@@ -311,7 +312,7 @@ class AdminController extends Controller
         $partner->status = 'disapproved';
         $partner->save();
 
-        $disapprove_msg = array_merge($this->disapprove_driver_msg, ['body' => 'Your Account is Registered On Moray Limousines as Partner is Not Approved by Admin . ! ']);
+        $disapprove_msg = array_merge($this->disapprove_driver_msg, ['body' => 'Your Account is Registered On Hathaway Limousines as Partner is Not Approved by Admin . ! ']);
         $partner->notify(new MorayLimousineNotifications($disapprove_msg));
 
         $message = 'Success ... !   Partner Is Disapproved Successfully';
@@ -323,7 +324,7 @@ class AdminController extends Controller
         $partner->status = 'blocked';
         $partner->save();
         $message = 'Success ... !    Partner Is Blocked Successfully';
-        $approve_msg = array_merge($this->block_driver_msg, ['body' => 'Your Account Is Blocked By Admin On Moray Limousine']);
+        $approve_msg = array_merge($this->block_driver_msg, ['body' => 'Your Account Is Blocked By Admin On Hathaway Limousine']);
         $partner->notify(new MorayLimousineNotifications($approve_msg));
         return redirect(route('partners.list'))->with('success', $message);
     }
@@ -631,7 +632,9 @@ class AdminController extends Controller
     public function happyClients()
     {
         $clint_images = $this->client->all();
-        return view('admin.pages-cms.happy-client')->with('client_images', $clint_images);
+        $id = 56;
+        $partnerText = CmsHomePage::where('id', '=', $id)->first();
+        return view('admin.pages-cms.happy-client')->with(['client_images' => $clint_images, 'partnerText' => $partnerText]);
     }
 
     /**
@@ -664,6 +667,20 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Clint Image saved Successfully');
     }
 
+
+    public function storehappyClients(Request $request){
+        $rowId = 56; // This is the row id where this partner text is stored in Database
+        $textData = CmsHomePage::where('id', '=', $rowId)->first();
+        if($textData){
+            $textData->item_content = $request->input('happy-text-client');
+            $textData->save();
+            return redirect()->back()->with('success', 'Partner text inserted Successfully');
+        }else{
+            return redirect()->back()->with('error', 'Partner text isn`t inserted Sucessfully');
+        }
+        
+
+    }
     /**
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
@@ -698,10 +715,10 @@ class AdminController extends Controller
     {
         $user = User::find($request['user_id']);
         $msg = [
-            'greeting' => 'You Have a New Notification Moray Limousine',
-            'subject' => 'New Notification Form Moray Limousines',
+            'greeting' => 'You Have a New Notification Hathaway Limousine',
+            'subject' => 'New Notification Form Hathaway Limousines',
             'body' => $request['msg_body'],
-            'thanks_text' => 'Thanks For Using Moray Limousine',
+            'thanks_text' => 'Thanks For Using Hathaway Limousine',
             'action_text' => 'View My Site',
             'action_url' => '/partner/profile',
         ];
@@ -718,10 +735,10 @@ class AdminController extends Controller
     {
         $user = User::find($request['user_id']);
         $msg = [
-            'greeting' => 'You Have a New Notification Moray Limousine',
-            'subject' => 'New Notification Form Moray Limousines',
+            'greeting' => 'You Have a New Notification Hathaway Limousine',
+            'subject' => 'New Notification Form Hathaway Limousines',
             'body' => $request['msg_body'],
-            'thanks_text' => 'Thanks For Using Moray Limousine',
+            'thanks_text' => 'Thanks For Using Hathaway Limousine',
             'action_text' => 'View My Site',
             'action_url' => '/partner/profile',
         ];
@@ -776,37 +793,37 @@ class AdminController extends Controller
 
     //    Notification Email Messages
     private $approve_booking_msg = [
-        'greeting' => 'Your Booking Request is approved by Moray Limousine',
-        'subject' => 'Booking Request is approved by Moray Limousine',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'greeting' => 'Your Booking Request is approved by Hathaway Limousine',
+        'subject' => 'Booking Request is approved by Hathaway Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
     ];
     private $register_driver_msg = [
-        'greeting' => 'Your Account is Registered on Moray Limousine By Using This Email Address',
+        'greeting' => 'Your Account is Registered on Hathaway Limousine By Using This Email Address',
         'subject' => 'Account Registered',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
     ];
     private $block_driver_msg = [
-        'greeting' => 'Your Account has been Blocked on Moray Limousine',
+        'greeting' => 'Your Account has been Blocked on Hathaway Limousine',
         'subject' => 'Account Blocked',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
     ];
     private $approve_driver_msg = [
-        'greeting' => 'Your Account has been Approved by Moray Limousine.',
+        'greeting' => 'Your Account has been Approved by Hathaway Limousine.',
         'subject' => 'Account Approved',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/driver/dashboard',
     ];
     private $disapprove_driver_msg = [
-        'greeting' => 'Your Account has Not been Approved by Moray Limousine',
+        'greeting' => 'Your Account has Not been Approved by Hathaway Limousine',
         'subject' => 'Account Disapproved',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
     ];

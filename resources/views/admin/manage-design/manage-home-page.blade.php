@@ -300,27 +300,57 @@
                         </div>
                     </div>
 
-                    {{-- <div class="row">
-                        <div class="col-md-4 mt-3">
-                            <h6>Customers Reviews</h6>
-                            <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE)) : 'https://via.placeholder.com/1500x1000'}}" class="img-fluid {{\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE}}"
-                                 alt="placeholder iamge">
-                            <label class="mt-2">
-                                <input type="file"
-                                       name="{{\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE}}"
-                                       class="d-none image-pick">
-                                <span class="btn btn-dark"><i class="fa fa-picture-o"></i></span>
-                            </label>
-                            <label for="advantageTitleCol1" class="d-block">Customer Name:</label>
-                            <input type="text"
-                                   name="{{\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE}}"
-                                   class="form-control" placeholder="Title" id="advantageTitleCol1" value="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE) : ''}}">
-                            <label for="advantageDescriptionCol1" class="mt-2">Customer Feedback:</label>
-                            <textarea class="form-control" id="advantageDescriptionCol1"
-                                      name="{{\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION}}"
-                                      placeholder="Description">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION) : ''}}</textarea>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Showcase Section</h5>
                         </div>
-                    </div> --}}
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <label for="youtube-video-link" class="d-block">Youtube Video Link:</label>
+                                    <input type="text"
+                                           name="{{\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK}}"
+                                           class="form-control" placeholder="Youtube Video Link" value="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) : ''}}">
+                                </div>   
+                                <div class="col-md-6">
+                                    <label for="showcase-title" class="d-block">Showcase Title</label>
+                                    <input type="text"
+                                           name="{{\App\Utills\Constants\AppConsts::SHOWCASE_TITLE}}"
+                                           class="form-control" placeholder="Showcase Title" value="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) : ''}}">
+                                </div>                            
+                            </div>
+
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <label for="youtube-video-link" class="d-block">Showcase Description:</label>
+                                    <input type="text"
+                                           name="{{\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION}}"
+                                           class="form-control" placeholder="Showcase Description" value="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) : ''}}">
+                                </div>   
+                                <div class="col-md-6">
+                                    <label for="showcase-title" class="d-block">Showcase Vehicles</label>
+                                    <input type="text"
+                                           name="{{\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES}}"
+                                           class="form-control" placeholder="Showcase Vehicles" value="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) : ''}}">
+                                </div>                            
+                            </div>
+
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    <label for="youtube-video-link" class="d-block">Showcase Awards:</label>
+                                    <input type="text"
+                                           name="{{\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS}}"
+                                           class="form-control" placeholder="Showcase Awards" value="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) : ''}}">
+                                </div>   
+                                <div class="col-md-6">
+                                    <label for="showcase-title" class="d-block">Showcase Happy Customers</label>
+                                    <input type="text"
+                                           name="{{\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS}}"
+                                           class="form-control" placeholder="Showcase Happy Customers" value="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) : ''}}">
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>
 
                     <button class="btn btn-dark my-3">Update</button>
                 </form>

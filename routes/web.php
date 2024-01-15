@@ -764,6 +764,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
         Route::get('admin/option/delete/{id}', [AdminController::class, 'optionDelete']);
 
         Route::get('admin/happy-clients', [AdminController::class, 'happyClients']);
+        Route::get('admin/store-happyClient-text', [AdminController::class, 'storehappyClients'])->name('store.happyclient.text');
         Route::post('admin/create-clients', [AdminController::class, 'createClient'])->name('save.client');
         Route::get('admin/delete-client/{id}', [AdminController::class, 'deleteClient']);
 

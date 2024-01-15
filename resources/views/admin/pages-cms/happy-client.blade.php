@@ -58,6 +58,18 @@
                         </div>
                         <div class="card-body">
                             <div class="forms">
+                                {{-- this form used for the text addition in database  --}}
+                                <form action="{{route('store.happyclient.text')}}">
+                                    <div class="row mb-4">
+                                        <div class="col-md-8">
+                                            <textarea class="form-control editor" id="partnerText" placeholder="Enter Partner text"
+                                           name="happy-text-client">{!!$partnerText['item_content']!!}</textarea>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="submit">Update</button>
+                                        </div>
+                                    </div>
+                                </form>
                                 <form id="addSubtype" action="{{route('save.client')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                    <input type="hidden" name="edit_id" value="{{null}}">
@@ -161,6 +173,18 @@
             $(this).hide();
             input.prop('required',true);
 
+        });
+
+        let descriptionEditor;
+        $(document).ready(function () {
+            ClassicEditor
+                .create(document.querySelector('#partnerText'))
+                .then(editor => {
+                    descriptionEditor = editor;
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         });
     </script>
 @endsection

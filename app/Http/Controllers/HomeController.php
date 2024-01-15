@@ -35,17 +35,17 @@ class HomeController extends Controller
 
 
     protected $notify_admin_enquiry = [
-        'greeting' => 'You have a new enquiry from a user on Moray Limousines',
+        'greeting' => 'You have a new enquiry from a user on Hathaway Limousines',
         'subject' => 'A new enquiry from a user',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => 'admin/index',
     ];
     protected $notify_user_enquiry = [
-        'greeting' => 'Your enquiry is received on Moray Limousines',
+        'greeting' => 'Your enquiry is received on Hathaway Limousines',
         'subject' => 'Enquiry Is Received',
-        'body' => 'Your enquiry is received on Moray Limousines Thanks for your response we will respond you ( if needed ) soon.',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'body' => 'Your enquiry is received on Hathaway Limousines Thanks for your response we will respond you ( if needed ) soon.',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => 'user/profile',
     ];
@@ -259,14 +259,14 @@ class HomeController extends Controller
     private $approve_driver_msg = [
         'greeting' => 'Document expired.',
         'subject' => 'Document Expired Notify',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/driver/dashboard',
     ];
     private $admin_notify_expiry_msg = [
         'greeting' => 'Document expired.',
         'subject' => 'Document Expired',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/driver/dashboard',
     ];

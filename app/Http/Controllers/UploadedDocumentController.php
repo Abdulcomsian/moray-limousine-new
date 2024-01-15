@@ -42,16 +42,16 @@ class UploadedDocumentController extends Controller
     protected $notifyApproveDocumentMsg = [
         'greeting' => 'Your Document is Approved',
         'subject' => 'Your Document is Approved',
-        'body'   => 'Your Uploaded Document is Approved on Moray Limousines For More Details visit web',
-        'thanks_text' => 'Thanks For Using Moray Limousines',
+        'body'   => 'Your Uploaded Document is Approved on Hathaway Limousines For More Details visit web',
+        'thanks_text' => 'Thanks For Using Hathaway Limousines',
         'action_text' => 'View My Site',
         'action_url' => '/admin/index'
     ];
     protected $notifyDisApproveDocumentMsg = [
         'greeting' => 'Your Document is DisApproved',
         'subject' => 'Your Document is DisApproved',
-        'body'   => 'Your Uploaded Document is DisApproved on Moray Limousines For More Details visit web',
-        'thanks_text' => 'Thanks For Using Moray Limousines',
+        'body'   => 'Your Uploaded Document is DisApproved on Hathaway Limousines For More Details visit web',
+        'thanks_text' => 'Thanks For Using Hathaway Limousines',
         'action_text' => 'View My Site',
         'action_url' => '/admin/index'
     ];

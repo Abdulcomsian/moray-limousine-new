@@ -48,7 +48,7 @@ class UserController extends Controller
     public $notify_cancel_booking_user = [
         'greeting' => 'Booking Cancelled',
         'subject' => 'Booking Request Cancelled',
-        'thanks_text' => 'Thanks For being Moray Limousine',
+        'thanks_text' => 'Thanks For being Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/admin/index',
 
@@ -167,7 +167,7 @@ class UserController extends Controller
             $booking->save();
 
             //Send Notification
-            $cancel_booking_msg = array_merge($this->notify_cancel_booking_user, ['body' => 'You Cancelled Your Booking Request On Moray Limousine Which Pick Address Is   ' .
+            $cancel_booking_msg = array_merge($this->notify_cancel_booking_user, ['body' => 'You Cancelled Your Booking Request On Hathaway Limousine Which Pick Address Is   ' .
                 $booking['pick_address'] .  ' And Pick Time Was  ' . $booking['pick_time']]);
             auth()->user()->notify(new MorayLimousineNotifications($cancel_booking_msg));
             return redirect()->back()->with('success', 'booking is cancelled Successfully ..');
@@ -239,7 +239,7 @@ class UserController extends Controller
     public $confirm_booking_msg = [
         'greeting' => 'Booking Request is confirmed by User',
         'subject' => 'Booking Request is Confirmed by user',
-        'thanks_text' => 'Thanks For Using Moray Limousine',
+        'thanks_text' => 'Thanks For Using Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
     ];
@@ -372,8 +372,8 @@ class UserController extends Controller
     {
         return  [
             'greeting' => 'Booking Extended by User .',
-            'subject' => 'Moray Limousine .  Booking Is Extended By a User',
-            'thanks_text' => 'Thanks For Choosing Moray Limousine',
+            'subject' => 'Hathaway Limousine .  Booking Is Extended By a User',
+            'thanks_text' => 'Thanks For Choosing Hathaway Limousine',
             'action_text' => 'View My Site',
             'action_url' => '/booking/details/' . $booking->id,
             'body' => "BOOKING DETAILS
@@ -456,8 +456,8 @@ class UserController extends Controller
      */
     public $notify_booking_user = [
         'greeting' => 'Your request is submitted successfully',
-        'subject' => 'Welcome To Moray Limousines',
-        'thanks_text' => 'Thanks For Choosing Moray Limousine',
+        'subject' => 'Welcome To Hathaway Limousines',
+        'thanks_text' => 'Thanks For Choosing Hathaway Limousine',
         'action_text' => 'View My Site',
         'action_url' => '/home',
 

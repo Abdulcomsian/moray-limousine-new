@@ -420,10 +420,10 @@ class DriverController extends Controller
     }
 
     protected $notifyDocumentMsg = [
-        'greeting' => 'A New Driver On Moray Limousines Added Document',
+        'greeting' => 'A New Driver On Hathaway Limousines Added Document',
         'subject' => 'New Driver Added Document',
-        'body'   => 'A New Driver On Moray Limousines Added Document For More Details visit web',
-        'thanks_text' => 'Thanks For Using Moray Limousines',
+        'body'   => 'A New Driver On Hathaway Limousines Added Document For More Details visit web',
+        'thanks_text' => 'Thanks For Using Hathaway Limousines',
         'action_text' => 'View My Site',
         'action_url' => '/admin/index'
     ];
