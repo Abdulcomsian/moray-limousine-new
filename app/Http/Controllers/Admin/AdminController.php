@@ -13,6 +13,7 @@ use App\Notifications\MorayLimousineNotifications;
 use App\Models\Tax;
 use App\Models\User;
 use App\Models\Vehicle;
+use App\Models\Testimonial;
 use App\Models\VehicleCategory;
 use App\Models\CmsHomePage;
 use http\Env\Response;
@@ -102,6 +103,103 @@ class AdminController extends Controller
         return view('admin.booking.manage-bookings', $data);
     }
 
+    public function showTestimonials(){
+        $data = Testimonial::get();
+        return view('admin.manage-design.manage-testimonials', compact('data'));
+    }
+
+    public function saveTestimonials(Request $request){
+
+        $request->validate([
+            'vehicle-designed-by' => 'required',
+            'vehicle-designed-title' => 'required',
+            'vehicle-designed-image-click-link' => 'required',
+        ],[
+            'vehicle-designed-by.required' => 'This field is required',
+            'vehicle-designed-title.required' => 'This field is required',
+            'vehicle-designed-image-click-link.required' => 'This field is required',
+        ]);
+
+        // for logo image 
+        $logoimage = $request->file('vehicle-designed-logo');
+        if ($request->hasFile('vehicle-designed-logo')) {
+            $logoImageLink = time() . $logoimage->getClientOriginalName();
+            $logoimage->move(public_path('files/testimonials_images'), $logoImageLink);
+        }
+
+        // for Main Image
+        $mainImage = $request->file('vehicle-designed-image');
+        if($request->hasFile('vehicle-designed-image')){
+            $mainImageLink = time() . $mainImage->getClientOriginalName();
+            $mainImage->move(public_path('files/testimonials_images'), $mainImageLink);
+        }
+
+        try{
+            $testimonial = new Testimonial();
+            $testimonial->vehicle_designed_by = $request->input('vehicle-designed-by');
+            $testimonial->vehicle_designed_logo = $logoImageLink;
+            $testimonial->vehicle_designed_name = $request->input('vehicle-designed-title');
+            $testimonial->vehicle_designed_image = $mainImageLink;
+            $testimonial->vehicle_designed_click_link = $request->input('vehicle-designed-image-click-link');
+            $testimonial->save();
+            return redirect()->back()->with('success', 'Testimonials Added Successfully');
+        }catch(\Exception $e){
+            return redirect()->back()->with('error', 'Error Inserting Testimonial', $e->getMessage());
+        }
+    }
+
+    public function deleteTestimonial(Request $request){
+        $testimonial_id = $request->id;
+        $query = Testimonial::where('id', '=', $testimonial_id)->delete();
+        if($query){
+            return redirect()->back()->with('success', 'Testimonial Delete Successfully');
+        }else{
+            return redirect()->back()->with('error', 'Testimonial Not Deleted Successfully');
+        }
+    }
+
+    public function showEdit(Request $request){
+        $id = $request->id;
+        $getData = Testimonial::where('id', '=', $id)->first();
+        return response()->json($getData);
+    }
+
+    public function updateTestimonial(Request $request){
+        // dd($request->all());
+        $testId = $request->input('testimonial_id');
+        // for logo image 
+        $logoimage = $request->file('vehicle-designed-logo');
+        if ($request->hasFile('vehicle-designed-logo')) {
+            $logoImageLink = time() . $logoimage->getClientOriginalName();
+            $logoimage->move(public_path('files/testimonials_images'), $logoImageLink);
+        }
+
+        // for Main Image
+        $mainImage = $request->file('vehicle-designed-image');
+        if($request->hasFile('vehicle-designed-image')){
+            $mainImageLink = time() . $mainImage->getClientOriginalName();
+            $mainImage->move(public_path('files/testimonials_images'), $mainImageLink);
+        }
+
+        try{
+            $testimonial = Testimonial::find($testId);
+            $testimonial->vehicle_designed_by = $request->input('vehicle-designed-by');
+            if(isset($logoImageLink)){
+                $testimonial->vehicle_designed_logo = $logoImageLink;
+            }
+            $testimonial->vehicle_designed_name = $request->input('vehicle-designed-title');
+            if(isset($mainImageLink)){
+                $testimonial->vehicle_designed_image = $mainImageLink;
+            }
+            $testimonial->vehicle_designed_click_link = $request->input('vehicle-designed-image-click-link');
+            $testimonial->save();
+            return redirect()->back()->with('success', 'Testimonial Updated Successfully');
+        }catch(\Exception $e){
+            echo $e->getMessage();
+        }
+
+
+    }
 
     /**
      * @param Request $request

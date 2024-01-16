@@ -723,6 +723,14 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
         Route::get('admin/city-price-active/{id}',  [AdminController::class, 'cityPriceActive']);
 
+        // Manage Testimonials
+
+        Route::get('admin/testimonials', [AdminController::class, 'showTestimonials']);
+        Route::post('admin/testimonials/save', [AdminController::class, 'saveTestimonials'])->name('save.testimonial');
+        Route::get('admin/testimonials/delete/{id}', [AdminController::class, 'deleteTestimonial']);
+        Route::post('admin/testimonials/show-edit/', [AdminController::class, 'showEdit']);
+        Route::post('admin/testimonials/update/save', [AdminController::class, 'updateTestimonial'])->name('update.testimonial');
+
 
 
         //        Documents Routes

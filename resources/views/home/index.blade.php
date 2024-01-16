@@ -617,26 +617,24 @@
             <div class="col-md-6">
                 <div id="carouselExampleControls" class="carousel" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="card1">
-                                <div style="text-align: center;">
-                                    <p class="card-heading-para mb-2">Vehicles Designed By</p>
-                                    <img class="mb-2" src="{{asset('images/Rolf Partner.png')}}" alt="Profile Photo" style="width: auto; height: 70px;">
+                        @foreach ($testimonial as $item)  
+                            <div class="carousel-item active">
+                                <div class="card1">
+                                    <div style="text-align: center;">
+                                        <p class="card-heading-para mb-2">{{$item->vehicle_designed_by}}</p>
+                                        <img class="mb-2" src="{{asset('files/testimonials_images/' . $item->vehicle_designed_logo)}}" alt="Vehicle Logo" style="width: auto; height: 70px;">
+                                    </div>
+                                    <div>
+                                        <p class="card-title-para">{{$item->vehicle_designed_name}}</p>
+                                        <a href="{{$item->vehicle_designed_click_link}}" target="_blank">
+                                            <img class="card-main-image" src="{{asset('files/testimonials_images/' . $item->vehicle_designed_image)}}" alt="office van">
+                                        </a>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p class="card-title-para">The Office Van</p>
-                                    <a href="https://www.rolfhartge.de/rolfhartge-office-van/" target="_blank">
-                                        <img class="card-main-image" src="{{asset('images/office-van.jpg')}}" alt="office van">
-                                    </a>
-                                </div>
-                                    {{-- <div>
-                                        <h6>Rolf Hartge</h6>
-                                        <p class="description">Berlin</p>
-                                    </div> --}}
-                                {{-- <p class="ptextClass">"Exceptional service from start to finish! We recently used Hathaway Limousines in Germany, and the experience was nothing short of luxurious. The chauffeur was punctual, the limousine was immaculate, and the entire journey was a seamless blend of comfort and sophistication. Highly recommended for anyone seeking a premium transport experience!"</p> --}}
-
                             </div>
-                        </div>
+                        @endforeach
+
+                        {{-- old carousel design  --}}
                         {{-- <div class="carousel-item">
                             <div class="card1">
                                 <div class="d-flex gap-3">
@@ -666,7 +664,7 @@
                         </div> --}}
 
                     </div>
-                    {{-- <div class="navigation">
+                    <div class="navigation">
                         <a class="carousel-control-prev " href="#carouselExampleControls" role="button"
                             data-slide="prev"id="prev-slide">
                             <span class="fa fa-arrow-alt-circle-left" style="color:black ;font-size: 20px;"></span>
@@ -680,7 +678,7 @@
                         <div class="slide-number">
                             <span id="current-slide">1</span> / <span id="total-slides">3</span>
                         </div>
-                    </div> --}}
+                    </div>
 
                 </div>
             </div>

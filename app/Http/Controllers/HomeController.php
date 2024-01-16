@@ -9,6 +9,7 @@ use App\Models\CmsService;
 use App\Models\Configuration;
 use App\Models\Location;
 use App\Models\HappyClient;
+use App\Models\Testimonial;
 use App\Notifications\BookingNotification;
 use App\Notifications\MorayLimousineNotifications;
 use App\Models\User;
@@ -61,6 +62,7 @@ class HomeController extends Controller
         $data['config'] = Configuration::first();
         $data['logos'] = HappyClient::all();
         $data['services'] = CmsService::all();
+        $data['testimonial'] = Testimonial::all();
 
         return view('home.index', $data);
     }

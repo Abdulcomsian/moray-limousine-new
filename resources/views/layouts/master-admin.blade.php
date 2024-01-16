@@ -278,9 +278,16 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{url('admin/happy-clients')}}">
-              Happy Clinets Logo
+              Happy Clients Logo
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/testimonials')}}">
+              Testimonials
+            </a>
+          </li>
+
         </ul>
       </div>
     </li>
@@ -353,6 +360,9 @@
 <script src="{{asset('driver/js/dashboard.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/BsMultiSelect.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/DataTables/datatables.min.js')}}"></script>
+
+{{-- sweeetalert  --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @yield('js')
 
