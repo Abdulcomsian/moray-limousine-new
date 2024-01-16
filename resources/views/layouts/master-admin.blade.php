@@ -362,7 +362,7 @@
 <script type="text/javascript" src="{{asset('js/DataTables/datatables.min.js')}}"></script>
 
 {{-- sweeetalert  --}}
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{asset('js/sweetalert2/sweetalert.js')}}"></script>
 
 @yield('js')
 
