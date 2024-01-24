@@ -35,9 +35,9 @@
                     <div class="car-container hover-element">
                                 <p class="text-left font-weight-bold fleet-card--title">{{ $category->name }}</p>
                                 <p class="car-descrip">{{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}</p>
-                                <!-- <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
-                                    alt="Car" class="car-picture" /> -->
-                                    <img src="{{asset('/images/car1.png')}}" alt="">
+                                <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
+                                    alt="Car" class="car-picture" />
+                                    <!-- <img src="{{asset('/images/car1.png')}}" alt=""> -->
                                 <div class="car-info">
                                     <div class="info">
                                         <i class="fa-solid fa-people-group" id="persons"></i>
