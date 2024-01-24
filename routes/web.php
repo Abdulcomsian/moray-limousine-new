@@ -286,7 +286,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
         Route::get('vehicle/disapproved-vehicles', [VehicleController::class, 'disapprovedVehicles']);
 
-        Route::get('vehicle/blocked-vehicles', [VehicleController::class, 'blockedVehicles']);
+        Route::get('vehicle/blocked-vehicles', [VehicleController::class, 'blockedVehicles']); // this is the route 
 
 
         Route::post('vehicle/save-documents', [VehicleController::class, 'storeDocuments'])->name('vehicle.store.docs');
