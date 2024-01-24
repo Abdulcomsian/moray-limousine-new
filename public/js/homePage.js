@@ -14,20 +14,23 @@ $(document).ready(function () {
     $(".fleet-slider").slick({
         adaptiveHeight: true,
         dots: true,
+        arrows:false,
+        slidesToShow: 3,
         prevArrow: '<button type="button" class="slick-prev">Previous</button>',
         nextArrow: '<button type="button" class="slick-next">Next</button>',
         // Add other settings and options as needed
-        slidesToShow: slideCount,
+        // slidesToShow: slideCount,
         slidesToScroll: 1,
-        // autoplay: true,
+        autoplay: true,
         // autoplaySpeed: 2000,
 
         responsive: [
             {
                 breakpoint: 1027,
                 settings: {
-                    arrows: false,
+                    arrows: true,
                     centerMode: true,
+                    dots: false,
                     centerPadding: "40px",
                     slidesToShow: 3,
                 },
@@ -35,25 +38,28 @@ $(document).ready(function () {
             {
                 breakpoint: 780,
                 settings: {
-                    arrows: false,
+                    arrows: true,
+                    dots: false,
                     centerMode: true,
                     centerPadding: "40px",
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                 },
             },
             {
                 breakpoint: 770,
                 settings: {
-                    arrows: false,
+                    arrows: true,
+                    dots: false,
                     centerMode: true,
                     centerPadding: "40px",
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                 },
             },
             {
                 breakpoint: 574,
                 settings: {
-                    arrows: false,
+                    dots: false,
+                    arrows: true,
                     centerMode: true,
                     centerPadding: "40px",
                     slidesToShow: 1,
@@ -62,18 +68,20 @@ $(document).ready(function () {
             {
                 breakpoint: 480,
                 settings: {
-                    arrows: false,
+                    arrows: true,
+                    dots: false,
                     centerMode: true,
-                    centerPadding: "40px",
+                    centerPadding: "20px",
                     slidesToShow: 1,
                 },
             },
             {
                 breakpoint: 378,
                 settings: {
-                    arrows: false,
+                    arrows: true,
                     centerMode: true,
-                    centerPadding: "40px",
+                    dots: false,
+                    centerPadding: "20px",
                     slidesToShow: 1,
                 },
             },
@@ -95,6 +103,7 @@ $(document).ready(function () {
     $(".services-slider").slick({
         adaptiveHeight: true,
         dots: true,
+        arrows:false,
         prevArrow: '<button type="button" class="slick-prev">Previous</button>',
         nextArrow: '<button type="button" class="slick-next">Next</button>',
         // Add other settings and options as needed
@@ -107,7 +116,7 @@ $(document).ready(function () {
             {
                 breakpoint: 1027,
                 settings: {
-                    arrows: false,
+                    arrows: true,
                     centerMode: true,
                     centerPadding: "40px",
                     slidesToShow: 3,
@@ -116,25 +125,28 @@ $(document).ready(function () {
             {
                 breakpoint: 780,
                 settings: {
-                    arrows: false,
+                    arrows: true,
+                    dots: false,
                     centerMode: true,
                     centerPadding: "40px",
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                 },
             },
             {
                 breakpoint: 770,
                 settings: {
-                    arrows: false,
+                    arrows: true,
                     centerMode: true,
+                    dots: false,
                     centerPadding: "40px",
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                 },
             },
             {
                 breakpoint: 480,
                 settings: {
-                    arrows: false,
+                    arrows: true,
+                    dots: false,
                     centerMode: true,
                     centerPadding: "40px",
                     slidesToShow: 1,
@@ -143,7 +155,8 @@ $(document).ready(function () {
             {
                 breakpoint: 378,
                 settings: {
-                    arrows: false,
+                    arrows: true,
+                    dots: false,
                     centerMode: true,
                     centerPadding: "40px",
                     slidesToShow: 1,

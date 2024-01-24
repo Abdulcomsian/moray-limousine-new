@@ -87,10 +87,9 @@
 }
 .btn1611ID {
     background-color: transparent;
-    height: 40px;
-    max-width: 140px;
     border-radius: 5px;
     color: white;
+    padding: 10px 15px;
     box-shadow: 5px;
     border: 1px solid #e8e8e8;
     box-shadow: 0 2px 2px 0 rgba(91, 91, 91, 0.24),
@@ -253,7 +252,7 @@
 
 .fleetContainer {
     margin-bottom: 30px;
-    background-color: #f7f6f6;
+    /* background-color: #f7f6f6; */
 }
 
 .slider {
@@ -262,27 +261,32 @@
 }
 
 .car-container {
-    margin-top: 30px;
+    margin-top: 0;
+    font-family: 'Quicksand', sans-serif;
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 25px;
     text-align: center;
     /* width: 200px; */
     /* Set the desired width */
     height: 360px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     background-color: white;
-    box-shadow: 0 2px 2px 0 rgba(86, 86, 86, 0.24),
-        0 2px 2px 0 rgba(71, 71, 71, 0.19);
+    border: 1px solid #E5E5E5;
+    transition: all 0.5s ease-in;
 }
-/* Add a hover effect to elements with the .hover-element class */
+.fleetContainer .slick-list{
+    margin-bottom: 20px;
+}
 .hover-element:hover {
-    background-color: rgb(242, 241, 241);
-    transition: background-color 0.3s ease;
-    box-shadow: 0 10px 10px 0 rgba(166, 165, 165, 0.24),
-        0 10px 10px 0 rgba(166, 165, 165, 0.24);
+    transition: all 0.5s ease-in;
+    background-color: #fff;
+    border:1px solid #000;
 }
-
+.car-descrip{
+    text-align: left;
+    font-weight: 600;
+}
 .car-picture {
     max-width: 100%;
     max-height: fit-content;
@@ -292,18 +296,54 @@
 .car-info {
     max-width: 100%;
     max-height: 100%;
-    margin: 60px 0 1rem 0;
+    margin: 45px 0 1rem 0;
+    gap: 2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 .car-info .info {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
     margin-bottom: 8px;
+    font-weight: 700;
 }
-
+.car-info .info #persons{
+    background-color: #F6F6F6;
+    border-radius: 50%;
+    padding: 15px 13px;
+    margin-right: 5px;
+}
+.car-info .info #person1{
+    background-color: #F6F6F6;
+    border-radius: 50%;
+    padding: 15px;
+    margin-right: 5px;
+}
+.fleet-slider button.slick-prev{
+    background: url("../images/Arrow-Big-1.png");
+    width: 50px;
+    height: 50px;
+    background-size:100% 100%;
+}
+.fleet-slider button.slick-next{
+    background: url("../images/Arrow-Big.png");
+    width: 50px;
+    height: 50px;
+    background-size:100% 100%;
+}
+.fleet-slider .slick-next:before, .slick-prev:before{
+    
+    content: '' !important;
+}
+.slick-dots li{
+    margin: 0 !important;
+}
+.slick-dots li button:before{
+    font-size: 10px !important;
+}
 #hrID {
     margin: 1px;
 }
@@ -317,12 +357,6 @@
     font-size: 1.2rem;
 }
 
-#persons {
-    font-size: 15px;
-}
-#person1 {
-    font-size: 15px;
-}
 #passenger {
     align-items: left;
     margin-bottom: 0;
@@ -336,8 +370,9 @@
 
 /*make trip contianer */
 
+
 .BK {
-    text-align: center;
+    text-align: left;
     font-size: 35px;
     margin-bottom: 50px;
     font-weight: 600;
@@ -371,7 +406,25 @@
     display: flex;
 }
 .workFlow-content {
-    text-align: center;
+    text-align: left;
+}
+.cont2 .text{
+    font-size: 22px;
+    margin: 0;
+}
+.cont2 .text1{
+    font-weight: 600;
+    font-size: 40px;
+}
+.cont2 button{
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 600;
+}
+.cont2 button i{
+    margin-left: 7px;
+}
+.cont2{
+
 }
 
 .workFlow-content .icon {
@@ -385,13 +438,14 @@
     font-size: 1.4rem;
     color: black;
     font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .BK7 {
     color: black;
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 10px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 #number_con {
@@ -403,13 +457,21 @@
 }
 
 /*meet our team container*/
-
+.sowcase-sec{
+    padding-top: 80px;
+    text-align: left;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    background: #f9f9f9;
+}
 .team-container {
     padding-top: 80px;
     text-align: center;
     padding-top: 50px;
-    padding-bottom: 80px;
+    padding-bottom: 50px;
     margin-top: 50px;
+    background: #f9f9f9;
     /* width: 100%; */
 }
 
@@ -436,32 +498,119 @@
     margin: 0px;
     position: relative;
     overflow: hidden;
-    height: 300px;
+    /* height: 300px; */
+    font-family: 'Quicksand', sans-serif;
 }
-
+.services-slider button.slick-prev{
+    background: url("../images/Arrow-Big-1.png");
+    width: 50px;
+    height: 50px;
+    background-size:100% 100%;
+}
+.services-slider button.slick-next{
+    background: url("../images/Arrow-Big.png");
+    width: 50px;
+    height: 50px;
+    background-size:100% 100%;
+}
+.services-slider .slick-next:before, .slick-prev:before{
+    
+    content: '' !important;
+}
 .team-member img {
     margin-top: 10px;
     width: 100%;
+    height: 350px;
     border-radius: 2%;
     transition: transform 0.3s, filter 0.3s;
     margin-bottom: 20px;
 
     object-fit: cover;
 }
-
+.service-link-tag{
+    display: block;
+    position: relative;
+}
 .team-member .overlay {
     position: absolute;
-    top: 17px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s;
+    justify-content: start;
+    align-items: end;
+    border-radius: 2%;
+    transition: all 0.5s;
+    opacity: 1;
+    background-image: linear-gradient(#ffffff1a, #000000a6);
 }
-
+.check {
+    display: none;
+}
+.overlay-circle{
+    margin-bottom: 35px;
+    text-align: left;
+    padding-left: 20px;
+}
+.overlay-circle .member-name{
+    font-size: 20px;
+}
+.overlay-circle .member-description{
+    font-size: 15px;
+    display: none;
+    transition: all 0.5s ease-in;
+}
+.team-member:hover .overlay-circle .member-description{
+    display: block;
+    transition: all 0.5s ease-in;
+}
+.team-member:hover .overlay-circle i{
+    display: inline-block;
+    transition: all 0.5s ease-in;
+}
+.overlay-circle i.arrow{
+    padding: 13px 17px;
+}
+.overlay-circle i{
+    color: #fff;
+    transition: all 0.5s ease-in;
+    display: none;
+    border: 1px solid #fff;
+    padding: 15px 17px;
+    font-size: 20px;
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+.team-container .section-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.fleetContainer .section-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.team-member:hover img {
+    transform: scale(1.01);
+    filter: brightness(0.7);
+}
+.more-services{
+    font-size: 17px;
+    font-family: 'Quicksand', sans-serif;
+    color: #000;
+    text-decoration: none;
+}
+.more-services:hover{
+    text-decoration: none;
+    color: #000;
+}
+.more-services i{
+    transform: rotate(45deg);
+    margin-left: 5px;
+}
+/*
 .team-member .overlay-circle {
     border-radius: 50%;
     padding: 20px;
@@ -475,7 +624,6 @@
 .team-member:hover img {
     transform: scale(1.05);
     filter: brightness(0.7);
-    /* Darken the image */
 }
 
 .team-member:hover .overlay {
@@ -496,7 +644,7 @@
 
 .team-member:hover .check {
     opacity: 0;
-}
+} */
 #con222 {
     width: 100%;
 }
@@ -508,7 +656,6 @@
     border-radius: 10px;
 }
 .IK112 {
-    padding-top: 50px;
     font-size: 35px;
     font-weight: 600;
     color: black;
@@ -516,16 +663,18 @@
     letter-spacing: -1px;
 }
 .IK1112 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     color: black;
 }
 
 .btn161ID {
     background-color: rgb(254 108 102);
-    height: 40px;
+    padding: 10px 15px ;
+    font-weight: 700;
     width: 177px !important;
+    font-family: 'Quicksand', sans-serif !important;
     border-radius: 5px;
     color: white;
     box-shadow: 5px;
@@ -559,16 +708,16 @@
     border: 1px solid #e8e8e8;
     box-shadow: 0 1px 1px 0 rgba(86, 86, 86, 0.24),
         0 1px 1px 0 rgba(71, 71, 71, 0.19);
-    margin: 5px;
+    margin-right: 5px;
     font-size: 16px;
     cursor: pointer;
     width: 150px;
-    height: 60px;
+    padding: 15px 25px 4px 25px;
     border-radius: 6px;
 }
 
 .textbtnclass {
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .iframeClass {
@@ -594,11 +743,11 @@
 
 /* cont hear what our customers say */
 #cont2222 {
-    background-color: rgb(251, 217, 226);
-    margin-top: 0px;
+    /* background-color: rgb(251, 217, 226); */
+    margin-top: 60px;
     padding-bottom: 80px;
     border-radius: 10px;
-    padding: 48px 146px;
+    padding: 48px 50px;
 }
 .IK11 {
     /* margin-top: 30px; */
@@ -632,10 +781,10 @@
 }
 
 .card1 {
-    background-color: white;
+    background-color: #fffaeb;
     border: none;
     border-radius: 5px;
-    padding: 20px;
+    padding: 50px 20px 20px 20px;
     margin-bottom: 10px;
     box-shadow: 1px;
     height: auto;
@@ -1282,4 +1431,22 @@
     /* .check{
     top:100px
 } */
+}
+.iconbox-icon{
+    margin-bottom: 20px;
+    position: relative;
+}
+.iconbox-icon::before{
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: #FDEEEC;
+    position: absolute;
+    border-radius: 50%;
+    top: -10px;
+    left: -10px;
+}
+.iconbox-icon img{
+    position: relative;
+    width: 50px;
 }

@@ -26,21 +26,20 @@
             @if (count($services) > 0)
                 @foreach ($services as $service)
                     <div class="col-md-4 team-member">
-                        <a href="{{ url('service/details', $service->id) }}">
-                            <img src="{{ asset('files/services-images' . '/' . $service->service_image) }}"
-                                alt="Team Member 1" id="con222" style="height: 250px">
-                            <div class="check">{{ $service->service_title }}</div>
-                            <div class="overlay">
+                        <a href="{{ url('service/details', $service->id) }}" class="service-link-tag">
+                                <img src="{{ asset('files/services-images' . '/' . $service->service_image) }}" alt="services" id="con222">
+                                <div class="check">{{ $service->service_title }}</div>
+                                <div class="overlay">
 
-                                <div class="overlay-circle">
-                                    <div class="member-name">{{ $service->service_title }}</div>
-                                    <div class="member-description">
-                                        {{ strip_tags(\Illuminate\Support\Str::limit($service->long_description, 20)) }}
+                                    <div class="overlay-circle">
+                                        <div class="member-name">{{ $service->service_title }}</div>
+                                        <div class="member-description">
+                                            {{ strip_tags(\Illuminate\Support\Str::limit($service->long_description, 20)) }}
+                                        </div>
+                                        <i class="fa-solid fa-arrow-up-long arrow"></i>
                                     </div>
-                                    <i class="fas fa-arrow-trend-up"></i>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
                     </div>
                 @endforeach
                 {{-- pagination links  --}}

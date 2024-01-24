@@ -554,9 +554,15 @@ button:focus {
     width: fit-content;
 }
 .btn1611ID:hover {
-    padding: 6px;
     width: fit-content;
-    border: 1px solid rgb(212, 212, 212);
+    background-color: #CCA642;
+}
+#txt1ID{
+    font-size: 40px !important;
+    font-weight: 600;
+}
+.black-box p{
+    font-size: 16px;
 }
 /*========== Page Title ==========*/
 .top-title {

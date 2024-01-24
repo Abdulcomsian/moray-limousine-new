@@ -21,8 +21,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('css/ionicons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <!-- Responsive style -->
-    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -68,12 +67,19 @@
 
     <!-- Add flatpickr CSS and JavaScript links -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
-
-
+    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Responsive style -->
+<link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     @yield('css')
     <style>
         .tp-splitted {
             font-size: 2.5rem !important;
+        }
+        body{
+            font-family: 'Quicksand', sans-serif;
         }
 
         .profile-drop-down {

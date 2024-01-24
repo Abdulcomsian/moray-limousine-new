@@ -1362,3 +1362,84 @@
 		padding: 0 12px;
 	}
 }
+@media screen and (max-width: 768px) {
+	.adjustCenID li{
+		display: inline-block;
+	}
+	#nav{
+		padding: 15px;
+		align-items: baseline;
+	}
+	.navbar-toggler{
+		right: 20px;
+	}
+    .for-mobile-media{
+        padding: 0 !important;
+        background: #fff;
+        margin-top: 50px !important;
+    }
+    .colorclass{
+        box-shadow: none;
+    }
+	.for-mobile-media .hero-form{
+		top: 0;
+	}
+	.colorclass .form-input--container{
+		margin-bottom: 10px;
+	}
+	.adjustCenID br{
+		display: none;
+	}
+	.btn-form-search{
+		background: #000 !important;
+		opacity: 1 !important;
+	}
+	.overlay-circle .member-description{
+		display: block;
+		margin-top: 5px;
+	}
+	.overlay-circle i{
+		display: inline-block;
+	}
+	.nav-tabs .nav-link{
+		font-weight: 600;
+		padding-left:0 ;
+	}
+	.services-slider .slick-next{
+		bottom: -22%;
+		top: unset;
+		left: 70px;
+	}
+	.services-slider .slick-prev{
+		bottom: -22%;
+		top: unset;
+		left: 0;
+	}
+	.fleet-slider .car-info{
+		display: flow-root;
+		text-align: left;
+		margin: 25px 0 1rem 0;
+	}
+	.fleet-slider .car-info .info{
+		margin-bottom: 20px;
+	}
+	.fleet-slider .slick-next{
+		bottom: -15%;
+		top: unset;
+		left: 70px;
+	}
+	.fleet-slider .slick-prev{
+		bottom: -15%;
+		top: unset;
+		left: 0;
+	}
+	#cont7{
+		margin-top: 181px;
+	}
+	.team-container{
+		padding-bottom: 100px;
+	}
+	.workFlow-content{
+		margin-bottom: 30px;
+	}
+}

@@ -32,30 +32,24 @@
             @if (count($categories) > 0)
                 @foreach ($categories as $category)
                     <div class="col-md-4">
-
-                        <div class="car-container hover-element" style="height: auto">
-                            <p class="text-left font-weight-bold car-container-text">{{ $category->name }}</p>
-                            {{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}
-                            <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
-                                alt="Car" class="car-picture" />
-                            <div class="car-info">
-                                <div class="row adjustCenID4242" >
-                                    <div class="col-md-5">
-                                        <span class="icon-text">
-                                            <i class="fa-solid fa-people-group" id="persons"></i>
-                                            <p id="passenger">Passengers {{ $category->max_seats }}</p>
-                                        </span>
+                    <div class="car-container hover-element">
+                                <p class="text-left font-weight-bold fleet-card--title">{{ $category->name }}</p>
+                                <p class="car-descrip">{{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}</p>
+                                <!-- <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
+                                    alt="Car" class="car-picture" /> -->
+                                    <img src="{{asset('/images/car1.png')}}" alt="">
+                                <div class="car-info">
+                                    <div class="info">
+                                        <i class="fa-solid fa-people-group" id="persons"></i>
+                                        <p id="passenger" style="margin-bottom: 0">Passangers {{ $category->max_seats }}
+                                        </p>
                                     </div>
-                                    <div class="col-md-5">
-                                        <span class="icon-text">
-                                            <i class="fa-solid fa-briefcase" id="person1"></i>
-                                            <p id="passenger1">Luggage {{ $category->max_bags }}</p>
-                                        </span>
+                                    <div class="info">
+                                        <i class="fa-solid fa-briefcase" id="person1"></i>
+                                        <p id="passenger1">Luggage {{ $category->max_bags }}</p>
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
                     </div>
                 @endforeach
                 {{-- pagination links --}}

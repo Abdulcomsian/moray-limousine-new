@@ -235,9 +235,7 @@
 .iconbox .iconbox-content p {
 	line-height: 24px;
 }
-.iconbox-icon img{
-	max-width: 20%;
-}
+
 /*========== Services Single ==========*/
 .customs-single:not(.fleet-single) {
 	padding: 80px 0 68px;
@@ -1685,8 +1683,7 @@ ul.booking-steps li .text {
 	cursor: pointer;
 
 }
-.remember label:before,
-/*.checkbox label:before*/ {
+.remember label:before {
 	content: '';
 	position: absolute;
 	top: 5px;
@@ -1698,8 +1695,7 @@ ul.booking-steps li .text {
 	border: 2px solid #bf9c60;
     padding: 7px;
 }
-.remember label:after,
-/*.checkbox label:after*/ {
+.remember label:after {
     content: '';
     position: absolute;
     height: 12px;

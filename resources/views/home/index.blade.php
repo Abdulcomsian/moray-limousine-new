@@ -126,7 +126,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 for-mobile-media">
 
                 <div class="container class1font hero-form" style="z-index: 1; display: flex; justify-content: center;" id="con33">
                     <!-- Navigation Tabs -->
@@ -254,7 +254,7 @@
                                         </div>
 
                                         <div class="row adjustCenID">
-                                            <button type="submit" class="btn btn-dark w-100 searchbtn22" style="background-color: #CCA642;" id="enable" disabled>
+                                            <button type="submit" class="btn btn-dark w-100 searchbtn22 btn-form-search" style="background-color: #CCA642;" id="enable" disabled>
                                                 <i class="fa fa-search"></i> Search
                                             </button>
                                         </div>
@@ -403,7 +403,7 @@
         <div class="row">
             <div class="col">
                 <div>
-                    <p class="BK">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_TITLE) : 'Your Advantages'}}</p>
+                    <p class="BK add-before">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_TITLE) : 'Your Advantages'}}</p>
                 </div>
             </div>
         </div>
@@ -429,7 +429,7 @@
             </div> --}}
             <div class="col-md-3 workFlow-content">
                 <div class="iconbox-icon">
-                    <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_IMAGE)) : asset('images/iconbox/002.png')}}" style="max-width: 20%;" alt="">
+                    <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_IMAGE)) : asset('images/iconbox/002.png')}}" alt="">
                 </div>
                 <p class=" workFLow-heading"> <span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_TITLE) : 'Professional Drivers'}}</span></p>
                 <p class="BK7 workFlow-desc">
@@ -447,7 +447,7 @@
             </div> --}}
             <div class="col-md-3 workFlow-content">
                 <div class="iconbox-icon">
-                    <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_IMAGE)) : asset('images/iconbox/003.png')}}" alt="" style="max-width: 50%;">
+                    <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_IMAGE)) : asset('images/iconbox/003.png')}}" alt="">
                 </div>  
                 <p class=" workFLow-heading" style="margin-top: 14px;"><span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) : 'Guaranteed fixed prices'}}</span></p>
                 <p class="BK7 workFlow-desc">
@@ -481,44 +481,58 @@
 
     {{-- Start of Services  --}}
 
-    <div class="container team-container class1font">
-        <p class="section-title">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_TITLE) : 'Our Services'}}</p>
+     <section class="team-container">
+        <div class="container class1font">
+            <p class="section-title">
+                {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_TITLE) : 'Our Services'}}
+                    <a href="#" class="more-services">
+                        More Services
+                        <i class="fa-solid fa-arrow-up-long"></i>
+                    </a>
+            </p>
 
-        {{-- <div class="row"> --}}
-        {{-- <div class="col-md-12"> --}}
-        <div class="services-slider">
-            @if (count($services) > 0)
-                @foreach ($services as $service)
-                    <div class="col-md-5 team-member">
-                        <a href="{{ url('service/details', $service->id) }}">
-                            <img src="{{ asset('files/services-images' . '/' . $service->service_image) }}"
-                                style="height: 170px" alt="services" id="con222">
-                            <div class="check">{{ $service->service_title }}</div>
-                            <div class="overlay">
+            {{-- <div class="row"> --}}
+            {{-- <div class="col-md-12"> --}}
+            <div class="services-slider">
+                @if (count($services) > 0)
+                    @foreach ($services as $service)
+                        <div class="col-md-5 team-member service-card">
+                            <a href="{{ url('service/details', $service->id) }}" class="service-link-tag">
+                                <img src="{{ asset('files/services-images' . '/' . $service->service_image) }}" alt="services" id="con222">
+                                <div class="check">{{ $service->service_title }}</div>
+                                <div class="overlay">
 
-                                <div class="overlay-circle">
-                                    <div class="member-name">{{ $service->service_title }}</div>
-                                    <div class="member-description">
-                                        {{ strip_tags(\Illuminate\Support\Str::limit($service->long_description, 20)) }}
+                                    <div class="overlay-circle">
+                                        <div class="member-name">{{ $service->service_title }}</div>
+                                        <div class="member-description">
+                                            {{ strip_tags(\Illuminate\Support\Str::limit($service->long_description, 20)) }}
+                                        </div>
+                                        <i class="fa-solid fa-arrow-up-long"></i>
                                     </div>
-                                    <i class="fas fa-arrow-trend-up"></i>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-            @endif
+                            </a>
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+            {{-- </div> --}}
+            {{-- </div> --}}
         </div>
-        {{-- </div> --}}
-        {{-- </div> --}}
-    </div>
+     </section>           
 
     {{-- End of Services  --}}
 
     {{-- Start of our fleet  --}}
 
-    <div class="container fleetContainer class1font">
-        <p class="section-title">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_FLEET_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_FLEET_TITLE) : 'Our Fleet'}}</p>
+   <section class="fleetContainer py-5">
+   <div class="container class1font">
+        <p class="section-title" style="margin-bottom:30px;">
+            {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_FLEET_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_FLEET_TITLE) : 'Our Fleet'}}
+            <a href="#" class="more-services">
+                More Fleet
+                <i class="fa-solid fa-arrow-up-long"></i>
+            </a>
+        </p>
         @if (count($categories) > 0)
             <div class="w-95">
                 <div class="fleet-slider">
@@ -526,9 +540,10 @@
                         <div class="col-md-2 slick-slide">
                             <div class="car-container hover-element">
                                 <p class="text-left font-weight-bold fleet-card--title">{{ $category->name }}</p>
-                                {{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}
-                                <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
-                                    alt="Car" class="car-picture" />
+                                <p class="car-descrip">{{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}</p>
+                                <!-- <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
+                                    alt="Car" class="car-picture" /> -->
+                                    <img src="{{asset('/images/car1.png')}}" alt="">
                                 <div class="car-info">
                                     <div class="info">
                                         <i class="fa-solid fa-people-group" id="persons"></i>
@@ -547,55 +562,56 @@
             </div>
         @endif
     </div>
+   </section>
 
     {{-- End of Our Fleet  --}}
 
     {{-- Start of Showcase section  --}}
+    
+    <section class="sowcase-sec">
+        <div class="container  class1font" id="cont3434">
+            <div class="row align-items-center">
 
-    <div class="container  class1font" id="cont3434">
-        <div class="row align-items-center">
+                <div class="col-md-6">
+                        <iframe class ="iframeClass" width="100%" height="375"
+                            src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) : 'https://www.youtube.com/embed/Ri8qrzOBSYA?si=cW7kzqD4oGt-ooo0'}}">
+                        </iframe>
 
-            <div class="col-md-6 adjustCenID">
-                <div class="video-container">
-                    <iframe class ="iframeClass" width="280" height="375"
-                        src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) : 'https://www.youtube.com/embed/Ri8qrzOBSYA?si=cW7kzqD4oGt-ooo0'}}">
-                    </iframe>
 
-                    <!-- <button id="playButton">Play Video</button> -->
+
                 </div>
 
-
-            </div>
-
-            <div class="col-md-6">
-                <div class="row">
-                    <p class="IK112">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) : 'Showcase some impressive numbers.'}}</p>
-                </div>
-                <div class="row">
-                    <p class="IK1112">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) : 'PO Box 1611 Collins Street West Victoria 8007 Australia'}}</p>
-                </div>
-                <div class="button-row">
-                    <div class="custom-button">
-                        <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) : '285'}}<h4>
-                                <p class="textbtnclass">Vehicles</p>
+                <div class="col-md-6 align-items-center">
+                    <div class="row">
+                        <p class="IK112">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) : 'Showcase some impressive numbers.'}}</p>
                     </div>
-                    <div class="custom-button">
-                        <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) : '97'}}<h4>
-                                <p class="textbtnclass">Awards</p>
+                    <div class="row">
+                        <p class="IK1112">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) : 'PO Box 1611 Collins Street West Victoria 8007 Australia'}}</p>
                     </div>
-                    <div class="custom-button">
-                        <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) : '13K'}}<h4>
-                                <p class="textbtnclass">Happy Customers</p>
+                    <div class="button-row">
+                        <div class="custom-button">
+                            <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) : '285'}}<h4>
+                                    <p class="textbtnclass">Vehicles</p>
+                        </div>
+                        <div class="custom-button">
+                            <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) : '97'}}<h4>
+                                    <p class="textbtnclass">Awards</p>
+                        </div>
+                        <div class="custom-button">
+                            <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) : '13K'}}<h4>
+                                    <p class="textbtnclass">Happy Customers</p>
+                        </div>
+
                     </div>
 
+                    <button class="btn161ID" type="button" class="btn" style="color: white;width: 100%; background-color: #CCA642;">Learn More
+                        <i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
+                    </button>
                 </div>
-
-                <button class="btn161ID" type="button" class="btn" style="color: white;width: 100%; background-color: #CCA642;">Learn More
-                    <i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
-                </button>
             </div>
         </div>
-    </div>
+    </section>
+    
 
     {{-- End of Showcase  --}}
 
@@ -773,11 +789,11 @@
         <div class="col-md-12">
             <div class="partner_con">
                 <div class="row justify-content-center">
-                    <div class="col-md-4 text-center mb-3">
+                    <div class="col-md-4 text-start mb-3">
                         {!!\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HAPPY_CLIENTS_TEXT) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HAPPY_CLIENTS_TEXT) : '<h2>Partners Who Sell Our Product</h2>'!!}
                     </div>
                     @foreach ($logos as $logo)
-                        <div class="col-md-2 text-center mb-3">
+                        <div class="col-md-2 col-6 text-center mb-3">
                             <img src="{{asset('files/clients-images/'.$logo->client_image)}}"/>
                         </div>
                     @endforeach
