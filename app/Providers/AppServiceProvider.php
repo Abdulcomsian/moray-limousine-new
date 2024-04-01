@@ -6,10 +6,7 @@ use Illuminate\Support\ServiceProvider;
 // use Way\Generators\GeneratorsServiceProvider;
 use Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider;
 use Illuminate\Pagination\Paginator;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Schema;
-=======
->>>>>>> 5758a8caf7b869ca45db07bf111a6915ec595f3a
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,10 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-<<<<<<< HEAD
         Schema::defaultStringLength(191);
-=======
->>>>>>> 5758a8caf7b869ca45db07bf111a6915ec595f3a
         if ($this->app->environment() !== 'production'){
             // $this->app->register(GeneratorsServiceProvider::class);
             // $this->app->register(MigrationsGeneratorServiceProvider::class);
