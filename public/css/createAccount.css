@@ -1,0 +1,183 @@
+
+@font-face {
+    font-family:Dosis;
+    src: url(fonts/Dosis/Dosis-VariableFont_wght.ttf);
+}
+
+
+     /* Container 1 NAVBAR */
+
+
+/*page container */
+body {
+    font-family: Dosis;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 14px;
+}
+
+
+.btn1 {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.btn2 {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: 1px silver solid;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.btn3 {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.btn4 {
+    background-color:black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+
+
+.form-control {
+  
+    position: relative;
+    width: 100%;
+    height: 45px;
+   border-radius: 8px;
+    margin-bottom: 30px;
+    border:none !important;
+  padding: 50px;
+   color: black;
+    
+  }
+  .form-control input {
+    font-family: Dosis;
+    font-size: 12px;
+    font-weight: 600;
+    width: 100%;
+    
+    border: none;
+    outline: none;
+    height: 45px;
+     top: 0;
+    display: flex;
+    align-items: center;
+   padding-left: 15px;
+    transition: 0.4s;
+    margin-top: 0px;
+    border-radius: 8px;
+    background-color: rgb(237, 237, 237);
+    margin-bottom: 20px;
+    
+  }
+  .form-control label {
+    font-family: Dosis;
+    position: absolute;
+    top: 8px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: rgb(5, 5, 5);
+    pointer-events: none;
+  }
+  .form-control div.border-around {
+    position: absolute;
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding-right: 25px;
+    top: 0;
+    pointer-events: none;
+    border-radius: 6px;
+    transition: 0.2s;
+    left:0px;
+ 
+    
+    
+  }
+  
+  .form-control input:valid + label {
+   
+    top: -0.25rem;
+    left: 18px;
+    font-size: 0.9rem;
+    z-index: 100;
+    width: auto;
+    height: 0.9rem;
+    padding: 0 10px;
+    color: rgba(0, 0, 0, 0.3);
+    background-color:white;
+    border: none;
+  }
+  
+ 
+ 
+  .form-control input:focus + label {
+   
+    top: -0.15rem;
+    left: 20px;
+    font-size: 10px;
+    z-index: 1;
+    width: auto;
+    height: 0.9rem;
+    padding: 0px 10px;
+   
+    background-color:white;
+    color :black !important;
+  }
+  
+  .form-control input:focus  {
+    border: 2px solid #000000;
+    border-radius: 8px;
+    background-color: white;
+    color:black !important;
+    
+  }
+  .adjustCenID
+{
+    display: flex;
+    justify-content: center;
+}
+.adjustCenID123
+{
+    display: flex;
+    justify-content:space-between;
+}
+
+
+/*footer.....*/
+

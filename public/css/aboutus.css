@@ -1,0 +1,414 @@
+@font-face {
+    font-family: Dosis;
+    src: url(fonts/Dosis/Dosis-VariableFont_wght.ttf);
+}
+
+/* Container 1 NAVBAR */
+
+/*contianer page content */
+
+.black-box {
+    background-color: #000;
+    color: #fff;
+    padding: 0px;
+}
+
+.imgClass {
+    z-index: 0;
+    height: 70vh;
+    background-image: url(../images/limo1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#txt1ID {
+    font-size: xx-large;
+}
+
+.custom-list {
+    list-style: none;
+}
+#listID1 {
+    padding-bottom: 10px;
+}
+
+.custom-list li:before {
+    content: "\f058"; /* Font Awesome bullet icon code */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+    color: #d02121; /* Customize the bullet color */
+}
+
+.adjustCenID {
+    display: flex;
+    justify-content: center;
+}
+#number_con {
+    background-color: rgb(231, 67, 67);
+    color: white;
+    margin-top: 60px;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+/*make trip contianer */
+
+#cont7 {
+    max-width: 100%;
+    margin-bottom: 50px;
+    /* padding-top: 100px; */
+    margin-top: 51px;
+}
+.center {
+    text-align: center;
+    width: 100%;
+    display: flex;
+}
+.BK {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+.BK1 {
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+.BK4 {
+    text-align: center;
+    color: black;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.BK7 {
+    color: black;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* container 10 black */
+
+#cont10 {
+    background-color: black;
+    margin-top: 150px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.EK4 {
+    width: 100%;
+    height: 100%;
+    /* margin-top: 110px; */
+    border-radius: 40px;
+    object-fit: contain;
+}
+
+.custom-list2 li:before {
+    content: "\f110"; /* Font Awesome bullet icon code */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+    color: #d02121; /* Customize the bullet color */
+    display: inline-block;
+    font-size: 17px;
+}
+.custom-list2 {
+    list-style: none;
+    padding-bottom: 1px;
+}
+.liID21,
+.liID22 {
+    color: grey;
+    margin-bottom: 10px;
+}
+.liID21 span,
+.liID22 span {
+    font-size: 18px;
+}
+.liID22 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: white;
+}
+.txtpara1,
+.txtpara {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: grey;
+    font-size: 15px;
+}
+#cont11 {
+    background-color: pink;
+    margin-bottom: 40px;
+    height: auto;
+    padding: 65px 0;
+}
+
+.EK41 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.EK {
+    font-size: 50px;
+}
+.EK1 {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+}
+.EK2 {
+    color: black;
+    font-size: 19px;
+    /* margin-top: -45px;
+    margin-left: 55px; */
+    font-weight: 500;
+    /* margin-top: -10px; */
+}
+.devText-content p {
+    margin-bottom: 0;
+}
+.EK3 {
+    color: black;
+    font-size: 21px;
+    font-weight: 600;
+    margin-top: 50px;
+    padding-bottom: 10px;
+}
+/* partners container*/
+.partner_con {
+    color: black;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 10px;
+}
+
+#Question-container {
+    margin-top: 50px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 50px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+#headingID {
+    margin-bottom: 30px;
+    font-size: xx-large;
+}
+
+.HK {
+    font-size: 35px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+.HK1 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.HK2 {
+    font-size: 13px;
+    font-weight: 500;
+}
+.HK3 {
+    width: 560px;
+}
+.HK4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/*download app con*/
+
+#cont14 {
+    background-color: rgb(231, 67, 67);
+    margin-top: 30px;
+    padding-bottom: 50px;
+}
+.IK11 {
+    margin-top: 50px;
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+.IK111 {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    color: white;
+}
+#btn14 {
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.btn14ID {
+    text-align: center;
+}
+#apple1 {
+    font-size: 20px;
+    margin-right: 100px;
+    margin-top: 5px;
+}
+#lin11 {
+    font-size: 20px;
+    margin-top: -27px;
+    margin-right: 60px;
+    color: rgb(122, 128, 128);
+}
+.IK21 {
+    margin-top: -40px;
+    font-size: 9px;
+    color: black;
+    margin-left: 33px;
+}
+
+.IK31 {
+    color: black;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: -20px;
+    margin-left: 30px;
+}
+
+.imgClassCon14 {
+    width: 300px;
+    height: 280px;
+    margin-top: 46px;
+    border-radius: 5px;
+}
+/*Accordion flush*/
+
+.ptitle {
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+/*footer.....*/
+
+.trip-way--icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 883px) {
+    #KKK {
+        display: none;
+    }
+    #k2k2 {
+        display: block;
+    }
+}
+@media screen and (max-width: 761px) {
+    .custom-list2 {
+        text-align: center;
+        padding-left: 0px;
+    }
+}
+@media screen and (max-width: 767px) {
+    #cont11 .adjustCenID {
+        text-align: center;
+    }
+    .header-devText {
+        justify-content: center;
+    }
+    .EK3 {
+        font-size: 22px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 570px) {
+    #Number {
+        display: none;
+    }
+    #phone1 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #cont2 {
+        padding: 0% 5%;
+    }
+    #cont3 {
+        padding: 0% 5%;
+    }
+    #cont15 {
+        padding: 0% 5%;
+    }
+    #cont155 {
+        padding: 0% 5%;
+    }
+    #cont16 {
+        padding: 0% 5%;
+    }
+    #KK {
+        color: white;
+        font-size: 10px;
+        margin-top: 30px;
+    }
+    #GER {
+        font-size: 10px;
+        border-radius: 50px;
+        color: white;
+        width: 80px;
+        background-color: #000000;
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #cont7 {
+        padding-top: 0px;
+    }
+}
+@media screen and (max-width: 376px) {
+    #cont2 {
+        padding: 0% 5%;
+    }
+    #cont3 {
+        padding: 0% 5%;
+    }
+    #cont15 {
+        padding: 0% 5%;
+    }
+    #cont155 {
+        padding: 0% 5%;
+    }
+    #cont16 {
+        padding: 0% 5%;
+    }
+    #KK {
+        font-size: 8px;
+    }
+}
+@media screen and (max-width: 320px) {
+    #cont2 {
+        padding: 0% 5%;
+    }
+    #cont3 {
+        padding: 0% 5%;
+    }
+    #cont15 {
+        padding: 0% 5%;
+    }
+    #cont155 {
+        padding: 0% 5%;
+    }
+    #cont16 {
+        padding: 0% 5%;
+    }
+    #KK {
+        font-size: 8px;
+    }
+}
