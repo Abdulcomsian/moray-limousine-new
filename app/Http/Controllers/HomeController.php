@@ -91,6 +91,7 @@ class HomeController extends Controller
         $data['categories'] = $categories;
         return view('siteheader.our-fleet', $data);
     }
+<<<<<<< HEAD
     public function fleetdetail()
     {
         $homeCMS = CmsHomePage::all();
@@ -104,6 +105,9 @@ class HomeController extends Controller
         $data['categories'] = $categories;
         return view('siteheader.fleet-detail', $data);
     }
+=======
+
+>>>>>>> 5758a8caf7b869ca45db07bf111a6915ec595f3a
     /**
      * @return Factory|\Illuminate\View\View
      */

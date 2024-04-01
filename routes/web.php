@@ -65,7 +65,10 @@ Route::get('/ariport-transfer', [HomeController::class, 'ariporttransfer']);
 Route::get('/limousine-service', [HomeController::class, 'limousineservice']);
 Route::get('home/free-waiting-time', [HomeController::class, 'freewaitingtime']);
 Route::get('/our-fleet', [HomeController::class, 'ourfleet']);
+<<<<<<< HEAD
 Route::get('/fleet-detail', [HomeController::class, 'fleetdetail']);
+=======
+>>>>>>> 5758a8caf7b869ca45db07bf111a6915ec595f3a
 Route::get('/about-us', [HomeController::class, 'aboutUs']);
 Route::get('/contact-us', [HomeController::class, 'contactUs']);
 Route::get('/services-rates', [HomeController::class, 'servicesrates']);
