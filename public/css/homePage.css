@@ -269,7 +269,7 @@
     text-align: center;
     /* width: 200px; */
     /* Set the desired width */
-    /* height: 360px; */
+    height: 400px;
     margin-bottom: 20px;
     background-color: white;
     border: 1px solid #E5E5E5; 
@@ -420,10 +420,7 @@
     font-weight: 600;
 }
 .cont2 button i{
-    margin-left: 7px;
-}
-.cont2{
-
+    margin-right: 7px;
 }
 
 .workFlow-content .icon {
