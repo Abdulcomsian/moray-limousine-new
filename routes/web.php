@@ -732,6 +732,11 @@ Route::group(['middleware' => ['web', 'auth']], function ()
         Route::post('admin/testimonials/show-edit/', [AdminController::class, 'showEdit']);
         Route::post('admin/testimonials/update/save', [AdminController::class, 'updateTestimonial'])->name('update.testimonial');
 
+        // Manage About us Page
+
+        Route::get('admin/aboutUs', [AdminController::class, 'aboutUsPage']);
+        Route::post('admin/store_about_us_content', [AdminController::class, 'storeAboutUsContent'])->name('store.about.us.content');
+
 
 
         //        Documents Routes

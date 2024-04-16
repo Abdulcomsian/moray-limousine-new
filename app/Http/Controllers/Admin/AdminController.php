@@ -16,6 +16,7 @@ use App\Models\Vehicle;
 use App\Models\Testimonial;
 use App\Models\VehicleCategory;
 use App\Models\CmsHomePage;
+use App\Models\AboutUsPage;
 use http\Env\Response;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -778,6 +779,53 @@ class AdminController extends Controller
         }
         
 
+    }
+
+
+    public function aboutUsPage(){
+        $data = AboutUsPage::first();
+        return view('admin.manage-design.about-us', compact('data'));
+    }
+
+    public function storeAboutUsContent(Request $request){
+        try{
+            if($request->file('section_3_image')){
+                $file = $request->file('section_3_image');
+                $destinationPath = public_path('images/about/');
+                $imageName = rand() . '_image' . '.'  . $file->getClientOriginalExtension();
+                $file->move($destinationPath, $imageName);
+            }
+
+            $oldImage = AboutUsPage::where('id', $request->id)->value("section_3_image");
+
+            $content = AboutUsPage::updateOrCreate([
+                'id' => $request->id,
+            ],[
+                'section_1_heading' => $request->section_1_heading,                
+                'section_1_description' => $request->section_1_description,
+                'section_2_heading' => $request->section_2_heading,
+                'section_2_first_step_heading' => $request->section_2_first_step_heading,
+                'section_2_first_step_description' => $request->section_2_first_step_description,
+                'section_2_second_step_heading' => $request->section_2_second_step_heading,
+                'section_2_second_step_description' => $request->section_2_second_step_description,
+                'section_2_third_step_heading' => $request->section_2_third_step_heading,
+                'section_2_third_step_description' => $request->section_2_third_step_description,
+                'section_3_heading' => $request->section_3_heading,
+                'section_3_first_step_heading' => $request->section_3_first_step_heading,
+                'section_3_first_step_description' => $request->section_3_first_step_description,
+                'section_3_second_step_heading' => $request->section_3_second_step_heading,
+                'section_3_second_step_description' => $request->section_3_second_step_description,
+                'section_3_third_step_heading' => $request->section_3_third_step_heading,
+                'section_3_third_step_description' => $request->section_3_third_step_description,
+                'section_3_image' => isset($imageName) ? $imageName : $oldImage,
+            ]);
+
+            if($content){
+                return redirect()->back()->with(["success" => "About Us Content saved successfully"]);
+            }
+        }catch(\Exception $e){
+            return redirect()->back()->with(["error" => $e->getMessage()]);
+        }       
     }
     /**
      * @param $id

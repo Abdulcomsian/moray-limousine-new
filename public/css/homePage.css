@@ -11,7 +11,7 @@
 }
 #logo {
     width: 100px;
-    height: 30px;
+    /* height: 30px; */
     margin-left: 0px;
 }
 .navbar-dark .navbar-nav .nav-link {
@@ -998,7 +998,7 @@
 #logo2 {
     margin-top: 20px;
     width: 100px;
-    height: 30px;
+    /* height: 30px; */
     margin-bottom: 20px;
 }
 .phone1 {

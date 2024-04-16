@@ -8,7 +8,7 @@
 
     <div class="black-box">
         <div class="container ">
-            <p id="txt1ID" class="mb-0">{{$home_content['about_us_title']}}</p>
+            <p id="txt1ID" class="mb-0">{{$about_us_content->section_1_heading}}</p>
             <p>Home-About</p>
         </div>
         </div>
@@ -25,8 +25,8 @@
     <div class="container class1font">
         <div class="row mt-4">
             <div class="text-center">
-                <h1>{{$home_content['about_us_title']}}</h1>
-                <p class="w-50 mx-auto">{{$home_content['about_us_description']}}</p>
+                <h1>{{$about_us_content->section_1_heading}}</h1>
+                <p class="w-50 mx-auto">{{$about_us_content->section_1_description}}</p>
             </div>
         </div>
         {{-- <div class="row">
@@ -73,32 +73,26 @@
         <div class="row">
             <div class="col">
                 <div>
-                    <p class="BK">Make Your Trip Your Way With Us</p>
+                    <p class="BK">{{$about_us_content->section_2_heading}}</p>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-3 trip-content">
                 <i class="fa-solid fa-user-shield center  trip-way--icon" style="color:black;"></i>
-                <p class="BK4">Safety First</p>
-                <p class="BK7">At Safety First Car Company, your well-being is paramount. Drive with confidence,
-                    knowing
-                    our vehicles prioritize your safety at every turn.</p>
+                <p class="BK4">{{$about_us_content->section_2_first_step_heading}}</p>
+                <p class="BK7">{{$about_us_content->section_2_first_step_description}}</p>
             </div>
             <div class="col-md-3 trip-content">
                 <a href="#"><i class="fa-solid fa-hand-holding-dollar center trip-way--icon" style="color:black;"></i></a>
-                <p class="BK4">Price With No Suprise</p>
-                <p class="BK7">Experience transparent pricing at its finest with our cars no surprises, just
-                    straightforward
-                    and honest pricing practices. at every turn.</p>
+                <p class="BK4">{{$about_us_content->section_2_second_step_heading}}</p>
+                <p class="BK7">{{$about_us_content->section_2_second_step_description}}</p>
 
             </div>
             <div class="col-md-3 trip-content">
                 <a href="#"><i class="fa-solid fa-car-rear center  trip-way--icon" style="color:black;"></i></a>
-                <p class="BK4">Private Travel Solutions</p>
-                <p class="BK7">Discover the ultimate private travel solution, tailored to provide luxury, comfort,
-                    and
-                    convenience for your journeys.</p>
+                <p class="BK4">{{$about_us_content->section_2_third_step_heading}}</p>
+                <p class="BK7">{{$about_us_content->section_2_third_step_description}}</p>
             </div>
 
         </div>
@@ -109,26 +103,26 @@
             <div class="row">
                 <div class="col-md-6 ">
                     <ul class="custom-list2">
-                        <h1 style="color: White; margin-bottom: 28px">How It Works</h1>
+                        <h1 style="color: White; margin-bottom: 28px">{{$about_us_content->section_3_heading}}</h1>
                         <li class="liID21">
-                            <span>Create Your Route.</span>
-                            <p class="txtpara1">Enter your pickup and drop of loaction or the number of hours you wish to book a car</p>
+                            <span>{{$about_us_content->section_3_first_step_heading}}</span>
+                            <p class="txtpara1">{{$about_us_content->section_3_first_step_description}}</p>
                         </li>
                         
                         <li class="liID22">
-                            <span>Choose Vehicle For You</span>
-                            <p class="txtpara">Enter your pickup and drop of loaction or the number of hours you wish to book a car</p>
+                            <span>{{$about_us_content->section_3_second_step_heading}}</span>
+                            <p class="txtpara">{{$about_us_content->section_3_second_step_description}}</p>
                         </li>
                         
                         <li class="liID21">
-                            <span>Enjoy The Journey</span>
-                            <p class="txtpara1">Enter your pickup and drop of loaction or the number of hours you wish to book a car</p>
+                            <span>{{$about_us_content->section_3_third_step_heading}}</span>
+                            <p class="txtpara1">{{$about_us_content->section_3_third_step_description}}</p>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-6 ">
                     <div style="height: 405px">
-                        <img src="images/DD2.jpg" class="EK4" alt="Avatar">
+                        <img src="{{asset('images/about/' . $about_us_content->section_3_image)}}" class="EK4" alt="Avatar">
                     </div>
                 </div>
             </div>

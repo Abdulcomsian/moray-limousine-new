@@ -477,7 +477,7 @@
                     <p class="JK2">KONTAKT</p>
                     <ul class="list footer-list">
                         <li>Hathaway Limousines</li>
-                        <li>Friedrich-Ebert-Anlage 36</li>
+                        <li>Westendstraße 16-22</li>
                         <li>60325 Frankfurt am Main</li>
                         <li>+49 69 26022180</li>
                     </ul>
@@ -507,7 +507,7 @@
 
             <div class="mt-4 footer-termsLink">
                 {{-- <div class="col-md-6"> --}}
-                    <p class="KK"> @ 2023 HATHWAY-LIMOUSINES</p>
+                    <p class="KK"> © 2024 The Hathaway Group GmbH</p>
                 {{-- </div> --}}
 
                 {{-- <div class="col-md-6 "> --}}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUsPage;
 use App\Models\Booking;
 use App\Models\CmsFaq;
 use App\Models\CmsHomePage;
@@ -135,7 +136,9 @@ class HomeController extends Controller
 
         $faqs = CmsFaq::all();
         $happyClients = HappyClient::all();
-        return view('siteheader.about-us', compact('faqs', 'home_content' , 'happyClients'));
+
+        $about_us_content = AboutUsPage::first();
+        return view('siteheader.about-us', compact('faqs', 'home_content' , 'happyClients', 'about_us_content'));
     }
 
     /**
