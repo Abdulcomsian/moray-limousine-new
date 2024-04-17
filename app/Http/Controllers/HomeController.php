@@ -287,4 +287,9 @@ class HomeController extends Controller
         'action_text' => 'View My Site',
         'action_url' => '/driver/dashboard',
     ];
+
+    public function impressum(){
+        $footerPageOne = CmsHomePage::where('item_name', 'footer_page_one')->first();
+        return view('impressum', compact('footerPageOne'));
+    }
 }

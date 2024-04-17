@@ -241,6 +241,7 @@
 
 .slick-slide {
     height: auto !important;
+    cursor: pointer;
 }
 .slick-center {
     padding-top: 0px !important;

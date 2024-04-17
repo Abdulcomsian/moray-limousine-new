@@ -471,6 +471,7 @@
                     <ul class="list footer-list">
                         <li><a href="{{url('/become-driver')}}">Für Fahrer</a></li>
                         <li><a href="{{url('/become-partner')}}">Für Partnerunternehmen</a></li>
+                        <li><a href="{{url('/impressum')}}">Impressum</a></li>
                     </ul>
                 </div>
                 <div class="col">
