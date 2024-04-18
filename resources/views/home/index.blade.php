@@ -119,6 +119,13 @@
             -webkit-transform: scale(1.5); /* Safari 3-8 */
             transform: scale(1.02); 
         }
+        @media only screen and (max-width: 992px) {
+	.datetimepicker {
+		top: 573.219px !important;
+		left: 50px !important;
+	}
+
+}
     </style>
 
     <div class="container-fluid cont2 class1font">
