@@ -213,6 +213,12 @@ class VehicleCategoryController extends Controller
                 'feature_four_picture',
                 'feature_five_picture',
                 'feature_six_picture',
+                'featureOnePicture',        
+                    'featureTwoPicture',       
+                    'featureThreePicture',        
+                    'featureFourPicture',        
+                    'featureFivePicture',       
+                    'featureSixPicture',
             );
             if (isset($image)){
                 $formData['picture'] = $image;
