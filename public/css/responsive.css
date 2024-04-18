@@ -1455,4 +1455,10 @@
 	.nav-login div:first-child{
 		margin-bottom: 15px;
 	}
+	.datetimepicker {
+		top: 573.219px !important;
+		left: 50px !important;
+	}
+
 }
+
