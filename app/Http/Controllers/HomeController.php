@@ -92,7 +92,7 @@ class HomeController extends Controller
         $data['categories'] = $categories;
         return view('siteheader.our-fleet', $data);
     }
-    public function fleetdetail()
+    public function fleetdetail(Request $request, $id)
     {
         $homeCMS = CmsHomePage::all();
         $home_content = [];
@@ -100,9 +100,43 @@ class HomeController extends Controller
             $item_name = $home->item_name;
             $home_content += [$item_name => $home->item_content];
         }
-        $data['home_content'] = $home_content;
-        $categories = VehicleCategory::paginate(3);
-        $data['categories'] = $categories;
+        $categories = VehicleCategory::where('id' ,'!=', $id)->paginate(3);
+        $fleetData = VehicleCategory::where('id', $id)->first();
+        if(isset($fleetData->feature_1)){
+            $featureOne = json_decode($fleetData->feature_1);
+        }
+
+        if(isset($fleetData->feature_2)){
+            $featureTwo = json_decode($fleetData->feature_2);
+        }
+
+        if(isset($fleetData->feature_3)){
+            $featureThree = json_decode($fleetData->feature_3);
+        }
+
+        if(isset($fleetData->feature_4)){
+            $featureFour = json_decode($fleetData->feature_4);
+        }
+
+        if(isset($fleetData->feature_5)){
+            $featureFive = json_decode($fleetData->feature_5);
+        }
+
+        if(isset($fleetData->feature_6)){
+            $featureSix = json_decode($fleetData->feature_6);
+        }
+
+        $data = [
+            'home_content' => $home_content,
+            'categories' => $categories,
+            'fleetData' => $fleetData,
+            'featureOne' => $featureOne ?? '',
+            'featureTwo' => $featureTwo ?? '',
+            'featureThree' => $featureThree ?? '',
+            'featureFour' => $featureFour ?? '',
+            'featureFive' => $featureFive ?? '',
+            'featureSix' => $featureSix ?? '',
+        ];
         return view('siteheader.fleet-detail', $data);
     }
     /**

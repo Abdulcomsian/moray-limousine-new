@@ -4,7 +4,7 @@
 @endsection
 
 @section('main-content')
-    {{--    Modal for add driver--}}
+    {{--    Modal for add driver --}}
     <style>
         .register-form form div {
             margin-bottom: 0;
@@ -34,15 +34,21 @@
             border-radius: 3px;
         }
 
-        .ck.ck-content ul, .ck.ck-content ol {
+        .ck.ck-content ul,
+        .ck.ck-content ol {
             list-style: initial;
         }
 
         .ck.ck-content ol {
             list-style-type: decimal;
         }
-        .invalid-feedback{
+
+        .invalid-feedback {
             display: none;
+        }
+
+        .feature-profile-photo {
+            width: 286px;
         }
     </style>
     <div class="container position-absolute">
@@ -60,83 +66,121 @@
                                 <div id="tab-2" class="content-tab">
                                     <input type="hidden" id="isEdit" value="0">
                                     <div class="register-form">
-                                        <form action="{{route('save.category')}}" method="post" name="cateForm"
-                                              id="cateForm" novalidate enctype="multipart/form-data">
+                                        <form action="{{ route('save.category') }}" method="post" name="cateForm"
+                                            id="cateForm" novalidate enctype="multipart/form-data">
                                             @csrf
-                                            <input type="hidden" value="{{Auth()->id()}}" name="created_by" required>
-                                            <input type="hidden" value="{{null}}" name="id" required>
+                                            <input type="hidden" value="{{ Auth()->id() }}" name="created_by" required>
+                                            <input type="hidden" value="{{ null }}" name="id" required>
+                                            <input type="hidden" value="{{ null }}" name="featureOnePicture" required>
+                                            <input type="hidden" value="{{ null }}" name="featureTwoPicture" required>
+                                            <input type="hidden" value="{{ null }}" name="featureThreePicture" required>
+                                            <input type="hidden" value="{{ null }}" name="featureFourPicture" required>
+                                            <input type="hidden" value="{{ null }}" name="featureFivePicture" required>
+                                            <input type="hidden" value="{{ null }}" name="featureSixPicture" required>
                                             <div class="row justify-content-center">
                                                 <div class="col-md-5">
                                                     <div class="form-group">
                                                         <label for="dob">Vehicle Class Name :</label>
-                                                        <input type="text" data-name="Name" class="form-control validate" id="dob" name="name"
-                                                               placeholder="Add Vehicle Type / Class " required>
-                                                        @include('admin._partials._error-feedback',
-                                                         ['message' => $errors->has('name') ? $errors->first('name') : 'Name is required',
-                                                          'role' => $errors->has('name') ? 'alert' : ''])
+                                                        <input type="text" data-name="Name" class="form-control validate"
+                                                            id="dob" name="name"
+                                                            placeholder="Add Vehicle Type / Class " required>
+                                                        @include('admin._partials._error-feedback', [
+                                                            'message' => $errors->has('name')
+                                                                ? $errors->first('name')
+                                                                : 'Name is required',
+                                                            'role' => $errors->has('name') ? 'alert' : '',
+                                                        ])
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6 mt-3">
                                                             <div class="form-group">
                                                                 <label for="dob">Max No Of Seats :</label>
-                                                                <input type="number" data-name="Max seats" class="form-control validate" id="dob"
-                                                                       name="max_seats"
-                                                                       value="{{isset($user) ? $user->date_of_birth : old('date_of_birth')}}"
-                                                                       placeholder="Max seats" required>
-                                                                @include('admin._partials._error-feedback',
-                                                                 ['message' => $errors->has('max_seats') ? $errors->first('max_seats') : 'Max seats is required',
-                                                                  'role' => $errors->has('max_seats') ? 'alert' : ''])
+                                                                <input type="number" data-name="Max seats"
+                                                                    class="form-control validate" id="dob"
+                                                                    name="max_seats"
+                                                                    value="{{ isset($user) ? $user->date_of_birth : old('date_of_birth') }}"
+                                                                    placeholder="Max seats" required>
+                                                                @include(
+                                                                    'admin._partials._error-feedback',
+                                                                    [
+                                                                        'message' => $errors->has('max_seats')
+                                                                            ? $errors->first('max_seats')
+                                                                            : 'Max seats is required',
+                                                                        'role' => $errors->has('max_seats')
+                                                                            ? 'alert'
+                                                                            : '',
+                                                                    ]
+                                                                )
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6  mt-3">
                                                             <div class="form-group">
                                                                 <label for="dob">Max No Of Bags :</label>
-                                                                <input type="number" data-name="Max bags" class="form-control validate" id="dob"
-                                                                       name="max_bags"
-                                                                       value="{{isset($user) ? $user->date_of_birth : old('date_of_birth')}}"
-                                                                       placeholder="Max bags" required>
-                                                                @include('admin._partials._error-feedback',
-                                                                 ['message' => $errors->has('max_bags') ? $errors->first('max_bags') : 'Max bags is required',
-                                                                  'role' => $errors->has('max_bags') ? 'alert' : ''])
+                                                                <input type="number" data-name="Max bags"
+                                                                    class="form-control validate" id="dob"
+                                                                    name="max_bags"
+                                                                    value="{{ isset($user) ? $user->date_of_birth : old('date_of_birth') }}"
+                                                                    placeholder="Max bags" required>
+                                                                @include(
+                                                                    'admin._partials._error-feedback',
+                                                                    [
+                                                                        'message' => $errors->has('max_bags')
+                                                                            ? $errors->first('max_bags')
+                                                                            : 'Max bags is required',
+                                                                        'role' => $errors->has('max_bags')
+                                                                            ? 'alert'
+                                                                            : '',
+                                                                    ]
+                                                                )
                                                             </div>
                                                         </div>
 
-{{--                                                        <div class="col-md-6 mt-3">--}}
-{{--                                                            <div class="form-group">--}}
-{{--                                                                <label for="price_per_km">Price / KM: </label>--}}
-{{--                                                                <input id="price_per_km" data-name="Price / KM" type="number" min="0"--}}
-{{--                                                                       step="0.01" placeholder="Price per KM"--}}
-{{--                                                                       name="price_per_km" class="form-control validate">--}}
-{{--                                                                @include('admin._partials._error-feedback',--}}
-{{--                                                                 ['message' => $errors->has('price_per_km') ? $errors->first('price_per_km') : 'Price / KM is required',--}}
-{{--                                                                  'role' => $errors->has('price_per_km') ? 'alert' : ''])--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="col-md-6 mt-3">--}}
-{{--                                                            <div class="form-group">--}}
-{{--                                                                <label for="price_per_hr">Price / Hour: </label>--}}
-{{--                                                                <input id="price_per_hr" data-name="Perice / Hour" type="number" min="0"--}}
-{{--                                                                       step="0.01" placeholder="Price per Hour"--}}
-{{--                                                                       name="price_per_hr" class="form-control validate">--}}
-{{--                                                                @include('admin._partials._error-feedback',--}}
-{{--                                                                 ['message' => $errors->has('price_per_hr') ? $errors->first('price_per_hr') : 'Price / Hour is required',--}}
-{{--                                                                  'role' => $errors->has('price_per_hr') ? 'alert' : ''])--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
+                                                        {{--                                                        <div class="col-md-6 mt-3"> --}}
+                                                        {{--                                                            <div class="form-group"> --}}
+                                                        {{--                                                                <label for="price_per_km">Price / KM: </label> --}}
+                                                        {{--                                                                <input id="price_per_km" data-name="Price / KM" type="number" min="0" --}}
+                                                        {{--                                                                       step="0.01" placeholder="Price per KM" --}}
+                                                        {{--                                                                       name="price_per_km" class="form-control validate"> --}}
+                                                        {{--                                                                @include('admin._partials._error-feedback', --}}
+                                                        {{--                                                                 ['message' => $errors->has('price_per_km') ? $errors->first('price_per_km') : 'Price / KM is required', --}}
+                                                        {{--                                                                  'role' => $errors->has('price_per_km') ? 'alert' : '']) --}}
+                                                        {{--                                                            </div> --}}
+                                                        {{--                                                        </div> --}}
+                                                        {{--                                                        <div class="col-md-6 mt-3"> --}}
+                                                        {{--                                                            <div class="form-group"> --}}
+                                                        {{--                                                                <label for="price_per_hr">Price / Hour: </label> --}}
+                                                        {{--                                                                <input id="price_per_hr" data-name="Perice / Hour" type="number" min="0" --}}
+                                                        {{--                                                                       step="0.01" placeholder="Price per Hour" --}}
+                                                        {{--                                                                       name="price_per_hr" class="form-control validate"> --}}
+                                                        {{--                                                                @include('admin._partials._error-feedback', --}}
+                                                        {{--                                                                 ['message' => $errors->has('price_per_hr') ? $errors->first('price_per_hr') : 'Price / Hour is required', --}}
+                                                        {{--                                                                  'role' => $errors->has('price_per_hr') ? 'alert' : '']) --}}
+                                                        {{--                                                            </div> --}}
+                                                        {{--                                                        </div> --}}
 
                                                         <div class="col-md-12 mt-3">
                                                             <div class="form-group">
                                                                 <label for="subtypes">Vehicle Model : </label>
-                                                                <select id="subtypes" data-name="Subtypes" class="form-control validate"
-                                                                        name="subtypes[]" multiple>
+                                                                <select id="subtypes" data-name="Subtypes"
+                                                                    class="form-control validate" name="subtypes[]"
+                                                                    multiple>
                                                                     <option></option>
-                                                                    @foreach($subtypes as $subtype)
-                                                                        <option value="{{$subtype->id}}">{{$subtype->title}}</option>
+                                                                    @foreach ($subtypes as $subtype)
+                                                                        <option value="{{ $subtype->id }}">
+                                                                            {{ $subtype->title }}</option>
                                                                     @endforeach
                                                                 </select>
-                                                                @include('admin._partials._error-feedback',
-                                                                  ['message' => $errors->has('subtypes') ? $errors->first('subtypes') : 'Select at least one subtype',
-                                                                   'role' => $errors->has('subtypes') ? 'alert' : ''])
+                                                                @include(
+                                                                    'admin._partials._error-feedback',
+                                                                    [
+                                                                        'message' => $errors->has('subtypes')
+                                                                            ? $errors->first('subtypes')
+                                                                            : 'Select at least one subtype',
+                                                                        'role' => $errors->has('subtypes')
+                                                                            ? 'alert'
+                                                                            : '',
+                                                                    ]
+                                                                )
                                                             </div>
                                                         </div>
                                                     </div>
@@ -147,38 +191,330 @@
                                                     <div class="form-group input-group-sm">
                                                         <div class="edit-profile-photo  user-image-preview">
                                                             <div class="img-preview">
-                                                                <img src="{{asset('images/no-image-icon.png')}}"
-                                                                     id="output" alt="profile-photo" class="img-fluid">
+                                                                <img src="{{ asset('images/no-image-icon.png') }}"
+                                                                    id="output" alt="profile-photo" class="img-fluid">
 
                                                             </div>
-                                                            {{--                                    <input type="hidden" name="user_id" value="{{$get_user->id}}">--}}
+                                                            {{--                                    <input type="hidden" name="user_id" value="{{$get_user->id}}"> --}}
                                                             <div class="change-photo-btn mb-0">
                                                                 <div class="photoUpload">
                                                                     <span><i class="fa fa-upload"></i></span>
                                                                     <input type="file" accept="image/*" data-name="Image"
-                                                                           onchange="loadFile(event)"
-                                                                           class="validate upload {{ $errors->has('image_name') ? ' is-invalid' : '' }}"
-                                                                           name="picture" id="profile-img" required>
+                                                                        onchange="loadFile(event)"
+                                                                        class="validate upload {{ $errors->has('image_name') ? ' is-invalid' : '' }}"
+                                                                        name="picture" id="profile-img" required>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        @include('admin._partials._error-feedback',
-                                                          ['message' => $errors->has('image_name') ? $errors->first('image_name') : 'Image is required',
-                                                           'role' => $errors->has('image_name') ? 'alert' : ''])
+                                                        @include('admin._partials._error-feedback', [
+                                                            'message' => $errors->has('image_name')
+                                                                ? $errors->first('image_name')
+                                                                : 'Image is required',
+                                                            'role' => $errors->has('image_name') ? 'alert' : '',
+                                                        ])
                                                     </div>
                                                 </div>
                                                 <div class="col-md-1"></div>
                                                 <div class="col-md-11 pt-4">
                                                     <div class="form-group ">
                                                         <label for="description">Vehicle Class Description :</label>
-                                                        <textarea class="form-control validate" rows="5" id="description"
-                                                                  name="description" data-name="Description"
-                                                                  placeholder="Vehicle Type Description" required></textarea>
-                                                        @include('admin._partials._error-feedback',
-                                                          ['message' => $errors->has('description') ? $errors->first('description') : 'description is required',
-                                                           'role' => $errors->has('description') ? 'alert' : ''])
+                                                        <textarea class="form-control validate" rows="5" name="description" data-name="Description"
+                                                            placeholder="Vehicle Type Description" required></textarea>
+                                                        @include('admin._partials._error-feedback', [
+                                                            'message' => $errors->has('description')
+                                                                ? $errors->first('description')
+                                                                : 'description is required',
+                                                            'role' => $errors->has('description') ? 'alert' : '',
+                                                        ])
                                                     </div>
                                                 </div>
+
+                                                <div class="col-md-11 pt-4">
+                                                    <div class="form-group ">
+                                                        <label for="longDescription">Vehicle Long Description :</label>
+                                                        <textarea class="form-control validate" id="longDescription" name="long_description"
+                                                            data-name="Long Description" placeholder="Vehicle Long Description" required></textarea>
+                                                        @include('admin._partials._error-feedback', [
+                                                            'message' => $errors->has('long_description')
+                                                                ? $errors->first('long_description')
+                                                                : 'description is required',
+                                                            'role' => $errors->has('long_description')
+                                                                ? 'alert'
+                                                                : '',
+                                                        ])
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-11 pt-4">
+                                                    <div class="form-group ">
+                                                        <label for="description">Feature Heading:</label>
+                                                        <input class="form-control validate" name="feature_heading" data-name="Feature Heading"
+                                                            placeholder="Enter Feature Heading" required>
+                                                        @include('admin._partials._error-feedback', [
+                                                            'message' => $errors->has('feature_heading')
+                                                                ? $errors->first('feature_heading')
+                                                                : 'Feature heading is required',
+                                                            'role' => $errors->has('feature_heading')
+                                                                ? 'alert'
+                                                                : '',
+                                                        ])
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mt-3">
+                                                    {{-- feature one  --}}
+                                                    <div class="col-md-4">
+                                                        <div class="form-group input-group-sm">
+                                                            <div
+                                                                class="edit-profile-photo feature-profile-photo  user-image-preview">
+                                                                <div class="img-preview">
+                                                                    <img src="{{ asset('images/no-image-icon.png') }}"
+                                                                        id="output_feature_one" alt="profile-photo"
+                                                                        class="img-fluid">
+
+                                                                </div>
+                                                                {{--                                    <input type="hidden" name="user_id" value="{{$get_user->id}}"> --}}
+                                                                <div class="change-photo-btn mb-0">
+                                                                    <div class="photoUpload">
+                                                                        <span><i class="fa fa-upload"></i></span>
+                                                                        <input type="file" accept="image/*"
+                                                                            data-name="Image"
+                                                                            onchange="loadFileOne(event)"
+                                                                            class="validate upload {{ $errors->has('image_name') ? ' is-invalid' : '' }}"
+                                                                            name="feature_one_picture" id="profile-img"
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            @include('admin._partials._error-feedback', [
+                                                                'message' => $errors->has('image_name')
+                                                                    ? $errors->first('image_name')
+                                                                    : 'Image is required',
+                                                                'role' => $errors->has('image_name')
+                                                                    ? 'alert'
+                                                                    : '',
+                                                            ])
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <input type="text" class="form-control mb-3"
+                                                                name="feature_one_heading"
+                                                                placeholder="Enter feature one heading">
+                                                            <textarea name="feature_one_description" cols="30" rows="10" placeholder="Enter feature one description"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    {{-- feature two  --}}
+                                                    <div class="col-md-4">
+                                                        <div class="form-group input-group-sm">
+                                                            <div
+                                                                class="edit-profile-photo feature-profile-photo  user-image-preview">
+                                                                <div class="img-preview">
+                                                                    <img src="{{ asset('images/no-image-icon.png') }}"
+                                                                        id="output_feature_two" alt="profile-photo"
+                                                                        class="img-fluid">
+
+                                                                </div>
+                                                                {{--                                    <input type="hidden" name="user_id" value="{{$get_user->id}}"> --}}
+                                                                <div class="change-photo-btn mb-0">
+                                                                    <div class="photoUpload">
+                                                                        <span><i class="fa fa-upload"></i></span>
+                                                                        <input type="file" accept="image/*"
+                                                                            data-name="Image"
+                                                                            onchange="loadFileTwo(event)"
+                                                                            class="validate upload {{ $errors->has('feature_two_picture') ? ' is-invalid' : '' }}"
+                                                                            name="feature_two_picture" id="profile-img"
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            @include('admin._partials._error-feedback', [
+                                                                'message' => $errors->has('image_name')
+                                                                    ? $errors->first('image_name')
+                                                                    : 'Image is required',
+                                                                'role' => $errors->has('image_name')
+                                                                    ? 'alert'
+                                                                    : '',
+                                                            ])
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <input type="text" class="form-control mb-3"
+                                                                name="feature_two_heading"
+                                                                placeholder="Enter feature two heading">
+                                                            <textarea name="feature_two_description" cols="30" rows="10" placeholder="Enter feature two description"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    {{-- feature three --}}
+                                                    <div class="col-md-4">
+                                                        <div class="form-group input-group-sm">
+                                                            <div
+                                                                class="edit-profile-photo feature-profile-photo  user-image-preview">
+                                                                <div class="img-preview">
+                                                                    <img src="{{ asset('images/no-image-icon.png') }}"
+                                                                        id="output_feature_three" alt="profile-photo"
+                                                                        class="img-fluid">
+
+                                                                </div>
+                                                                {{--                                    <input type="hidden" name="user_id" value="{{$get_user->id}}"> --}}
+                                                                <div class="change-photo-btn mb-0">
+                                                                    <div class="photoUpload">
+                                                                        <span><i class="fa fa-upload"></i></span>
+                                                                        <input type="file" accept="image/*"
+                                                                            data-name="Image"
+                                                                            onchange="loadFileThree(event)"
+                                                                            class="validate upload {{ $errors->has('feature_three_picture') ? ' is-invalid' : '' }}"
+                                                                            name="feature_three_picture" id="profile-img"
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            @include('admin._partials._error-feedback', [
+                                                                'message' => $errors->has('image_name')
+                                                                    ? $errors->first('image_name')
+                                                                    : 'Image is required',
+                                                                'role' => $errors->has('image_name')
+                                                                    ? 'alert'
+                                                                    : '',
+                                                            ])
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <input type="text" class="form-control mb-3"
+                                                                name="feature_three_heading"
+                                                                placeholder="Enter feature three heading">
+                                                            <textarea name="feature_three_description" cols="30" rows="10"
+                                                                placeholder="Enter feature three description"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                {{-- second row another three  --}}
+                                                <div class="row mt-3">
+                                                    {{-- feature four  --}}
+                                                    <div class="col-md-4">
+                                                        <div class="form-group input-group-sm">
+                                                            <div
+                                                                class="edit-profile-photo feature-profile-photo  user-image-preview">
+                                                                <div class="img-preview">
+                                                                    <img src="{{ asset('images/no-image-icon.png') }}"
+                                                                        id="output_feature_four" alt="profile-photo"
+                                                                        class="img-fluid">
+
+                                                                </div>
+                                                                {{--                                    <input type="hidden" name="user_id" value="{{$get_user->id}}"> --}}
+                                                                <div class="change-photo-btn mb-0">
+                                                                    <div class="photoUpload">
+                                                                        <span><i class="fa fa-upload"></i></span>
+                                                                        <input type="file" accept="image/*"
+                                                                            data-name="Image"
+                                                                            onchange="loadFileFour(event)"
+                                                                            class="validate upload {{ $errors->has('feature_four_picture') ? ' is-invalid' : '' }}"
+                                                                            name="feature_four_picture" id="profile-img"
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            @include('admin._partials._error-feedback', [
+                                                                'message' => $errors->has('image_name')
+                                                                    ? $errors->first('image_name')
+                                                                    : 'Image is required',
+                                                                'role' => $errors->has('image_name')
+                                                                    ? 'alert'
+                                                                    : '',
+                                                            ])
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <input type="text" class="form-control mb-3"
+                                                                name="feature_four_heading"
+                                                                placeholder="Enter feature four heading">
+                                                            <textarea name="feature_four_description" cols="30" rows="10"
+                                                                placeholder="Enter feature four description"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    {{-- feature five  --}}
+                                                    <div class="col-md-4">
+                                                        <div class="form-group input-group-sm">
+                                                            <div
+                                                                class="edit-profile-photo feature-profile-photo  user-image-preview">
+                                                                <div class="img-preview">
+                                                                    <img src="{{ asset('images/no-image-icon.png') }}"
+                                                                        id="output_feature_five" alt="profile-photo"
+                                                                        class="img-fluid">
+
+                                                                </div>
+                                                                {{--                                    <input type="hidden" name="user_id" value="{{$get_user->id}}"> --}}
+                                                                <div class="change-photo-btn mb-0">
+                                                                    <div class="photoUpload">
+                                                                        <span><i class="fa fa-upload"></i></span>
+                                                                        <input type="file" accept="image/*"
+                                                                            data-name="Image"
+                                                                            onchange="loadFileFive(event)"
+                                                                            class="validate upload {{ $errors->has('feature_five_picture') ? ' is-invalid' : '' }}"
+                                                                            name="feature_five_picture" id="profile-img"
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            @include('admin._partials._error-feedback', [
+                                                                'message' => $errors->has('image_name')
+                                                                    ? $errors->first('image_name')
+                                                                    : 'Image is required',
+                                                                'role' => $errors->has('image_name')
+                                                                    ? 'alert'
+                                                                    : '',
+                                                            ])
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <input type="text" class="form-control mb-3"
+                                                                name="feature_five_heading"
+                                                                placeholder="Enter feature five heading">
+                                                            <textarea name="feature_five_description" cols="30" rows="10"
+                                                                placeholder="Enter feature five description"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    {{-- feature six --}}
+                                                    <div class="col-md-4">
+                                                        <div class="form-group input-group-sm">
+                                                            <div
+                                                                class="edit-profile-photo feature-profile-photo  user-image-preview">
+                                                                <div class="img-preview">
+                                                                    <img src="{{ asset('images/no-image-icon.png') }}"
+                                                                        id="output_feature_six" alt="profile-photo"
+                                                                        class="img-fluid">
+
+                                                                </div>
+                                                                {{--                                    <input type="hidden" name="user_id" value="{{$get_user->id}}"> --}}
+                                                                <div class="change-photo-btn mb-0">
+                                                                    <div class="photoUpload">
+                                                                        <span><i class="fa fa-upload"></i></span>
+                                                                        <input type="file" accept="image/*"
+                                                                            data-name="Image"
+                                                                            onchange="loadFileSix(event)"
+                                                                            class="validate upload {{ $errors->has('feature_six_picture') ? ' is-invalid' : '' }}"
+                                                                            name="feature_six_picture" id="profile-img"
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            @include('admin._partials._error-feedback', [
+                                                                'message' => $errors->has('image_name')
+                                                                    ? $errors->first('image_name')
+                                                                    : 'Image is required',
+                                                                'role' => $errors->has('image_name')
+                                                                    ? 'alert'
+                                                                    : '',
+                                                            ])
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <input type="text" class="form-control mb-3"
+                                                                name="feature_six_heading"
+                                                                placeholder="Enter feature six heading">
+                                                            <textarea name="feature_six_description" cols="30" rows="10" placeholder="Enter feature six description"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                                 <div class="col-md-11">
                                                     <div class="form-group-lg mt-3 float-left">
                                                         <button type="submit" class="btn btn-outline-dark">
@@ -209,29 +545,32 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <img src="{{asset('images/loading.gif')}}" alt="loading gif" id="loading_gif"
-                                 class="img-fluid" style="display: none ; position: absolute; z-index: 10;">
+                            <img src="{{ asset('images/loading.gif') }}" alt="loading gif" id="loading_gif"
+                                class="img-fluid" style="display: none ; position: absolute; z-index: 10;">
                             <!-- Trigger the modal with a button -->
-                            <button type="button" id="addVehicle" class="btn btn-dark float-right btn-create-category btn-show-modal"
-                                    data-toggle="modal" data-target="#add-driver-modal">Add New Vehicle Class
+                            <button type="button" id="addVehicle"
+                                class="btn btn-dark float-right btn-create-category btn-show-modal" data-toggle="modal"
+                                data-target="#add-driver-modal">Add New Vehicle Class
                             </button>
-                            @if(session('success'))
+                            @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Success!</strong> {{session('success')}}.
+                                    <strong>Success!</strong> {{ session('success') }}.
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                             @elseif(session('error'))
                                 <div class="alert alert-error alert-dismissible fade show" role="alert">
-                                    <strong>Error!</strong> {{session('error')}}.
+                                    <strong>Error!</strong> {{ session('error') }}.
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                             @endif
                             <div class='driver-table'>
-                                @include('parshall-views._vehicle-category-listing', ['categories'=> $categories])
+                                @include('parshall-views._vehicle-category-listing', [
+                                    'categories' => $categories,
+                                ])
                             </div>
                         </div>
                     </div>
@@ -239,133 +578,203 @@
             </div>
         </div>
     </div>
-        <script>
-            let loadFile = function (event) {
-                let output = document.getElementById('output');
-                output.src = URL.createObjectURL(event.target.files[0]);
-            };
-        </script>
-        @stop
-        @section('js')
-            <script>
+    <script>
+        let loadFile = function(event) {
+            let output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
 
-                let descriptionEditor;
-                $(document).ready(function () {
-                    ClassicEditor
-                        .create(document.querySelector('#description'))
-                        .then(editor => {
-                            descriptionEditor = editor;
-                        })
-                        .catch(error => {
-                            console.error(error);
-                        });
+        let loadFileOne = function(event) {
+            let output = document.getElementById('output_feature_one');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
 
-                    $('#myTable').dataTable({
-                        responsive : true
-                    });
-                    $('body').on('click' ,'.edit-btn',function ()
-                     {
-                        $('#add-driver-modal').modal('toggle');
-                        let updateURL = '{{url('admin/vehicleCategory/update')}}/';
-                        let $id = $(this).attr('id');
-                        changeVehicleStatus(updateURL, $id);
-                    });
+        let loadFileTwo = function(event) {
+            let output = document.getElementById('output_feature_two');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+
+        let loadFileThree = function(event) {
+            let output = document.getElementById('output_feature_three');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+
+        let loadFileFour = function(event) {
+            let output = document.getElementById('output_feature_four');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+
+        let loadFileFive = function(event) {
+            let output = document.getElementById('output_feature_five');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+
+        let loadFileSix = function(event) {
+            let output = document.getElementById('output_feature_six');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+@stop
+@section('js')
+    <script>
+        let descriptionEditor;
+        $(document).ready(function() {
+            ClassicEditor
+                .create(document.querySelector('#longDescription'))
+                .then(editor => {
+                    descriptionEditor = editor;
+                })
+                .catch(error => {
+                    console.error(error);
                 });
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+            $('#myTable').dataTable({
+                responsive: true
+            });
+            $('body').on('click', '.edit-btn', function() {
+                $('#add-driver-modal').modal('toggle');
+                let updateURL = '{{ url('admin/vehicleCategory/update') }}/';
+                let $id = $(this).attr('id');
+                changeVehicleStatus(updateURL, $id);
+            });
+        });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('body').on('click', '.edit-btn', function() {
+            $('#add-driver-modal').modal('toggle');
+            let updateURL = '{{ url('admin/vehicleCategory/update') }}/';
+            let $id = $(this).attr('id');
+            $('input[name=picture]').removeAttr('required');
+            changeVehicleStatus(updateURL, $id);
+        });
+
+        function changeVehicleStatus(updateUrl, id) {
+            let user_id = parseInt({{ Auth()->id() }});
+            let img = "{{ url('files/vehicleCategory/category_img') }}/";
+
+            $.ajax({
+                type: 'get',
+                url: updateUrl + id,
+                success: function(response) {
+                    let category = response;
+                    let subtypes = response.subtypes;
+                    let featureOne = JSON.parse(category.category.feature_1);
+                    let featureTwo = JSON.parse(category.category.feature_2);
+                    let featureThree = JSON.parse(category.category.feature_3);
+                    let featureFour = JSON.parse(category.category.feature_4);
+                    let featureFive = JSON.parse(category.category.feature_5);
+                    let featureSix = JSON.parse(category.category.feature_6);
+                    // console.log(response);
+                    $('input[name="max_seats"]').val(category.category.max_seats);
+                    $('input[name="max_bags"]').val(category.category.max_bags);
+                    $('input[name="price_per_km"]').val(category.category.price_per_km);
+                    $('input[name="price_per_hr"]').val(category.category.price_per_hr);
+                    $('input[name="name"]').val(category.category.name);
+                    $('input[name="created_by"]').val(category.category.created_by);
+                    $('input[name="modified_by"]').val(user_id);
+                    $('input[name="id"]').val(id);
+                    $('textarea[name=description]').val(category.category.description);
+                    descriptionEditor.setData(category.category.long_description);
+                    $('input[name="feature_heading"]').val(category.category.feature_heading);
+                    $('#output').attr('src', img + category.category.picture);
+                    
+                    $('#output_feature_one').attr('src', img + featureOne.icon);
+                    $('#output_feature_two').attr('src', img + featureTwo.icon);
+                    $('#output_feature_three').attr('src', img + featureThree.icon);
+                    $('#output_feature_four').attr('src', img + featureFour.icon);
+                    $('#output_feature_five').attr('src', img + featureFive.icon);
+                    $('#output_feature_six').attr('src', img + featureSix.icon);
+
+                    $('input[name="feature_one_heading"]').val(featureOne.heading);
+                    $('input[name="feature_two_heading"]').val(featureTwo.heading);
+                    $('input[name="feature_three_heading"]').val(featureThree.heading);
+                    $('input[name="feature_four_heading"]').val(featureFour.heading);
+                    $('input[name="feature_five_heading"]').val(featureFive.heading);
+                    $('input[name="feature_six_heading"]').val(featureSix.heading);
+
+                    $('input[name="featureOnePicture"]').val(featureOne.icon);
+                    $('input[name="featureTwoPicture"]').val(featureTwo.icon);
+                    $('input[name="featureThreePicture"]').val(featureThree.icon);
+                    $('input[name="featureFourPicture"]').val(featureFour.icon);
+                    $('input[name="featureFivePicture"]').val(featureFive.icon);
+                    $('input[name="featureSixPicture"]').val(featureSix.icon);                    
+
+                    
+                    $('textarea[name=feature_one_description]').val(featureOne.description);
+                    $('textarea[name=feature_two_description]').val(featureTwo.description);
+                    $('textarea[name=feature_three_description]').val(featureThree.description);
+                    $('textarea[name=feature_four_description]').val(featureFour.description);
+                    $('textarea[name=feature_five_description]').val(featureFive.description);
+                    $('textarea[name=feature_six_description]').val(featureSix.description);
+
+
+                    
+                    // $('#subtypes').val('').trigger("chosen:updated");
+                    let ids = [];
+                    for (let i = 0; i < subtypes.length; i++) {
+                        ids[i] = subtypes[i].id;
                     }
-                });
-                $('body').on('click' ,'.edit-btn',function () {
-                    $('#add-driver-modal').modal('toggle');
-                    let updateURL = '{{url('admin/vehicleCategory/update')}}/';
-                    let $id = $(this).attr('id');
-                    $('input[name=picture]').removeAttr('required');
-                    changeVehicleStatus(updateURL, $id);
-                });
-
-                function changeVehicleStatus(updateUrl, id) {
-                    let user_id = parseInt({{Auth()->id()}});
-                    let img = "{{url('files/vehicleCategory/category_img')}}/";
-
-                    $.ajax({
-                        type: 'get',
-                        url: updateUrl + id,
-                        success: function (response) {
-                            let category = response;
-                            let subtypes = response.subtypes;
-                            // console.log(response);
-                            $('input[name="max_seats"]').val(category.category.max_seats);
-                            $('input[name="max_bags"]').val(category.category.max_bags);
-                            $('input[name="price_per_km"]').val(category.category.price_per_km);
-                            $('input[name="price_per_hr"]').val(category.category.price_per_hr);
-                            $('input[name="name"]').val(category.category.name);
-                            $('input[name="created_by"]').val(category.category.created_by);
-                            $('input[name="modified_by"]').val(user_id);
-                            $('input[name="id"]').val(id);
-                            descriptionEditor.setData(category.category.description);
-                            // $('textarea[name=description]').val(category.category.description);
-                            $('#output').attr('src', img + category.category.picture);
-                            // $('#subtypes').val('').trigger("chosen:updated");
-                            let ids = [];
-                            for (let i = 0; i < subtypes.length; i++){
-                                ids[i] = subtypes[i].id;
-                            }
-                            $('#subtypes').val(ids).trigger("chosen:updated");
-                            $('#isEdit').val(1);
-                        }
-                    });
+                    $('#subtypes').val(ids).trigger("chosen:updated");
+                    $('#isEdit').val(1);
                 }
+            });
+        }
 
-                $('body').on('click' ,'.btn-create-category',function () {
-                    $('input[name="max_seats"]').val(null);
-                    $('input[name="max_bags"]').val(null);
-                    $('input[name="name"]').val(null);
-                    $('input[name="id"]').val(null);
-                    descriptionEditor.setData('');
-                    $('input[name="price_per_km"]').val('');
-                    $('input[name="price_per_hr"]').val('');
-                    $('#output').attr('src', '{{url('images/no-image-icon.png')}}');
-                    $('#output').attr('required', 'required');
-                    $('#isEdit').val(0);
-                    $('#subtypes').val('').trigger("chosen:updated");
-                });
+        $('body').on('click', '.btn-create-category', function() {
+            $('input[name="max_seats"]').val(null);
+            $('input[name="max_bags"]').val(null);
+            $('input[name="name"]').val(null);
+            $('input[name="id"]').val(null);
+            descriptionEditor.setData('');
+            $('input[name="price_per_km"]').val('');
+            $('input[name="price_per_hr"]').val('');
+            $('#output').attr('src', '{{ url('images/no-image-icon.png') }}');
+            $('#output').attr('required', 'required');
+            $('#isEdit').val(0);
+            $('#subtypes').val('').trigger("chosen:updated");
+        });
 
-                //    chosen
-                $('#subtypes').chosen({
-                    'placeholder_text_multiple': 'Select subtypes'
-                });
+        //    chosen
+        $('#subtypes').chosen({
+            'placeholder_text_multiple': 'Select subtypes'
+        });
 
-                //    form
-                $(document).on('submit', '#cateForm', function (e) {
-                    if (!isValid()){
-                        e.preventDefault()
-                    }
-                });
-            //    validation
-                function isValid() {
-                    let isValid = true;
-                    let fields = $('.validate');
-                    $('.invalid-feedback').hide();
-                    $(fields).each(function () {
-                        if ($(this).val() === ''){
-                            console.log($(this).attr('data-name'));
-                            if ($(this).attr('data-name') === 'Image'){
-                                if ($('#isEdit').val() !== "1"){
-                                    $(this).parents('.form-group').find('.invalid-feedback').html($(this).attr('data-name') + ' is required').show();
-                                    isValid = false;
-                                }
-                            }else {
-                                $(this).siblings('.invalid-feedback').html($(this).attr('data-name') + ' is required').show();
-                                isValid = false;
-                            }
+        //    form
+        $(document).on('submit', '#cateForm', function(e) {
+            if (!isValid()) {
+                e.preventDefault()
+            }
+        });
+        //    validation
+        function isValid() {
+            let isValid = true;
+            let fields = $('.validate');
+            $('.invalid-feedback').hide();
+            $(fields).each(function() {
+                if ($(this).val() === '') {
+                    console.log($(this).attr('data-name'));
+                    if ($(this).attr('data-name') === 'Image') {
+                        if ($('#isEdit').val() !== "1") {
+                            let val = $(this).parents('.form-group').find('.invalid-feedback').html($(this).attr(
+                                'data-name') + ' is required').show();
+                            console.log(val);
+                            isValid = false;
                         }
-                    });
-                    if ($('#subtypes').val().length === 0){
+                    } else {
+                        $(this).siblings('.invalid-feedback').html($(this).attr('data-name') + ' is required')
+                        .show();
                         isValid = false;
-                        $('#subtypes').siblings('.invalid-feedback').show();
                     }
-                    return isValid;
                 }
-            </script>
+            });
+            if ($('#subtypes').val().length === 0) {
+                isValid = false;
+                $('#subtypes').siblings('.invalid-feedback').show();
+            }
+            return isValid;
+        }
+    </script>
 @endsection
