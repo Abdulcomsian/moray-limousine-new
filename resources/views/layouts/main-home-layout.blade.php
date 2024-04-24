@@ -174,17 +174,19 @@
                                 href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'about-us' ? 'nav-active' : ''; ?>" aria-current="page"
-                                href="{{ url('/about-us') }}">About Us</a>
+                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'our-services' ? 'nav-active' : ''; ?>" aria-current="page"
+                                href="{{ url('/our-services') }}">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'our-fleet' ? 'nav-active' : ''; ?>" aria-current="page"
                                 href="{{ url('/our-fleet') }}">Our Fleet</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'our-services' ? 'nav-active' : ''; ?>" aria-current="page"
-                                href="{{ url('/our-services') }}">Services</a>
+                            <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'about-us' ? 'nav-active' : ''; ?>" aria-current="page"
+                                href="{{ url('/about-us') }}">About Us</a>
                         </li>
+                        
+                        
                         {{-- <li class="nav-item">
                             <a class="nav-link bar" aria-current="page" href="#">Blog</a>
                         </li> --}}
