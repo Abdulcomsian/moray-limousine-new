@@ -20,15 +20,16 @@
             <div class="col-md-6">
                 <p id="GK" style="margin-top: 0">Choose Your Fleet</p>
             </div>
-            <div class="col-md-3 textalign fleet-btn">
+            {{-- <div class="col-md-3 textalign fleet-btn">
                 <button class="btn btn" id="lastest" type="submit">Vehicle Type <i class="fa-solid fa-arrow-trend-up"
                         id="late" style="color:black;"></i></button>
             </div>
             <div class="col-md-3 textalign fleet-btn">
                 <button class="btn btn" id="lastest" type="submit">Vehicle Make <i class="fa-solid fa-arrow-trend-up"
                         id="late" style="color:black;"></i></button>
-            </div>
-
+            </div> --}}
+        </div>
+        <div class="row">
             @if (count($categories) > 0)
                 @foreach ($categories as $category)
                     <div class="col-md-4">

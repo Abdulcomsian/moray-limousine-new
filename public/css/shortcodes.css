@@ -1684,7 +1684,7 @@ ul.booking-steps li .text {
 
 }
 .remember label:before {
-	content: '';
+	/* content: ''; */
 	position: absolute;
 	top: 5px;
 	left: -1px;
@@ -1696,7 +1696,7 @@ ul.booking-steps li .text {
     padding: 7px;
 }
 .remember label:after {
-    content: '';
+    /* content: ''; */
     position: absolute;
     height: 12px;
     width: 12px;

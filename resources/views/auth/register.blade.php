@@ -116,14 +116,17 @@
                             <div class="border-around"></div>
                         </div>
                         <div class=" pt-4">
-                            <div class="w-100 checkbox px-4 d-flex gap-3">
+                            <div class="w-100 checkbox px-4 d-flex gap-3 ">
                                 <input type="checkbox" name="accept" id="accept" required style="margin: 0; position:static">
-                                <a href="{{asset('files/HL_logo.pdf')}}">
+                                <a href="{{asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::AGB_FILE))}}" target="_blank">
                                     <label style="padding-left:0px !important">Ich akzeptiere die
-                                        <span>AGB's</span> & die <span>Datenschutzbestimmungen</span> </label>
+                                        AGB's</label>
                                 </a>
-                                </div>
                             </div>
+                            <a href="{{asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::DATE_FILE))}}" target="_blank">
+                                <label style="padding-left:58px !important"><span>Datenschutzbestimmungen</span> </label>
+                            </a>
+                        </div>
                         
 
 

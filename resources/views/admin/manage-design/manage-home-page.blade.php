@@ -352,6 +352,36 @@
                         </div>
                     </div>
 
+                    {{-- Links to PDF  --}}
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Add AGB and Datenschutz PDF File</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <div class="col-md-6">
+                                    {{-- <span>Add AGB File</span> --}}
+                                    @if(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::AGB_FILE))
+                                        <embed src="{{asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::AGB_FILE))}}" class="img-fluid {{\App\Utills\Constants\AppConsts::AGB_FILE}}" type="">
+                                    @else
+                                        <img src="https://via.placeholder.com/1500x1000" alt="placeholder iamge" style="height: 164px; margin-bottom: 8px; width: 300px"> 
+                                    @endif                                    
+                                    <input type="file" class="form-control mt-3" name="{{\App\Utills\Constants\AppConsts::AGB_FILE}}" style="width: 300px;">
+                                </div>   
+                                <div class="col-md-6">
+                                    {{-- <label for="showcase-title" class="d-block">Add Datenschutz File</label> --}}
+                                    {{-- <img src="" alt=""> --}}
+                                    @if(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::DATE_FILE))
+                                        <embed src="{{asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::DATE_FILE))}}" class="img-fluid {{\App\Utills\Constants\AppConsts::DATE_FILE}}" type="">
+                                    @else
+                                        <img src="https://via.placeholder.com/1500x1000" alt="placeholder iamge" style="height: 164px; width: 300px"> 
+                                    @endif 
+                                    <input type="file" class="form-control mt-3" name="{{\App\Utills\Constants\AppConsts::DATE_FILE}}" style="width: 300px;">
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>
+
                     <button class="btn btn-dark my-3">Update</button>
                 </form>
             </div>

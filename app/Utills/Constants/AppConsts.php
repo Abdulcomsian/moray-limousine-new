@@ -74,6 +74,10 @@ class AppConsts
     public const SHOWCASE_AWARDS = 'showcase_awards';
     public const SHOWCASE_HAPPY_CUSTOMERS = 'showcase_happy_customers';
 
+    // PDF Files Constants
+    public const AGB_FILE = 'agb_file';
+    public const DATE_FILE = 'date_file';
+
 
 
 //    Column Key for home page CMS END ===========================================================
