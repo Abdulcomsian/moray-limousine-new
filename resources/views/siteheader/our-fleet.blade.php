@@ -32,7 +32,7 @@
         <div class="row">
             @if (count($categories) > 0)
                 @foreach ($categories as $category)
-                    <div class="col-md-4">
+                    <div class="col-md-4 clickable-card" id="card{{$category->id}}">
                     <div class="car-container hover-element">
                                 <p class="text-left font-weight-bold fleet-card--title">{{ $category->name }}</p>
                                 <p class="car-descrip">{{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}</p>
@@ -69,4 +69,17 @@
             <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
         </div> --}}
     </div>
+@endsection
+@section('js')
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+            let cards = document.querySelectorAll('.clickable-card');
+            cards.forEach(function(card) {
+                let categoryId = card.getAttribute('id').replace('card', '');
+                card.addEventListener('click', function() {
+                    window.location.href = "{{url('/fleet-detail/')}}" + '/' + categoryId;
+                });
+            });
+        });
+</script>
 @endsection
