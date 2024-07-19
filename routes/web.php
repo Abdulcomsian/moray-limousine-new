@@ -12,40 +12,41 @@
 */
 
 //sites home pages roots
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\PartnerController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\CMSController;
-use App\Http\Controllers\Admin\booking;
-use App\Http\Controllers\Admin\VehicleController;
-use App\Http\Controllers\DriverController;
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\VehicleTypeController;
-use App\Http\Controllers\Admin\VehicleMakeController;
-use App\Http\Controllers\Admin\VehicleModelController;
-use App\Http\Controllers\Admin\VehicleCategoryController;
-use App\Http\Controllers\Admin\PricingByLocationController;
-use App\Http\Controllers\Admin\PricingByDistanceController;
-use App\Http\Controllers\Admin\VehiclePricingController;
-use App\Http\Controllers\VehicleSubtypeController;
-use App\Http\Controllers\DiscountController;
-use App\Http\Controllers\DocumentsController;
-use App\Http\Controllers\UploadedDocumentController;
-use App\Http\Controllers\LocationController;
+use App\Models\User;
+use Mailjet\Resources;
+use App\Models\Vehicle;
 use App\Models\Document;
+use GuzzleHttp\Psr7\Request;
+use App\Models\VehicleSubtype;
+use App\Models\VehicleCategory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Models\User;
-use App\Models\Vehicle;
-use App\Models\VehicleCategory;
-use App\Models\VehicleSubtype;
-use GuzzleHttp\Psr7\Request;
-use Mailjet\LaravelMailjet\Facades\Mailjet;
-use Mailjet\Resources;
+use App\Http\Controllers\Admin\booking;
+use App\Http\Controllers\CMSController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\DriverController;
 use App\Notifications\BookingNotification;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\PartnerController;
+use Mailjet\LaravelMailjet\Facades\Mailjet;
+use App\Http\Controllers\DiscountController;
+use App\Http\Controllers\LocationController;
 use Illuminate\Support\Facades\Notification;
+use App\Http\Controllers\DocumentsController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\VehicleController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\VehicleSubtypeController;
+use App\Http\Controllers\UploadedDocumentController;
+use App\Http\Controllers\Admin\VehicleMakeController;
+use App\Http\Controllers\Admin\VehicleTypeController;
+use App\Http\Controllers\Admin\VehicleModelController;
+use App\Http\Controllers\Admin\VehiclePricingController;
+use App\Http\Controllers\Admin\VehicleCategoryController;
+use App\Http\Controllers\Admin\PricingByDistanceController;
+use App\Http\Controllers\Admin\PricingByLocationController;
 
 
 Auth::routes();
@@ -76,8 +77,7 @@ Route::get('/become-partner', [PartnerController::class, 'becomePartner']);
 
 //new work for partner registration
 
-Route::get('/partner-registration', function ()
-{
+Route::get('/partner-registration', function () {
     $locations = DB::table('locations')->get();
     return view('home.partner-registration', compact('locations'));
 });
@@ -94,8 +94,7 @@ Route::get('/booking', [BookingController::class, 'selectClassByDistance'])->nam
 
 
 
-Route::group(['middleware' => ['web', 'auth']], function ()
-{
+Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('user/invoice/{id}', [UserController::class, 'getInvoice']);
 
 
@@ -138,8 +137,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
     Route::get('/booking/delete/{id}', [BookingController::class, 'bookingDelete']);
 
-    Route::group(['middleware' => 'end_user'], function ()
-    {
+    Route::group(['middleware' => 'end_user'], function () {
         Route::get('user/build-profile', [UserController::class, 'buildProfile'])->name('build-user-profile');
 
         Route::post('user/store-profile', [UserController::class, 'storeProfile'])->name('store-profile');
@@ -189,7 +187,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
     Route::get('admin/get-categories-title/{id}', [VehicleSubtypeController::class, 'getSubCategories']);
 
 
-    Route::post('/booking/assign', [BookingController::class , 'assignBooking'])->name('assignBooking');
+    Route::post('/booking/assign', [BookingController::class, 'assignBooking'])->name('assignBooking');
 
     Route::get('/booking/un-assign/{id}', [BookingController::class, 'unAssignBooking'])->name('unAssignBooking');
 
@@ -201,7 +199,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
     Route::get('/admin/get-neww-bookings', [BookingController::class, 'newBookings']);
 
-    Route::get('/admin/get-assigned-bookings', [BookingController::class , 'assignedBookings']);
+    Route::get('/admin/get-assigned-bookings', [BookingController::class, 'assignedBookings']);
 
     Route::get('/admin/get-canceled-bookings', [BookingController::class, 'canceledBookings']);
 
@@ -231,7 +229,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
     Route::get('admin/manage-home-page', [CMSController::class, 'manageHomePage'])->name('manageHomePage');
 
-    Route::post('admin/update-home-pageCMS', [CMSController::class , 'updateHomePageCMS'])->name('updateHomePageCMS');
+    Route::post('admin/update-home-pageCMS', [CMSController::class, 'updateHomePageCMS'])->name('updateHomePageCMS');
 
 
     Route::get('/admin/faq-cms', [CMSController::class, 'addFaqs']);
@@ -265,12 +263,11 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
     Route::get('admin/booking-checkout', [booking::class, 'bookingcheckout']);
 
-    
+
 
     // Admin Routes
 
-    Route::group(['middleware' => 'auth'], function ()
-    {
+    Route::group(['middleware' => 'auth'], function () {
 
         Route::get('vehicle/vehicleDetail/{id}', [VehicleController::class, 'vehicleDetails']);
 
@@ -288,7 +285,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
         Route::get('vehicle/disapproved-vehicles', [VehicleController::class, 'disapprovedVehicles']);
 
-        Route::get('vehicle/blocked-vehicles', [VehicleController::class, 'blockedVehicles']); // this is the route 
+        Route::get('vehicle/blocked-vehicles', [VehicleController::class, 'blockedVehicles']); // this is the route
 
 
         Route::post('vehicle/save-documents', [VehicleController::class, 'storeDocuments'])->name('vehicle.store.docs');
@@ -297,8 +294,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
         Route::get('vehicle/delete-docs/{id}', [VehicleController::class, 'deleteDocument']);
 
-        Route::group(['middleware' => 'partner'], function ()
-        {
+        Route::group(['middleware' => 'partner'], function () {
             Route::get('partner/profile', [PartnerController::class, 'profileView'])->name('partner.profile');
 
             Route::get('partner/add-new-vehicle', [PartnerController::class, 'addNewVehicle']);
@@ -362,14 +358,11 @@ Route::group(['middleware' => ['web', 'auth']], function ()
             Route::post('partner/store-vehicle-docs', [PartnerController::class, 'storeVehicleDocs'])->name('partner.vehicle.docs');
         });
 
-        Route::group(['middleware' => 'partnerstep'], function ()
-        {
-            Route::get('info/welcome', function ()
-            {
+        Route::group(['middleware' => 'partnerstep'], function () {
+            Route::get('info/welcome', function () {
                 return view('information.welcome');
             });
-            Route::get('info/company', function ()
-            {
+            Route::get('info/company', function () {
                 $cities = DB::table('locations')->get();
                 $coutnrycode = DB::table('country')->groupBy('phonecode')->orderBy('phonecode', 'asc')->get();
                 $countries = DB::table('country')->get();
@@ -377,15 +370,13 @@ Route::group(['middleware' => ['web', 'auth']], function ()
                 return view('information.company', compact('cities', 'legalform', 'coutnrycode', 'countries'));
             });
 
-            Route::get('info/driver', function ()
-            {
+            Route::get('info/driver', function () {
                 $driver = User::where(['user_type' => 'driver', 'creator_id' => Auth::user()->id])->first();
                 $coutnrycode = DB::table('country')->groupBy('phonecode')->orderBy('phonecode', 'asc')->get();
                 return view('information.driver', compact('driver', 'coutnrycode'));
             });
 
-            Route::get('info/vehicle', function ()
-            {
+            Route::get('info/vehicle', function () {
                 $vehicle = Vehicle::where(['creator_id' => Auth::user()->id])->first();
                 $data['category'] = VehicleCategory::all();
                 $VehicleSubtype = VehicleSubtype::get();
@@ -394,8 +385,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
                 return view('information.vehicle', compact('vehicle', 'data', 'VehicleSubtype', 'standards', 'proudctionyear'));
             });
 
-            Route::get('info/payment', function ()
-            {
+            Route::get('info/payment', function () {
                 return view('information.payment');
             });
 
@@ -420,8 +410,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
             Route::post('/save-payment', [PartnerController::class, 'save_payment'])->name('save-payment');
         });
 
-        Route::group(['middleware' => 'driver'], function ()
-        {
+        Route::group(['middleware' => 'driver'], function () {
 
             Route::get('driver/login', 'AdminController@login')->name('driver.login');
 
@@ -465,14 +454,13 @@ Route::group(['middleware' => ['web', 'auth']], function ()
         });
     });
 
-    Route::get('email/notify-user', function(){
+    Route::get('email/notify-user', function () {
         return view('mail.notifyUser');
     })->name('email.notify.user');
 
     // booking
 
-    Route::group(['middleware' => 'admin'], function ()
-    {
+    Route::group(['middleware' => 'admin'], function () {
 
         Route::get('driver/pending-drivers', [DriverController::class, 'pendingDrivers']);
 
@@ -480,7 +468,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
         Route::get('driver/disapproved-drivers', [DriverController::class, 'disapprovedDrivers']);
 
-        Route::get('driver/blocked-drivers', [DriverController::class,'blockedDrivers']);
+        Route::get('driver/blocked-drivers', [DriverController::class, 'blockedDrivers']);
 
         Route::get('driver/all-drivers', [DriverController::class, 'allDrivers']);
 
@@ -492,7 +480,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
         Route::get('admin/vehicleType', [VehicleTypeController::class, 'index'])->name('admin.vehicleType');
 
-        Route::get('admin/vehicleType/add', [VehicleTypeController::class,'add'])->name('admin.vehicleType.add');
+        Route::get('admin/vehicleType/add', [VehicleTypeController::class, 'add'])->name('admin.vehicleType.add');
 
         Route::post('admin/vehicleType/save', [VehicleTypeController::class, 'save'])->name('admin.vehicleType.save');
 
@@ -544,7 +532,7 @@ Route::group(['middleware' => ['web', 'auth']], function ()
 
         Route::post('admin/vehicleCategory/save', [VehicleCategoryController::class, 'save'])->name('admin.vehicleCategory.save');
 
-        Route::get('admin/vehicleCategory/edit/{id}', [ehicleCategoryController::class, 'edit'])->name('admin.vehicleCategory.edit');
+        Route::get('admin/vehicleCategory/edit/{id}', [VehicleCategoryController::class, 'edit'])->name('admin.vehicleCategory.edit');
 
         Route::post('admin/vehicleCategory/update', [VehicleCategoryController::class, 'update'])->name('admin.vehicleCategory.update');
 

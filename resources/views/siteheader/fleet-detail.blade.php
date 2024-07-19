@@ -91,7 +91,8 @@
             width: 25px;
             background-color: #FDEEEC;
             border-radius: 50%;
-            background-image: url("https://creativelayers.net/themes/luxride-html/assets/imgs/page/homepage3/tick.svg");
+            /* background-image: url("https://creativelayers.net/themes/luxride-html/assets/imgs/page/homepage3/tick.svg"); */
+            background-image: url();
             background-position: center;
             background-repeat: no-repeat;
             position: absolute;
@@ -281,25 +282,25 @@
             @if (count($categories) > 0)
                 @foreach ($categories as $category)
                     <div class="col-md-4">
-                            <div id="card{{ $category->id }}" class="car-container hover-element clickable-card">
-                                <p class="text-left font-weight-bold fleet-card--title">{{ $category->name }}</p>
-                                <p class="car-descrip">
-                                    {{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}</p>
-                                <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
-                                    alt="Car" class="car-picture" />
-                                {{-- <img src="{{asset('/images/car1.png')}}" alt=""> --}}
-                                <div class="car-info">
-                                    <div class="info">
-                                        <i class="fa-solid fa-people-group" id="persons"></i>
-                                        <p id="passenger" style="margin-bottom: 0">Passangers {{ $category->max_seats }}
-                                        </p>
-                                    </div>
-                                    <div class="info">
-                                        <i class="fa-solid fa-briefcase" id="person1"></i>
-                                        <p id="passenger1">Luggage {{ $category->max_bags }}</p>
-                                    </div>
+                        <div id="card{{ $category->id }}" class="car-container hover-element clickable-card">
+                            <p class="text-left font-weight-bold fleet-card--title">{{ $category->name }}</p>
+                            <p class="car-descrip">
+                                {{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}</p>
+                            <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
+                                alt="Car" class="car-picture" />
+                            {{-- <img src="{{asset('/images/car1.png')}}" alt=""> --}}
+                            <div class="car-info">
+                                <div class="info">
+                                    <i class="fa-solid fa-people-group" id="persons"></i>
+                                    <p id="passenger" style="margin-bottom: 0">Passangers {{ $category->max_seats }}
+                                    </p>
+                                </div>
+                                <div class="info">
+                                    <i class="fa-solid fa-briefcase" id="person1"></i>
+                                    <p id="passenger1">Luggage {{ $category->max_bags }}</p>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 @endforeach
             @endif

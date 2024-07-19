@@ -5,23 +5,28 @@
 @section('content-area')
 
     <style>
-        .img-slide-moray{
+        .img-slide-moray {
             width: 100%;
         }
-        .navigation{
-            display:block  !important;
+
+        .navigation {
+            display: block !important;
             text-align: center;
             margin-top: 15px;
         }
+
         .pac-item {
             padding: 6px;
             font-size: 0.9rem;
             border-top: 1px solid #ef9657;
         }
-        .carousel-control-next, .carousel-control-prev{
+
+        .carousel-control-next,
+        .carousel-control-prev {
             display: inline-block !important;
             width: 5% !important;
         }
+
         .pac-icon {
             padding-top: 1px;
             background: url('{{ asset('images/icon/icon4.PNG') }}') no-repeat center !important;
@@ -79,7 +84,7 @@
 
         }
 
-        .cont2{
+        .cont2 {
             background-image: url("{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE)) : asset('images/slider/home04.jpg') }}") !important;
         }
 
@@ -97,35 +102,38 @@
             margin-bottom: 30px;
         }
 
-        .card-heading-para{
+        .card-heading-para {
             font-size: 15px;
             font-weight: 500;
             margin-bottom: 0;
         }
 
-        .card-title-para{
+        .card-title-para {
             font-size: 15px;
             font-weight: 500;
             text-align: center;
         }
 
-        .card-main-image{
-            border-radius: 8px; 
+        .card-main-image {
+            border-radius: 8px;
             transition: transform .2s;
         }
 
-        .card-main-image:hover{
-            -ms-transform: scale(1.5); /* IE 9 */
-            -webkit-transform: scale(1.5); /* Safari 3-8 */
-            transform: scale(1.02); 
+        .card-main-image:hover {
+            -ms-transform: scale(1.5);
+            /* IE 9 */
+            -webkit-transform: scale(1.5);
+            /* Safari 3-8 */
+            transform: scale(1.02);
         }
-        @media only screen and (max-width: 992px) {
-	.datetimepicker {
-		top: 573.219px !important;
-		left: 50px !important;
-	}
 
-}
+        @media only screen and (max-width: 992px) {
+            .datetimepicker {
+                top: 573.219px !important;
+                left: 50px !important;
+            }
+
+        }
     </style>
 
     <div class="container-fluid cont2 class1font">
@@ -135,8 +143,10 @@
                 <div style="max-width: 500px;">
                     {{-- <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE)) : asset('images/slider/home04.jpg')}}"  alt=""> --}}
 
-                    <p class="text">Where Would You Like To Go?</p> 
-                    <p class="text1">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE_TEXT) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE_TEXT) : 'A new Class of Luxury<br />Limo Service'}}</p>                    
+                    <p class="text">Where Would You Like To Go?</p>
+                    <p class="text1">
+                        {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE_TEXT) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_SLIDER_IMAGE_TEXT) : 'A new Class of Luxury<br />Limo Service' }}
+                    </p>
                     <a href="{{ url('/our-fleet') }}" target="_blank">
                         <button type="button" class=" btn1611ID">
                             Visit Our Fleet<i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
@@ -146,7 +156,8 @@
             </div>
             <div class="col-md-6 for-mobile-media">
 
-                <div class="container class1font hero-form" style="z-index: 1; display: flex; justify-content: center;" id="con33">
+                <div class="container class1font hero-form" style="z-index: 1; display: flex; justify-content: center;"
+                    id="con33">
                     <!-- Navigation Tabs -->
                     <div class="w-100 ">
                         <div class=" colorclass">
@@ -201,20 +212,22 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             {{-- <div class="input-group"> --}}
-                                                {{-- <div class="input-group-prepend">
+                                            {{-- <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
                                                 </div> --}}
-                                                <div class="date form_date d-flex align-items-center form-input--container" data-date="3" data-date-format="dd MM yyyy"
-                                                    data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                                                    <span class="icon--container" ><img src="{{asset('images/icon/calender.svg')}}" alt=""></span>
-                                                    <input size="100%" class="mt-0 mb-0" type="text" id="pick-date"
-                                                        placeholder="{{ date('d-M-Y') }}" readonly required>
-                                                    <span class="add-on"><i class="icon-remove"></i></span>
-                                                    <span class="add-on"><i class="icon-th"></i></span>
-                                                </div>
-                                                <input type="hidden" name="pick_date" id="dtp_input2"
-                                                    class="pick_date" /><br />
+                                            <div class="date form_date d-flex align-items-center form-input--container"
+                                                data-date="3" data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                                                data-link-format="yyyy-mm-dd">
+                                                <span class="icon--container"><img
+                                                        src="{{ asset('images/icon/calender.svg') }}" alt=""></span>
+                                                <input size="100%" class="mt-0 mb-0" type="text" id="pick-date"
+                                                    placeholder="{{ date('d-M-Y') }}" readonly required>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                            </div>
+                                            <input type="hidden" name="pick_date" id="dtp_input2"
+                                                class="pick_date" /><br />
                                             {{-- </div> --}}
                                         </div>
 
@@ -226,22 +239,23 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             {{-- <div class="input-group"> --}}
-                                                {{-- <div class="input-group-append">
+                                            {{-- <div class="input-group-append">
                                                     <span class="input-group-text"><div class="input-group-prepend">
                                                     <span class="input-group-text"> <img src="{{asset('images/icon/backArrow.svg')}}"/></span>
                                                 </div></span>
                                                 </div> --}}
-                                                <div class="controls input-append date form_time d-flex align-items-center form-input--container" data-date=""
-                                                    data-date-format="hh:ii p" data-link-field="dtp_input3"
-                                                    data-link-format="hh:ii">
-                                                    <span class="icon--container" ><img src="{{asset('images/icon/clock.svg')}}" alt=""></span>
-                                                    <input size="100%" class="mb-0 mt-0" type="text"
-                                                        value="" id="pick-time" placeholder="12:25 am" readonly>
-                                                    <span class="add-on"><i class="icon-remove"></i></span>
-                                                    <span class="add-on"><i class="icon-th"></i></span>
-                                                </div>
-                                                <input type="hidden" name="pick_time" id="dtp_input3"
-                                                    value="" /><br />
+                                            <div class="controls input-append date form_time d-flex align-items-center form-input--container"
+                                                data-date="" data-date-format="hh:ii p" data-link-field="dtp_input3"
+                                                data-link-format="hh:ii">
+                                                <span class="icon--container"><img
+                                                        src="{{ asset('images/icon/clock.svg') }}" alt=""></span>
+                                                <input size="100%" class="mb-0 mt-0" type="text" value=""
+                                                    id="pick-time" placeholder="12:25 am" readonly>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                            </div>
+                                            <input type="hidden" name="pick_time" id="dtp_input3"
+                                                value="" /><br />
                                             {{-- </div> --}}
                                         </div>
 
@@ -253,7 +267,8 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             <div class="d-flex align-items-center form-input--container">
-                                                    <span class="icon--container" > <span class="icon-border"><img src="{{asset('images/icon/from.svg')}}"/></span></span>
+                                                <span class="icon--container"> <span class="icon-border"><img
+                                                            src="{{ asset('images/icon/from.svg') }}" /></span></span>
                                                 <input type="text" id="pick-location" name="pick_address"
                                                     class="form-control pick-address mb-0" placeholder="From" />
                                             </div>
@@ -265,14 +280,16 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             <div class="d-flex align-items-center form-input--container">
-                                                <span class="icon--container"><span class="icon-border"> <img src="{{asset('images/icon/backArrow.svg')}}"/></span></span>
+                                                <span class="icon--container"><span class="icon-border"> <img
+                                                            src="{{ asset('images/icon/backArrow.svg') }}" /></span></span>
                                                 <input type="text" id="drop-location" name="drop_address"
                                                     class="form-control drop-address mb-0" placeholder="To" />
                                             </div>
                                         </div>
 
                                         <div class="row adjustCenID">
-                                            <button type="submit" class="btn btn-dark w-100 searchbtn22 btn-form-search" style="background-color: #CCA642;" id="enable" disabled>
+                                            <button type="submit" class="btn btn-dark w-100 searchbtn22 btn-form-search"
+                                                style="background-color: #CCA642;" id="enable" disabled>
                                                 <i class="fa fa-search"></i> Search
                                             </button>
                                         </div>
@@ -294,21 +311,27 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             <div class="">
-                                                <div class="input-group-prepend d-flex align-items-center form-input--container">
-                                                    <span class="icon--container ml-3" ><span class="icon-border"><img src="{{asset('images/icon/from.svg')}}" alt=""></span></span>
-                                                            <input type="text" id="pick-location-hour" name="pick_address"
-                                                                class="form-control pick-address mb-0" placeholder="From" />
+                                                <div
+                                                    class="input-group-prepend d-flex align-items-center form-input--container">
+                                                    <span class="icon--container ml-3"><span class="icon-border"><img
+                                                                src="{{ asset('images/icon/from.svg') }}"
+                                                                alt=""></span></span>
+                                                    <input type="text" id="pick-location-hour" name="pick_address"
+                                                        class="form-control pick-address mb-0" placeholder="From" />
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="row adjustCenID">
                                             <div>
-                                                <div class="pick-drop-day mb-2 d-flex align-items-center form-input--container">
+                                                <div
+                                                    class="pick-drop-day mb-2 d-flex align-items-center form-input--container">
                                                     @error('selected_hour')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
-                                                    <span class="icon--container ml-3" ><span class="icon-border"><img src="{{asset('images/icon/from.svg')}}" alt=""></span></span>
+                                                    <span class="icon--container ml-3"><span class="icon-border"><img
+                                                                src="{{ asset('images/icon/from.svg') }}"
+                                                                alt=""></span></span>
                                                     <select class="form-control browser-default custom-select mb-0"
                                                         name="selected_hour" id="location-hour">
                                                         <option selected value="">Length of Time</option>
@@ -337,7 +360,8 @@
                                                         <option value="23">23 Hours</option>
                                                         <option value="24">24 Hours</option>
                                                     </select>
-                                                    <span class="hide valid-drop" style="color: rgba(190,181,12,0.97)"></span>
+                                                    <span class="hide valid-drop"
+                                                        style="color: rgba(190,181,12,0.97)"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -353,11 +377,14 @@
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
                                                 </div> --}}
-                                                
+
                                                 <div class="d-flex align-items-center form-input--container">
-                                                    <div class="date form_date d-flex" data-date="" data-date-format="dd MM yyyy"
-                                                        data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-                                                        <span class="icon--container ml-3" ><img src="{{asset('images/icon/calender.svg')}}" alt=""></span>
+                                                    <div class="date form_date d-flex" data-date=""
+                                                        data-date-format="dd MM yyyy" data-link-field="dtp_input1"
+                                                        data-link-format="yyyy-mm-dd">
+                                                        <span class="icon--container ml-3"><img
+                                                                src="{{ asset('images/icon/calender.svg') }}"
+                                                                alt=""></span>
                                                         <input class="mt-0 mb-0" size="100%" type="text"
                                                             id="pick_date_hour" placeholder="Wed 19 July, 2017" readonly>
                                                         <span class="add-on"><i class="icon-remove"></i></span>
@@ -379,10 +406,12 @@
                                                     {{-- <div class="input-group-append">
                                                         <span class="input-group-text"><i class="far fa-clock"></i></span>
                                                     </div> --}}
-                                                    <div class="controls input-append date form_time d-flex" data-date=""
-                                                        data-date-format="hh:ii p" data-link-field="dtp_input4"
-                                                        data-link-format="hh:ii">
-                                                        <span class="icon--container ml-3" ><img src="{{asset('images/icon/clock.svg')}}" alt=""></span>
+                                                    <div class="controls input-append date form_time d-flex"
+                                                        data-date="" data-date-format="hh:ii p"
+                                                        data-link-field="dtp_input4" data-link-format="hh:ii">
+                                                        <span class="icon--container ml-3"><img
+                                                                src="{{ asset('images/icon/clock.svg') }}"
+                                                                alt=""></span>
                                                         <input class="mt-0 mb-0" size="100%" type="text"
                                                             value="" id="pick_time_hour" placeholder="12:25 am"
                                                             readonly>
@@ -395,7 +424,8 @@
                                             </div>
                                         </div>
                                         <div class="row adjustCenID">
-                                            <button type="submit" class="btn btn-dark w-100 searchbtn22" style="background-color: #CCA642;">
+                                            <button type="submit" class="btn btn-dark w-100 searchbtn22"
+                                                style="background-color: #CCA642;">
                                                 <i class="fa fa-search mr-1" style="vertical-align: middle"></i> Search
                                             </button>
                                         </div>
@@ -421,7 +451,9 @@
         <div class="row">
             <div class="col">
                 <div>
-                    <p class="BK add-before">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_TITLE) : 'Your Advantages'}}</p>
+                    <p class="BK add-before">
+                        {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_TITLE) : 'Your Advantages' }}
+                    </p>
                 </div>
             </div>
         </div>
@@ -429,11 +461,14 @@
         <div class="row justify-content-center">
             <div class="col-md-3 workFlow-content">
                 <div class="iconbox-icon">
-                 <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE)) : asset('images/iconbox/001.png')}}" alt="">
+                    <img src="{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_IMAGE)) : asset('images/iconbox/001.png') }}"
+                        alt="">
                 </div>
-                <p class=" workFLow-heading"><span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE) : 'Easy Online Booking'}}</span></p>
+                <p class=" workFLow-heading">
+                    <span>{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_TITLE) : 'Easy Online Booking' }}</span>
+                </p>
                 <p class="BK7 workFlow-desc">
-                    {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION) : 'The most efficient booking system in this industry geared towards  handling single bookings to a full-fledged event'}}
+                    {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL1_DESCRIPTION) : 'The most efficient booking system in this industry geared towards  handling single bookings to a full-fledged event' }}
                 </p>
             </div>
             {{-- <div class="col-md-1 arrowbutton1">
@@ -447,11 +482,14 @@
             </div> --}}
             <div class="col-md-3 workFlow-content">
                 <div class="iconbox-icon">
-                    <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_IMAGE)) : asset('images/iconbox/002.png')}}" alt="">
+                    <img src="{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_IMAGE)) : asset('images/iconbox/002.png') }}"
+                        alt="">
                 </div>
-                <p class=" workFLow-heading"> <span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_TITLE) : 'Professional Drivers'}}</span></p>
+                <p class=" workFLow-heading">
+                    <span>{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_TITLE) : 'Professional Drivers' }}</span>
+                </p>
                 <p class="BK7 workFlow-desc">
-                    {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_DESCRIPTION) : 'Our professional drivers are licensed, insured and are required to comply with local laws and regulations. '}}
+                    {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL2_DESCRIPTION) : 'Our professional drivers are licensed, insured and are required to comply with local laws and regulations. ' }}
                 </p>
             </div>
             {{-- <div class="col-md-1 arrowbutton1">
@@ -465,11 +503,14 @@
             </div> --}}
             <div class="col-md-3 workFlow-content">
                 <div class="iconbox-icon">
-                    <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_IMAGE)) : asset('images/iconbox/003.png')}}" alt="">
-                </div>  
-                <p class=" workFLow-heading" style="margin-top: 14px;"><span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) : 'Guaranteed fixed prices'}}</span></p>
+                    <img src="{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_IMAGE)) : asset('images/iconbox/003.png') }}"
+                        alt="">
+                </div>
+                <p class=" workFLow-heading" style="margin-top: 14px;">
+                    <span>{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_TITLE) : 'Guaranteed fixed prices' }}</span>
+                </p>
                 <p class="BK7 workFlow-desc">
-                    {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) : 'At Hathaway Limousines there are no hidden costs. Our prices include all fees, taxes and are guaranteed with the booking.'}}
+                    {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL3_DESCRIPTION) : 'At Hathaway Limousines there are no hidden costs. Our prices include all fees, taxes and are guaranteed with the booking.' }}
                 </p>
             </div>
             {{-- <div class="col-md-1 arrowbutton1">
@@ -483,15 +524,18 @@
             </div> --}}
             <div class="col-md-3 workFlow-content">
                 <div class="iconbox-icon">
-                    <img src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_IMAGE)) :asset('images/iconbox/004.png')}}" alt="">
+                    <img src="{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_IMAGE) ? asset(\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_IMAGE)) : asset('images/iconbox/004.png') }}"
+                        alt="">
                 </div>
-                <p class=" workFLow-heading"> <span>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_TITLE) : 'Free waiting time'}}</span></p>
+                <p class=" workFLow-heading">
+                    <span>{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_TITLE) : 'Free waiting time' }}</span>
+                </p>
                 <p class="BK7 workFlow-desc">
-                    {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_DESCRIPTION) : 'When picking up from the airport we wait 60 minutes for you. For all other pickups the free waiting time is 15 minutes'}}
+                    {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_ADVANTAGE_COL4_DESCRIPTION) : 'When picking up from the airport we wait 60 minutes for you. For all other pickups the free waiting time is 15 minutes' }}
                 </p>
             </div>
 
-            
+
         </div>
     </div>
 
@@ -499,14 +543,14 @@
 
     {{-- Start of Services  --}}
 
-     <section class="team-container">
+    <section class="team-container">
         <div class="container class1font">
             <p class="section-title">
-                {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_TITLE) : 'Our Services'}}
-                    <a href="#" class="more-services">
-                        More Services
-                        <i class="fa-solid fa-arrow-up-long"></i>
-                    </a>
+                {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_SERVICES_TITLE) : 'Our Services' }}
+                <a href="#" class="more-services">
+                    More Services
+                    <i class="fa-solid fa-arrow-up-long"></i>
+                </a>
             </p>
 
             {{-- <div class="row"> --}}
@@ -516,7 +560,8 @@
                     @foreach ($services as $service)
                         <div class="col-md-5 team-member service-card">
                             <a href="{{ url('service/details', $service->id) }}" class="service-link-tag">
-                                <img src="{{ asset('files/services-images' . '/' . $service->service_image) }}" alt="services" id="con222">
+                                <img src="{{ asset('files/services-images' . '/' . $service->service_image) }}"
+                                    alt="services" id="con222">
                                 <div class="check">{{ $service->service_title }}</div>
                                 <div class="overlay">
 
@@ -536,166 +581,176 @@
             {{-- </div> --}}
             {{-- </div> --}}
         </div>
-     </section>           
+    </section>
 
     {{-- End of Services  --}}
 
     {{-- Start of our fleet  --}}
 
-   <section class="fleetContainer py-5">
-   <div class="container class1font">
-        <p class="section-title" style="margin-bottom:30px;">
-            {{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_FLEET_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_FLEET_TITLE) : 'Our Fleet'}}
-            <a href="#" class="more-services">
-                More Fleet
-                <i class="fa-solid fa-arrow-up-long"></i>
-            </a>
-        </p>
-        @if (count($categories) > 0)
-            <div class="w-95">
-                <div class="fleet-slider">
-                    @foreach ($categories as $category)
-                        <div id="card{{$category->id}}" class="col-md-2 slick-slide clickable-card">
-                            <div class="car-container hover-element">
-                                <p class="text-left font-weight-bold fleet-card--title">{{ $category->name }}</p>
-                                <p class="car-descrip">{{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}</p>
-                                <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
-                                    alt="Car" class="car-picture" />
-                                    <!-- <img src="{{asset('/images/car1.png')}}" alt=""> -->
-                                <div class="car-info">
-                                    <div class="info">
-                                        <i class="fa-solid fa-people-group" id="persons"></i>
-                                        <p id="passenger" style="margin-bottom: 0">Passangers {{ $category->max_seats }}
-                                        </p>
-                                    </div>
-                                    <div class="info">
-                                        <i class="fa-solid fa-briefcase" id="person1"></i>
-                                        <p id="passenger1">Luggage {{ $category->max_bags }}</p>
+    <section class="fleetContainer py-5">
+        <div class="container class1font">
+            <p class="section-title" style="margin-bottom:30px;">
+                {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_FLEET_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_OUR_FLEET_TITLE) : 'Our Fleet' }}
+                <a href="#" class="more-services">
+                    More Fleet
+                    <i class="fa-solid fa-arrow-up-long"></i>
+                </a>
+            </p>
+            @if (count($categories) > 0)
+                <div class="w-95">
+                    <div class="fleet-slider">
+                        @foreach ($categories as $category)
+                            <div id="card{{ $category->id }}" class="col-md-2 slick-slide clickable-card">
+                                <div class="car-container hover-element">
+                                    <p class="text-left font-weight-bold fleet-card--title">{{ $category->name }}</p>
+                                    <p class="car-descrip">
+                                        {{ strip_tags(\Illuminate\Support\Str::limit($category->description, 20)) }}</p>
+                                    <img src="{{ asset('files/vehicleCategory/category_img') }}/{{ $category->picture }}"
+                                        alt="Car" class="car-picture" />
+                                    <!-- <img src="{{ asset('/images/car1.png') }}" alt=""> -->
+                                    <div class="car-info">
+                                        <div class="info">
+                                            <i class="fa-solid fa-people-group" id="persons"></i>
+                                            <p id="passenger" style="margin-bottom: 0">Passangers
+                                                {{ $category->max_seats }}
+                                            </p>
+                                        </div>
+                                        <div class="info">
+                                            <i class="fa-solid fa-briefcase" id="person1"></i>
+                                            <p id="passenger1">Luggage {{ $category->max_bags }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
-            </div>
-        @endif
-    </div>
-   </section>
+            @endif
+        </div>
+    </section>
 
     {{-- End of Our Fleet  --}}
 
     {{-- Start of Showcase section  --}}
-    
+
     <section class="sowcase-sec">
         <div class="container  class1font" id="cont3434">
             <div class="row align-items-center">
 
                 <div class="col-md-6">
-                        <!-- <iframe class ="iframeClass" width="100%" height="375"
-                            src="{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) : 'https://www.youtube.com/embed/Ri8qrzOBSYA?si=cW7kzqD4oGt-ooo0'}}">
-                        </iframe> -->
+                    <!-- <iframe class ="iframeClass" width="100%" height="375"
+                                    src="{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::YOUTUBE_VIDEO_LINK) : 'https://www.youtube.com/embed/Ri8qrzOBSYA?si=cW7kzqD4oGt-ooo0' }}">
+                                </iframe> -->
 
-                        <div id="carouselExampleControls" class="carousel" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img class="img-slide-moray" src="{{asset('/images/car1.png')}}" alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="img-slide-moray" src="{{asset('/images/car1.png')}}" alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="img-slide-moray" src="{{asset('/images/car1.png')}}" alt="">
-                                </div>
-
+                    <div id="carouselExampleControls" class="carousel" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="img-slide-moray" src="{{ asset('/images/car1.png') }}" alt="">
                             </div>
-                            <div class="navigation">
-                                <a class="carousel-control-prev " href="#carouselExampleControls" role="button"
-                                    data-slide="prev"id="prev-slide">
-                                    <span class="fa fa-arrow-alt-circle-left" style="color:black ;font-size: 20px;"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next displayarrow" href="#carouselExampleControls" role="button"
-                                    data-slide="next"id="next-slide">
-                                    <span class="fa fa-arrow-alt-circle-right" style="color:black ;font-size: 20px;"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
+                            <div class="carousel-item">
+                                <img class="img-slide-moray" src="{{ asset('/images/car1.png') }}" alt="">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="img-slide-moray" src="{{ asset('/images/car1.png') }}" alt="">
                             </div>
 
                         </div>
+                        <div class="navigation">
+                            <a class="carousel-control-prev " href="#carouselExampleControls" role="button"
+                                data-slide="prev"id="prev-slide">
+                                <span class="fa fa-arrow-alt-circle-left" style="color:black ;font-size: 20px;"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next displayarrow" href="#carouselExampleControls" role="button"
+                                data-slide="next"id="next-slide">
+                                <span class="fa fa-arrow-alt-circle-right" style="color:black ;font-size: 20px;"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+                    </div>
 
                 </div>
 
                 <div class="col-md-6 align-items-center">
                     <div class="row">
-                        <p class="IK112">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) : 'Showcase some impressive numbers.'}}</p>
+                        <p class="IK112">
+                            {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_TITLE) : 'Showcase some impressive numbers.' }}
+                        </p>
                     </div>
                     <div class="row">
-                        <p class="IK1112">{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) : 'PO Box 1611 Collins Street West Victoria 8007 Australia'}}</p>
+                        <p class="IK1112">
+                            {{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_DESCRIPTION) : 'PO Box 1611 Collins Street West Victoria 8007 Australia' }}
+                        </p>
                     </div>
                     <div class="button-row">
                         <div class="custom-button">
-                            <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) : '285'}}<h4>
+                            <h4>{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_VEHICLES) : '285' }}
+                                <h4>
                                     <p class="textbtnclass">Vehicles</p>
                         </div>
                         <div class="custom-button">
-                            <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) : '97'}}<h4>
+                            <h4>{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_AWARDS) : '97' }}
+                                <h4>
                                     <p class="textbtnclass">Awards</p>
                         </div>
                         <div class="custom-button">
-                            <h4>{{\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) : '13K'}}<h4>
+                            <h4>{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::SHOWCASE_HAPPY_CUSTOMERS) : '13K' }}
+                                <h4>
                                     <p class="textbtnclass">Happy Customers</p>
                         </div>
 
                     </div>
 
-                    <button class="btn161ID" type="button" class="btn" style="color: white;width: 100%; background-color: #CCA642;">Learn More
+                    <button class="btn161ID" type="button" class="btn"
+                        style="color: white;width: 100%; background-color: #CCA642;">Learn More
                         <i class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i>
                     </button>
                 </div>
             </div>
         </div>
     </section>
-    
+
 
     {{-- End of Showcase  --}}
 
     {{-- Start of Testimonial  --}}
 
     <!-- <div class="container displaycon222 class1font" id="cont2222">
-        <div class="row ">
-            <div class="col-md-6 d-flex flex-column gap-4 justify-content-center">
-                <p class="IK11">Hear what our amazing<br> customers say</p>
-                <p class="IK111">Ensuring global customer satisfaction, we consistently deliver high-quality services with prompt efficiency. Our commitment extends beyond borders, providing excellence to customers around the world.</p>
+                <div class="row ">
+                    <div class="col-md-6 d-flex flex-column gap-4 justify-content-center">
+                        <p class="IK11">Hear what our amazing<br> customers say</p>
+                        <p class="IK111">Ensuring global customer satisfaction, we consistently deliver high-quality services with prompt efficiency. Our commitment extends beyond borders, providing excellence to customers around the world.</p>
 
-                {{-- <div calss="row " class="btn16ID">
+                        {{-- <div calss="row " class="btn16ID">
                     <button type="button" class="btn" style="color: white;width: 100%;">Get Started <i
                             class="fas fa-arrow-trend-up" id="arrw" style="color:white"></i></button>
                 </div> --}}
-            </div>
+                    </div>
 
 
-            <div class="col-md-6">
-                <div id="carouselExampleControls" class="carousel" data-ride="carousel">
-                    <div class="carousel-inner">
-                        @foreach ($testimonial as $item)  
-                            <div class="carousel-item active">
-                                <div class="card1">
-                                    <div style="text-align: center;">
-                                        <p class="card-heading-para mb-2">{{$item->vehicle_designed_by}}</p>
-                                        <img class="mb-2" src="{{asset('files/testimonials_images/' . $item->vehicle_designed_logo)}}" alt="Vehicle Logo" style="width: auto; height: 70px;">
+                    <div class="col-md-6">
+                        <div id="carouselExampleControls" class="carousel" data-ride="carousel">
+                            <div class="carousel-inner">
+                                @foreach ($testimonial as $item)
+    <div class="carousel-item active">
+                                        <div class="card1">
+                                            <div style="text-align: center;">
+                                                <p class="card-heading-para mb-2">{{ $item->vehicle_designed_by }}</p>
+                                                <img class="mb-2" src="{{ asset('files/testimonials_images/' . $item->vehicle_designed_logo) }}" alt="Vehicle Logo" style="width: auto; height: 70px;">
+                                            </div>
+                                            <div>
+                                                <p class="card-title-para">{{ $item->vehicle_designed_name }}</p>
+                                                <a href="{{ $item->vehicle_designed_click_link }}" target="_blank">
+                                                    <img class="card-main-image" src="{{ asset('files/testimonials_images/' . $item->vehicle_designed_image) }}" alt="office van">
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p class="card-title-para">{{$item->vehicle_designed_name}}</p>
-                                        <a href="{{$item->vehicle_designed_click_link}}" target="_blank">
-                                            <img class="card-main-image" src="{{asset('files/testimonials_images/' . $item->vehicle_designed_image)}}" alt="office van">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
+    @endforeach
 
-                        {{-- old carousel design  --}}
-                        {{-- <div class="carousel-item">
+                                {{-- old carousel design  --}}
+                                {{-- <div class="carousel-item">
                             <div class="card1">
                                 <div class="d-flex gap-3">
                                     <img class="profile-photo" src="images/r2.jpg" alt="Profile Photo">
@@ -723,30 +778,30 @@
                             </div>
                         </div> --}}
 
-                    </div>
-                    <div class="navigation">
-                        <a class="carousel-control-prev " href="#carouselExampleControls" role="button"
-                            data-slide="prev"id="prev-slide">
-                            <span class="fa fa-arrow-alt-circle-left" style="color:black ;font-size: 20px;"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next displayarrow" href="#carouselExampleControls" role="button"
-                            data-slide="next"id="next-slide">
-                            <span class="fa fa-arrow-alt-circle-right" style="color:black ;font-size: 20px;"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                        <div class="slide-number">
-                            <span id="current-slide">1</span> / <span id="total-slides">3</span>
+                            </div>
+                            <div class="navigation">
+                                <a class="carousel-control-prev " href="#carouselExampleControls" role="button"
+                                    data-slide="prev"id="prev-slide">
+                                    <span class="fa fa-arrow-alt-circle-left" style="color:black ;font-size: 20px;"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next displayarrow" href="#carouselExampleControls" role="button"
+                                    data-slide="next"id="next-slide">
+                                    <span class="fa fa-arrow-alt-circle-right" style="color:black ;font-size: 20px;"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                <div class="slide-number">
+                                    <span id="current-slide">1</span> / <span id="total-slides">3</span>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
+
+
                 </div>
-            </div>
-
-
-
-        </div>
-    </div> -->
+            </div> -->
 
     {{-- End of Testimonial --}}
 
@@ -771,8 +826,8 @@
                 <div class="card" id="CARD">
                     <div class="card-body latest-news--card">
                         <div class="card-image image1"> --}}
-                            {{-- <img class="card-img-top" src="images/C5.jpg" alt="Card image cap"> --}}
-                            {{-- <div class="image-content">
+    {{-- <img class="card-img-top" src="images/C5.jpg" alt="Card image cap"> --}}
+    {{-- <div class="image-content">
                                 <h2>14.</h2>
                                 <p>August,23</p>
                             </div>
@@ -788,8 +843,8 @@
                 <div class="card" id="CARD">
                     <div class="card-body latest-news--card">
                         <div class="card-image image2"> --}}
-                            {{-- <img class="card-img-top" src="images/C3.jpg" alt="Card image cap" id="opacitty"> --}}
-                            {{-- <div class="image-content">
+    {{-- <img class="card-img-top" src="images/C3.jpg" alt="Card image cap" id="opacitty"> --}}
+    {{-- <div class="image-content">
                                 <h2>14.</h2>
                                 <p>August,23</p>
                             </div>
@@ -834,11 +889,13 @@
             <div class="partner_con">
                 <div class="row justify-content-center" style="align-items: center;">
                     <div class="col-md-4 text-start mb-3">
-                        {!!\App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HAPPY_CLIENTS_TEXT) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HAPPY_CLIENTS_TEXT) : '<h2>Partners Who Sell Our Product</h2>'!!}
+                        {!! \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HAPPY_CLIENTS_TEXT)
+                            ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HAPPY_CLIENTS_TEXT)
+                            : '<h2>Partners Who Sell Our Product</h2>' !!}
                     </div>
                     @foreach ($logos as $logo)
                         <div class="col-md-2 col-6 text-center mb-3">
-                            <img src="{{asset('files/clients-images/'.$logo->client_image)}}"/>
+                            <img src="{{ asset('files/clients-images/' . $logo->client_image) }}" />
                         </div>
                     @endforeach
                 </div>
@@ -897,7 +954,7 @@
             cards.forEach(function(card) {
                 let categoryId = card.getAttribute('id').replace('card', '');
                 card.addEventListener('click', function() {
-                    window.location.href = "{{url('/fleet-detail/')}}" + '/' + categoryId;
+                    window.location.href = "{{ url('/fleet-detail/') }}" + '/' + categoryId;
                 });
             });
         });
@@ -913,8 +970,6 @@
         //                                 <input type="hidden" name="long_pck" class="long_pck">
         //                                 <input type="hidden" name="lat_drop" class="lat_drop">
         //                                 <input type="hidden" name="long_drop" class="long_drop">
-
-     
     </script>
     <script src="{{ asset('js/front-end/index.js') }}"></script>
     <script

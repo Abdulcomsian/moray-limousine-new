@@ -65,9 +65,10 @@ class BookingController extends Controller
      * @return Factory|View
      */
     public function selectClassByDistance(Request $request)
-    { 
+    {
         // dd($request->all());
-            $request->validate([
+        $request->validate(
+            [
                 'lat_pck' => 'required',
                 'long_pck' => 'required',
                 'lat_drop' => 'required',
@@ -78,41 +79,41 @@ class BookingController extends Controller
                 'pick_time' => 'required',
                 'pick_address' => 'required',
                 'drop_address' => 'required'
-            ],[
+            ],
+            [
                 'pick_date.required' => 'This field is required',
                 'pick_time.required' => 'This field is required',
                 'pick_address.required' => 'This field is required',
                 'drop_address.required' => 'This field is required',
             ]
         );
-            $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-            if (Auth()->check() == false)
-            {
-                Session::put('search', $actual_link);
-            }
-            // $validated = $request->validated(); $request->validate([]) gives us a validated data so Don`t need to add this
-            $dist = (float)$request['total_distance'];
-            $durationInHours = $this->durationInHour($request->total_duration);
-            $distance_in_km=$dist/1000;
-            //$distance_in_km = $this->calculateDistance($dist);
-            $classes = $this->classes->all();
-            //    Set Prices and also set the discounts & markup with classes
-            $classes =  $this->booking->classesWithPriceByDistance($classes, $distance_in_km, $request->all());
+        $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        if (Auth()->check() == false) {
+            Session::put('search', $actual_link);
+        }
+        // $validated = $request->validated(); $request->validate([]) gives us a validated data so Don`t need to add this
+        $dist = (float)$request['total_distance'];
+        $durationInHours = $this->durationInHour($request->total_duration);
+        $distance_in_km = $dist / 1000;
+        //$distance_in_km = $this->calculateDistance($dist);
+        $classes = $this->classes->all();
+        //    Set Prices and also set the discounts & markup with classes
+        $classes =  $this->booking->classesWithPriceByDistance($classes, $distance_in_km, $request->all());
 
-             // Paginate the array manually
-            // $perPage = 50; // Number of items per page
-            // $currentPage = request('page', 1); // Get the current page from the request
-            // $pagedData = array_slice($classes, ($currentPage - 1) * $perPage, $perPage);
-            // $paginatedClasses = new LengthAwarePaginator($pagedData, count($classes), $perPage);
+        // Paginate the array manually
+        // $perPage = 50; // Number of items per page
+        // $currentPage = request('page', 1); // Get the current page from the request
+        // $pagedData = array_slice($classes, ($currentPage - 1) * $perPage, $perPage);
+        // $paginatedClasses = new LengthAwarePaginator($pagedData, count($classes), $perPage);
 
-            $data['booking_type'] = 'distance';
-            $data['form_data'] = $request->except('_token');
-            $data['distance'] = $distance_in_km;
-            $data['classes'] = $classes;
-            $data['travel_duration'] = $durationInHours;
-            // echo "<pre>";
-            // print_r($data); exit;
-            return view('booking.select-vehicle-class', $data);
+        $data['booking_type'] = 'distance';
+        $data['form_data'] = $request->except('_token');
+        $data['distance'] = $distance_in_km;
+        $data['classes'] = $classes;
+        $data['travel_duration'] = $durationInHours;
+        // echo "<pre>";
+        // print_r($data); exit;
+        return view('booking.select-vehicle-class', $data);
     }
 
     /**
@@ -127,7 +128,7 @@ class BookingController extends Controller
             'selected_hour' => 'required',
             'pick_date'    => 'required',
             'pick_time'    => 'required',
-        ],[
+        ], [
             'pick_address.required' => 'This field is required',
             'selected_hour.required' => 'This field is required',
             'pick_date.required'  => 'This field is required',
@@ -135,17 +136,16 @@ class BookingController extends Controller
         ]);
 
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        if (Auth()->check() == false)
-        {
+        if (Auth()->check() == false) {
             Session::put('search', $actual_link);
         }
 
         $classes = $this->classes->all();
         $selected_hour = $request['selected_hour'];
         //           set prices and set discounts or markup with given classes
-        $classes = $this->booking->classesWithPriceByDuration($classes, $selected_hour,$request->all());
+        $classes = $this->booking->classesWithPriceByDuration($classes, $selected_hour, $request->all());
 
-         // Paginate the array manually
+        // Paginate the array manually
         // $perPage = 50; // Number of items per page
         // $currentPage = request('page', 1); // Get the current page from the request
         // $pagedData = array_slice($classes, ($currentPage - 1) * $perPage, $perPage);
@@ -166,8 +166,7 @@ class BookingController extends Controller
      */
     public function saveBookingOnSelect(Request $request)
     {
-        if (Auth()->check())
-        {
+        if (Auth()->check()) {
             $distance = $request['distance'];
             $form_data = json_decode($request->formData);
             $tax_amount = $request->tax_amount;
@@ -179,8 +178,7 @@ class BookingController extends Controller
             $booking = $this->booking->saveBookingOnSelect($form_data, $id, $travel_amount, $distance, $tax_amount);
 
             $tax_rate = "";
-            if (!empty(Configuration::first()->tax_rate))
-            {
+            if (!empty(Configuration::first()->tax_rate)) {
                 $tax_rate = Configuration::first()->tax_rate;
             }
             //get enduser billing details if have
@@ -192,10 +190,9 @@ class BookingController extends Controller
             $data['travel_amount'] = $travel_amount;
             $data['enduser_billing_details'] = $enduser_billing_details;
             $data['tax_rate'] = $tax_rate;
-            
+
             return view('booking.select-options', $data);
-        } else
-        {
+        } else {
             session(['link' => url()->previous()]);
             return redirect('/login');
         }
@@ -211,8 +208,7 @@ class BookingController extends Controller
         $options_data = $request->optionsData;
         $options_data = json_decode($options_data);
         // dd($options_data);
-        if ($options_data == null)
-        {
+        if ($options_data == null) {
             $options_data = [];
         }
         $class = $request->selectedClass;
@@ -229,8 +225,7 @@ class BookingController extends Controller
         $this->other_user->storeOtherUser($request->all(), $id);
         $options_price = $booking->extra_options_amount;
         $tax_rate = "";
-        if (!empty(Configuration::first()->tax_rate))
-        {
+        if (!empty(Configuration::first()->tax_rate)) {
             $tax_rate = Configuration::first()->tax_rate;
         }
         return view('booking.billing-information', ['class' => $class, 'form_data1' => $form_data, 'form_data' => $booking, 'options_data' => $options_data, 'options_price' => $options_price, 'tax_rate' => $tax_rate]);
@@ -268,16 +263,16 @@ class BookingController extends Controller
     //stripe submit action
     public function storeBooking(Request $request)
     {
-         $booking_id = $request->input('bookingId');
-         $booking = Booking::find($booking_id);
-         $amount=$booking->extra_options_amount+$booking->travel_amount;
-       try{
-             Stripe\Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
-             $stripedata=Stripe\Charge::create ([
-                    "amount" => $amount*100,
-                    "currency" => "eur",
-                    "source" => $request->stripeToken,
-                    "description" => "This payment is for tested purpose"
+        $booking_id = $request->input('bookingId');
+        $booking = Booking::find($booking_id);
+        $amount = $booking->extra_options_amount + $booking->travel_amount;
+        try {
+            Stripe\Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
+            $stripedata = Stripe\Charge::create([
+                "amount" => $amount * 100,
+                "currency" => "eur",
+                "source" => $request->stripeToken,
+                "description" => "This payment is for tested purpose"
             ]);
 
             $booking->orderId = $stripedata->id;
@@ -332,7 +327,7 @@ class BookingController extends Controller
                     'Payment Status'   =>  $booking->payment_status,
                     'invoicenumber' => $invoice_number,
                     'bookingid' => $booking_id,
-                    'pendingamount' =>'',
+                    'pendingamount' => '',
                     'filename' => $fileName,
                 ],
                 'thanks_text' => 'Thanks For Using Hathaway Limousines',
@@ -340,13 +335,10 @@ class BookingController extends Controller
                 'action_url' => '',
             ];
             Notification::send($users, new InvoiceNotifications($notify_admins_msg));
-             return view('booking.thanks')->with('booking', $booking);
+            return view('booking.thanks')->with('booking', $booking);
         } catch (\Exception $exception) {
-            return redirect()->back()->with('error','ERROR .. !  '.$exception->getMessage().'.');;
+            return redirect()->back()->with('error', 'ERROR .. !  ' . $exception->getMessage() . '.');;
         }
-
-
-
     }
 
     /**
@@ -356,8 +348,7 @@ class BookingController extends Controller
     public function thanksPage($id)
     {
         $booking = ExtendBooking::find($id);
-        if ($booking)
-        {
+        if ($booking) {
             $original_booking = $booking->booking->find($booking['booking_id']);
             return view('booking.thanks-page', ['booking' => $booking, 'original_booking' => $original_booking]);
         } else {
@@ -399,54 +390,54 @@ class BookingController extends Controller
 
     public function adminbookingApprove(Request $request)
     {
-            //assign to driver from admin side
+        //assign to driver from admin side
 
-            $vehicleId =$request->vehicle;
-            $bookingId = $request->id;
-            $driver =$request->driver; //array
+        $vehicleId = $request->vehicle;
+        $bookingId = $request->id;
+        $driver = $request->driver; //array
 
 
-            $booking = Booking::find($bookingId);
-            $pickUpDate = $booking->pick_date;
+        $booking = Booking::find($bookingId);
+        $pickUpDate = $booking->pick_date;
 
-            $booking->vehicle()->sync($vehicleId);
-            $booking->driver()->attach($driver, ['booking_date' => $pickUpDate, 'assigned_to' => 'driver','admin_assign'=>1]);
-            $assign_msg = array_merge($this->notify_driver_assign, ['body' => 'You are assigned a new ride which booking address is : ' . $booking->pick_address . ' See yor dashboard for more details or click the button blow.. ', 'action_url' => '/driver/dashboard']);
-            $driveruser = User::find($driver);
-            $driveruser->notify(new MorayLimousineNotifications($assign_msg));
-            $booking  = Booking::find($request->id);
-            $booking->booking_status = 'approved';
-            $booking->save();
-            $user = $booking->user;
-            $approve_msg = array_merge($this->approve_booking_msg_admin, ['body' => 'Your Booking Confirm is approved by Hathaway Limousine which ' .
-            $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time'] . ' is Assigned to '.$driveruser->first_name .' '.$driveruser->last_name.' having phone number is '.$driveruser->phone_number.' ! Enjoy With Us.  ']);
-            $user->notify(new MorayLimousineNotifications($approve_msg));
-            return redirect()->back();
+        $booking->vehicle()->sync($vehicleId);
+        $booking->driver()->attach($driver, ['booking_date' => $pickUpDate, 'assigned_to' => 'driver', 'admin_assign' => 1]);
+        $assign_msg = array_merge($this->notify_driver_assign, ['body' => 'You are assigned a new ride which booking address is : ' . $booking->pick_address . ' See yor dashboard for more details or click the button blow.. ', 'action_url' => '/driver/dashboard']);
+        $driveruser = User::find($driver);
+        $driveruser->notify(new MorayLimousineNotifications($assign_msg));
+        $booking  = Booking::find($request->id);
+        $booking->booking_status = 'approved';
+        $booking->save();
+        $user = $booking->user;
+        $approve_msg = array_merge($this->approve_booking_msg_admin, ['body' => 'Your Booking Confirm is approved by Hathaway Limousine which ' .
+            $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time'] . ' is Assigned to ' . $driveruser->first_name . ' ' . $driveruser->last_name . ' having phone number is ' . $driveruser->phone_number . ' ! Enjoy With Us.  ']);
+        $user->notify(new MorayLimousineNotifications($approve_msg));
+        return redirect()->back();
     }
 
     public function editadminbookingApprove(Request $request)
     {
-            $vehicleId =$request->vehicle;
-            $bookingId = $request->id;
-            $driver =$request->driver; //array
+        $vehicleId = $request->vehicle;
+        $bookingId = $request->id;
+        $driver = $request->driver; //array
 
 
-            $booking = Booking::find($bookingId);
-            $pickUpDate = $booking->pick_date;
+        $booking = Booking::find($bookingId);
+        $pickUpDate = $booking->pick_date;
 
-            $booking->vehicle()->sync($vehicleId);
-            $booking->driver()->updateExistingPivot($driver, ['booking_date' => $pickUpDate, 'assigned_to' => 'driver','status'=>'approved','driver_status'=>'approved','admin_assign'=>1]);
-            $assign_msg = array_merge($this->notify_driver_assign, ['body' => 'You are assigned a new ride which booking address is : ' . $booking->pick_address . ' See yor dashboard for more details or click the button blow.. ', 'action_url' => '/driver/dashboard']);
-            $driveruser = User::find($driver);
-            $driveruser->notify(new MorayLimousineNotifications($assign_msg));
-            $booking  = Booking::find($request->id);
-            $booking->booking_status = 'approved';
-            $booking->save();
-            $user = $booking->user;
-            $approve_msg = array_merge($this->approve_booking_msg_admin, ['body' => 'Your Booking Confirm is updated by Hathaway Limousine which ' .
-            $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time'] . ' is Assigned to '.$driveruser->first_name .' '.$driveruser->last_name.' having phone number is '.$driveruser->phone_number.' ! Enjoy With Us.  ']);
-            $user->notify(new MorayLimousineNotifications($approve_msg));
-            return redirect()->back();
+        $booking->vehicle()->sync($vehicleId);
+        $booking->driver()->updateExistingPivot($driver, ['booking_date' => $pickUpDate, 'assigned_to' => 'driver', 'status' => 'approved', 'driver_status' => 'approved', 'admin_assign' => 1]);
+        $assign_msg = array_merge($this->notify_driver_assign, ['body' => 'You are assigned a new ride which booking address is : ' . $booking->pick_address . ' See yor dashboard for more details or click the button blow.. ', 'action_url' => '/driver/dashboard']);
+        $driveruser = User::find($driver);
+        $driveruser->notify(new MorayLimousineNotifications($assign_msg));
+        $booking  = Booking::find($request->id);
+        $booking->booking_status = 'approved';
+        $booking->save();
+        $user = $booking->user;
+        $approve_msg = array_merge($this->approve_booking_msg_admin, ['body' => 'Your Booking Confirm is updated by Hathaway Limousine which ' .
+            $booking['pick_address'] .  ' And Pick Time is  ' . $booking['pick_time'] . ' is Assigned to ' . $driveruser->first_name . ' ' . $driveruser->last_name . ' having phone number is ' . $driveruser->phone_number . ' ! Enjoy With Us.  ']);
+        $user->notify(new MorayLimousineNotifications($approve_msg));
+        return redirect()->back();
     }
     /**
      * @param $id
@@ -796,8 +787,7 @@ class BookingController extends Controller
         ];
         $driver->notify(new MorayLimousineNotifications($notify_driver_msg));
         //admin notify when driver accepted
-        if (auth()->user()->user_type == 'driver')
-        {
+        if (auth()->user()->user_type == 'driver') {
             $notify_admins_msg = [
                 'greeting' => 'A Booking With Booking Id ' . $bookingId . ' Assigned To Driver By a Partner ' . $status . ' By Driver On Hathaway-Limousines',
                 'subject' => 'Booking ' . $status . ' By Driver',
@@ -808,8 +798,7 @@ class BookingController extends Controller
                 'action_url' => '/booking/details/' . $bookingId,
             ];
             Notification::send($customer_email->user, new MorayLimousineNotifications($notify_admins_msg));
-        } elseif (auth()->user()->user_type == 'partner')
-        {
+        } elseif (auth()->user()->user_type == 'partner') {
             $notify_admins_msg = [
                 'greeting' => 'A Booking With Booking Id ' . $bookingId . ' Assigned To  Partner ' . $status . ' By Partner On Hathaway-Limousines',
                 'subject' => 'Booking ' . $status . ' By Partner',
@@ -907,13 +896,13 @@ class BookingController extends Controller
     public function pendingBookings()
     {
         // $data['bookings'] = Booking::where(['booking_status'=>'pending'])->get();
-        $data['bookings'] = Booking::with('checkdriverassign')->where(['booking_status'=>'approved','payment_status'=>'paid'])->get();
+        $data['bookings'] = Booking::with('checkdriverassign')->where(['booking_status' => 'approved', 'payment_status' => 'paid'])->get();
 
         return view('parshall-views._booking-list-table', $data);
     }
     public function newBookings()
     {
-        $data['bookings'] = Booking::with('checkdriverassign')->where(['booking_status'=>'new'])->get();
+        $data['bookings'] = Booking::with('checkdriverassign')->where(['booking_status' => 'new'])->get();
 
         return view('parshall-views._booking-list-table', $data);
     }
@@ -1008,29 +997,24 @@ class BookingController extends Controller
     }
     public function getLocationHours(Request $request)
     {
-        $country=$request->country;
+        $country = $request->country;
 
         //check if country wise is hours is exist or not
-        $countryresult=BookingHour::where('country',$country)->first();
-        if($countryresult)
-        {
-            $hours=$countryresult->hours;
-             return response()->json($hours);
+        $countryresult = BookingHour::where('country', $country)->first();
+        if ($countryresult) {
+            $hours = $countryresult->hours;
+            return response()->json($hours);
         }
-        $cityresult=BookingHour::where('city',$request->pick_city)->first();
-        if($cityresult)
-        {
-            $hours=$cityresult->hours;
+        $cityresult = BookingHour::where('city', $request->pick_city)->first();
+        if ($cityresult) {
+            $hours = $cityresult->hours;
             return response()->json($hours);
         }
         $config = Configuration::first();
-        if($config)
-        {
-            $hours=$config->master_hour;
-             return response()->json($hours);
+        if ($config) {
+            $hours = $config->master_hour;
+            return response()->json($hours);
         }
-
-
     }
 
     /**

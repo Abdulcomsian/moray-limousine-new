@@ -21,7 +21,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('css/ionicons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -67,18 +67,20 @@
 
     <!-- Add flatpickr CSS and JavaScript links -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<!-- Responsive style -->
-<link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Responsive style -->
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     @yield('css')
     <style>
         .tp-splitted {
             font-size: 2.5rem !important;
         }
-        body{
+
+        body {
             font-family: 'Quicksand', sans-serif;
         }
 
@@ -95,7 +97,8 @@
             border-radius: 5px;
             display: none;
         }
-        .profile-drop-down ul{
+
+        .profile-drop-down ul {
             padding-left: 0px;
             margin-bottom: 0;
         }
@@ -113,35 +116,42 @@
             background-color: rgb(150, 152, 152);
             border-radius: 10px;
         }
-        .navbar-dark .navbar-toggler{
+
+        .navbar-dark .navbar-toggler {
             position: absolute;
             padding: 2px;
             height: 33px;
             margin-left: 23px
         }
-        @media (max-width: 992px){
-            .nav-bar{
+
+        @media (max-width: 992px) {
+            .nav-bar {
                 margin-top: 3rem;
                 align-self: flex-start;
             }
-            .nav-bar ul.navbar-nav{
+
+            .nav-bar ul.navbar-nav {
                 flex-grow: 1;
             }
-            .navbar-nav .nav-link{
+
+            .navbar-nav .nav-link {
                 padding: .5rem 1rem;
             }
+
             .nav-active {
-            background-color: rgb(150, 152, 152);
-            border-radius: 25px;
+                background-color: rgb(150, 152, 152);
+                border-radius: 25px;
+            }
         }
-        }
-        @media (max-width:425px){
-            .nav-bar{
+
+        @media (max-width:425px) {
+            .nav-bar {
                 margin: 3rem auto 0;
             }
         }
-        @media (max-width:392px){
-            .form-inline{
+
+        @media (max-width:392px) {
+            .form-inline {
                 justify-content: center
             }
         }
@@ -163,8 +173,8 @@
                 <a href="{{ url('/') }}"><img src="{{ asset('images/moray-logo.png') }}" id="logo"
                         alt="Hathaway Limousines" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse nav-bar justify-content-between" id="navbarSupportedContent">
@@ -185,8 +195,8 @@
                             <a class="nav-link bar <?php echo basename($_SERVER['PHP_SELF']) === 'about-us' ? 'nav-active' : ''; ?>" aria-current="page"
                                 href="{{ url('/about-us') }}">About Us</a>
                         </li>
-                        
-                        
+
+
                         {{-- <li class="nav-item">
                             <a class="nav-link bar" aria-current="page" href="#">Blog</a>
                         </li> --}}
@@ -415,17 +425,21 @@
 
                 <div class="d-flex justify-content-between gap-4 connection-list">
                     <div>
-                        <a href="#"><i class="fa fa-phone phone1" style="color: white;" id=""></i></a>
-                        <span class="mx-1 Number" id="">{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) : '+49 69 26022180' }}</span>
+                        <a href="#"><i class="fa fa-phone phone1" style="color: white;"
+                                id=""></i></a>
+                        <span class="mx-1 Number"
+                            id="">{{ \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) ? \App\Models\CmsHomePage::getValueForKey(\App\Utills\Constants\AppConsts::HOME_PHONE_NUMBER) : '+49 69 26022180' }}</span>
                     </div>
                     <div class="d-flex align-items-center">
                         <span class="mx-1 Number" id="">Follow Us</span>
                         <div>
-                            <a href="https://www.facebook.com/moraylimousines" target="_blank"><i class="fa-brands fa-facebook mx-2 footer--brand-icon"
+                            <a href="https://www.facebook.com/moraylimousines" target="_blank"><i
+                                    class="fa-brands fa-facebook mx-2 footer--brand-icon"
                                     style="color: white; display: inline-block;"></i></a>
                             {{-- <a href="#"><i class="fa-brands fa-twitter mx-2"
                                     style="color: white; display: inline-block; "></i></a> --}}
-                            <a href="https://www.instagram.com/moraylimousines"><i class="fa-brands fa-instagram mx-2 footer--brand-icon"
+                            <a href="https://www.instagram.com/moraylimousines"><i
+                                    class="fa-brands fa-instagram mx-2 footer--brand-icon"
                                     style="color: white; display: inline-block;"></i></a>
                             {{-- <a href="#"><i class="fa-brands fa-linkedin mx-2"
                                     style="color: white; display: inline-block;"></i></a> --}}
@@ -440,18 +454,19 @@
             <div class="row justify-content-between">
                 <div class="col">
                     <p class="JK2">SERVICES</p>
-                    <ul  class="list footer-list">
-                        @foreach(\App\Models\CmsService::all()->take(4) as $service)
-                        <li>
-                            <a href="{{url('/service/details/'.$service->id)}}" title="">{{$service->service_title}}</a>
-                        </li>
-                    @endforeach
+                    <ul class="list footer-list">
+                        @foreach (\App\Models\CmsService::all()->take(4) as $service)
+                            <li>
+                                <a href="{{ url('/service/details/' . $service->id) }}"
+                                    title="">{{ $service->service_title }}</a>
+                            </li>
+                        @endforeach
 
                     </ul>
                 </div>
                 <div class="col">
                     <p class="JK2">Worldwide Service</p>
-                    <ul  class="list footer-list">
+                    <ul class="list footer-list">
                         <li>Frankfurt am Main</li>
                         <li>Munich</li>
                         <li>Berlin</li>
@@ -463,17 +478,17 @@
                 <div class="col">
                     <p class="JK2">Über uns</p>
                     <ul class="list footer-list">
-                        <li><a href="{{url('/about-us')}}">Über uns</a></li>
-                        <li><a href="{{url('/Faq')}}">FAQs</a></li>
-                        <li><a href="{{url('/contact-us')}}">Kontakt</a></li>
+                        <li><a href="{{ url('/about-us') }}">Über uns</a></li>
+                        <li><a href="{{ url('/Faq') }}">FAQs</a></li>
+                        <li><a href="{{ url('/contact-us') }}">Kontakt</a></li>
                     </ul>
                 </div>
                 <div class="col">
                     <p class="JK2">PARTNER WERDEN</p>
                     <ul class="list footer-list">
-                        <li><a href="{{url('/become-driver')}}">Für Fahrer</a></li>
-                        <li><a href="{{url('/become-partner')}}">Für Partnerunternehmen</a></li>
-                        <li><a href="{{url('/impressum')}}">Impressum</a></li>
+                        <li><a href="{{ url('/become-driver') }}">Für Fahrer</a></li>
+                        <li><a href="{{ url('/become-partner') }}">Für Partnerunternehmen</a></li>
+                        <li><a href="{{ url('/impressum') }}">Impressum</a></li>
                     </ul>
                 </div>
                 <div class="col">
@@ -488,8 +503,8 @@
                 <div class="col">
                     <p class="JK2">Payment</p>
                     <div class="d-flex flex-column justify-content-md-end storeIcons gap-2">
-                        <img src="{{asset('images/all/paymentMethod1.png')}}" class="EK41" alt="Avatar"> 
-                        <img src="{{asset('images/all/paymentMethod2.png')}}" class="EK41" alt="Avatar"> 
+                        <img src="{{ asset('images/all/paymentMethod1.png') }}" class="EK41" alt="Avatar">
+                        <img src="{{ asset('images/all/paymentMethod2.png') }}" class="EK41" alt="Avatar">
                         {{-- <button type="button" class="btn-dark" id="BTM"><a href="#"><i
                                     class="fa-brands fa-apple" id="apple" style="color:white"></i></a>
                             <p id="lin1"> | </p>
@@ -510,16 +525,17 @@
 
             <div class="mt-4 footer-termsLink">
                 {{-- <div class="col-md-6"> --}}
-                    <p class="KK"> © 2024 The Hathaway Group GmbH</p>
+                <p class="KK"> © 2024 The Hathaway Group GmbH</p>
                 {{-- </div> --}}
 
                 {{-- <div class="col-md-6 "> --}}
-                    <p class="copyRightText text-center">Developed by <a href="https://dbqplabs.com/" target="_blank" title="Software development agency in Finland" nofollow style="color: inherit">dpqp</a> 
-                        {{-- <a href="{{url('/mpressum')}}" class="pl-2 pr-2" style="color: goldenrod; text-decoration: underline;"> Impressum</a>
+                <p class="copyRightText text-center">Developed by <a href="https://dbqplabs.com/" target="_blank"
+                        title="Software development agency in Finland" nofollow style="color: inherit">dpqp</a>
+                    {{-- <a href="{{url('/mpressum')}}" class="pl-2 pr-2" style="color: goldenrod; text-decoration: underline;"> Impressum</a>
                         <a href="{{url('/datenschutz')}}" class="pl-2" style="color: goldenrod;text-decoration: underline;"> Datenschutz</a> --}}
-                    </p>
+                </p>
                 {{-- </div> --}}
-                
+
                 {{-- <div class="col-4 d-flex justify-content-md-end mt-4">
                     <div class="">
                         <button class="btn btn-dark" id="GER" type="submit"><i
@@ -532,11 +548,11 @@
                 </div> --}}
             </div>
             {{-- <div>
-                
+
             </div> --}}
         </div>
 
-        {{-- 
+        {{--
             <div class="container">
                 <div class="row">
                     <div class="col-md-2 col-sm-6 text-center ft1">

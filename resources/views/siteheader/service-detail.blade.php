@@ -3,127 +3,144 @@
     Service Details
 @endsection
 @section('content-area')
-<style>
-    @if(isset($config->service_detail_img))
-        .top-title 
-        {
-        background: url({{asset('files/pages-images/'.$config->service_detail_img)}}) !important; 
-        background-repeat: no-repeat;
-        background-repeat: no-repeat !important;
-        background-position: center;
-        background-size: 100% 100% !important;
-    }
-    @else
+    <style>
         .top-title {
-        background: url({{asset('images/template/services-single.jpg')}});
-    }
-    @endif
-    ul{
-        padding-left:0 ;
-    }
-    a, a:hover{
-        color: dodgerblue;
-        text-decoration: none
-    }
-    #pick-date,
-    #pick-time{
-        border: none
-    }
-    .datetimepicker {
-        padding: 15px;
-        margin-top: 0;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-        direction: ltr;
-        background-color: #151515;
-        width: 300px !important;
-        left: 934px !important;
-    }
-</style>
-<style>
-    .heading-banner{
-        font-weight: 500;
-        font-size: 44px;
-        line-height: 58px;
-        color: #fff;
-    }
-    .section-fleet-detail{
-        padding-top: 100px;
-        padding-bottom: 60px;
-    }
-    .heading-class{
-        font-weight: 500;
-        font-size: 44px;
-        line-height: 58px;
-        color: #000;
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    .box-breadcrumb ul{
-        padding: 0;
-    }
-    .box-breadcrumb ul li {
-    display: inline-block;
-    position: relative;
-    padding: 0px 22px 0px 0px;
-    }
-    .box-breadcrumb ul li::before {
-        content: "-";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 4px;
-        color: #fff;
-    }
-    .box-breadcrumb ul li:last-child::before {
-        content: none;
-    }
-    .box-breadcrumb ul li a {
-        color: #fff;
-        font-size: 14px;
-        line-height: 24px;
-        font-weight: 400;
-    }
-    .top-title.ver-1{
-        margin-top: 0 !important;
-    }
-    .mt-50 {
-    margin-top: 50px !important;
-}
-.cardIconTitleDesc .cardIcon {
-    margin-bottom: 30px;
-}
-.cardIconTitleDesc .cardTitle {
-    margin-bottom: 10px;
-}
-.cardIconTitleDesc .cardDesc {
-    margin-bottom: 30px;
-}
-.cardIconTitleDescLeft .cardIconTitleDesc {
-    text-align: left;
-    padding: 40px 40px 10px 40px;
-}
-.cardIconTitleDescLeft .cardIconTitleDesc:hover {
-    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05);
-    border-radius: 18px;
-}
-.customs-single.ver-1{
-    padding:  0;
-}
+            @if (isset($config->service_detail_img))
+                background: url('{{ asset('files/pages-images/' . $config->service_detail_img) }}') !important;
+                background-repeat: no-repeat !important;
+                background-position: center;
+                background-size: 100% 100% !important;
+            @else
+                background: url('{{ asset('images/template/services-single.jpg') }}');
+            @endif
+        }
+
+        ul {
+            padding-left: 0;
+        }
+
+        a,
+        a:hover {
+            color: dodgerblue;
+            text-decoration: none
+        }
+
+        #pick-date,
+        #pick-time {
+            border: none
+        }
+
+        .datetimepicker {
+            padding: 15px;
+            margin-top: 0;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            direction: ltr;
+            background-color: #151515;
+            width: 300px !important;
+            left: 934px !important;
+        }
+
+        .heading-banner {
+            font-weight: 500;
+            font-size: 44px;
+            line-height: 58px;
+            color: #fff;
+        }
+
+        .section-fleet-detail {
+            padding-top: 100px;
+            padding-bottom: 60px;
+        }
+
+        .heading-class {
+            font-weight: 500;
+            font-size: 44px;
+            line-height: 58px;
+            color: #000;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .box-breadcrumb ul {
+            padding: 0;
+        }
+
+        .box-breadcrumb ul li {
+            display: inline-block;
+            position: relative;
+            padding: 0px 22px 0px 0px;
+        }
+
+        .box-breadcrumb ul li::before {
+            content: "-";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 4px;
+            color: #fff;
+        }
+
+        .box-breadcrumb ul li:last-child::before {
+            content: none;
+        }
+
+        .box-breadcrumb ul li a {
+            color: #fff;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+        }
+
+        .top-title.ver-1 {
+            margin-top: 0 !important;
+        }
+
+        .mt-50 {
+            margin-top: 50px !important;
+        }
+
+        .cardIconTitleDesc .cardIcon {
+            margin-bottom: 30px;
+        }
+
+        .cardIconTitleDesc .cardTitle {
+            margin-bottom: 10px;
+        }
+
+        .cardIconTitleDesc .cardDesc {
+            margin-bottom: 30px;
+        }
+
+        .cardIconTitleDescLeft .cardIconTitleDesc {
+            text-align: left;
+            padding: 40px 40px 10px 40px;
+        }
+
+        .cardIconTitleDescLeft .cardIconTitleDesc:hover {
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05);
+            border-radius: 18px;
+        }
+
+        .customs-single.ver-1 {
+            padding: 0;
+        }
     </style>
-<div class="section-fleet-detail pt-60 pb-60 bg-black">
-        <div class="container"> 
-          <h1 class="heading-banner">Airport Transfer Service</h1>
-          <div class="box-breadcrumb"> 
-            <ul>
-              <li> <a href="#">Home</a></li>
-              <li> <a href="fleet-list.html">Our Fleet</a></li>
-            </ul>
-          </div>
+
+    <div class="section-fleet-detail pt-60 pb-60 bg-black">
+        <div class="container">
+            <h1 class="heading-banner">Airport Transfer Service</h1>
+            <div class="box-breadcrumb">
+                <ul>
+                    <li> <a href="#">Home</a></li>
+                    <li> <a href="fleet-list.html">Our Fleet</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-    <section class="top-title ver-1" style="background-image: url(https://creativelayers.net/themes/luxride-html/assets/imgs/page/services/banner.png) !important;background-size: 100% !important;">
+    <section class="top-title ver-1"
+        style="background-image: url(https://creativelayers.net/themes/luxride-html/assets/imgs/page/services/banner.png) !important;background-size: 100% !important;">
         <div class="">
             <div class="container">
                 <div class="row">
@@ -182,20 +199,22 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             {{-- <div class="input-group"> --}}
-                                                {{-- <div class="input-group-prepend">
+                                            {{-- <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
                                                 </div> --}}
-                                                <div class="date form_date d-flex align-items-center form-input--container" data-date="3" data-date-format="dd MM yyyy"
-                                                    data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                                                    <span class="icon--container" ><img src="{{asset('images/icon/calender.svg')}}" alt=""></span>
-                                                    <input size="100%" class="mt-0 mb-0" type="text" id="pick-date"
-                                                        placeholder="{{ date('d-M-Y') }}" readonly required>
-                                                    <span class="add-on"><i class="icon-remove"></i></span>
-                                                    <span class="add-on"><i class="icon-th"></i></span>
-                                                </div>
-                                                <input type="hidden" name="pick_date" id="dtp_input2"
-                                                    class="pick_date" /><br />
+                                            <div class="date form_date d-flex align-items-center form-input--container"
+                                                data-date="3" data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                                                data-link-format="yyyy-mm-dd">
+                                                <span class="icon--container"><img
+                                                        src="{{ asset('images/icon/calender.svg') }}" alt=""></span>
+                                                <input size="100%" class="mt-0 mb-0" type="text" id="pick-date"
+                                                    placeholder="{{ date('d-M-Y') }}" readonly required>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                            </div>
+                                            <input type="hidden" name="pick_date" id="dtp_input2"
+                                                class="pick_date" /><br />
                                             {{-- </div> --}}
                                         </div>
 
@@ -207,22 +226,23 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             {{-- <div class="input-group"> --}}
-                                                {{-- <div class="input-group-append">
+                                            {{-- <div class="input-group-append">
                                                     <span class="input-group-text"><div class="input-group-prepend">
                                                     <span class="input-group-text"> <img src="{{asset('images/icon/backArrow.svg')}}"/></span>
                                                 </div></span>
                                                 </div> --}}
-                                                <div class="controls input-append date form_time d-flex align-items-center form-input--container" data-date=""
-                                                    data-date-format="hh:ii p" data-link-field="dtp_input3"
-                                                    data-link-format="hh:ii">
-                                                    <span class="icon--container" ><img src="{{asset('images/icon/clock.svg')}}" alt=""></span>
-                                                    <input size="100%" class="mb-0 mt-0" type="text"
-                                                        value="" id="pick-time" placeholder="12:25 am" readonly>
-                                                    <span class="add-on"><i class="icon-remove"></i></span>
-                                                    <span class="add-on"><i class="icon-th"></i></span>
-                                                </div>
-                                                <input type="hidden" name="pick_time" id="dtp_input3"
-                                                    value="" /><br />
+                                            <div class="controls input-append date form_time d-flex align-items-center form-input--container"
+                                                data-date="" data-date-format="hh:ii p" data-link-field="dtp_input3"
+                                                data-link-format="hh:ii">
+                                                <span class="icon--container"><img
+                                                        src="{{ asset('images/icon/clock.svg') }}" alt=""></span>
+                                                <input size="100%" class="mb-0 mt-0" type="text" value=""
+                                                    id="pick-time" placeholder="12:25 am" readonly>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                            </div>
+                                            <input type="hidden" name="pick_time" id="dtp_input3"
+                                                value="" /><br />
                                             {{-- </div> --}}
                                         </div>
 
@@ -234,7 +254,8 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             <div class="d-flex align-items-center form-input--container">
-                                                    <span class="icon--container" > <span class="icon-border"><img src="{{asset('images/icon/from.svg')}}"/></span></span>
+                                                <span class="icon--container"> <span class="icon-border"><img
+                                                            src="{{ asset('images/icon/from.svg') }}" /></span></span>
                                                 <input type="text" id="pick-location" name="pick_address"
                                                     class="form-control pick-address mb-0" placeholder="From" />
                                             </div>
@@ -246,7 +267,8 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             <div class="d-flex align-items-center form-input--container">
-                                                <span class="icon--container"><span class="icon-border"> <img src="{{asset('images/icon/backArrow.svg')}}"/></span></span>
+                                                <span class="icon--container"><span class="icon-border"> <img
+                                                            src="{{ asset('images/icon/backArrow.svg') }}" /></span></span>
                                                 <input type="text" id="drop-location" name="drop_address"
                                                     class="form-control drop-address mb-0" placeholder="To" />
                                             </div>
@@ -278,8 +300,8 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
                                                             class="fas fa-map-marker-alt"></i></span>
-                                                            <input type="text" id="pick-location-hour" name="pick_address"
-                                                                class="form-control pick-address" placeholder="From" />
+                                                    <input type="text" id="pick-location-hour" name="pick_address"
+                                                        class="form-control pick-address" placeholder="From" />
                                                 </div>
                                             </div>
                                         </div>
@@ -380,7 +402,7 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -392,42 +414,45 @@
         </div>
     </section>
     <section class="section-class mt-90">
-        <div class="container"> 
-          <div class="row mt-50 cardIconTitleDescLeft"> 
-            <div class="col-lg-4 col-md-6 col-sm-6 mb-30"> 
-              <div class="cardIconTitleDesc wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                <div class="cardIcon"><img src="{{asset('/images/camera.svg')}}" alt="luxride"></div>
-                <div class="cardTitle">
-                  <h5 class="text-20-medium color-text">Safety First</h5>
+        <div class="container">
+            <div class="row mt-50 cardIconTitleDescLeft">
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-30">
+                    <div class="cardIconTitleDesc wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="cardIcon"><img src="{{ asset('/images/camera.svg') }}" alt="luxride"></div>
+                        <div class="cardTitle">
+                            <h5 class="text-20-medium color-text">Safety First</h5>
+                        </div>
+                        <div class="cardDesc">
+                            <p class="text-16 color-text">Both you and your shipments will travel with professional
+                                drivers. Always with the highest quality standards.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="cardDesc">
-                  <p class="text-16 color-text">Both you and your shipments will travel with professional drivers. Always with the highest quality standards.</p>
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-30">
+                    <div class="cardIconTitleDesc wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="cardIcon"><img src="{{ asset('/images/water.svg') }}" alt="luxride"></div>
+                        <div class="cardTitle">
+                            <h5 class="text-20-medium color-text">Prices With No Surprises</h5>
+                        </div>
+                        <div class="cardDesc">
+                            <p class="text-16 color-text">Both you and your shipments will travel with professional
+                                drivers. Always with the highest quality standards.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-30">
+                    <div class="cardIconTitleDesc wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="cardIcon"><img src="{{ asset('/images/coffee.svg') }}" alt="luxride"></div>
+                        <div class="cardTitle">
+                            <h5 class="text-20-medium color-text">Private Travel Solutions</h5>
+                        </div>
+                        <div class="cardDesc">
+                            <p class="text-16 color-text">Both you and your shipments will travel with professional
+                                drivers. Always with the highest quality standards.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 mb-30"> 
-              <div class="cardIconTitleDesc wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                <div class="cardIcon"><img src="{{asset('/images/water.svg')}}" alt="luxride"></div>
-                <div class="cardTitle">
-                  <h5 class="text-20-medium color-text">Prices With No Surprises</h5>
-                </div>
-                <div class="cardDesc">
-                  <p class="text-16 color-text">Both you and your shipments will travel with professional drivers. Always with the highest quality standards.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 mb-30"> 
-              <div class="cardIconTitleDesc wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                <div class="cardIcon"><img src="{{asset('/images/coffee.svg')}}" alt="luxride"></div>
-                <div class="cardTitle">
-                  <h5 class="text-20-medium color-text">Private Travel Solutions</h5>
-                </div>
-                <div class="cardDesc">
-                  <p class="text-16 color-text">Both you and your shipments will travel with professional drivers. Always with the highest quality standards.</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
     </section>
     <section class="customs-single ver-1">
@@ -438,45 +463,48 @@
                     <article class="block-customs-single ver-1">
                         {{--  <div class="featured-customs">
                             <div class="images">
-                                 <img src="{{asset('files/services-images/'.$service->service_image)}}" class="w-100" alt=""> 
+                                 <img src="{{asset('files/services-images/'.$service->service_image)}}" class="w-100" alt="">
                             </div>
-                        </div>--}}
+                        </div> --}}
                         <div class="entry-customs">
                             <div class="entry-box">
-                                <h3>{{$service->service_title2}} </h3>
+                                <h3>{{ $service->service_title2 }} </h3>
                                 {!! $service->long_description !!}
                             </div>
                         </div>
                     </article>
                 </div>
             </div>
-            <div class="row align-items-center mt-50"> 
+            <div class="row align-items-center mt-50">
                 <div class="col-lg-6 mb-30 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                    <img src="{{asset('/images/img1.png')}}" alt="luxride">
+                    <img src="{{ asset('/images/img1.png') }}" alt="luxride">
                 </div>
                 <div class="col-lg-6 mb-30">
                     <div class="box-info-right wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                    <h3 style="font-size: 40px;font-weight: 600;margin-bottom: 10px;">Get to or from <br> the airport</h3>
-                    <p style="font-weight: 500;font-size: 17px;">The price of tickets for low-cost airlines for a specific route has a much larger spread than that of regular airlines. It depends on the time to departure, demand and competition on the route. Unlike regular airlines, low-cost airlines rarely offer cheap tickets more than 3 months before departure. </p>
+                        <h3 style="font-size: 40px;font-weight: 600;margin-bottom: 10px;">Get to or from <br> the airport
+                        </h3>
+                        <p style="font-weight: 500;font-size: 17px;">The price of tickets for low-cost airlines for a
+                            specific route has a much larger spread than that of regular airlines. It depends on the time to
+                            departure, demand and competition on the route. Unlike regular airlines, low-cost airlines
+                            rarely offer cheap tickets more than 3 months before departure. </p>
                     </div>
                 </div>
             </div>
-            <div class="row align-items-center mt-50"> 
+            <div class="row align-items-center mt-50">
                 <div class="col-lg-6 mb-30">
                     <div class="box-info-right wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                    <h3 style="font-size: 40px;font-weight: 600;margin-bottom: 10px;">Get to or from <br> the airport</h3>
-                    <p style="font-weight: 500;font-size: 17px;">The price of tickets for low-cost airlines for a specific route has a much larger spread than that of regular airlines. It depends on the time to departure, demand and competition on the route. Unlike regular airlines, low-cost airlines rarely offer cheap tickets more than 3 months before departure. </p>
+                        <h3 style="font-size: 40px;font-weight: 600;margin-bottom: 10px;">Get to or from <br> the airport
+                        </h3>
+                        <p style="font-weight: 500;font-size: 17px;">The price of tickets for low-cost airlines for a
+                            specific route has a much larger spread than that of regular airlines. It depends on the time to
+                            departure, demand and competition on the route. Unlike regular airlines, low-cost airlines
+                            rarely offer cheap tickets more than 3 months before departure. </p>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-30 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                    <img src="{{asset('/images/img1.png')}}" alt="luxride">
+                    <img src="{{ asset('/images/img1.png') }}" alt="luxride">
                 </div>
             </div>
         </div>
     </section>
 @endsection
-
-
-
-
-
